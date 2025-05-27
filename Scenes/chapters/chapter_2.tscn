@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=3 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://m5c1cyo50rgw" path="res://scenes/maps/city.tscn" id="1_3hgx5"]
+[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
 
 [node name="Chapter2" type="Node2D"]
 
 [node name="City" parent="." instance=ExtResource("1_3hgx5")]
+
+[node name="Player" parent="." instance=ExtResource("2_v6yd1")]
 z_index = 1
+position = Vector2(31, 661)
