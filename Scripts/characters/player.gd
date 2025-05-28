@@ -1,28 +1,57 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
 @onready var anim = $AnimatedSprite2D
+@onready var player = self
+var last_direction = "down" 
+var speed = 1 
 
 func _ready() -> void:
-	anim.play("walk")	
+	anim.play("walk_right")
+	
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+func _process(delta: float) -> void:
+		var moving = false
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# Movement Up
+		if Input.is_key_pressed(KEY_W):
+				player.position.y -= speed
+				anim.play("walk_up")
+				last_direction = "up"
+				moving = true
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Movement Down
+		elif Input.is_key_pressed(KEY_S):
+				player.position.y += speed
+				anim.play("walk_down")
+				last_direction = "down"
+				moving = true
 
-	move_and_slide()
+		# Movement Left
+		elif Input.is_key_pressed(KEY_A):
+				player.position.x -= speed
+				anim.play("walk_side")
+				anim.flip_h = true
+				last_direction = "left"
+				moving = true
+
+		# Movement Right
+		elif Input.is_key_pressed(KEY_D):
+				player.position.x += speed
+				anim.play("walk_side")
+				anim.flip_h = false
+				last_direction = "right"
+				moving = true
+
+		# If not moving, play idle animation based on last direction
+		if not moving:
+				match last_direction:
+						"up":
+								anim.play("idle_up")
+						"down":
+								anim.play("idle_down")
+						"left":
+								anim.play("idle_side")
+								anim.flip_h = true
+						"right":
+								anim.play("idle_side")
+								anim.flip_h = false

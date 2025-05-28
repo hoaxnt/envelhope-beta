@@ -2,7 +2,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time
 func _ready():
-	get_tree().change_scene_to_file("res://scenes/chapter_2.tscn")
+	get_tree().change_scene_to_file("res://scenes/chapters/chapter_2.tscn")
+	print("Goto 2")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
