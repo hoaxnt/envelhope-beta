@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://m5c1cyo50rgw" path="res://scenes/maps/city.tscn" id="1_3hgx5"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
-[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://scripts/characters/npc/knight/roam.gd" id="3_jauny"]
+[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://scripts/characters/npc/knight/roaming.gd" id="3_jauny"]
 [ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc/knight.tscn" id="3_sa0bh"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
