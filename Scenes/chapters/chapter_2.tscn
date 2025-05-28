@@ -11,6 +11,11 @@
 z_index = 1
 position = Vector2(31, 661)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(180, 611)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+limit_smoothed = true
+position_smoothing_enabled = true
