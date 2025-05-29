@@ -10,7 +10,7 @@ var current_speed = base_speed
 
 func _ready() -> void:
 	var screen_size = get_viewport_rect().size
-	anim.play("walk_right")
+	anim.play("idle_down")
 	camera.limit_right = screen_size.x
 	camera.limit_bottom = screen_size.y
 	
