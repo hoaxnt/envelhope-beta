@@ -1,47 +1,52 @@
 [gd_scene load_steps=9 format=3 uid="uid://roh6nuojjp2y"]
 
 [ext_resource type="Script" uid="uid://cg0mfw1cvriky" path="res://scripts/characters/npc/knight/knight.gd" id="1_xk2rj"]
-[ext_resource type="Texture2D" uid="uid://deqnjom3w74e5" path="res://assets/images/characters/npc/knight/idle_side.png" id="2_xrx7d"]
+[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/images/characters/player/idle/idle_side.png" id="2_xk2rj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qyh0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_84hc2"]
-atlas = ExtResource("2_xrx7d")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrx7d"]
+atlas = ExtResource("2_xk2rj")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bgitj"]
-atlas = ExtResource("2_xrx7d")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtv4a"]
+atlas = ExtResource("2_xk2rj")
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01k3j"]
-atlas = ExtResource("2_xrx7d")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rwbk"]
+atlas = ExtResource("2_xk2rj")
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urpkq"]
-atlas = ExtResource("2_xrx7d")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejvtx"]
+atlas = ExtResource("2_xk2rj")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qyh0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_84hc2")
+"texture": SubResource("AtlasTexture_xrx7d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bgitj")
+"texture": SubResource("AtlasTexture_qtv4a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_01k3j")
+"texture": SubResource("AtlasTexture_8rwbk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_urpkq")
+"texture": SubResource("AtlasTexture_ejvtx")
 }],
 "loop": true,
 "name": &"idle_side",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
-[node name="Knight" type="Area2D"]
+[node name="FruitVendor" type="Area2D"]
 script = ExtResource("1_xk2rj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -51,5 +56,3 @@ shape = SubResource("RectangleShape2D_7qyh0")
 sprite_frames = SubResource("SpriteFrames_7qyh0")
 animation = &"idle_side"
 autoplay = "idle_side"
-frame = 3
-frame_progress = 1.0
