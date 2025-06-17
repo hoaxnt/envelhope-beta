@@ -14,7 +14,6 @@ func _ready() -> void:
 	camera.limit_right = screen_size.x
 	camera.limit_bottom = screen_size.y
 	
-
 func _process(delta: float) -> void:
 		var moving = false
 	# Hold Shift to sprint
