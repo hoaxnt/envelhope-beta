@@ -1,6 +1,6 @@
 extends Button
 
-@onready var guard := self
+var root_viewport = get_tree().root
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
