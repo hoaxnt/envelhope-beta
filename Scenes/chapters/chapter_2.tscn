@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=9 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
 [ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
+[ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
@@ -44,6 +45,10 @@ z_index = 1
 rotation = 0.0217357
 
 [node name="StreetPerformer" parent="." instance=ExtResource("5_g2xa2")]
-position = Vector2(450, 593)
+position = Vector2(498, 602)
 
 [node name="Guard" parent="." instance=ExtResource("6_2w64o")]
+position = Vector2(263, 479)
+
+[node name="BlindVendor" parent="." instance=ExtResource("7_165o0")]
+position = Vector2(321, 657)
