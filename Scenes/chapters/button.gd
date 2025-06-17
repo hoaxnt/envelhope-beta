@@ -1,6 +1,7 @@
 extends Button
 
 var root_node2d  # This will store the parent Node2D
+var vendor
 
 func _ready() -> void:
 		# Connect button press
@@ -16,6 +17,8 @@ func _ready() -> void:
 		
 		if root_node2d:
 				print("Found Node2D:", root_node2d.name)
+				print(root_node2d.get_child(5).name)
+				
 		else:
 				print("Node2D not found in parent chain")
 
