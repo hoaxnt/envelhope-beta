@@ -1,19 +1,23 @@
 extends Button
 
-var root_viewport = get_tree().root
+var root_node2d  # This will store the parent Node2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	connect("pressed", self.vanish)
-	pass # Replace with function body.
+		# Connect button press
+		connect("pressed", self.vanish)
 
+		# Traverse up the scene tree until we find a Node2D
+		var current = self
+		while current and not current is Node2D:
+				current = current.get_parent()
+		
+		root_node2d = current
+		
+		if root_node2d:
+				print("Found Node2D:", root_node2d.name)
+		else:
+				print("Node2D not found in parent chain")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func vanish():
-	
+	print("Hi ")
 	pass
-	
-	

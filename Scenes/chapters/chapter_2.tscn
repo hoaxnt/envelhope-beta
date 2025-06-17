@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=11 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
@@ -14,6 +14,8 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 130, 616, 0, 0, 0, 0, 370, 616)
 }
 point_count = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei26i"]
 
 [node name="Chapter2" type="Node2D"]
 
@@ -71,6 +73,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ei26i")
 
 [node name="Button" type="Button" parent="CanvasLayer/UI/Panel"]
 layout_mode = 1
