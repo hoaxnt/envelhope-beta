@@ -17,11 +17,13 @@ func _ready() -> void:
 		
 		if root_node2d:
 				print("Found Node2D:", root_node2d.name)
-				print(root_node2d.get_child(5).name)
+				vendor = root_node2d.get_child(5)
+				print(vendor.name)
 				
 		else:
 				print("Node2D not found in parent chain")
 
 func vanish():
 	
+	vendor.visible = false
 	pass
