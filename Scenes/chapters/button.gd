@@ -12,6 +12,8 @@ func _ready() -> void:
 				current = current.get_parent()
 		
 		root_node2d = current
+		root_node2d.get_node("BlindVendor")
+		
 		
 		if root_node2d:
 				print("Found Node2D:", root_node2d.name)
@@ -19,5 +21,5 @@ func _ready() -> void:
 				print("Node2D not found in parent chain")
 
 func vanish():
-	print("Hi ")
+	
 	pass
