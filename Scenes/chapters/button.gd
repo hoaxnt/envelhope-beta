@@ -13,7 +13,7 @@ func _ready() -> void:
 		
 		root_node2d = current
 		root_node2d.get_node("BlindVendor")
-		
+		print(root_node2d.name)
 		
 		if root_node2d:
 				print("Found Node2D:", root_node2d.name)
