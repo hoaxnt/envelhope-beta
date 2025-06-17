@@ -2,10 +2,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	connect("body_entered", self.interact)
-	
-	pass # Replace with function body.
-
+	connect("body_entered", self._interact)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
