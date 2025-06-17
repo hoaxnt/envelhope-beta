@@ -14,7 +14,7 @@ point_count = 2
 
 [node name="Chapter2" type="Node2D"]
 
-[node name="City" parent="." instance=ExtResource("1_3hgx5")]
+[node name="Plaza" parent="." instance=ExtResource("1_3hgx5")]
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
