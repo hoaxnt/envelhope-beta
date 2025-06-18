@@ -24,6 +24,5 @@ func _ready() -> void:
 				print("Node2D not found in parent chain")
 
 func vanish():
-	
 	vendor.visible = false
 	pass
