@@ -99,3 +99,11 @@ shape = SubResource("RectangleShape2D_7qyh0")
 sprite_frames = SubResource("SpriteFrames_7qyh0")
 animation = &"new_animation"
 autoplay = "idle_side"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -39.0
+offset_right = 19.0
+offset_bottom = -16.0
+text = "User"
+horizontal_alignment = 1
