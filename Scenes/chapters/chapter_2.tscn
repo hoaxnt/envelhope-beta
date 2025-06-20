@@ -23,7 +23,6 @@ point_count = 2
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
-z_index = 1
 position = Vector2(31, 661)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -67,6 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,3 +87,25 @@ offset_bottom = -43.0
 grow_vertical = 2
 text = "Vanish"
 script = ExtResource("8_ei26i")
+
+[node name="Dialog" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -180.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Greetings!"
+autowrap_mode = 2
