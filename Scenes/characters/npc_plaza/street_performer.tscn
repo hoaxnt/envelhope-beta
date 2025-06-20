@@ -90,6 +90,7 @@ animations = [{
 }]
 
 [node name="StreetPerformer" type="Area2D"]
+texture_filter = 1
 script = ExtResource("1_1lybs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -101,9 +102,12 @@ animation = &"new_animation"
 autoplay = "idle_side"
 
 [node name="Label" type="Label" parent="."]
+texture_filter = 1
 offset_left = -21.0
 offset_top = -39.0
 offset_right = 19.0
 offset_bottom = -16.0
 text = "User"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
