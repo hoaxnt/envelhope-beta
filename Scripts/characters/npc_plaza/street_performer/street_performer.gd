@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	print(is_player_collided)
 	pass
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("interact"):
 		is_dialog_visible = !is_dialog_visible
@@ -18,7 +19,7 @@ func _input(event: InputEvent) -> void:
 		dialog_box.visible = not is_dialog_visible
 
 func _on_body_entered(player: PhysicsBody2D) -> void:
-	if player.name == "Player":
-		while player:
-			is_player_collided = true
+	#if player.name == "Player":
+		#while player:
+			#is_player_collided = true
 	pass # Replace with function body.
