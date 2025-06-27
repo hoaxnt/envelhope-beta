@@ -13,16 +13,16 @@ func _ready() -> void:
 	anim.play("idle_down")
 	camera.limit_right = screen_size.x
 	camera.limit_bottom = screen_size.y
+
 	
 func _process(delta: float) -> void:
 		var moving = false
-	# Hold Shift to sprint
+
 		if Input.is_key_pressed(KEY_SHIFT):
 			current_speed = sprint_speed
 		else:
 			current_speed = base_speed
 			
-		# Movement Up
 		if Input.is_key_pressed(KEY_W):
 				player.position.y -= current_speed
 				anim.play("walk_up")
