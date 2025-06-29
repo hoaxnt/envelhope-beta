@@ -18,10 +18,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 		var moving = false
 
-		if Input.is_key_pressed(KEY_SHIFT):
-			current_speed = sprint_speed
-		else:
-			current_speed = base_speed
+		#if Input.is_key_pressed(KEY_SHIFT):
+			#current_speed = sprint_speed
+		#else:
+			#current_speed = base_speed
 			
 		if Input.is_key_pressed(KEY_W):
 				player.position.y -= current_speed
