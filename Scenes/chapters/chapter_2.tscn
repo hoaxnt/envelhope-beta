@@ -109,3 +109,14 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 60
 text = "Greetings!"
 autowrap_mode = 2
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_right = 478.0
+offset_bottom = 743.0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "UP"
