@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://yretl865neq6"]
+
+[ext_resource type="Texture2D" uid="uid://u1rbfa84k3kx" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Entities/Characters/Body_A/Animations/Run_Base/Run_Down-Sheet.png" id="1_1fnyj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3hja"]
+height = 32.0
+
+[node name="player_island" type="CharacterBody2D"]
+position = Vector2(29, 17)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1fnyj")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 1)
+shape = SubResource("CapsuleShape2D_t3hja")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, 2)
+zoom = Vector2(2, 2)

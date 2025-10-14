@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddu68mlrsgaia"]
+
+[ext_resource type="Script" path="res://scripts/dialog_system.gd" id="1_t271h"]
+[ext_resource type="Texture2D" uid="uid://c8467x5dx5wc3" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/dialogue_ui.png" id="2_lfogj"]
+[ext_resource type="FontFile" uid="uid://dj55cajvubeem" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/npc_and_dialog/fonts/Abaddon Bold.ttf" id="3_osx3c"]
+[ext_resource type="Texture2D" uid="uid://bkoyxvqntnu8w" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/npc_and_dialog/sprites/portraits/npc_portrait_01.png" id="4_pijr2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4yhv"]
+content_margin_left = 75.0
+content_margin_top = 30.0
+content_margin_right = 75.0
+content_margin_bottom = 30.0
+texture = ExtResource("2_lfogj")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8drv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="dialog_system" type="CanvasLayer"]
+process_mode = 3
+layer = 0
+script = ExtResource("1_t271h")
+
+[node name="dialog_ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="dialog_ui"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -582.0
+offset_top = -179.0
+offset_right = -37.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_l4yhv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="dialog_ui/PanelContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "Magandang umaga, alam mo ba na [b] Bold [/b] ang  klase ng text na ito?
+
+[wave] Alam mo ba na wave naman itong text na ito?
+
+"
+scroll_active = false
+
+[node name="Label" type="Label" parent="dialog_ui"]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 440.0
+offset_right = 737.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_osx3c")
+theme_override_font_sizes/font_size = 30
+text = "NORIEL"
+
+[node name="Timer" type="Timer" parent="dialog_ui"]
+
+[node name="Sprite2D" type="Sprite2D" parent="dialog_ui"]
+position = Vector2(519, 529)
+scale = Vector2(1.19, 1.27027)
+texture = ExtResource("4_pijr2")
+hframes = 4
+
+[node name="PanelContainer2" type="PanelContainer" parent="dialog_ui"]
+self_modulate = Color(0.382655, 0.504865, 0.234688, 1)
+layout_mode = 0
+offset_left = 1018.0
+offset_top = 583.0
+offset_right = 1055.0
+offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8drv")
+
+[node name="Label" type="Label" parent="dialog_ui/PanelContainer2"]
+layout_mode = 2
+text = "NEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dialog_ui/PanelContainer2"]
