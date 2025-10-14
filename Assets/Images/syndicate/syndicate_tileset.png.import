@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deqnjom3w74e5"
-path="res://.godot/imported/idle_side.png-7e3d759c6cf9b410ca09fe7e0c49d1df.ctex"
+uid="uid://cfqcax1vge6b7"
+path="res://.godot/imported/syndicate_tileset.png-b30505e2b15afd5c720393c457d665fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/npc/knight/idle_side.png"
-dest_files=["res://.godot/imported/idle_side.png-7e3d759c6cf9b410ca09fe7e0c49d1df.ctex"]
+source_file="res://assets/images/syndicate/syndicate_tileset.png"
+dest_files=["res://.godot/imported/syndicate_tileset.png-b30505e2b15afd5c720393c457d665fe.ctex"]
 
 [params]
 

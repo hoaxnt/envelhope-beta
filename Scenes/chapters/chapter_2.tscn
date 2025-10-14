@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=11 format=3 uid="uid://ch7e3kl82la3y"]
 
-[ext_resource type="PackedScene" uid="uid://m5c1cyo50rgw" path="res://scenes/maps/city.tscn" id="1_3hgx5"]
+[ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
-[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://scripts/characters/npc/knight/roaming.gd" id="3_jauny"]
-[ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc/knight.tscn" id="3_sa0bh"]
+[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://scripts/characters/npc_plaza/fruit_vendor/roaming.gd" id="3_jauny"]
+[ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
+[ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
+[ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
+[ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
+[ext_resource type="Script" uid="uid://bhhbamp0p1qam" path="res://scenes/chapters/button.gd" id="8_ei26i"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
@@ -11,13 +15,14 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei26i"]
+
 [node name="Chapter2" type="Node2D"]
 
-[node name="City" parent="." instance=ExtResource("1_3hgx5")]
+[node name="Plaza" parent="." instance=ExtResource("1_3hgx5")]
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
-z_index = 1
 position = Vector2(31, 661)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -37,6 +42,82 @@ curve = SubResource("Curve2D_g2xa2")
 position = Vector2(130, 616)
 script = ExtResource("3_jauny")
 
-[node name="Knight" parent="Path2D/PathFollow2D" instance=ExtResource("3_sa0bh")]
+[node name="FruitVendor" parent="Path2D/PathFollow2D" instance=ExtResource("3_sa0bh")]
 z_index = 1
 rotation = 0.0217357
+
+[node name="StreetPerformer" parent="." instance=ExtResource("5_g2xa2")]
+position = Vector2(498, 602)
+
+[node name="Guard" parent="." instance=ExtResource("6_2w64o")]
+position = Vector2(263, 479)
+
+[node name="BlindVendor" parent="." instance=ExtResource("7_165o0")]
+position = Vector2(321, 657)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ei26i")
+
+[node name="Button" type="Button" parent="CanvasLayer/UI/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 84.0
+offset_top = -152.0
+offset_right = 402.0
+offset_bottom = -43.0
+grow_vertical = 2
+text = "Vanish"
+script = ExtResource("8_ei26i")
+
+[node name="Dialog" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -180.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Greetings!"
+autowrap_mode = 2
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_right = 478.0
+offset_bottom = 743.0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "UP"
