@@ -606,6 +606,8 @@ texture = ExtResource("1_27lah")
 36:31/0 = 0
 31:32/0 = 0
 36:27/0 = 0
+23:27/0 = 0
+38:22/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tlbrg"]
 sources/0 = SubResource("TileSetAtlasSource_0i0rx")
