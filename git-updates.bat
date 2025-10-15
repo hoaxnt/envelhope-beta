@@ -7,72 +7,26 @@ REM ====================================================================
 echo --- Starting Robust Git Push Sequence ---
 echo.
 
-REM Verify that this is a Git repository (Restored check)
-if not exist .git (
-    echo ERROR: Current directory is not a Git repository.
-    pause
-    goto :eof
-)
-
-REM === STEP 1: ADD (Stage All Changes) ===
 echo 1/4: Staging all changes (git add .)...
 git add .
-if %errorlevel% neq 0 (
-    echo ADD FAILED. Please review the output above.
-    pause
-    goto :eof  REM <-- Stop execution after pausing on error
-)
+
 echo Staging complete.
 
-REM === STEP 2: COMMIT (with fixed message) ===
 echo.
 echo 2/4: Committing changes with message 'initial commit'...
 git commit -m "initial commit"
 
-REM Check for non-zero error level (excluding "nothing to commit" scenarios)
-if %errorlevel% neq 0 (
-    set LAST_OUTPUT=
-    FOR /F "tokens=*" %%g IN ('git status --porcelain') DO (
-        set LAST_OUTPUT=%%g
-    )
-    if defined LAST_OUTPUT (
-        echo COMMIT FAILED. Aborting sequence.
-        pause
-        goto :eof  REM <-- Stop execution after pausing on error
-    ) else (
-        echo WARNING: Nothing new was committed. Moving to pull step.
-    )
-)
 echo Commit step complete.
 
-REM === STEP 3: PULL (Fetch and Merge remote changes) ===
 echo.
 echo 3/4: Pulling latest updates from origin main non-interactively...
 git pull origin main --no-edit
 
-if %errorlevel% neq 0 (
-    echo.
-    echo PULL FAILED! A manual merge is required (likely conflicts).
-    echo FIX THE CONFLICTS and then run this script again.
-    pause
-    goto :eof  REM <-- Stop execution after pausing on conflict error
-)
 echo Pull successful.
 
-REM === STEP 4: PUSH (to origin main) ===
 echo.
 echo 4/4: Pushing committed and merged changes to origin main...
-git push origin main
-
-if %errorlevel% equ 0 (
-    echo.
-    echo SUCCESS: All changes have been synchronized with origin main!
-) else (
-    echo.
-    echo PUSH FAILED: Could not push changes. Check connection or authentication.
-    pause
-    goto :eof  REM <-- Stop execution after pausing on push error
-)
+git push
 
 echo.
 pause
