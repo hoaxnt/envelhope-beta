@@ -4,10 +4,14 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://db6vs4w3o1hp7"
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/Piglet_animation_with_shadow.png-d6946987f73eb97ea8fef2202b336058.ctex"
 =======
 path="res://.godot/imported/Piglet_animation_with_shadow.png-57015fb8a5d81de33e95d881c65b894a.ctex"
 >>>>>>> parent of 108b76c (dev)
+=======
+path="res://.godot/imported/Piglet_animation_with_shadow.png-57015fb8a5d81de33e95d881c65b894a.ctex"
+>>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
 metadata={
 "vram_texture": false
 }
@@ -15,12 +19,17 @@ metadata={
 [deps]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 source_file="res://Assets/Images/animals/Piglet_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Piglet_animation_with_shadow.png-d6946987f73eb97ea8fef2202b336058.ctex"]
 =======
 source_file="res://assets/images/animals/Piglet_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Piglet_animation_with_shadow.png-57015fb8a5d81de33e95d881c65b894a.ctex"]
 >>>>>>> parent of 108b76c (dev)
+=======
+source_file="res://assets/images/animals/Piglet_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Piglet_animation_with_shadow.png-57015fb8a5d81de33e95d881c65b894a.ctex"]
+>>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
 
 [params]
 

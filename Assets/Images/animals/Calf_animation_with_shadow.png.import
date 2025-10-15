@@ -4,10 +4,14 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdd7ikge0180o"
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/Calf_animation_with_shadow.png-af24f3dc9bbfbdf172447c75c2425083.ctex"
 =======
 path="res://.godot/imported/Calf_animation_with_shadow.png-a1113195f7e29edb88def4a643b22dfa.ctex"
 >>>>>>> parent of 108b76c (dev)
+=======
+path="res://.godot/imported/Calf_animation_with_shadow.png-a1113195f7e29edb88def4a643b22dfa.ctex"
+>>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
 metadata={
 "vram_texture": false
 }
@@ -15,12 +19,17 @@ metadata={
 [deps]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 source_file="res://Assets/Images/animals/Calf_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Calf_animation_with_shadow.png-af24f3dc9bbfbdf172447c75c2425083.ctex"]
 =======
 source_file="res://assets/images/animals/Calf_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Calf_animation_with_shadow.png-a1113195f7e29edb88def4a643b22dfa.ctex"]
 >>>>>>> parent of 108b76c (dev)
+=======
+source_file="res://assets/images/animals/Calf_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Calf_animation_with_shadow.png-a1113195f7e29edb88def4a643b22dfa.ctex"]
+>>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
 
 [params]
 
