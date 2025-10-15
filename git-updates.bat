@@ -7,14 +7,8 @@ REM ====================================================================
 echo --- Starting Robust Git Push Sequence ---
 echo.
 
-REM Verify that this is a Git repository
-if not exist .git (
-    echo ERROR: Current directory is not a Git repository.
-    pause
 
-)
-
-REM === STEP 1: ADD (Stage All Changes) ===
+REM === STEP 1: ADD (Stage All Changes) ==
 echo 1/4: Staging all changes (git add .)...
 git add .
 if %errorlevel% neq 0 (
@@ -58,7 +52,7 @@ if %errorlevel% neq 0 (
 
 )
 echo Pull successful.
-
+pause
 REM === STEP 4: PUSH (to origin main) ===
 echo.
 echo 4/4: Pushing committed and merged changes to origin main...
