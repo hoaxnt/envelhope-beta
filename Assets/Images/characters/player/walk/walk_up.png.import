@@ -3,23 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oiw8mnm1leuq"
-path="res://.godot/imported/walk_up.png-30923093443d3b5aa6b919a0b2455aaf.ctex"
+path="res://.godot/imported/walk_up.png-f8479b75e82663b666247a7871ce8edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/characters/player/walk/walk_up.png"
-dest_files=["res://.godot/imported/walk_up.png-30923093443d3b5aa6b919a0b2455aaf.ctex"]
+source_file="res://assets/images/characters/player/walk/walk_up.png"
+dest_files=["res://.godot/imported/walk_up.png-f8479b75e82663b666247a7871ce8edf.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
-compress/uastc_level=0
-compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -27,10 +25,6 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/channel_remap/red=0
-process/channel_remap/green=1
-process/channel_remap/blue=2
-process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

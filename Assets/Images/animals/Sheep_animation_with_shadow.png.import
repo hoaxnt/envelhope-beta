@@ -3,23 +3,35 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtc6lfi7fx2im"
+<<<<<<< HEAD
 path="res://.godot/imported/Sheep_animation_with_shadow.png-4bb480af3935c71632a41ce9aa990687.ctex"
+=======
+path="res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"
+>>>>>>> parent of 108b76c (dev)
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
 source_file="res://Assets/Images/animals/Sheep_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Sheep_animation_with_shadow.png-4bb480af3935c71632a41ce9aa990687.ctex"]
+=======
+source_file="res://assets/images/animals/Sheep_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"]
+>>>>>>> parent of 108b76c (dev)
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+<<<<<<< HEAD
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
+=======
+>>>>>>> parent of 108b76c (dev)
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -27,10 +39,13 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+<<<<<<< HEAD
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
+=======
+>>>>>>> parent of 108b76c (dev)
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
