@@ -1,11 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddu68mlrsgaia"]
 
+[ext_resource type="Script" path="res://scripts/dialog_system.gd" id="1_t271h"]
 [ext_resource type="Texture2D" uid="uid://c8467x5dx5wc3" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/dialogue_ui.png" id="2_lfogj"]
 [ext_resource type="FontFile" uid="uid://dj55cajvubeem" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/npc_and_dialog/fonts/Abaddon Bold.ttf" id="3_osx3c"]
 [ext_resource type="Texture2D" uid="uid://bkoyxvqntnu8w" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/npc_and_dialog/sprites/portraits/npc_portrait_01.png" id="4_pijr2"]
-
-[sub_resource type="Resource" id="Resource_7myk8"]
-metadata/__load_path__ = "res://scripts/dialog_system.gd"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4yhv"]
 content_margin_left = 75.0
@@ -28,7 +26,7 @@ corner_radius_bottom_left = 3
 [node name="dialog_system" type="CanvasLayer"]
 process_mode = 3
 layer = 0
-script = SubResource("Resource_7myk8")
+script = ExtResource("1_t271h")
 
 [node name="dialog_ui" type="Control" parent="."]
 layout_mode = 3

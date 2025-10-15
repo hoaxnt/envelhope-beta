@@ -17,6 +17,7 @@ run/main_scene="res://Scenes/maps/locations/island.tscn"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 config/features=PackedStringArray("4.5", "GL Compatibility")
 =======
 =======
@@ -57,6 +58,9 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 config/features=PackedStringArray("4.5", "GL Compatibility")
 >>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
 >>>>>>> parent of f18ed24 (update dev)
+=======
+config/features=PackedStringArray("4.5", "GL Compatibility")
+>>>>>>> parent of 7d42ff9 (delete: resources)
 boot_splash/image="uid://bcnebtixkonl"
 config/icon="uid://bcnebtixkonl"
 
@@ -68,7 +72,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/resizable=false
 window/size/window_width_override=640
 window/size/window_height_override=360
 window/stretch/mode="viewport"
