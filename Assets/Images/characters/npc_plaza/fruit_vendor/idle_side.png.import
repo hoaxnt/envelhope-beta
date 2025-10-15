@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deqnjom3w74e5"
-path="res://.godot/imported/idle_side.png-0c838570b444b770790eb3cd2cb82878.ctex"
+path="res://.godot/imported/idle_side.png-28ecff859825a53384a72a8ba00c7161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/characters/npc_plaza/fruit_vendor/idle_side.png"
-dest_files=["res://.godot/imported/idle_side.png-0c838570b444b770790eb3cd2cb82878.ctex"]
+source_file="res://assets/images/characters/npc_plaza/fruit_vendor/idle_side.png"
+dest_files=["res://.godot/imported/idle_side.png-28ecff859825a53384a72a8ba00c7161.ctex"]
 
 [params]
 

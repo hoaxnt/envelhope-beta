@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfqcax1vge6b7"
-path="res://.godot/imported/syndicate_tileset.png-1aa657255f0ab81bae7625d4cf770fc0.ctex"
+path="res://.godot/imported/syndicate_tileset.png-b30505e2b15afd5c720393c457d665fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/syndicate/syndicate_tileset.png"
-dest_files=["res://.godot/imported/syndicate_tileset.png-1aa657255f0ab81bae7625d4cf770fc0.ctex"]
+source_file="res://assets/images/syndicate/syndicate_tileset.png"
+dest_files=["res://.godot/imported/syndicate_tileset.png-b30505e2b15afd5c720393c457d665fe.ctex"]
 
 [params]
 
