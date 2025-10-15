@@ -1,8 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://4h22a7hemgyb"]
 
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
 [ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/images/characters/player/walk/walk_side.png" id="1_rp718"]
 [ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://assets/images/characters/player/idle/idle_down.png" id="2_dyp2m"]
 [ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/images/characters/player/idle/idle_side.png" id="3_atpat"]
@@ -10,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/images/characters/player/walk/walk_down.png" id="5_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://assets/images/characters/player/walk/walk_up.png" id="7_eojnx"]
 =======
->>>>>>> 691ab4124eb3dbd3f778d41d198df6fac2436a73
 [ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://Assets/Images/characters/player/walk/walk_side.png" id="1_rp718"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_yewv4"]
 [ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://Assets/Images/characters/player/idle/idle_down.png" id="2_dyp2m"]
@@ -18,18 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://Assets/Images/characters/player/idle/idle_up.png" id="4_atpat"]
 [ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://Assets/Images/characters/player/walk/walk_down.png" id="5_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://Assets/Images/characters/player/walk/walk_up.png" id="7_eojnx"]
-<<<<<<< HEAD
-=======
-[ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/images/characters/player/walk/walk_side.png" id="1_rp718"]
-[ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://assets/images/characters/player/idle/idle_down.png" id="2_dyp2m"]
-[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/images/characters/player/idle/idle_side.png" id="3_atpat"]
-[ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://assets/images/characters/player/idle/idle_up.png" id="4_atpat"]
-[ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/images/characters/player/walk/walk_down.png" id="5_6eyoc"]
-[ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://assets/images/characters/player/walk/walk_up.png" id="7_eojnx"]
->>>>>>> 16ab67f944e6eedec6af4bfa2ab063ec10c4628c
-=======
 >>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
->>>>>>> 691ab4124eb3dbd3f778d41d198df6fac2436a73
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wocps"]
 radius = 14.0

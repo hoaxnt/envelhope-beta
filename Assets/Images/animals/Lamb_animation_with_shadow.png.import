@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deqnjom3w74e5"
-path="res://.godot/imported/idle_side.png-28ecff859825a53384a72a8ba00c7161.ctex"
+uid="uid://dfb1ma7mlf31f"
+path="res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/npc_plaza/fruit_vendor/idle_side.png"
-dest_files=["res://.godot/imported/idle_side.png-28ecff859825a53384a72a8ba00c7161.ctex"]
+source_file="res://assets/images/animals/Lamb_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"]
 
 [params]
 

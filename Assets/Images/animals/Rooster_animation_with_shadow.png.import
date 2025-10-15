@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deqnjom3w74e5"
-path="res://.godot/imported/idle_side.png-28ecff859825a53384a72a8ba00c7161.ctex"
+uid="uid://b7g5k5vgbftd"
+path="res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/characters/npc_plaza/fruit_vendor/idle_side.png"
-dest_files=["res://.godot/imported/idle_side.png-28ecff859825a53384a72a8ba00c7161.ctex"]
+source_file="res://assets/images/animals/Rooster_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"]
 
 [params]
 
