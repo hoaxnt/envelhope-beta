@@ -5,6 +5,7 @@ type="CompressedTexture2D"
 uid="uid://dtc6lfi7fx2im"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/Sheep_animation_with_shadow.png-4bb480af3935c71632a41ce9aa990687.ctex"
 =======
 path="res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"
@@ -12,12 +13,16 @@ path="res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce34
 =======
 path="res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+path="res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"
+>>>>>>> parent of f18ed24 (update dev)
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 source_file="res://Assets/Images/animals/Sheep_animation_with_shadow.png"
@@ -30,6 +35,10 @@ dest_files=["res://.godot/imported/Sheep_animation_with_shadow.png-783f27a289117
 source_file="res://assets/images/animals/Sheep_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"]
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+source_file="res://assets/images/animals/Sheep_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Sheep_animation_with_shadow.png-783f27a2891172b1ce340b5a65e08d23.ctex"]
+>>>>>>> parent of f18ed24 (update dev)
 
 [params]
 

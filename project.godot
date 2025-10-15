@@ -16,12 +16,15 @@ run/main_scene="res://Scenes/maps/locations/island.tscn"
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 config/features=PackedStringArray("4.5", "GL Compatibility")
 =======
 =======
 >>>>>>> parent of 108b76c (dev)
 =======
 >>>>>>> 691ab4124eb3dbd3f778d41d198df6fac2436a73
+=======
+>>>>>>> parent of f18ed24 (update dev)
 =======
 config/features=PackedStringArray("4.5", "GL Compatibility")
 =======
@@ -31,6 +34,7 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 run/main_scene="uid://dakmfuhim8ksf"
 >>>>>>> parent of d315dba (Merge pull request #4 from hoaxnt/dev)
 config/features=PackedStringArray("4.4", "GL Compatibility")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +52,11 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 >>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
 >>>>>>> parent of f18ed24 (update dev)
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+=======
+config/features=PackedStringArray("4.5", "GL Compatibility")
+>>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
+>>>>>>> parent of f18ed24 (update dev)
 boot_splash/image="uid://bcnebtixkonl"
 config/icon="uid://bcnebtixkonl"
 

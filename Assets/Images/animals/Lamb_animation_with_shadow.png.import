@@ -5,6 +5,7 @@ type="CompressedTexture2D"
 uid="uid://dfb1ma7mlf31f"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/Lamb_animation_with_shadow.png-35d93845f7cb70e7571bebe0f8d72fef.ctex"
 =======
 path="res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"
@@ -12,12 +13,16 @@ path="res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad26
 =======
 path="res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+path="res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"
+>>>>>>> parent of f18ed24 (update dev)
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 source_file="res://Assets/Images/animals/Lamb_animation_with_shadow.png"
@@ -30,6 +35,10 @@ dest_files=["res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0
 source_file="res://assets/images/animals/Lamb_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"]
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+source_file="res://assets/images/animals/Lamb_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Lamb_animation_with_shadow.png-b8507b54ebecb0d05ad260450bb7528b.ctex"]
+>>>>>>> parent of f18ed24 (update dev)
 
 [params]
 

@@ -5,6 +5,7 @@ type="CompressedTexture2D"
 uid="uid://b7g5k5vgbftd"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/Rooster_animation_with_shadow.png-544689a6d2b29ed87583807a1c371762.ctex"
 =======
 path="res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"
@@ -12,12 +13,16 @@ path="res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580a
 =======
 path="res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+path="res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"
+>>>>>>> parent of f18ed24 (update dev)
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 source_file="res://Assets/Images/animals/Rooster_animation_with_shadow.png"
@@ -30,6 +35,10 @@ dest_files=["res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9
 source_file="res://assets/images/animals/Rooster_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"]
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+source_file="res://assets/images/animals/Rooster_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Rooster_animation_with_shadow.png-f1c4c1c54c9557580ad761abe0bff0d6.ctex"]
+>>>>>>> parent of f18ed24 (update dev)
 
 [params]
 

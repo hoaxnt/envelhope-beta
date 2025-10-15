@@ -5,6 +5,7 @@ type="CompressedTexture2D"
 uid="uid://clv47tphlgis7"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 path="res://.godot/imported/Chick_animation_with_shadow.png-48e0cd025f196e58ec59abf470dc7625.ctex"
 =======
 path="res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c04011267c951c80d1fe7c8.ctex"
@@ -12,12 +13,16 @@ path="res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c04011267c9
 =======
 path="res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c04011267c951c80d1fe7c8.ctex"
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+path="res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c04011267c951c80d1fe7c8.ctex"
+>>>>>>> parent of f18ed24 (update dev)
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 source_file="res://Assets/Images/animals/Chick_animation_with_shadow.png"
@@ -30,6 +35,10 @@ dest_files=["res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c040
 source_file="res://assets/images/animals/Chick_animation_with_shadow.png"
 dest_files=["res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c04011267c951c80d1fe7c8.ctex"]
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+source_file="res://assets/images/animals/Chick_animation_with_shadow.png"
+dest_files=["res://.godot/imported/Chick_animation_with_shadow.png-e1a7e71d1c04011267c951c80d1fe7c8.ctex"]
+>>>>>>> parent of f18ed24 (update dev)
 
 [params]
 

@@ -4,9 +4,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+>>>>>>> parent of f18ed24 (update dev)
 [ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/images/characters/player/walk/walk_side.png" id="1_rp718"]
 [ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://assets/images/characters/player/idle/idle_down.png" id="2_dyp2m"]
 [ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/images/characters/player/idle/idle_side.png" id="3_atpat"]
@@ -21,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://Assets/Images/characters/player/idle/idle_up.png" id="4_atpat"]
 [ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://Assets/Images/characters/player/walk/walk_down.png" id="5_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://Assets/Images/characters/player/walk/walk_up.png" id="7_eojnx"]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -42,6 +46,9 @@
 =======
 >>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
 >>>>>>> 89b446136008dbe508b21a7cceda7a97db9e61c3
+=======
+>>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
+>>>>>>> parent of f18ed24 (update dev)
 
 [sub_resource type="GDScript" id="GDScript_kqtwu"]
 script/source = "extends CharacterBody2D
