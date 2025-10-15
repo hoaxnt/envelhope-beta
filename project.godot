@@ -11,25 +11,8 @@ config_version=5
 [application]
 
 config/name="Envelhope (Beta)"
-<<<<<<< HEAD
 run/main_scene="res://Scenes/maps/locations/island.tscn"
-<<<<<<< HEAD
-<<<<<<< HEAD
 config/features=PackedStringArray("4.5", "GL Compatibility")
-=======
-=======
->>>>>>> 691ab4124eb3dbd3f778d41d198df6fac2436a73
-=======
-run/main_scene="uid://dakmfuhim8ksf"
->>>>>>> parent of d315dba (Merge pull request #4 from hoaxnt/dev)
-config/features=PackedStringArray("4.4", "GL Compatibility")
-<<<<<<< HEAD
->>>>>>> 16ab67f944e6eedec6af4bfa2ab063ec10c4628c
-=======
-=======
-config/features=PackedStringArray("4.5", "GL Compatibility")
->>>>>>> 33192ef6d814e9b3e7606522aad298641b779092
->>>>>>> 691ab4124eb3dbd3f778d41d198df6fac2436a73
 boot_splash/image="uid://bcnebtixkonl"
 config/icon="uid://bcnebtixkonl"
 
