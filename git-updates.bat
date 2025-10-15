@@ -11,7 +11,7 @@ REM Verify that this is a Git repository
 if not exist .git (
     echo ERROR: Current directory is not a Git repository.
     pause
-    goto :eof
+
 )
 
 REM === STEP 1: ADD (Stage All Changes) ===
@@ -20,7 +20,7 @@ git add .
 if %errorlevel% neq 0 (
     echo ADD FAILED. Please review the output above.
     pause
-    goto :eof
+
 )
 echo Staging complete.
 
@@ -38,7 +38,7 @@ if %errorlevel% neq 0 (
     if defined LAST_OUTPUT (
         echo COMMIT FAILED. Aborting sequence.
         pause
-        goto :eof
+   
     ) else (
         echo WARNING: Nothing new was committed. Moving to pull step.
     )
@@ -55,7 +55,7 @@ if %errorlevel% neq 0 (
     echo PULL FAILED! A manual merge is required (likely conflicts).
     echo FIX THE CONFLICTS and then run this script again.
     pause
-    goto :eof
+
 )
 echo Pull successful.
 
