@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Envelhope (Beta)"
+<<<<<<< HEAD
 run/main_scene="res://Scenes/maps/locations/island.tscn"
+=======
+run/main_scene="uid://dakmfuhim8ksf"
+>>>>>>> parent of d315dba (Merge pull request #4 from hoaxnt/dev)
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="uid://bcnebtixkonl"
 config/icon="uid://bcnebtixkonl"
@@ -24,6 +28,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/resizable=false
 window/size/window_width_override=640
 window/size/window_height_override=360
 window/stretch/mode="viewport"
