@@ -28,7 +28,7 @@ radius = 20.0
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
-position = Vector2(304, 401)
+position = Vector2(263, 514)
 script = ExtResource("3_d806c")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
