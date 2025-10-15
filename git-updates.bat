@@ -1,20 +1,26 @@
 @echo off
 REM ====================================================================
 REM Robust Git Synchronization Script (Add, Commit, Pull, Push)
-REM This script now PAUSES upon encountering an error to allow inspection.
+REM This script now correctly PAUSES on error and then EXITS.
 REM ====================================================================
 
 echo --- Starting Robust Git Push Sequence ---
 echo.
 
+REM Verify that this is a Git repository (Restored check)
+if not exist .git (
+    echo ERROR: Current directory is not a Git repository.
+    pause
+    goto :eof
+)
 
-REM === STEP 1: ADD (Stage All Changes) ==
+REM === STEP 1: ADD (Stage All Changes) ===
 echo 1/4: Staging all changes (git add .)...
 git add .
 if %errorlevel% neq 0 (
     echo ADD FAILED. Please review the output above.
     pause
-
+    goto :eof  REM <-- Stop execution after pausing on error
 )
 echo Staging complete.
 
@@ -32,7 +38,7 @@ if %errorlevel% neq 0 (
     if defined LAST_OUTPUT (
         echo COMMIT FAILED. Aborting sequence.
         pause
-   
+        goto :eof  REM <-- Stop execution after pausing on error
     ) else (
         echo WARNING: Nothing new was committed. Moving to pull step.
     )
@@ -49,10 +55,10 @@ if %errorlevel% neq 0 (
     echo PULL FAILED! A manual merge is required (likely conflicts).
     echo FIX THE CONFLICTS and then run this script again.
     pause
-
+    goto :eof  REM <-- Stop execution after pausing on conflict error
 )
 echo Pull successful.
-pause
+
 REM === STEP 4: PUSH (to origin main) ===
 echo.
 echo 4/4: Pushing committed and merged changes to origin main...
@@ -65,6 +71,7 @@ if %errorlevel% equ 0 (
     echo.
     echo PUSH FAILED: Could not push changes. Check connection or authentication.
     pause
+    goto :eof  REM <-- Stop execution after pausing on push error
 )
 
 echo.
