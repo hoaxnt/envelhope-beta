@@ -14,5 +14,5 @@ func _input(event: InputEvent) -> void:
 		dialog_box.visible = not is_dialog_visible
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

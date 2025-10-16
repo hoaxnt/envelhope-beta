@@ -5,10 +5,9 @@ var is_dialog_visible = false
 var is_player_collided = false
 
 func _ready() -> void:
-	connect("body_entered", self._on_body_entered)
+	pass
 	
-func _process(delta: float) -> void:
-	print(is_player_collided)
+func _process(_delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
@@ -18,7 +17,7 @@ func _input(event: InputEvent) -> void:
 		dialog_box.get_child(0).text = "I'm the " + self.name + "."
 		dialog_box.visible = not is_dialog_visible
 
-func _on_body_entered(player: PhysicsBody2D) -> void:
+func _on_body_entered(_player: PhysicsBody2D) -> void:
 	#if player.name == "Player":
 		#while player:
 			#is_player_collided = true
