@@ -1,13 +1,71 @@
-[gd_scene load_steps=8 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=16 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://Scripts/Chapters/chapter_2.gd" id="1_ukf1f"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://Scenes/maps/locations/island.tscn" id="2_2t2a1"]
 [ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="3_lhans"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="4_itjef"]
-[ext_resource type="Texture2D" uid="uid://cpbtkre5gs8oo" path="res://Assets/Images/icon.PNG" id="5_itjef"]
-[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scenes/chapters/portal.gd" id="5_k2l3u"]
+[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scripts/utils/portal.gd" id="5_k2l3u"]
+[ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://Assets/Images/utils/portal.png" id="6_k2l3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
+radius = 6.8259025
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amgoa"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgckv"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kggau"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(132, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys341"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(198, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it1fp"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(264, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7de4"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(330, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjdj8"]
+atlas = ExtResource("6_k2l3u")
+region = Rect2(396, 0, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cq1mj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amgoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgckv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kggau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys341")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it1fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7de4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjdj8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_ukf1f")
@@ -19,22 +77,24 @@ position = Vector2(1, 0)
 position = Vector2(994, 248)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
-position = Vector2(629, 281)
+position = Vector2(1017, 282)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
-[node name="StaticBody2D" type="Area2D" parent="."]
-position = Vector2(1007, 393)
-scale = Vector2(0.120000005, 0.120000005)
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2(1053, 288)
+scale = Vector2(0.080000006, 0.080000006)
 script = ExtResource("5_k2l3u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 scale = Vector2(25.666666, 25.666666)
 shape = SubResource("CircleShape2D_k2l3u")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("5_itjef")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
+scale = Vector2(10.333373, 8.666707)
+sprite_frames = SubResource("SpriteFrames_cq1mj")
+autoplay = "default"
 
-[connection signal="body_entered" from="StaticBody2D" to="StaticBody2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
