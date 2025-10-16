@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=21 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://Scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="2_v6yd1"]
@@ -8,12 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://Scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://Scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
 [ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scripts/utils/portal.gd" id="8_3ilha"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://bhhbamp0p1qam" path="res://Scenes/chapters/button.gd" id="8_ei26i"]
 <<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cpbtkre5gs8oo" path="res://Assets/Images/icon.PNG" id="8_q4xdi"]
 =======
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://Assets/Images/utils/portal.png" id="9_3ilha"]
 >>>>>>> 8d459382d035973d32cf8aeceafee87d1e35dffe
+=======
+[ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://Assets/Images/utils/portal.png" id="9_3ilha"]
+>>>>>>> 55f35a4c298f0539912cc3e7f28a742e02619a7c
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
@@ -136,9 +140,9 @@ sprite_frames = SubResource("SpriteFrames_q4xdi")
 autoplay = "default"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="UI" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -147,7 +151,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,21 +159,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ei26i")
 
-[node name="Button" type="Button" parent="CanvasLayer/UI/Panel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 84.0
-offset_top = -152.0
-offset_right = 402.0
-offset_bottom = -43.0
-grow_vertical = 2
-text = "Vanish"
-script = ExtResource("8_ei26i")
-
 [node name="Dialog" type="Panel" parent="CanvasLayer/UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
