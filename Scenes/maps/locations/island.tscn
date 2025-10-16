@@ -1,6 +1,5 @@
-[gd_scene load_steps=44 format=4 uid="uid://c8mx67b8f1vc3"]
+[gd_scene load_steps=42 format=4 uid="uid://c8mx67b8f1vc3"]
 
-[ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="1_4r65o"]
 [ext_resource type="Texture2D" uid="uid://nku2sjx4agqw" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="1_63ehp"]
 [ext_resource type="Texture2D" uid="uid://bwvy0jq4t3rg3" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Base.png" id="1_ghgfd"]
 [ext_resource type="Texture2D" uid="uid://cetyjjg2vxlkg" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil.png" id="1_wtvhd"]
@@ -21,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bncioqti4j101" path="res://submission_daneeklu/submission_daneeklu/tilesets/farming_fishing.png" id="13_84pwe"]
 [ext_resource type="Texture2D" uid="uid://bq42qwuqq0gtx" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Farm.png" id="14_3e0bd"]
 [ext_resource type="Texture2D" uid="uid://b4bevgymbxfe2" path="res://submission_daneeklu/submission_daneeklu/tilesets/sand.png" id="15_x4wsh"]
-[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="20_5tulu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g84s"]
 texture = ExtResource("1_ghgfd")
@@ -4577,13 +4575,3 @@ use_parent_material = true
 scale = Vector2(1.00342, 1.00361)
 tile_map_data = PackedByteArray("AAAEABYABwAHAAEAAAAFABYABwAHAAEAABAvAA0AEAACAAQAAAAvAA4AEAACAAUAAAAwAA0AEAADAAQAAAAwAA4AEAADAAUAAAAkAAoADAAFACwAAABIADcACwAIAAEAAABIADgACwAIAAIAAABJADcACwAJAAEAAABJADgACwAJAAIAAABFADoADgACAA8AAABGADoADgACAA8AAABHADoADgACAA8AAAA=")
 tile_set = SubResource("TileSet_l8voq")
-
-[node name="npc_diving" parent="." instance=ExtResource("1_4r65o")]
-position = Vector2(994, 248)
-
-[node name="Player" parent="." instance=ExtResource("20_5tulu")]
-position = Vector2(629, 281)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
-position_smoothing_enabled = true
