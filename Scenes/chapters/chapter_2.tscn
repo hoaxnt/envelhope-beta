@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=22 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://Scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
+[ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://Scripts/Chapters/chapter_2.gd" id="1_3ilha"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="2_v6yd1"]
 [ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://Scripts/characters/npc_plaza/fruit_vendor/roaming.gd" id="3_jauny"]
 [ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://Scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
@@ -88,6 +89,7 @@ animations = [{
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei26i"]
 
 [node name="Chapter2" type="Node2D"]
+script = ExtResource("1_3ilha")
 
 [node name="Plaza" parent="." instance=ExtResource("1_3hgx5")]
 metadata/_edit_lock_ = true

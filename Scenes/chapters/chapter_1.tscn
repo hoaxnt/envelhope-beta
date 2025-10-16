@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://btiivx7viv3y6"]
 
-[ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://Scripts/Chapters/chapter_2.gd" id="1_ukf1f"]
+[ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://Scripts/Chapters/chapter_1.gd" id="1_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://Scenes/maps/locations/island.tscn" id="2_2t2a1"]
 [ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="3_lhans"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="4_itjef"]
@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [node name="Chapter1" type="Node2D"]
-script = ExtResource("1_ukf1f")
+script = ExtResource("1_k2l3u")
 
 [node name="island" parent="." instance=ExtResource("2_2t2a1")]
 position = Vector2(1, 0)
