@@ -5,7 +5,7 @@ var is_dialog_visible = false
 var is_player_collided = false
 
 func _ready() -> void:
-	connect("body_entered", self._on_body_entered)
+	pass
 	
 func _process(_delta: float) -> void:
 	pass
