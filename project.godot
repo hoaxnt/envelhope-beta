@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/image="uid://bcnebtixkonl"
 config/icon="uid://bcnebtixkonl"
 
-[autoload]
-
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-
 [display]
 
 window/size/viewport_width=1920
