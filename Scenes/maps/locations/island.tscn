@@ -1,31 +1,27 @@
-[gd_scene load_steps=48 format=3 uid="uid://c8mx67b8f1vc3"]
+[gd_scene load_steps=44 format=3 uid="uid://c8mx67b8f1vc3"]
 
 [ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="1_4r65o"]
-[ext_resource type="Texture2D" uid="uid://duxel6fa3bjcb" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="1_63ehp"]
-[ext_resource type="Texture2D" uid="uid://w1qn7eel4b8t" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Base.png" id="1_ghgfd"]
-[ext_resource type="Texture2D" uid="uid://epmhqr31d0rg" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil.png" id="1_wtvhd"]
-[ext_resource type="Texture2D" uid="uid://b4jtct0cinw8s" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Rocks.png" id="2_ky2m2"]
-[ext_resource type="Texture2D" uid="uid://dwobgc0eoncsa" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Walls.png" id="3_jjlw8"]
-[ext_resource type="Texture2D" uid="uid://csyybq6jdeyyo" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Roofs.png" id="4_mgbt1"]
-[ext_resource type="Texture2D" uid="uid://cd0hyajnemaut" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png" id="5_77fbl"]
-[ext_resource type="Texture2D" uid="uid://brrkm6xj0ktf8" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Estructure.png" id="6_rtmnt"]
-[ext_resource type="Texture2D" uid="uid://cmrf8qkqg2kt6" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire.png" id="7_il02j"]
-[ext_resource type="Texture2D" uid="uid://c3b1mwqoxvbeq" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Water_tiles.png" id="8_5yh7o"]
-[ext_resource type="Texture2D" uid="uid://vg8qkj0q3mw7" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Variations.png" id="9_kkw2e"]
-[ext_resource type="Texture2D" uid="uid://rt8svvloa0qc" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Floors_Tiles.png" id="10_8csvx"]
-[ext_resource type="Texture2D" uid="uid://c1kx7sequjcu4" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_02.png" id="11_rb26p"]
-[ext_resource type="Texture2D" uid="uid://c22suupnuiq8v" path="res://submission_daneeklu/submission_daneeklu/tilesets/sandwater.png" id="12_72pfw"]
-[ext_resource type="Texture2D" uid="uid://cku8kmmrsw6pb" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Shadows.png" id="12_fvwkf"]
-[ext_resource type="Texture2D" uid="uid://bcpk0ymynrchi" path="res://submission_daneeklu/submission_daneeklu/tilesets/plants.png" id="12_ov2y4"]
-[ext_resource type="Texture2D" uid="uid://cooj6swixc45t" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.png" id="13_3h4y1"]
-[ext_resource type="Texture2D" uid="uid://bkeh4f3hk7ppc" path="res://submission_daneeklu/submission_daneeklu/tilesets/farming_fishing.png" id="13_84pwe"]
-[ext_resource type="Texture2D" uid="uid://e2jmdim565kr" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Farm.png" id="14_3e0bd"]
-[ext_resource type="Texture2D" uid="uid://buq3b2apvfwp3" path="res://submission_daneeklu/submission_daneeklu/tilesets/sand.png" id="15_x4wsh"]
+[ext_resource type="Texture2D" uid="uid://nku2sjx4agqw" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Resources.png" id="1_63ehp"]
+[ext_resource type="Texture2D" uid="uid://bwvy0jq4t3rg3" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Sawmill/Base.png" id="1_ghgfd"]
+[ext_resource type="Texture2D" uid="uid://cetyjjg2vxlkg" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Anvil/Anvil.png" id="1_wtvhd"]
+[ext_resource type="Texture2D" uid="uid://b8x7dvdm6cusb" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Rocks.png" id="2_ky2m2"]
+[ext_resource type="Texture2D" uid="uid://l5y7202f7evx" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Walls.png" id="3_jjlw8"]
+[ext_resource type="Texture2D" uid="uid://ccmegc5s7bkdp" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Roofs.png" id="4_mgbt1"]
+[ext_resource type="Texture2D" uid="uid://in5bhy3t4plk" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Buildings/Props.png" id="5_77fbl"]
+[ext_resource type="Texture2D" uid="uid://bey8n0m2jaunc" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Cooking Station/Estructure.png" id="6_rtmnt"]
+[ext_resource type="Texture2D" uid="uid://bw6ji6tgkav8f" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Structures/Stations/Bonfire/Bonfire.png" id="7_il02j"]
+[ext_resource type="Texture2D" uid="uid://b4mh5meauvh3l" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Water_tiles.png" id="8_5yh7o"]
+[ext_resource type="Texture2D" uid="uid://cxqiwi4sqbtcj" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Wall_Variations.png" id="9_kkw2e"]
+[ext_resource type="Texture2D" uid="uid://dlx5poqkyna4b" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Tilesets/Floors_Tiles.png" id="10_8csvx"]
+[ext_resource type="Texture2D" uid="uid://kcsl56t0cm71" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Trees/Model_01/Size_02.png" id="11_rb26p"]
+[ext_resource type="Texture2D" uid="uid://1th3l705cnee" path="res://submission_daneeklu/submission_daneeklu/tilesets/sandwater.png" id="12_72pfw"]
+[ext_resource type="Texture2D" uid="uid://bu143xmi0otm5" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Shadows.png" id="12_fvwkf"]
+[ext_resource type="Texture2D" uid="uid://c4uk46hri1g5a" path="res://submission_daneeklu/submission_daneeklu/tilesets/plants.png" id="12_ov2y4"]
+[ext_resource type="Texture2D" uid="uid://3rm43efvijio" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Vegetation.png" id="13_3h4y1"]
+[ext_resource type="Texture2D" uid="uid://bncioqti4j101" path="res://submission_daneeklu/submission_daneeklu/tilesets/farming_fishing.png" id="13_84pwe"]
+[ext_resource type="Texture2D" uid="uid://bq42qwuqq0gtx" path="res://Pixel Crawler - Free Pack 2.0.4/Pixel Crawler - Free Pack/Environment/Props/Static/Farm.png" id="14_3e0bd"]
+[ext_resource type="Texture2D" uid="uid://b4bevgymbxfe2" path="res://submission_daneeklu/submission_daneeklu/tilesets/sand.png" id="15_x4wsh"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="20_5tulu"]
-[ext_resource type="PackedScene" uid="uid://dms7chmg3gp8v" path="res://Scenes/animals/animal_pig.tscn" id="23_tffb2"]
-[ext_resource type="PackedScene" uid="uid://bus040uge042w" path="res://Scenes/animals/animal_chick.tscn" id="24_0stnv"]
-[ext_resource type="PackedScene" uid="uid://cpuux57vor4gj" path="res://Scenes/animals/animal_sheep.tscn" id="25_i6oju"]
-[ext_resource type="PackedScene" uid="uid://cqpnl1rtboj5n" path="res://Scenes/animals/animal_calf.tscn" id="26_oduqn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g84s"]
 texture = ExtResource("1_ghgfd")
@@ -4578,19 +4574,3 @@ position = Vector2(629, 281)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
-
-[node name="animal_pig" parent="." instance=ExtResource("23_tffb2")]
-position = Vector2(51, 840)
-scale = Vector2(2.12206, 1.8)
-
-[node name="animal_chick" parent="." instance=ExtResource("24_0stnv")]
-position = Vector2(154, 845)
-scale = Vector2(1.41015, 1)
-
-[node name="animal_sheep" parent="." instance=ExtResource("25_i6oju")]
-position = Vector2(123, 773)
-scale = Vector2(0.814802, 0.69782)
-
-[node name="animal_lamb" parent="." instance=ExtResource("26_oduqn")]
-position = Vector2(197, 898)
-scale = Vector2(0.991594, 1)
