@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://Scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://Scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://Scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
-[ext_resource type="Texture2D" uid="uid://kbpbqou3jamk" path="res://Assets/Images/icon.PNG" id="8_cf2n5"]
 [ext_resource type="Script" uid="uid://bhhbamp0p1qam" path="res://Scenes/chapters/button.gd" id="8_ei26i"]
+[ext_resource type="Texture2D" uid="uid://cpbtkre5gs8oo" path="res://Assets/Images/icon.png" id="8_q4xdi"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
@@ -68,7 +68,7 @@ shape = SubResource("CircleShape2D_ei26i")
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 position = Vector2(2, -6)
 scale = Vector2(0.09707909, 0.08844972)
-texture = ExtResource("8_cf2n5")
+texture = ExtResource("8_q4xdi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

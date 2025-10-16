@@ -13,8 +13,8 @@ config_version=5
 config/name="Envelhope (Beta)"
 run/main_scene="res://Scenes/maps/locations/island.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="uid://bcnebtixkonl"
-config/icon="uid://bcnebtixkonl"
+boot_splash/image="uid://cpbtkre5gs8oo"
+config/icon="uid://cpbtkre5gs8oo"
 
 [display]
 
