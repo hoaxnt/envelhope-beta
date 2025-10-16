@@ -8,7 +8,6 @@ func _ready() -> void:
 	connect("body_entered", self._on_body_entered)
 	
 func _process(delta: float) -> void:
-	print(is_player_collided)
 	pass
 	
 func _input(event: InputEvent) -> void:

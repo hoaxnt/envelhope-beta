@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=8 format=3 uid="uid://btiivx7viv3y6"]
 
-[ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://scripts/chapters/chapter_2.gd" id="1_ukf1f"]
+[ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://Scripts/Chapters/chapter_2.gd" id="1_ukf1f"]
+[ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://Scenes/maps/locations/island.tscn" id="2_2t2a1"]
+[ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="3_lhans"]
+[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="4_itjef"]
+[ext_resource type="Texture2D" uid="uid://cpbtkre5gs8oo" path="res://Assets/Images/icon.PNG" id="5_itjef"]
+[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scenes/chapters/portal.gd" id="5_k2l3u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
 
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_ukf1f")
+
+[node name="island" parent="." instance=ExtResource("2_2t2a1")]
+position = Vector2(1, 0)
+
+[node name="npc_diving" parent="." instance=ExtResource("3_lhans")]
+position = Vector2(994, 248)
+
+[node name="Player" parent="." instance=ExtResource("4_itjef")]
+position = Vector2(629, 281)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+position = Vector2(1007, 393)
+scale = Vector2(0.120000005, 0.120000005)
+script = ExtResource("5_k2l3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(25.666666, 25.666666)
+shape = SubResource("CircleShape2D_k2l3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("5_itjef")
+
+[connection signal="body_entered" from="StaticBody2D" to="StaticBody2D" method="_on_body_entered"]

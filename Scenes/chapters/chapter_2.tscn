@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=14 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://Scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="2_v6yd1"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://Scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://Scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://Scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
+[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scenes/chapters/portal.gd" id="8_3ilha"]
 [ext_resource type="Script" uid="uid://bhhbamp0p1qam" path="res://Scenes/chapters/button.gd" id="8_ei26i"]
-[ext_resource type="Texture2D" uid="uid://cpbtkre5gs8oo" path="res://Assets/Images/icon.png" id="8_q4xdi"]
+[ext_resource type="Texture2D" uid="uid://cpbtkre5gs8oo" path="res://Assets/Images/icon.PNG" id="8_q4xdi"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
@@ -59,13 +60,14 @@ position = Vector2(263, 479)
 [node name="BlindVendor" parent="." instance=ExtResource("7_165o0")]
 position = Vector2(321, 657)
 
-[node name="Node2D" type="StaticBody2D" parent="."]
-position = Vector2(367, 391)
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2(377, 341)
+script = ExtResource("8_3ilha")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 shape = SubResource("CircleShape2D_ei26i")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Portal"]
 position = Vector2(2, -6)
 scale = Vector2(0.09707909, 0.08844972)
 texture = ExtResource("8_q4xdi")
@@ -136,3 +138,5 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "UP"
+
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
