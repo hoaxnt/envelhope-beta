@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 const PAUSE_MENU_PATH = "res://scenes/utils/pause_menu.tscn"
 var pause_menu_scene = preload(PAUSE_MENU_PATH)
@@ -16,16 +16,11 @@ func pause_game() -> void:
 		
 		current_menu_instance = pause_menu_scene.instantiate()
 		get_tree().root.add_child(current_menu_instance) 
-
-		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+		
 func unpause_game() -> void:
 		if not get_tree().paused: return 
-
 		get_tree().paused = false
 		
 		if is_instance_valid(current_menu_instance):
 				current_menu_instance.queue_free()
 				current_menu_instance = null
-				
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
