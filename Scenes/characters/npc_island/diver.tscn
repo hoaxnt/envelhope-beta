@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf5hru462vhwc"]
 
-[ext_resource type="Texture2D" uid="uid://eibxkpuypy1n" path="res://Pixel Crawler - Free Pack 2.0.4/dialog_ui/npc_and_dialog/sprites/npc_sprite.png" id="2_o2sa2"]
+[ext_resource type="Texture2D" uid="uid://eibxkpuypy1n" path="res://assets/characters/npc_island/diver/idle-sheet.png" id="2_o2sa2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5y5a"]
 radius = 14.0

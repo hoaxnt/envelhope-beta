@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cp647drb6trig"]
 
-[ext_resource type="Script" uid="uid://b2fnomigjff3h" path="res://Scripts/characters/npc_plaza/street_performer/street_performer.gd" id="1_1lybs"]
-[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://Assets/Images/characters/player/idle/idle_side.png" id="2_hkb1r"]
-[ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://Assets/Images/characters/player/walk/walk_down.png" id="3_hkb1r"]
+[ext_resource type="Script" uid="uid://b2fnomigjff3h" path="res://scripts/characters/npc_plaza/street_performer/street_performer.gd" id="1_1lybs"]
+[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/characters/player/idle/idle_side.png" id="2_hkb1r"]
+[ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/characters/player/walk/walk_down.png" id="3_hkb1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qyh0"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://roh6nuojjp2y"]
 
 [ext_resource type="Script" uid="uid://cg0mfw1cvriky" path="res://scripts/characters/npc_plaza/fruit_vendor/fruit_vendor.gd" id="1_xk2rj"]
-[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/images/characters/player/idle/idle_side.png" id="2_xk2rj"]
+[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/characters/player/idle/idle_side.png" id="2_xk2rj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qyh0"]
 
