@@ -1,7 +1,6 @@
 extends Node2D
 
-const PAUSE_MENU_PATH = "res://scenes/utils/pause_menu.tscn"
-var pause_menu_scene = preload(PAUSE_MENU_PATH)
+var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var current_menu_instance = null
 
 func toggle_pause() -> void:
