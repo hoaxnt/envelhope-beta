@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbv05cjlwicpk"
-path="res://.godot/imported/slice_side-sheet.png-ed2d9d1fcc35fb5c2d173506b86acc47.ctex"
+uid="uid://2ublewgjxuss"
+path="res://.godot/imported/slice_side-sheet.png-ef54b64ddce6729e616994053350ddd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Slice_Base/slice_side-sheet.png"
-dest_files=["res://.godot/imported/slice_side-sheet.png-ed2d9d1fcc35fb5c2d173506b86acc47.ctex"]
+source_file="res://assets/characters/player/slice_base/slice_side-sheet.png"
+dest_files=["res://.godot/imported/slice_side-sheet.png-ef54b64ddce6729e616994053350ddd9.ctex"]
 
 [params]
 

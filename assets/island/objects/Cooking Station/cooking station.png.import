@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lfx0qu1i1nva"
-path="res://.godot/imported/cooking station.png-4b14f580ee0702336945ff2fc86143d6.ctex"
+uid="uid://e4r86nwlqbpj"
+path="res://.godot/imported/cooking station.png-9d65fe23885e444ff4da17aeb029e997.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/Cooking Station/cooking station.png"
-dest_files=["res://.godot/imported/cooking station.png-4b14f580ee0702336945ff2fc86143d6.ctex"]
+source_file="res://assets/island/objects/cooking station/cooking station.png"
+dest_files=["res://.godot/imported/cooking station.png-9d65fe23885e444ff4da17aeb029e997.ctex"]
 
 [params]
 

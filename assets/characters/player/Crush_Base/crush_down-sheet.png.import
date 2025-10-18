@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e3mc7803wbph"
-path="res://.godot/imported/crush_down-sheet.png-28a1188cfcf75870c200de1ab98203a0.ctex"
+uid="uid://bvtdp7xdnfwf0"
+path="res://.godot/imported/crush_down-sheet.png-5107dde3430513cf63a6ddc7c1bd4ddb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Crush_Base/crush_down-sheet.png"
-dest_files=["res://.godot/imported/crush_down-sheet.png-28a1188cfcf75870c200de1ab98203a0.ctex"]
+source_file="res://assets/characters/player/crush_base/crush_down-sheet.png"
+dest_files=["res://.godot/imported/crush_down-sheet.png-5107dde3430513cf63a6ddc7c1bd4ddb.ctex"]
 
 [params]
 

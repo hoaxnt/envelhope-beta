@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pj3jfs6i5gg"
-path="res://.godot/imported/carry_walk_up-sheet.png-848268a55c7efaee9ccbf3cbd89dbb83.ctex"
+uid="uid://c4mecahow8q08"
+path="res://.godot/imported/carry_walk_up-sheet.png-aaeb826ae202133a451e082425a1c4ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Carry_Walk/carry_walk_up-sheet.png"
-dest_files=["res://.godot/imported/carry_walk_up-sheet.png-848268a55c7efaee9ccbf3cbd89dbb83.ctex"]
+source_file="res://assets/characters/player/carry_walk/carry_walk_up-sheet.png"
+dest_files=["res://.godot/imported/carry_walk_up-sheet.png-aaeb826ae202133a451e082425a1c4ab.ctex"]
 
 [params]
 

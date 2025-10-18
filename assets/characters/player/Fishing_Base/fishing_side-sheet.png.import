@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwcfcgkw1oi5l"
-path="res://.godot/imported/fishing_side-sheet.png-64c8c7b57ff7bbdfddc12df36d624aa4.ctex"
+uid="uid://21ord10gnu1p"
+path="res://.godot/imported/fishing_side-sheet.png-c96c6becdbb3e8ec9184a17a5bb105d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Fishing_Base/fishing_side-sheet.png"
-dest_files=["res://.godot/imported/fishing_side-sheet.png-64c8c7b57ff7bbdfddc12df36d624aa4.ctex"]
+source_file="res://assets/characters/player/fishing_base/fishing_side-sheet.png"
+dest_files=["res://.godot/imported/fishing_side-sheet.png-c96c6becdbb3e8ec9184a17a5bb105d7.ctex"]
 
 [params]
 

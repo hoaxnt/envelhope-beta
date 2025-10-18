@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cui17kykmcchd"
-path="res://.godot/imported/watering_down-sheet.png-2eb30861c8332e3c303e441671608824.ctex"
+uid="uid://bcub0vdoaru1i"
+path="res://.godot/imported/watering_down-sheet.png-d80cc0c4b5660c8af22f26e98c648f8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Watering_Base/watering_down-sheet.png"
-dest_files=["res://.godot/imported/watering_down-sheet.png-2eb30861c8332e3c303e441671608824.ctex"]
+source_file="res://assets/characters/player/watering_base/watering_down-sheet.png"
+dest_files=["res://.godot/imported/watering_down-sheet.png-d80cc0c4b5660c8af22f26e98c648f8c.ctex"]
 
 [params]
 

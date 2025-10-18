@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsu4ysrr53d7h"
-path="res://.godot/imported/bonfire_06-sheet.png-b6e288d347db89720400303ae972ca7e.ctex"
+uid="uid://cfr5ckdjcxgci"
+path="res://.godot/imported/bonfire_06-sheet.png-2fb7a746cf22f269b2f543e98cd4273c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/Bonfire/bonfire_06-sheet.png"
-dest_files=["res://.godot/imported/bonfire_06-sheet.png-b6e288d347db89720400303ae972ca7e.ctex"]
+source_file="res://assets/island/objects/bonfire/bonfire_06-sheet.png"
+dest_files=["res://.godot/imported/bonfire_06-sheet.png-2fb7a746cf22f269b2f543e98cd4273c.ctex"]
 
 [params]
 

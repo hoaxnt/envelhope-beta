@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caq2xpyi85md3"
-path="res://.godot/imported/crush_up-sheet.png-81eedf8fef7722aa1fd643f09cb199bb.ctex"
+uid="uid://bci2ni0erc1qi"
+path="res://.godot/imported/crush_up-sheet.png-e0f31edf2f6bc382c7ead1cc0db99aea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Crush_Base/crush_up-sheet.png"
-dest_files=["res://.godot/imported/crush_up-sheet.png-81eedf8fef7722aa1fd643f09cb199bb.ctex"]
+source_file="res://assets/characters/player/crush_base/crush_up-sheet.png"
+dest_files=["res://.godot/imported/crush_up-sheet.png-e0f31edf2f6bc382c7ead1cc0db99aea.ctex"]
 
 [params]
 

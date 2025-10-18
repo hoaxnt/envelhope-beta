@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dol0o4u8elskf"
-path="res://.godot/imported/slice_up-sheet.png-378a2ed2d2c99c0d10f54d59ee22f45f.ctex"
+uid="uid://dy3nl2jrtewme"
+path="res://.godot/imported/slice_up-sheet.png-efa56b465f677cd817bd195ef18abdd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Slice_Base/slice_up-sheet.png"
-dest_files=["res://.godot/imported/slice_up-sheet.png-378a2ed2d2c99c0d10f54d59ee22f45f.ctex"]
+source_file="res://assets/characters/player/slice_base/slice_up-sheet.png"
+dest_files=["res://.godot/imported/slice_up-sheet.png-efa56b465f677cd817bd195ef18abdd6.ctex"]
 
 [params]
 

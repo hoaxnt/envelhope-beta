@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wf64r888o2d8"
-path="res://.godot/imported/carry_walk_side-sheet.png-a1d6cd3a85dc3adca3c13ce80f0aa097.ctex"
+uid="uid://bboxp7i0gx8v1"
+path="res://.godot/imported/carry_walk_side-sheet.png-69dc0be451c58ea4e11daabee5f52904.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Carry_Walk/carry_walk_side-sheet.png"
-dest_files=["res://.godot/imported/carry_walk_side-sheet.png-a1d6cd3a85dc3adca3c13ce80f0aa097.ctex"]
+source_file="res://assets/characters/player/carry_walk/carry_walk_side-sheet.png"
+dest_files=["res://.godot/imported/carry_walk_side-sheet.png-69dc0be451c58ea4e11daabee5f52904.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bssb7cvburmnp"
-path="res://.godot/imported/collect_up-sheet.png-65eaeb417b701814e4816d1bd9932194.ctex"
+uid="uid://cx08oercnlnsu"
+path="res://.godot/imported/collect_up-sheet.png-d3cc6024392d585e044c398412ba2f1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Collect_Base/collect_up-sheet.png"
-dest_files=["res://.godot/imported/collect_up-sheet.png-65eaeb417b701814e4816d1bd9932194.ctex"]
+source_file="res://assets/characters/player/collect_base/collect_up-sheet.png"
+dest_files=["res://.godot/imported/collect_up-sheet.png-d3cc6024392d585e044c398412ba2f1d.ctex"]
 
 [params]
 

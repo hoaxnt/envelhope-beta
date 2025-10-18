@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b430f7xrvmlt"
-path="res://.godot/imported/pierce_top-sheet.png-b48b6db772c3b2f1de06c107a4bd1073.ctex"
+uid="uid://ckdqco4m5b2ar"
+path="res://.godot/imported/pierce_top-sheet.png-94420eb7c77dc46b8898286009db032f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Pierce_Base/pierce_top-sheet.png"
-dest_files=["res://.godot/imported/pierce_top-sheet.png-b48b6db772c3b2f1de06c107a4bd1073.ctex"]
+source_file="res://assets/characters/player/pierce_base/pierce_top-sheet.png"
+dest_files=["res://.godot/imported/pierce_top-sheet.png-94420eb7c77dc46b8898286009db032f.ctex"]
 
 [params]
 

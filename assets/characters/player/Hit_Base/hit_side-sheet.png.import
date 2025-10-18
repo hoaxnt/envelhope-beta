@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m1enf04c2ljx"
-path="res://.godot/imported/hit_side-sheet.png-681dae04f2c205e65f29d5e9a7e90ed9.ctex"
+uid="uid://c18k68ccppevc"
+path="res://.godot/imported/hit_side-sheet.png-eb518a35fbd82b2f9b010dee63fca123.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Hit_Base/hit_side-sheet.png"
-dest_files=["res://.godot/imported/hit_side-sheet.png-681dae04f2c205e65f29d5e9a7e90ed9.ctex"]
+source_file="res://assets/characters/player/hit_base/hit_side-sheet.png"
+dest_files=["res://.godot/imported/hit_side-sheet.png-eb518a35fbd82b2f9b010dee63fca123.ctex"]
 
 [params]
 

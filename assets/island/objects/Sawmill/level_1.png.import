@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccoqy1y0su2pf"
-path="res://.godot/imported/level_1.png-5c4acba86c40c99c2461a9197e45ff76.ctex"
+uid="uid://dcfe3h0np0pwk"
+path="res://.godot/imported/level_1.png-01327546be14feb7b5698674c5ab12bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/Sawmill/level_1.png"
-dest_files=["res://.godot/imported/level_1.png-5c4acba86c40c99c2461a9197e45ff76.ctex"]
+source_file="res://assets/island/objects/sawmill/level_1.png"
+dest_files=["res://.godot/imported/level_1.png-01327546be14feb7b5698674c5ab12bd.ctex"]
 
 [params]
 

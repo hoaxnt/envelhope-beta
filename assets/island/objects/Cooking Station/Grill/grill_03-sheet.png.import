@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0305pyby62qe"
-path="res://.godot/imported/grill_03-sheet.png-5bdc8e6a12a9f9fb2788f509541b3265.ctex"
+uid="uid://cqs3k2u71j6ae"
+path="res://.godot/imported/grill_03-sheet.png-5804b1ec7a1d4a3da53fc43fe6d13f7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/Cooking Station/Grill/grill_03-sheet.png"
-dest_files=["res://.godot/imported/grill_03-sheet.png-5bdc8e6a12a9f9fb2788f509541b3265.ctex"]
+source_file="res://assets/island/objects/cooking station/grill/grill_03-sheet.png"
+dest_files=["res://.godot/imported/grill_03-sheet.png-5804b1ec7a1d4a3da53fc43fe6d13f7b.ctex"]
 
 [params]
 

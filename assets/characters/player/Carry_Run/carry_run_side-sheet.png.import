@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr1ig4av1xc5x"
-path="res://.godot/imported/carry_run_side-sheet.png-48f2eacbcad9e22bc0f3c80e2bd43153.ctex"
+uid="uid://dkixpbmk4e8hx"
+path="res://.godot/imported/carry_run_side-sheet.png-937cc1afa5a13234aa17b98632054f6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Carry_Run/carry_run_side-sheet.png"
-dest_files=["res://.godot/imported/carry_run_side-sheet.png-48f2eacbcad9e22bc0f3c80e2bd43153.ctex"]
+source_file="res://assets/characters/player/carry_run/carry_run_side-sheet.png"
+dest_files=["res://.godot/imported/carry_run_side-sheet.png-937cc1afa5a13234aa17b98632054f6b.ctex"]
 
 [params]
 

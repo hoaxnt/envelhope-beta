@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brqpdu2b8mpj"
-path="res://.godot/imported/butchery_01-sheet.png-8d7150408d63da9bc65606fbab694bd3.ctex"
+uid="uid://dgsp5iac1n1d0"
+path="res://.godot/imported/butchery_01-sheet.png-63b0af22c78314c3a56a8c6df0f9d1ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/Cooking Station/Butchery/butchery_01-sheet.png"
-dest_files=["res://.godot/imported/butchery_01-sheet.png-8d7150408d63da9bc65606fbab694bd3.ctex"]
+source_file="res://assets/island/objects/cooking station/butchery/butchery_01-sheet.png"
+dest_files=["res://.godot/imported/butchery_01-sheet.png-63b0af22c78314c3a56a8c6df0f9d1ae.ctex"]
 
 [params]
 

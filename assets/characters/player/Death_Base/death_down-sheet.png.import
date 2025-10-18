@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0y84va2mjy1v"
-path="res://.godot/imported/death_down-sheet.png-3f49e94889d8ea33224cf846a9cd521a.ctex"
+uid="uid://db8e6shymh0dw"
+path="res://.godot/imported/death_down-sheet.png-05a289a85a825fb3ed2b2fb74856d2b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Death_Base/death_down-sheet.png"
-dest_files=["res://.godot/imported/death_down-sheet.png-3f49e94889d8ea33224cf846a9cd521a.ctex"]
+source_file="res://assets/characters/player/death_base/death_down-sheet.png"
+dest_files=["res://.godot/imported/death_down-sheet.png-05a289a85a825fb3ed2b2fb74856d2b7.ctex"]
 
 [params]
 

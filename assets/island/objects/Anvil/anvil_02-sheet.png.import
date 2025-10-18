@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be1xyg5ilqlbi"
-path="res://.godot/imported/anvil_02-sheet.png-74095b48703d545c0d98c88cb368db7d.ctex"
+uid="uid://bctvgpxvwvfao"
+path="res://.godot/imported/anvil_02-sheet.png-07d040c1372016f0a2a4dd5f6cdfecae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/Anvil/anvil_02-sheet.png"
-dest_files=["res://.godot/imported/anvil_02-sheet.png-74095b48703d545c0d98c88cb368db7d.ctex"]
+source_file="res://assets/island/objects/anvil/anvil_02-sheet.png"
+dest_files=["res://.godot/imported/anvil_02-sheet.png-07d040c1372016f0a2a4dd5f6cdfecae.ctex"]
 
 [params]
 

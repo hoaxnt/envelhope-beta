@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmb454ra4rw4s"
-path="res://.godot/imported/fishing_up-sheet.png-9117fe4c5bc225543c2fd0f92b3380c9.ctex"
+uid="uid://crhhkt8a5w7ad"
+path="res://.godot/imported/fishing_up-sheet.png-8ea3e2cc8d12fa154757e18d40dd0a4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/player/Fishing_Base/fishing_up-sheet.png"
-dest_files=["res://.godot/imported/fishing_up-sheet.png-9117fe4c5bc225543c2fd0f92b3380c9.ctex"]
+source_file="res://assets/characters/player/fishing_base/fishing_up-sheet.png"
+dest_files=["res://.godot/imported/fishing_up-sheet.png-8ea3e2cc8d12fa154757e18d40dd0a4c.ctex"]
 
 [params]
 
