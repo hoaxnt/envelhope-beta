@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca1vxevw68tqq"
-path="res://.godot/imported/cooker_02.png-1cbf6ad21497c71044bba00d5672c6c4.ctex"
+path="res://.godot/imported/cooker_02.png-cc1d7bd8fbacf75d5a149102ebcb4d47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/cooking station/cooker/cooker_02.png"
-dest_files=["res://.godot/imported/cooker_02.png-1cbf6ad21497c71044bba00d5672c6c4.ctex"]
+source_file="res://assets/island/objects/Cooking Station/Cooker/cooker_02.png"
+dest_files=["res://.godot/imported/cooker_02.png-cc1d7bd8fbacf75d5a149102ebcb4d47.ctex"]
 
 [params]
 

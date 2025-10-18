@@ -13,7 +13,7 @@ config_version=5
 config/name="Envelhope"
 run/main_scene="uid://btiivx7viv3y6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="uid://cpbtkre5gs8oo"
+config/icon="uid://dxk4o3kip1r4m"
 
 [display]
 

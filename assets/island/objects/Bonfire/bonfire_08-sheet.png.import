@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ot2e4i36fdwe"
-path="res://.godot/imported/bonfire_08-sheet.png-f1105644ece4bc1ba384a73fe5518983.ctex"
+path="res://.godot/imported/bonfire_08-sheet.png-2ed95a85dcae8c0547b25a9295d483a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/bonfire/bonfire_08-sheet.png"
-dest_files=["res://.godot/imported/bonfire_08-sheet.png-f1105644ece4bc1ba384a73fe5518983.ctex"]
+source_file="res://assets/island/objects/Bonfire/bonfire_08-sheet.png"
+dest_files=["res://.godot/imported/bonfire_08-sheet.png-2ed95a85dcae8c0547b25a9295d483a4.ctex"]
 
 [params]
 

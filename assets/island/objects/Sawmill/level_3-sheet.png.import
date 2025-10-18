@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8lqeof4n8eno"
-path="res://.godot/imported/level_3-sheet.png-3f12c016e2f6dfba2927bb35d2260f0b.ctex"
+path="res://.godot/imported/level_3-sheet.png-9b229c1773fc2a7decdbe89891354c04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/island/objects/sawmill/level_3-sheet.png"
-dest_files=["res://.godot/imported/level_3-sheet.png-3f12c016e2f6dfba2927bb35d2260f0b.ctex"]
+source_file="res://assets/island/objects/Sawmill/level_3-sheet.png"
+dest_files=["res://.godot/imported/level_3-sheet.png-9b229c1773fc2a7decdbe89891354c04.ctex"]
 
 [params]
 
