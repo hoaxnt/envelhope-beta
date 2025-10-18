@@ -1,16 +1,19 @@
-[gd_scene load_steps=40 format=3 uid="uid://4h22a7hemgyb"]
+[gd_scene load_steps=41 format=3 uid="uid://4h22a7hemgyb"]
 
-[ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://Assets/Images/characters/player/walk/walk_side.png" id="1_rp718"]
+[ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/characters/player/walk/walk_side.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://csml5lidw7k1i" path="res://scripts/characters/player.gd" id="1_yewv4"]
-[ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://Assets/Images/characters/player/idle/idle_down.png" id="2_dyp2m"]
-[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://Assets/Images/characters/player/idle/idle_side.png" id="3_atpat"]
-[ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://Assets/Images/characters/player/idle/idle_up.png" id="4_atpat"]
-[ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://Assets/Images/characters/player/walk/walk_down.png" id="5_6eyoc"]
-[ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://Assets/Images/characters/player/walk/walk_up.png" id="7_eojnx"]
+[ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://assets/characters/player/idle/idle_down.png" id="2_dyp2m"]
+[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/characters/player/idle/idle_side.png" id="3_atpat"]
+[ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://assets/characters/player/idle/idle_up.png" id="4_atpat"]
+[ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/characters/player/walk/walk_down.png" id="5_6eyoc"]
+[ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://assets/characters/player/walk/walk_up.png" id="7_eojnx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqtwu"]
 radius = 4.0
 height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twm3q"]
+radius = 24.020824
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eojnx"]
 atlas = ExtResource("2_dyp2m")
@@ -259,11 +262,20 @@ animations = [{
 z_index = 1
 texture_filter = 1
 script = ExtResource("1_yewv4")
+sprint_speed = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_kqtwu")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_twm3q")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wocps")
 animation = &"idle_down"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_interaction_zone_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_interaction_zone_body_exited"]
