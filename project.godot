@@ -18,8 +18,10 @@ config/icon="uid://dxk4o3kip1r4m"
 [autoload]
 
 GlobalState="*res://scripts/utils/global_state.gd"
-Hud="*res://scripts/utils/hud.gd"
-HudState="*res://scripts/utils/hud_state.gd"
+
+[debug]
+
+settings/size/resizable=true
 
 [display]
 
