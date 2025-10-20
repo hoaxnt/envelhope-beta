@@ -6,8 +6,7 @@ const DEFAULT_ENVELOPES_VALUE = 1000
 func _ready():
 		var loaded_data = SaveLoad.load_game()
 		var envelopes_value = loaded_data.get(SAVE_KEY, DEFAULT_ENVELOPES_VALUE)
-		
-		update_display(envelopes_value)
+		update_display(int(envelopes_value))
 
 func update_display(new_value):
 		text = str(new_value)
