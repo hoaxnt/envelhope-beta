@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3rqjregok76e"]
+
+[ext_resource type="Script" uid="uid://d0peiggrhcn0u" path="res://scripts/hud/envelopes.gd" id="1_iqqts"]
+
+[node name="Envelopes" type="Label"]
+theme_override_font_sizes/font_size = 50
+text = "0"
+script = ExtResource("1_iqqts")
