@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2jfj6qmxkkur"]
+[gd_scene load_steps=2 format=3 uid="uid://cpg5amojkingl"]
 
-[ext_resource type="Script" uid="uid://bk4md7ygek5mq" path="res://scripts/utils/startup_story.gd" id="1_gqv3l"]
+[ext_resource type="Script" path="res://scripts/utils/startup_story.gd" id="1_gqv3l"]
 
 [node name="StartupStory" type="Control"]
 layout_mode = 3
