@@ -13,7 +13,7 @@ radius = 4.0
 height = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_twm3q"]
-radius = 24.020824
+radius = 17.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eojnx"]
 atlas = ExtResource("2_dyp2m")
@@ -271,6 +271,7 @@ shape = SubResource("CapsuleShape2D_kqtwu")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_twm3q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
