@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
 [ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="8_3ilha"]
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="9_3ilha"]
-[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/utils/hud.tscn" id="11_8exib"]
+[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/utils/hud/hud.tscn" id="11_8exib"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
