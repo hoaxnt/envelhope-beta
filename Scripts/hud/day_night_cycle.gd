@@ -1,14 +1,22 @@
 extends Label
 
 const INITIAL_TIME = 300
+const SAVE_KEY = "cycle"
 
 var time_left: int = INITIAL_TIME
 @onready var timer = $Timer
 
 func _ready():
-		update_time_display()
+		var loaded_data = SaveLoad.load_game()
+		var saved_time = loaded_data.get(SAVE_KEY, INITIAL_TIME)
+		time_left = saved_time
 		
-		timer.connect("timeout", _on_timer_timeout)
+		if is_instance_valid(timer):
+				timer.start() 
+				if not timer.is_connected("timeout", _on_timer_timeout):
+						timer.connect("timeout", _on_timer_timeout)
+
+		update_time_display()
 
 func update_time_display():
 		var display_time = max(0, time_left)
@@ -22,10 +30,24 @@ func _on_timer_timeout():
 		if time_left > 0:
 				time_left -= 1
 				
+				save_current_time() 
+				
 				update_time_display()
 		else:
 				timer.stop()
-				print("Time is up!")
+				print("Time is up! Cycle ended.")
 				
-func get_time_to_save() -> int:
-		return time_left
+				time_left = INITIAL_TIME
+				update_time_display()
+				timer.start()
+				
+				save_current_time()
+				
+				print("Cycle Restarted.")
+
+func save_current_time():
+		var save_data = SaveLoad.load_game()
+		
+		save_data[SAVE_KEY] = time_left
+		
+		SaveLoad.save_game(save_data)

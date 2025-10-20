@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=7 format=3 uid="uid://c1n41auotc7uk"]
 
 [ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
+[ext_resource type="PackedScene" uid="uid://3rqjregok76e" path="res://scenes/hud/envelopes.tscn" id="3_0bx4p"]
 [ext_resource type="PackedScene" uid="uid://b6v6p84sq8x1a" path="res://scenes/hud/day_night_cycle.tscn" id="3_c45xl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
@@ -71,10 +72,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Envelopes : "
 
-[node name="Envelopes" type="Label" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Envelopes" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_0bx4p")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "0"
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3

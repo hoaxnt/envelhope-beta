@@ -10,3 +10,4 @@ vertical_alignment = 1
 script = ExtResource("1_3tmyp")
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
