@@ -1,10 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dakmfuhim8ksf"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://bbqrh4pa87t8k" path="res://scripts/main_menu.gd" id="1_iaex4"]
-=======
 [ext_resource type="Script" uid="uid://bbqrh4pa87t8k" path="res://scripts/utils/main_menu.gd" id="1_iaex4"]
->>>>>>> 68d631b52c6c77b44b8a27287117a5a88e89da1d
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
