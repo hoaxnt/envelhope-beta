@@ -17,7 +17,8 @@ config/icon="uid://dxk4o3kip1r4m"
 
 [autoload]
 
-GlobalState="*res://scripts/utils/global_state.gd"
+GlobalState="*res://scripts/autoloads/global_state.gd"
+SaveLoad="*res://scripts/autoloads/save_load.gd"
 
 [debug]
 
