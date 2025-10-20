@@ -70,4 +70,5 @@ func _on_interaction_zone_body_exited(body):
 
 func _unhandled_input(event):
 	if event.is_action_pressed("interact") and current_npc:
+		head_text.hide()
 		print('Interacting with NPC')
