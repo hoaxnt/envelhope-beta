@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=5 format=3 uid="uid://c1n41auotc7uk"]
 
 [ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
-[ext_resource type="PackedScene" uid="uid://b6v6p84sq8x1a" path="res://scenes/hud/day_night_cycle.tscn" id="3_c45xl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
 bg_color = Color(0, 0, 0, 0.3882353)
@@ -126,8 +125,12 @@ text = "Day | Night"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DayNightCycleLabel" parent="Control2/MarginContainer/Panel/HBoxContainer/VBoxContainer" instance=ExtResource("3_c45xl")]
+[node name="CycleIndicator" type="Label" parent="Control2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "30:00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control3" type="Control" parent="."]
 layout_mode = 3
