@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="4_itjef"]
 [ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="5_k2l3u"]
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="6_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/utils/hud.tscn" id="7_sx3b6"]
+[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/utils/hud/hud.tscn" id="7_sx3b6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
 radius = 6.8259025

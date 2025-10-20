@@ -1,16 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=5 format=3 uid="uid://c1n41auotc7uk"]
 
-[ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/utils/hud.gd" id="1_0fbou"]
+[ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/utils/hud/hud.gd" id="1_0fbou"]
+[ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/utils/hud/hunger_bar.tscn" id="2_l4r4f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
 bg_color = Color(0, 0, 0, 0.3882353)
 corner_radius_top_left = 80
 corner_radius_bottom_right = 80
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vn4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h743p"]
-bg_color = Color(0.7672838, 0.27202317, 0.30898613, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbou"]
 bg_color = Color(0, 0, 0, 0.3882353)
@@ -63,16 +59,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "HP : "
 
-[node name="HungerBar" type="ProgressBar" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(500, 60)
+[node name="HungerBar" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_l4r4f")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-theme_override_styles/background = SubResource("StyleBoxFlat_60vn4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_h743p")
-step = 1.0
-value = 90.0
-rounded = true
-show_percentage = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -85,7 +73,7 @@ text = "Envelopes : "
 [node name="Envelopes" type="Label" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "999999"
+text = "0"
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
