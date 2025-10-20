@@ -99,5 +99,6 @@ sprite_frames = SubResource("SpriteFrames_cq1mj")
 autoplay = "default"
 
 [node name="Hud" parent="." instance=ExtResource("7_sx3b6")]
+visible = false
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
