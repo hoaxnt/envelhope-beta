@@ -2,12 +2,28 @@ extends CharacterBody2D
 # opti
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
+@export var base_speed = 100 
+@export var sprint_speed = 1000
 
 var last_direction = "down"
-
-var base_speed = 300 
-var sprint_speed = 600
 var current_speed = base_speed
+var current_npc = null
+
+func _on_interaction_zone_body_entered(body):
+	#print('body: ' + body.name)
+	if body.name == 'npc_island':
+		current_npc = body
+		print('NPC: ' + body + " detected.")
+
+func _on_interaction_zone_body_exited(body):
+	if body == current_npc:
+		current_npc = null
+		print('NPC: ' + body + " exit detected.")
+
+func _unhandled_input(event):
+	if event.is_action_pressed("interact") and current_npc:
+		print('Interacting with NPC')
+		get_tree().set_input_as_handled() # Stop other things from processing the input
 
 func _ready() -> void:
 	var screen_size = get_viewport_rect().size
@@ -16,7 +32,6 @@ func _ready() -> void:
 	anim.play("idle_down")
 
 func _physics_process(_delta: float) -> void:
-	
 	get_input_and_animate()
 	move_and_slide()
 

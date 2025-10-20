@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://jb5a6caoavv4"]
+[gd_scene load_steps=22 format=3 uid="uid://ch7e3kl82la3y"]
 
-[ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://Scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
-[ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://Scripts/Chapters/chapter_2.gd" id="1_3ilha"]
-[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="2_v6yd1"]
-[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://Scripts/characters/npc_plaza/fruit_vendor/roaming.gd" id="3_jauny"]
-[ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://Scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
-[ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://Scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
-[ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://Scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
-[ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://Scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
-[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scripts/utils/portal.gd" id="8_3ilha"]
-[ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://Assets/Images/utils/portal.png" id="9_3ilha"]
+[ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/locations/plaza.tscn" id="1_3hgx5"]
+[ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://scripts/chapters/chapter_2.gd" id="1_3ilha"]
+[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
+[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://scripts/characters/npc_plaza/fruit_vendor/roaming.gd" id="3_jauny"]
+[ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
+[ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
+[ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
+[ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
+[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="8_3ilha"]
+[ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="9_3ilha"]
+[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/utils/hud.tscn" id="11_8exib"]
 
 [sub_resource type="Curve2D" id="Curve2D_g2xa2"]
 _data = {
@@ -77,8 +78,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ei26i"]
-
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_3ilha")
 
@@ -132,56 +131,7 @@ scale = Vector2(0.93122387, 0.84844726)
 sprite_frames = SubResource("SpriteFrames_q4xdi")
 autoplay = "default"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Hud" parent="." instance=ExtResource("11_8exib")]
 visible = false
-
-[node name="UI" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ei26i")
-
-[node name="Dialog" type="Panel" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -180.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="CanvasLayer/UI/Dialog"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Greetings!"
-autowrap_mode = 2
-
-[node name="Panel2" type="Panel" parent="CanvasLayer/UI"]
-layout_mode = 0
-offset_right = 478.0
-offset_bottom = 743.0
-
-[node name="Label" type="Label" parent="CanvasLayer/UI/Panel2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "UP"
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]

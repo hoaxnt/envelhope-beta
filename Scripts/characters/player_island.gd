@@ -7,10 +7,10 @@ func _ready():
 	
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	pass
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity = Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
