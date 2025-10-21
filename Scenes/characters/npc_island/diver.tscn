@@ -51,4 +51,3 @@ shape = SubResource("CapsuleShape2D_t5y5a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hyevw")
 autoplay = "default"
-frame_progress = 0.50000614
