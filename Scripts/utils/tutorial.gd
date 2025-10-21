@@ -1,6 +1,6 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	show()
+	hide()
 func _on_button_pressed() -> void:
 	hide()

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://nv8phd5kfc7"]
+[gd_scene load_steps=3 format=3 uid="uid://nv8phd5kfc7"]
 
 [ext_resource type="Script" uid="uid://2hger73fibag" path="res://scripts/utils/tutorial.gd" id="1_g50l0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g50l0"]
+bg_color = Color(0.008202021, 0.008202026, 0.008202015, 1)
 
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_g50l0")
@@ -19,6 +22,7 @@ metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g50l0")
 metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
