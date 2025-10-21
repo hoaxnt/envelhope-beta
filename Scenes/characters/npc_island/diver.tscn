@@ -6,7 +6,7 @@
 radius = 14.0
 height = 42.0
 
-[node name="diver" type="CharacterBody2D" groups=["NPCs"]]
+[node name="diver" type="CharacterBody2D" groups=["npcs"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 6)

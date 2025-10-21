@@ -59,12 +59,13 @@ func get_input_and_animate():
 				anim.flip_h = false
 
 func _on_interaction_zone_body_entered(body):
-	if body.name == 'npc_diving':
-		current_npc = body.name
+	if body.is_in_group("npcs"):
+		current_npc = body
 		head_text.show()
+		print("Interacted with NPC: ", body.name)
 		
 func _on_interaction_zone_body_exited(body):
-	if body.name == current_npc:
+	if body == current_npc:
 		current_npc = null
 		head_text.hide()
 

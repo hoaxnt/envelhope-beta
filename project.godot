@@ -42,7 +42,7 @@ enabled=PackedStringArray()
 
 [global_group]
 
-NPCs=""
+npcs=""
 
 [input]
 
