@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://i35dymwyomi4" path="res://assets/characters/npc_island/wizzard/idle/idle-sheet.png" id="1_hbv6q"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mwkii"]
-radius = 21.023796
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbv6q"]
+radius = 13.0
+height = 40.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x756q"]
 atlas = ExtResource("1_hbv6q")
@@ -41,10 +42,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="NpcBalancer" type="CharacterBody2D"]
+[node name="Balancer" type="CharacterBody2D" groups=["npcs"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_mwkii")
+shape = SubResource("CapsuleShape2D_hbv6q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mwkii")
