@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://nv8phd5kfc7"]
+
+[ext_resource type="Script" uid="uid://2hger73fibag" path="res://scripts/utils/tutorial.gd" id="1_g50l0"]
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_g50l0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "GAME CONTROLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "WASD             Move (Forward, Back, Strafe Left, Strafe Right)
+E	                      Interact / Use Object
+Bag	                 Open Inventory
+Quest             Open Journal / Quests Log
+Esc	                  Pause Game / Open Main Menu"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 66
+text = "Close"
+
+[connection signal="pressed" from="MarginContainer/Panel/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
