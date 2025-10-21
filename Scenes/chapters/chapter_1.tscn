@@ -72,6 +72,7 @@ animations = [{
 }]
 
 [node name="Chapter1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_k2l3u")
 
 [node name="Island" parent="." instance=ExtResource("2_2t2a1")]
@@ -87,10 +88,11 @@ position = Vector2(988, 190)
 position = Vector2(1002, 285)
 
 [node name="Harvester" parent="NPCs" instance=ExtResource("5_r7jkp")]
-position = Vector2(933, 191)
+position = Vector2(940, 192)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
-position = Vector2(715, 245)
+z_index = 0
+position = Vector2(884, 203)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
