@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bddwrasoh2bum"]
+
+[ext_resource type="Script" uid="uid://dauut4mw71k3u" path="res://scripts/minigames/island/pearl_diving.gd" id="1_a6bgs"]
+
+[node name="PearlDiving" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_a6bgs")

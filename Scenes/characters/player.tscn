@@ -12,8 +12,9 @@
 radius = 4.0
 height = 12.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_twm3q"]
-radius = 17.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eyoc"]
+radius = 12.0
+height = 34.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eojnx"]
 atlas = ExtResource("2_dyp2m")
@@ -260,6 +261,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_yewv4")
 sprint_speed = 250
@@ -272,7 +274,7 @@ shape = SubResource("CapsuleShape2D_kqtwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_twm3q")
+shape = SubResource("CapsuleShape2D_6eyoc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wocps")
@@ -292,7 +294,7 @@ offset_bottom = -13.645
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 9
-text = "Press 'E' to interact"
+text = "Interact [E]"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
