@@ -10,7 +10,7 @@ echo 2/3: Committing changes with message 'map updates'...
 git commit -m "map updates"
 echo Commit step complete.
 echo.
-echo 3/3: Pushing committed and merged changes to staging...
-git push origin staging
+echo 3/3: Pushing committed and merged changes...
+git push origin main
 echo.
 pause
