@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dqsya2esuhcwy"]
 
-[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/city_elements.png" id="1_so830"]
-[ext_resource type="Texture2D" uid="uid://dep3wvipowe4k" path="res://assets/city/building_day.png" id="2_fl4d3"]
-[ext_resource type="Texture2D" uid="uid://r5gwfw0glaly" path="res://assets/city/building_night.png" id="3_gocat"]
-[ext_resource type="Texture2D" uid="uid://c1pnymyvj7uwx" path="res://assets/city/street_light.png" id="4_kwunn"]
+[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="1_wkeib"]
+[ext_resource type="Texture2D" uid="uid://dep3wvipowe4k" path="res://assets/city/plaza/building_day.png" id="2_fv00m"]
+[ext_resource type="Texture2D" uid="uid://r5gwfw0glaly" path="res://assets/city/plaza/building_night.png" id="3_h6bhs"]
+[ext_resource type="Texture2D" uid="uid://c1pnymyvj7uwx" path="res://assets/city/plaza/street_light.png" id="4_wnp6w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i0rx"]
-texture = ExtResource("1_so830")
+texture = ExtResource("1_wkeib")
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -612,9 +612,10 @@ texture = ExtResource("1_so830")
 5:56/0 = 0
 7:56/0 = 0
 9:56/0 = 0
+32:43/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wn2pc"]
-texture = ExtResource("2_fl4d3")
+texture = ExtResource("2_fv00m")
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -1028,7 +1029,7 @@ texture = ExtResource("2_fl4d3")
 19:66/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqckt"]
-texture = ExtResource("3_gocat")
+texture = ExtResource("3_h6bhs")
 3:2/0 = 0
 4:2/0 = 0
 5:2/0 = 0
@@ -1416,7 +1417,7 @@ texture = ExtResource("3_gocat")
 13:82/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wh4u3"]
-texture = ExtResource("4_kwunn")
+texture = ExtResource("4_wnp6w")
 1:2/0 = 0
 2:2/0 = 0
 3:2/0 = 0

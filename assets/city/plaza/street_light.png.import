@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r5gwfw0glaly"
-path="res://.godot/imported/building_night.png-19c0a9ab3c349e31782dba66370476dc.ctex"
+uid="uid://c1pnymyvj7uwx"
+path="res://.godot/imported/street_light.png-b8a2690f6cee9ad9361a4526b866ee0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/city/building_night.png"
-dest_files=["res://.godot/imported/building_night.png-19c0a9ab3c349e31782dba66370476dc.ctex"]
+source_file="res://assets/city/plaza/street_light.png"
+dest_files=["res://.godot/imported/street_light.png-b8a2690f6cee9ad9361a4526b866ee0a.ctex"]
 
 [params]
 
