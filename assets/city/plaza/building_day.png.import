@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blyd235qe331v"
-path="res://.godot/imported/city_elements.png-59d609aa089c462bbb7a9f35379b62e8.ctex"
+uid="uid://dep3wvipowe4k"
+path="res://.godot/imported/building_day.png-63480c763769a551d3e2c0afd223a56f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/city/city_elements.png"
-dest_files=["res://.godot/imported/city_elements.png-59d609aa089c462bbb7a9f35379b62e8.ctex"]
+source_file="res://assets/city/plaza/building_day.png"
+dest_files=["res://.godot/imported/building_day.png-63480c763769a551d3e2c0afd223a56f.ctex"]
 
 [params]
 

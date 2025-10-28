@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://cqfnmj4as6wxg"]
 
-[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/city_elements.png" id="1_hhe0n"]
+[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="1_hhe0n"]
 [ext_resource type="TileSet" uid="uid://dqsya2esuhcwy" path="res://resources/city.tres" id="2_j5vst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i0rx"]
