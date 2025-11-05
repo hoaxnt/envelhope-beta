@@ -19,6 +19,7 @@ config/icon="uid://dxk4o3kip1r4m"
 
 GlobalState="*res://scripts/autoloads/global_state.gd"
 SaveLoad="*res://scripts/autoloads/save_load.gd"
+IslandNpcInteraction="*res://scripts/autoloads/island_npc_interaction.gd"
 
 [debug]
 

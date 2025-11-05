@@ -82,13 +82,13 @@ metadata/_edit_lock_ = true
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Diver" parent="NPCs" instance=ExtResource("3_lhans")]
-position = Vector2(988, 190)
+position = Vector2(1171, 93)
 
 [node name="Balancer" parent="NPCs" instance=ExtResource("4_gbphn")]
-position = Vector2(1002, 285)
+position = Vector2(1004, 251)
 
 [node name="Harvester" parent="NPCs" instance=ExtResource("5_r7jkp")]
-position = Vector2(940, 192)
+position = Vector2(1042, 586)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
 z_index = 0
