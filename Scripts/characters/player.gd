@@ -85,16 +85,14 @@ func _on_interaction_zone_body_exited(body: Node2D) -> void:
 						npc_label.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	print("current npc", current_npc)
 	if event.is_action_pressed("interact") and current_npc:
-			print("E")
-			IslandNpcInteraction.dialogue_finished.connect(self._on_dialogue_finished, CONNECT_ONE_SHOT)
+	
+			if not IslandNpcInteraction.dialogue_finished.is_connected(self._on_dialogue_finished):
+				IslandNpcInteraction.dialogue_finished.connect(self._on_dialogue_finished, CONNECT_ONE_SHOT)
 			
 			if current_npc.has_method("get_npc_id"):
-					
-					var npc_id = current_npc.get_npc_id()
-					IslandNpcInteraction.handle_npc_interaction(npc_id)
-					set_process_unhandled_input(false)
+				var npc_id = current_npc.get_npc_id()
+				IslandNpcInteraction.handle_npc_interaction(npc_id)
 					
 			else:
 					print("ERROR: NPC %s does not have the required 'get_npc_id' method." % current_npc.name)
