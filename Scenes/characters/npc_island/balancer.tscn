@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://csuro1o2pcce1"]
+[gd_scene load_steps=9 format=3 uid="uid://csuro1o2pcce1"]
 
 [ext_resource type="Texture2D" uid="uid://i35dymwyomi4" path="res://assets/characters/npc_island/wizzard/idle/idle-sheet.png" id="1_hbv6q"]
+[ext_resource type="Script" uid="uid://bka4r1ms8klnf" path="res://scripts/characters/npc_island/balancer.gd" id="1_x756q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbv6q"]
 radius = 13.0
@@ -43,6 +44,7 @@ animations = [{
 }]
 
 [node name="Balancer" type="CharacterBody2D" groups=["npcs"]]
+script = ExtResource("1_x756q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hbv6q")

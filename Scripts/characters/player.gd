@@ -99,4 +99,3 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_dialogue_finished() -> void:
 		set_process_unhandled_input(true)
-		print("Player input resumed.")
