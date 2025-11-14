@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://4abqf6ah3fhe"]
+
+[node name="BfsMinigame" type="Node2D"]
+
+[node name="Maze" type="TileMapLayer" parent="."]
+
+[node name="Agent" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PathTimer" type="Timer" parent="."]

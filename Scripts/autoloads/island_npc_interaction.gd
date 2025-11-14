@@ -1,7 +1,9 @@
 extends Node
 
-signal dialogue_finished
+@export var dialog_box : Control
 
+signal dialogue_finished
+		
 func handle_npc_interaction(npc_id: String) -> void:
 		match npc_id:
 				"diver":
@@ -23,6 +25,7 @@ func _on_dialogue_system_closed() -> void:
 		dialogue_finished.emit()
 		
 func start_dialogue(character_name: String, text: String) -> void:
+	
 		print("%s : %s" % [character_name, text])
 
 #-- Sorting Algorithm --

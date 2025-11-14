@@ -1,15 +1,15 @@
 [gd_scene load_steps=20 format=3 uid="uid://btiivx7viv3y6"]
 
-[ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://Scripts/Chapters/chapter_1.gd" id="1_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://Scenes/maps/island/island.tscn" id="2_2t2a1"]
-[ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="3_lhans"]
-[ext_resource type="PackedScene" uid="uid://csuro1o2pcce1" path="res://Scenes/characters/npc_island/balancer.tscn" id="4_gbphn"]
-[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="4_itjef"]
-[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scripts/utils/portal.gd" id="5_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://cxvc8000q5li5" path="res://Scenes/characters/npc_island/harvester.tscn" id="5_r7jkp"]
+[ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://scripts/chapters/chapter_1.gd" id="1_k2l3u"]
+[ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
+[ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://scenes/characters/npc_island/diver.tscn" id="3_lhans"]
+[ext_resource type="PackedScene" uid="uid://csuro1o2pcce1" path="res://scenes/characters/npc_island/balancer.tscn" id="4_gbphn"]
+[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="4_itjef"]
+[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="5_k2l3u"]
+[ext_resource type="PackedScene" uid="uid://cxvc8000q5li5" path="res://scenes/characters/npc_island/harvester.tscn" id="5_r7jkp"]
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="6_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://Scenes/hud/hud.tscn" id="7_sx3b6"]
-[ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://Scenes/utils/tutorial.tscn" id="10_0ad4i"]
+[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/hud/hud.tscn" id="7_sx3b6"]
+[ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="10_0ad4i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
 radius = 6.8259025
@@ -92,7 +92,7 @@ position = Vector2(1042, 586)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
 z_index = 0
-position = Vector2(771, 246)
+position = Vector2(1119, 93)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
