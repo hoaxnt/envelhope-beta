@@ -13,7 +13,10 @@ func handle_npc_interaction(npc_id: String) -> void:
 					
 					#start_dialogue("diver", "Welcome to my shop!")
 				"balancer":
-						start_dialogue("balancer", "Hello, adventurer.")
+					get_tree().current_scene.call_deferred("queue_free")
+					get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
+					
+						#start_dialogue("balancer", "Hello, adventurer.")
 				"harvester":
 						start_dialogue("harvester", "Knowledge is power.")
 				_:
