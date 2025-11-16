@@ -1,11 +1,15 @@
 extends Node2D
 
 # --- USER CONFIGURATION ---
-var START_POS = Vector2i(0, 0)
-var END_POS = Vector2i(11, 11)
-# The Atlas Coordinates (X, Y) of the Wall/Obstacle tile in your TileSet.
-# You MUST update this value to match your actual wall tile's position in the atlas.
-const WALL_ATLAS_COORDS = Vector2i(1, 0) 
+var START_POS = Vector2i(-1, -1)
+var END_POS = Vector2i(8, 4)
+# CRITICAL: A list of all Atlas Coordinates (X, Y) for ALL impassable tiles (walls, corners, etc.)
+# YOU MUST ADD EVERY WALL TILE'S ATLAS COORDINATE TO THIS LIST!
+const IMPASSABLE_ATLAS_COORDS = [
+	Vector2i(0, 2), 
+	Vector2i(1, 2), 
+	# Add more Vector2i(x, y) coordinates here if you have different wall sprites!
+]
 # The layer index where your maze tiles are drawn (default is 0 in Godot 4+).
 const LAYER_INDEX = 0
 
@@ -54,7 +58,6 @@ func _calculate_h_score(pos: Vector2i, target_pos: Vector2i) -> int:
 
 # Finds the shortest path between start_pos and end_pos using A* Search.
 # Returns an Array of Vector2i grid coordinates, or an empty Array if no path exists.
-# NOTE: Removed Array[Vector2i] return type annotation to avoid strict compiler errors on 'return []'.
 func find_path_a_star(start_pos: Vector2i, end_pos: Vector2i):
 	# G-Score: Cost from start to current node
 	var g_score_map: Dictionary = {start_pos: 0}
@@ -116,18 +119,26 @@ func find_path_a_star(start_pos: Vector2i, end_pos: Vector2i):
 
 # Checks if a given grid coordinate is a walkable tile (not a wall)
 func _is_walkable(pos: Vector2i) -> bool:
-	# Godot 4: Get the atlas coordinates (Vector2i) of the tile
-	var tile_coords = maze_tilemap.get_cell_atlas_coords(LAYER_INDEX, pos)
+	# FIX: Reinstated LAYER_INDEX and added 'false' for 'use_mesh' to satisfy the 3-argument requirement.
+	var tile_coords = maze_tilemap.get_cell_atlas_coords(LAYER_INDEX, pos, false)
 
-	# If the coordinates are (-1, -1), the cell is empty/null, which is walkable.
+	# --- DEBUGGING OUTPUT START ---
+	# This will print the coordinates being read by the TileMap when the A* tries to search a tile.
+	# If this is a wall, the output will tell you the correct coordinate to add to the IMPASSABLE_ATLAS_COORDS list.
+	if not IMPASSABLE_ATLAS_COORDS.has(tile_coords) and tile_coords != Vector2i(-1, -1):
+		# Only print if it's a non-empty tile AND it's not currently in our impassable list
+		print("DEBUG: Tile at ", pos, " is currently being considered walkable, but has coords: ", tile_coords)
+	# --- DEBUGGING OUTPUT END ---
+
+	# If the coordinates are (-1, -1), the cell is empty/null (walkable).
 	if tile_coords == Vector2i(-1, -1):
 		return true
 
-	# Otherwise, check if the tile's atlas coordinates match the defined WALL_ATLAS_COORDS
-	return tile_coords != WALL_ATLAS_COORDS
+	# Check if the tile's coordinates are in our list of impassable tiles.
+	# If the list HAS the tile's coordinates, the tile is NOT walkable (returns false).
+	return not IMPASSABLE_ATLAS_COORDS.has(tile_coords)
 
 # Reconstructs the path from the end back to the start using the parent_map
-# NOTE: Removed Array[Vector2i] return type annotation to avoid strict compiler errors on 'return []'.
 func _reconstruct_path(start_pos: Vector2i, end_pos: Vector2i, parent_map: Dictionary):
 	var path = []
 	var current = end_pos
