@@ -1,5 +1,6 @@
 extends Node
 
+const CONFIG_PATH = "user://config.json"
 const SAVE_PATH = "user://game_data.json" 
 
 func save_game(data_to_save: Dictionary) -> Error:

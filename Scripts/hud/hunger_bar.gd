@@ -17,7 +17,7 @@ func _ready():
 
 func _on_timer_timeout():
 		if value > 0:
-				value -= 5000.0
+				value -= 0.1
 				value = max(0.0, value)
 				loaded_data.set("hunger", value)
 				SaveLoad.save_game(loaded_data)
