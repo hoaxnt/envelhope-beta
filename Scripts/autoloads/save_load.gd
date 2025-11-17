@@ -4,12 +4,6 @@ const SAVE_PATH = "user://game_data.json"
 
 func save_game(data_to_save: Dictionary) -> Error:
 		var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		
-		#if file == null:
-				#var error = FileAccess.get_open_error()
-				#printerr("Failed to save game. Error code: ", error)
-				#return error
-		
 		var json_string = JSON.stringify(data_to_save, "\t", true)
 		file.store_string(json_string)
 		return OK
