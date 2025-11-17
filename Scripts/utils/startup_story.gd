@@ -1,6 +1,5 @@
 extends Control
 
 func _on_skip_button_pressed() -> void:
-	get_tree().current_scene.call_deferred("queue_free")
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/chapters/chapter_1.tscn")
+	Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
 	
