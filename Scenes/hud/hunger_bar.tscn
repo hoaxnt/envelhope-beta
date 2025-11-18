@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vn4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h743p"]
-bg_color = Color(0.90769166, 0.6415264, 0.21227357, 1)
+bg_color = Color(0.3771901, 0.6988048, 0.23082441, 1)
 
 [node name="HungerBar" type="ProgressBar"]
 custom_minimum_size = Vector2(500, 60)

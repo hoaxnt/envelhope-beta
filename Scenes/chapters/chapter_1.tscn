@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=54 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://scripts/chapters/chapter_1.gd" id="1_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -121,15 +121,15 @@ a = Vector2(709, -333)
 b = Vector2(722, -350)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3p6ht"]
-a = Vector2(81.17566, -2.8970032)
+a = Vector2(88.17566, -2.8970032)
 b = Vector2(-10.824341, -2.8970032)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tunax"]
-a = Vector2(15.194092, -33.561615)
-b = Vector2(15.194092, 88.438385)
+a = Vector2(15.194092, -42.561615)
+b = Vector2(16.194092, 116.438385)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ppruk"]
-a = Vector2(69.9906, 4.7938538)
+a = Vector2(77, 5)
 b = Vector2(-46, 6)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_51b4k"]
@@ -159,6 +159,26 @@ b = Vector2(40.057495, 60.75659)
 a = Vector2(24.446716, 22.321411)
 b = Vector2(24.446716, 108.32141)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ad4i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l01ag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmv4y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_re7c5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jqk4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1o1ye"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcv0w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynuiw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nq4ne"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqu7u"]
+
 [node name="Chapter1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_k2l3u")
@@ -170,10 +190,10 @@ metadata/_edit_lock_ = true
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Diver" parent="NPCs" instance=ExtResource("3_lhans")]
-position = Vector2(1171, 93)
+position = Vector2(1173, 97)
 
 [node name="Balancer" parent="NPCs" instance=ExtResource("4_gbphn")]
-position = Vector2(1004, 251)
+position = Vector2(191, 396)
 
 [node name="Harvester" parent="NPCs" instance=ExtResource("5_r7jkp")]
 position = Vector2(951, 613)
@@ -181,7 +201,7 @@ scale = Vector2(-1, 1)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
 z_index = 2
-position = Vector2(1119, 93)
+position = Vector2(628, 259)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -265,7 +285,7 @@ position = Vector2(679.8059, -267.4384)
 shape = SubResource("SegmentShape2D_tunax")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(627, -185)
+position = Vector2(627, -166)
 shape = SubResource("SegmentShape2D_ppruk")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
@@ -299,5 +319,45 @@ shape = SubResource("SegmentShape2D_48uj0")
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-385.44672, 541.6786)
 shape = SubResource("SegmentShape2D_tt0qj")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-273, 380)
+shape = SubResource("CircleShape2D_0ad4i")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-224, 106)
+shape = SubResource("CircleShape2D_l01ag")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-80, -182)
+shape = SubResource("CircleShape2D_pmv4y")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(80, -183)
+shape = SubResource("CircleShape2D_re7c5")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(145, 139)
+shape = SubResource("CircleShape2D_0jqk4")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-369, -84)
+shape = SubResource("CircleShape2D_1o1ye")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-417, 76)
+shape = SubResource("CircleShape2D_kcv0w")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-305, -169)
+shape = SubResource("CircleShape2D_ynuiw")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(145, 284)
+shape = SubResource("CircleShape2D_nq4ne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(418, 216)
+shape = SubResource("CircleShape2D_pqu7u")
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]

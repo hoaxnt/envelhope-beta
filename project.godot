@@ -23,6 +23,7 @@ GlobalState="*res://scripts/autoloads/global_state.gd"
 SaveLoad="*res://scripts/autoloads/save_load.gd"
 IslandNpcInteraction="*res://scripts/autoloads/island_npc_interaction.gd"
 Transition="*res://scenes/utils/transition.tscn"
+Tutorial="*res://scenes/utils/tutorial.tscn"
 
 [debug]
 

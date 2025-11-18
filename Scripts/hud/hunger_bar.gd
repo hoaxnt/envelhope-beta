@@ -1,10 +1,10 @@
 extends ProgressBar
 
-var loaded_data = SaveLoad.load_game()
+var loaded_data = SaveLoad.load_game(SaveLoad.SAVE_PATH)
 var envelopes
 
 func _ready():
-		loaded_data = SaveLoad.load_game()
+		loaded_data = SaveLoad.load_game(SaveLoad.SAVE_PATH)
 		envelopes = loaded_data.get("envelopes")
 		var saved_hunger = loaded_data.get("hunger", 100.0)
 		
@@ -20,7 +20,7 @@ func _on_timer_timeout():
 				value -= 0.1
 				value = max(0.0, value)
 				loaded_data.set("hunger", value)
-				SaveLoad.save_game(loaded_data)
+				SaveLoad.save_game(loaded_data, SaveLoad.SAVE_PATH)
 
 		if value <= 0:
 				if $Timer.is_stopped():
@@ -32,6 +32,6 @@ func _on_timer_timeout():
 				
 				loaded_data.set("hunger", 100)
 				loaded_data.set("envelopes", envelopes)
-				SaveLoad.save_game(loaded_data)
+				SaveLoad.save_game(loaded_data, SaveLoad.SAVE_PATH)
 				value = 100.0
 				$Timer.start()
