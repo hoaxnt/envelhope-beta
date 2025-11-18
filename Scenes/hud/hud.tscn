@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=13 format=3 uid="uid://c1n41auotc7uk"]
 
 [ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
@@ -7,9 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b6v6p84sq8x1a" path="res://scenes/hud/day_night_cycle.tscn" id="3_c45xl"]
 [ext_resource type="Texture2D" uid="uid://om54pqa2nl8x" path="res://assets/ui/envelope.png" id="4_n56i7"]
 [ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialog_box.gd" id="5_mgtrf"]
+[ext_resource type="Texture2D" uid="uid://5i30nwf1hvkt" path="res://assets/ui/bag.png" id="7_go0ap"]
+[ext_resource type="Texture2D" uid="uid://mxiklpr6dk07" path="res://assets/ui/current_quest.png" id="7_mq0y1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
-bg_color = Color(0.1655722, 0.1614393, 0.15668094, 1)
+bg_color = Color(0.22856453, 0.3778735, 0.19332448, 1)
+border_width_left = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbou"]
 bg_color = Color(0, 0, 0, 0.3882353)
@@ -188,14 +191,17 @@ custom_minimum_size = Vector2(250, 100)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 40
-text = "Bag"
+icon = ExtResource("7_go0ap")
+flat = true
+icon_alignment = 1
 
 [node name="ViewQuestButton" type="Button" parent="Control3/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 40
-text = "View Quest"
+icon = ExtResource("7_mq0y1")
+flat = true
+icon_alignment = 1
 
 [node name="Control4" type="Control" parent="."]
 layout_mode = 3
