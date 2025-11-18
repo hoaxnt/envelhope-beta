@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://nv8phd5kfc7"]
+[gd_scene load_steps=4 format=3 uid="uid://nv8phd5kfc7"]
 
 [ext_resource type="Script" uid="uid://2hger73fibag" path="res://scripts/utils/tutorial.gd" id="1_g50l0"]
+[ext_resource type="Texture2D" uid="uid://c885iuws6k2g8" path="res://assets/utils/mechanics.jpg" id="2_16obs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g50l0"]
-bg_color = Color(0.008202021, 0.008202026, 0.008202015, 1)
+bg_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
 
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_g50l0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 300.0
+offset_top = 80.0
+offset_right = 300.0
+offset_bottom = 80.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+texture = ExtResource("2_16obs")
+expand_mode = 1
+stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -25,7 +37,17 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g50l0")
 metadata/_edit_lock_ = true
 
+[node name="Button" type="Button" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 1407.0
+offset_top = 16.0
+offset_right = 1490.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 66
+text = " X "
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,9 +79,4 @@ Quest             Open Journal / Quests Log
 Esc	                  Pause Game / Open Main Menu"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "Close"
-
-[connection signal="pressed" from="MarginContainer/Panel/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]

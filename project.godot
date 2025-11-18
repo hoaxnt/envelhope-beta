@@ -13,12 +13,17 @@ config_version=5
 config/name="Envelhope"
 run/main_scene="uid://dakmfuhim8ksf"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/image="uid://dxk4o3kip1r4m"
 config/icon="uid://dxk4o3kip1r4m"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
 GlobalState="*res://scripts/autoloads/global_state.gd"
 SaveLoad="*res://scripts/autoloads/save_load.gd"
+IslandNpcInteraction="*res://scripts/autoloads/island_npc_interaction.gd"
+Transition="*res://scenes/utils/transition.tscn"
+Tutorial="*res://scenes/utils/tutorial.tscn"
 
 [debug]
 

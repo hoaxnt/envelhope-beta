@@ -7,7 +7,7 @@ var time_left: int = INITIAL_TIME
 @onready var timer = $Timer
 
 func _ready():
-		var loaded_data = SaveLoad.load_game()
+		var loaded_data = SaveLoad.load_game(SaveLoad.SAVE_PATH)
 		var saved_time = loaded_data.get(SAVE_KEY, INITIAL_TIME)
 		time_left = saved_time
 		
@@ -46,8 +46,8 @@ func _on_timer_timeout():
 				print("Cycle Restarted.")
 
 func save_current_time():
-		var save_data = SaveLoad.load_game()
+		var save_data = SaveLoad.load_game(SaveLoad.SAVE_PATH)
 		
 		save_data[SAVE_KEY] = time_left
 		
-		SaveLoad.save_game(save_data)
+		SaveLoad.save_game(save_data, SaveLoad.SAVE_PATH)

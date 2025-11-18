@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxvc8000q5li5"]
+[gd_scene load_steps=9 format=3 uid="uid://cxvc8000q5li5"]
 
 [ext_resource type="Texture2D" uid="uid://1ivqaivu3h6t" path="res://assets/characters/npc_island/rogue/idle/idle-sheet.png" id="1_qjjtn"]
+[ext_resource type="Script" uid="uid://co7bi3dtiu1ii" path="res://scripts/characters/npc_island/harvester.gd" id="1_qmwf7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d75tx"]
 radius = 13.0
@@ -43,6 +44,7 @@ animations = [{
 }]
 
 [node name="Harvester" type="CharacterBody2D" groups=["npcs"]]
+script = ExtResource("1_qmwf7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

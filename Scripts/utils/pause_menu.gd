@@ -26,3 +26,9 @@ func _pause_game() -> void:
 
 func _unpause_game() -> void:
 	get_tree().paused = false
+
+
+func _on_help_button_pressed() -> void:
+	Tutorial.show()
+	canvas_layer.hide()
+	_unpause_game()

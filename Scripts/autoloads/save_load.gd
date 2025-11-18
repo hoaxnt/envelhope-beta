@@ -1,24 +1,19 @@
 extends Node
 
+const CONFIG_PATH = "user://config.json"
 const SAVE_PATH = "user://game_data.json" 
 
-func save_game(data_to_save: Dictionary) -> Error:
-		var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		
-		#if file == null:
-				#var error = FileAccess.get_open_error()
-				#printerr("Failed to save game. Error code: ", error)
-				#return error
-		
+func save_game(data_to_save: Dictionary, path: String) -> Error:
+		var file = FileAccess.open(path, FileAccess.WRITE)
 		var json_string = JSON.stringify(data_to_save, "\t", true)
 		file.store_string(json_string)
 		return OK
 
-func load_game() -> Dictionary:
-		if not FileAccess.file_exists(SAVE_PATH):
-				print("No save file found at: ", SAVE_PATH)
+func load_game(path: String) -> Dictionary:
+		if not FileAccess.file_exists(path):
+				print("No save file found at: ", path)
 				return {}
-		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var file = FileAccess.open(path, FileAccess.READ)
 		if file == null:
 				printerr("Failed to load game. Error code: ", FileAccess.get_open_error())
 				return {}
