@@ -269,7 +269,7 @@ position = Vector2(627, -185)
 shape = SubResource("SegmentShape2D_ppruk")
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(399.53833, -1.0982361)
+position = Vector2(412, -2)
 shape = SubResource("SegmentShape2D_51b4k")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
