@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://d2cxy5noa30a2" path="res://scripts/hud/hunger_bar.gd" id="1_elhww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vn4"]
+bg_color = Color(0.97533685, 0.23190683, 0.18499789, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h743p"]
-bg_color = Color(0.3771901, 0.6988048, 0.23082441, 1)
+bg_color = Color(4.813075e-08, 0.9152418, 0.21239248, 1)
 
 [node name="HungerBar" type="ProgressBar"]
 custom_minimum_size = Vector2(500, 60)

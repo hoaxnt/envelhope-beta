@@ -4,13 +4,20 @@ extends Label
 @onready var envelopes = PLAYER_DATA.get("envelopes")
 
 func _ready():
-		update_display(int(envelopes))
+	update_display(int(envelopes))
+	
+func _on_timer_timeout() -> void:
+	PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
+	envelopes = PLAYER_DATA.get("envelopes")	
+	update_display(int(envelopes))
+
 
 func update_display(new_value):
-		text = str(new_value)
-		
-func save_envelopes(value):
-		PLAYER_DATA["envelopes"] = value
-		SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
-		update_display(value)
-		print("display updated")
+	text = str(new_value)
+	
+#func save_envelopes(value):
+	#PLAYER_DATA["envelopes"] = value
+	#SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
+	#update_display(value)
+	#print("display updated")
+	
