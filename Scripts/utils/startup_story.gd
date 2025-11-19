@@ -1,5 +1,7 @@
 extends Control
 
+@onready var anim = $AnimationPlayer
+
 const IMAGES = [
 	"res://assets/utils/introduction/scene_1.jpg",
 	"res://assets/utils/introduction/scene_2.jpg",
@@ -24,11 +26,13 @@ var is_transitioning: bool = false
 @onready var next_button: Button = $Panel/SkipButton
 
 func _ready() -> void:
+	anim.play("fade_reveal")
 	_update_content()
 
 func _on_skip_button_pressed() -> void:
 	current_step += 1
 	if current_step < IMAGES.size():
+		anim.play("fade_reveal")
 		_update_content()
 	else:
 		_transition_to_next_scene()

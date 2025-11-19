@@ -1,26 +1,29 @@
 extends ProgressBar
 
-var loaded_data = SaveLoad.load_game(SaveLoad.SAVE_PATH)
-var envelopes
+@onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
+@onready var envelopes = PLAYER_DATA.get("envelopes")
 
 func _ready():
-		loaded_data = SaveLoad.load_game(SaveLoad.SAVE_PATH)
-		envelopes = loaded_data.get("envelopes")
-		var saved_hunger = loaded_data.get("hunger", 100.0)
-		
-		max_value = 100.0
-		value = saved_hunger
-		loaded_data.set("hunger", saved_hunger)
 		var timer = $Timer
+		var hunger_status = PLAYER_DATA.get("hunger", 100.0)
+		
+#		Max value displayed on HUDs
+		max_value = 100.0
+		
+#		Displayed current hunger value
+		value = hunger_status
+		
+		#PLAYER_DATA_PATH.set("hunger", hunger_status)
+		
 		if is_instance_valid(timer):
 				timer.connect("timeout", _on_timer_timeout)
 
 func _on_timer_timeout():
 		if value > 0:
-				value -= 0.1
+				value -= 50
 				value = max(0.0, value)
-				loaded_data.set("hunger", value)
-				SaveLoad.save_game(loaded_data, SaveLoad.SAVE_PATH)
+				PLAYER_DATA.set("hunger", value)
+				SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 
 		if value <= 0:
 				if $Timer.is_stopped():
@@ -28,10 +31,10 @@ func _on_timer_timeout():
 				$Timer.stop()
 				envelopes -= 500
 				
-				print("Oops! player died from starving. Resetting hunger to 100.")
+				print("Oops! player starved too much, 500 envelopes deducted.")
 				
-				loaded_data.set("hunger", 100)
-				loaded_data.set("envelopes", envelopes)
-				SaveLoad.save_game(loaded_data, SaveLoad.SAVE_PATH)
+				PLAYER_DATA.set("hunger", 100)
+				PLAYER_DATA.set("envelopes", envelopes)
+				SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 				value = 100.0
 				$Timer.start()
