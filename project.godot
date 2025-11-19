@@ -24,6 +24,7 @@ SaveLoad="*res://scripts/autoloads/save_load.gd"
 IslandNpcInteraction="*res://scripts/autoloads/island_npc_interaction.gd"
 Transition="*res://scenes/utils/transition.tscn"
 Tutorial="*res://scenes/utils/tutorial.tscn"
+ObjectiveLabel="*res://scenes/utils/objective_label.tscn"
 
 [debug]
 

@@ -5,7 +5,7 @@ extends Node2D
 @onready var data = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
 
 func _ready() -> void:
-	hud.show()
+	ObjectiveLabel.display()
 	if data.get("user_opened_once") == false:
 		Tutorial.show()
 	else:

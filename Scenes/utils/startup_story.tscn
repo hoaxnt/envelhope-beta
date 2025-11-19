@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpg5amojkingl"]
 
 [ext_resource type="Script" uid="uid://bk4md7ygek5mq" path="res://scripts/utils/startup_story.gd" id="1_gqv3l"]
-[ext_resource type="Texture2D" uid="uid://c4e3acytdmfil" path="res://assets/utils/sample.jpg" id="2_5ekg1"]
+[ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_5ekg1"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_wrs7h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqv3l"]
-bg_color = Color(0.2248837, 0.65337026, 0.65907353, 1)
+bg_color = Color(0.13599786, 0.13210395, 0.1330798, 1)
 
 [node name="StartupStory" type="Control"]
 layout_mode = 3
@@ -33,31 +33,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 45
+theme_override_constants/separation = -5
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(1200, 700)
+custom_minimum_size = Vector2(1200, 750)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_5ekg1")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_wrs7h")
 theme_override_font_sizes/font_size = 40
-text = "Eto muna habang di pa nasesend yung pics"
+text = "And now you will experience the journey here in the island that is rich in natural resources"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(1300, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_wrs7h")
-theme_override_font_sizes/font_size = 30
-text = "Next >>                               "
+theme_override_font_sizes/font_size = 50
+text = "Next>>"
 horizontal_alignment = 2
 vertical_alignment = 1
+uppercase = true
 
 [node name="SkipButton" type="Button" parent="Panel"]
 layout_mode = 1

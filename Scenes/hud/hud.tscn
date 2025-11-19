@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=15 format=3 uid="uid://c1n41auotc7uk"]
 
 [ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://5i30nwf1hvkt" path="res://assets/ui/bag.png" id="7_go0ap"]
 [ext_resource type="Texture2D" uid="uid://mxiklpr6dk07" path="res://assets/ui/current_quest.png" id="7_mq0y1"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="10_nhd55"]
+[ext_resource type="PackedScene" uid="uid://dvmpuwcwltlnc" path="res://scenes/utils/objective_label.tscn" id="11_q6mn5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
@@ -289,17 +290,10 @@ offset_left = -192.0
 offset_right = 192.0
 offset_bottom = 40.0
 grow_horizontal = 2
-theme_override_constants/margin_top = 185
+theme_override_constants/margin_top = 300
 
-[node name="ObjectiveLabel" type="Label" parent="Control5/MarginContainer"]
-custom_minimum_size = Vector2(800, 200)
+[node name="ObjectiveLabel" parent="Control5/MarginContainer" instance=ExtResource("11_q6mn5")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("10_nhd55")
-theme_override_font_sizes/font_size = 40
-text = "OBJECTIVE: none."
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]
