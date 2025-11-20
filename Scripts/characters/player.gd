@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var base_speed = 100
 @export var sprint_speed = 1000
 
-@onready var db = Hud.get_node("DialogBox")
+@onready var objective_label_anim = ObjectiveLabel.get_node("ObjectiveTextAnimation")
 
 var last_direction = "down"
 var current_speed = base_speed
@@ -88,7 +88,9 @@ func _on_interaction_zone_body_exited(body: Node2D) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("show_objective"):
-		db.show()
+		objective_label_anim.reset_section()
+		objective_label_anim.play("show_objective")
+		print("objective showed")
 		pass
 	
 	if event.is_action_pressed("interact") and current_npc:

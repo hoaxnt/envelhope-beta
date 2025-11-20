@@ -1,11 +1,13 @@
 extends Node
 
+@onready var dialog_box = Hud.get_node("DialogBox")
+
 signal dialogue_finished
 		
 func handle_npc_interaction(npc_id: String) -> void:
 	match npc_id:
 		"diver":
-			
+			dialog_box.show()
 			var high_scores = [6, 3, 5, 4, 2, 7, 1]
 			print(bubble_sort(high_scores))
 		"balancer":
