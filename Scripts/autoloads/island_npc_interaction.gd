@@ -1,15 +1,28 @@
 extends Node
 
-@onready var dialog_box = Hud.get_node("DialogBox")
+@onready var dialogue_box = Hud.get_node("DialogueBox")
+@onready var dialogue_box_name = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Name")
+@onready var dialogue_box_message = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Message")
+@onready var ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
+var diver_name
+var diver_message
 
 signal dialogue_finished
-		
+	
 func handle_npc_interaction(npc_id: String) -> void:
+	
 	match npc_id:
 		"diver":
-			dialog_box.show()
+			#diver_name = ISLAND_NPC["diver"]["name"]
+			#diver_message = ISLAND_NPC["diver"]["dialogue"]["1"]
+			#
+			#dialogue_box_name.text = diver_name
+			#dialogue_box_message.text = diver_message
+			dialogue_box.show()
+			
 			var high_scores = [6, 3, 5, 4, 2, 7, 1]
 			print(bubble_sort(high_scores))
+			
 		"balancer":
 			get_tree().current_scene.call_deferred("queue_free")
 			get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")

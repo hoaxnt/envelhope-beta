@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy7p7yvejyyv"]
+[gd_scene load_steps=5 format=3 uid="uid://cy7p7yvejyyv"]
 
-[ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialog_box.gd" id="1_21e2g"]
+[ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialogue_box.gd" id="1_21e2g"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_nirvc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
@@ -15,7 +15,10 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="DialogBox" type="Panel"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21e2g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="DialogueBox" type="Panel"]
 custom_minimum_size = Vector2(0, 250)
 anchors_preset = 12
 anchor_top = 1.0
@@ -45,12 +48,25 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nirvc")
 theme_override_font_sizes/font_size = 50
-text = "Torling"
+text = "None"
 
 [node name="Message" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1760, 125)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nirvc")
 theme_override_font_sizes/font_size = 40
-text = "Get the scroll from the red dragon warrior and open it, after a few minutes come to me and open that scroll, the dragon warrior is waiting for you at the next room and I can't wait for you to be seen by him, if ever there is any conflict here just talk to me and I'm willing to help you."
+text = "This is empty"
 autowrap_mode = 1
+
+[node name="NextButton" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxFlat_21e2g")
+
+[connection signal="pressed" from="NextButton" to="." method="next_dialogue_line"]

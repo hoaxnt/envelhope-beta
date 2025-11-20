@@ -30,15 +30,12 @@ func _on_timer_timeout():
 				update_time_display()
 		else:
 				timer.stop()
-				print("Time is up! Cycle ended.")
 				
 				time_left = 300
 				update_time_display()
 				timer.start()
 				
 				save_current_time()
-				
-				print("Cycle Restarted.")
 
 func save_current_time():
 		PLAYER_DATA["cycle"] = time_left

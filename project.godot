@@ -23,7 +23,6 @@ IslandNpcInteraction="*res://scripts/autoloads/island_npc_interaction.gd"
 Transition="*res://scenes/utils/transition.tscn"
 Tutorial="*res://scenes/utils/tutorial.tscn"
 GameData="*res://scripts/autoloads/game_data.gd"
-ObjectiveLabel="*res://scenes/utils/objective_label.tscn"
 Hud="*res://scenes/hud/hud.tscn"
 
 [debug]

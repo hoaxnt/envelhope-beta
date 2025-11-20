@@ -26,6 +26,10 @@ corner_radius_bottom_left = 150
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_0fbou")
 
+[node name="DialogueBox" parent="." instance=ExtResource("9_nhd55")]
+z_index = 5
+offset_top = -250.0
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -231,8 +235,6 @@ theme_override_constants/margin_top = 300
 
 [node name="ObjectiveLabel" parent="Control5/MarginContainer" instance=ExtResource("11_q6mn5")]
 layout_mode = 2
-
-[node name="DialogBox" parent="." instance=ExtResource("9_nhd55")]
 
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]
