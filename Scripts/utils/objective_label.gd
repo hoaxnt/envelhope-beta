@@ -1,11 +1,10 @@
 extends Label
 
 @onready var objective_anim = $ObjectiveTextAnimation
+@onready var timer = $Timer
 
-func _ready() -> void:
-	#objective_anim.play("show_objective")
-	pass
-	
-func display() -> void:
-	objective_anim.play("show_objective")
-	return
+func _on_timer_timeout() -> void:
+	var CONFIG = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
+	if CONFIG.get("user_opened_once") == true:
+		objective_anim.play("show_objective")
+		timer.stop()

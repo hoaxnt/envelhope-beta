@@ -1,28 +1,21 @@
 extends Node
 
-@export var dialog_box : Control
-
 signal dialogue_finished
 		
 func handle_npc_interaction(npc_id: String) -> void:
-		match npc_id:
-				"diver":
-					
-					var high_scores = [6, 3, 5, 4,2,7,1]
-					print(bubble_sort(high_scores))
-					
-					#start_dialogue("diver", "Welcome to my shop!")
-				"balancer":
-					get_tree().current_scene.call_deferred("queue_free")
-					get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
-					
-						#start_dialogue("balancer", "Hello, adventurer.")
-				"harvester":
-						start_dialogue("harvester", "Knowledge is power.")
-				_:
-						start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
-						
-		_on_dialogue_system_closed() 
+	match npc_id:
+		"diver":
+			
+			var high_scores = [6, 3, 5, 4, 2, 7, 1]
+			print(bubble_sort(high_scores))
+		"balancer":
+			get_tree().current_scene.call_deferred("queue_free")
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
+		"harvester":
+				start_dialogue("harvester", "Knowledge is power.")
+		_:
+				start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
+	_on_dialogue_system_closed() 
 
 func _on_dialogue_system_closed() -> void:
 		dialogue_finished.emit()

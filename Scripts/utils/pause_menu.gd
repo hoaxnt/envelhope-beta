@@ -18,11 +18,11 @@ func _on_main_menu_button_pressed() -> void:
 	canvas_layer.hide()
 
 func _pause_game() -> void:
-		if get_tree().paused: return
-		get_tree().paused = true
-		pause_menu_instance = pause_menu_scene.instantiate()
-		add_child(pause_menu_instance)
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if get_tree().paused: return
+	get_tree().paused = true
+	pause_menu_instance = pause_menu_scene.instantiate()
+	add_child(pause_menu_instance)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _unpause_game() -> void:
 	get_tree().paused = false

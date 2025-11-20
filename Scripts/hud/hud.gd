@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	show()
+	hide()
 	
 func _on_bag_button_pressed() -> void:
 	get_tree().current_scene.call_deferred("queue_free")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy7p7yvejyyv"]
+
+[ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialog_box.gd" id="1_21e2g"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_nirvc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.23610237, 0.16611111, 0.12567946, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="DialogBox" type="Panel"]
+custom_minimum_size = Vector2(0, 250)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgtrf")
+script = ExtResource("1_21e2g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nirvc")
+theme_override_font_sizes/font_size = 50
+text = "Torling"
+
+[node name="Message" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1760, 125)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nirvc")
+theme_override_font_sizes/font_size = 40
+text = "Get the scroll from the red dragon warrior and open it, after a few minutes come to me and open that scroll, the dragon warrior is waiting for you at the next room and I can't wait for you to be seen by him, if ever there is any conflict here just talk to me and I'm willing to help you."
+autowrap_mode = 1

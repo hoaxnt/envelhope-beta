@@ -11,13 +11,6 @@ func _on_timer_timeout() -> void:
 	envelopes = PLAYER_DATA.get("envelopes")	
 	update_display(int(envelopes))
 
-
 func update_display(new_value):
 	text = str(new_value)
-	
-#func save_envelopes(value):
-	#PLAYER_DATA["envelopes"] = value
-	#SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
-	#update_display(value)
-	#print("display updated")
 	
