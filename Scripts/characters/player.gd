@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var head_text = $HeadText
-@export var base_speed = 100
-@export var sprint_speed = 1000
+@onready var base_speed = 80
+@onready var sprint_speed = 140
 
 @onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")

@@ -13,23 +13,21 @@ func handle_npc_interaction(npc_id: String) -> void:
 	
 	match npc_id:
 		"diver":
-			#diver_name = ISLAND_NPC["diver"]["name"]
-			#diver_message = ISLAND_NPC["diver"]["dialogue"]["1"]
-			#
-			#dialogue_box_name.text = diver_name
-			#dialogue_box_message.text = diver_message
-			dialogue_box.show()
+			dialogue_box.start_dialogue("diver", 4)
 			
-			var high_scores = [6, 3, 5, 4, 2, 7, 1]
+			var high_scores = [6, 3, 5]
 			print(bubble_sort(high_scores))
 			
 		"balancer":
-			get_tree().current_scene.call_deferred("queue_free")
-			get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
+			dialogue_box.start_dialogue("balancer", 3)
+			
+			#get_tree().current_scene.call_deferred("queue_free")
+			#get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
 		"harvester":
-				start_dialogue("harvester", "Knowledge is power.")
+			dialogue_box.start_dialogue("harvester", 2)
+			
 		_:
-				start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
+			start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
 	_on_dialogue_system_closed() 
 
 func _on_dialogue_system_closed() -> void:

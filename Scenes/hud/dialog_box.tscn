@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy7p7yvejyyv"]
+[gd_scene load_steps=16 format=3 uid="uid://cy7p7yvejyyv"]
 
 [ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialogue_box.gd" id="1_21e2g"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_nirvc"]
@@ -15,7 +15,40 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mycsa"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aldu6"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0gyn"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf0rs"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvo5q"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pepjd"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlk1a"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_230cq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21e2g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0652i"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nirvc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cbnh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="DialogueBox" type="Panel"]
@@ -28,6 +61,44 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mgtrf")
 script = ExtResource("1_21e2g")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -275.0
+offset_right = -20.0
+offset_bottom = -125.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="YesButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nirvc")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_mycsa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aldu6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x0gyn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qf0rs")
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nirvc")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_yvo5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pepjd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wlk1a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_230cq")
+text = "No"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -40,6 +111,7 @@ theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -59,7 +131,6 @@ text = "This is empty"
 autowrap_mode = 1
 
 [node name="NextButton" type="Button" parent="."]
-z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,5 +139,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 71
 theme_override_styles/normal = SubResource("StyleBoxFlat_21e2g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0652i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nirvc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8cbnh")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="NextButton" to="." method="next_dialogue_line"]

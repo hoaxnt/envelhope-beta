@@ -6,37 +6,32 @@ extends Panel
 @onready var dialogue_box_name = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Name") as Label
 @onready var dialogue_box_message = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Message") as Label
 
-var current_npc_key = "diver"
-var current_line_index = 0    
+var current_npc_key = null
+var current_line_index = 1
 var max_line_count = 0        
 
 func _ready() -> void:
 	hide()
 
-func start_dialogue(npc_key: String):
-	print(ISLAND_NPC[current_npc_key]["dialogue"])
+func start_dialogue(npc_key: String, max_lines: int):
 	current_npc_key = npc_key
-	current_line_index = 0
+	current_line_index = 1
 	
-	var dialogue_dict = ISLAND_NPC[current_npc_key]["dialogue"]
-	
-	max_line_count = dialogue_dict.length()
 	dialogue_box_name.text = ISLAND_NPC[current_npc_key]["name"]
+	max_line_count = max_lines
 	
-	# Show the box and the first line
 	dialogue_box.show()
 	_update_dialogue_text()
 	
 func _update_dialogue_text():
 	var line_key = str(current_line_index)
-	var current_line = ISLAND_NPC[current_npc_key]["dialogue"].get(line_key, "--- Error ---")
+	var current_line = ISLAND_NPC[current_npc_key]["dialogue"].get(line_key, "...")
 	dialogue_box_message.text = current_line
 
 func next_dialogue_line():
-	print("Button Clicked. Current line: ", current_line_index, ", Max: ", 5)
-	if current_line_index < 5:
+	if current_line_index <= max_line_count:
 		current_line_index += 1
-		if current_line_index < 5:
+		if current_line_index <= max_line_count:
 			_update_dialogue_text()
 		else:
 			close_dialogue()
