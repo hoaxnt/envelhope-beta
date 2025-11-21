@@ -27,6 +27,7 @@ corner_radius_bottom_left = 150
 script = ExtResource("1_0fbou")
 
 [node name="DialogueBox" parent="." instance=ExtResource("9_nhd55")]
+visible = false
 z_index = 5
 offset_top = -250.0
 
@@ -235,6 +236,50 @@ theme_override_constants/margin_top = 300
 
 [node name="ObjectiveLabel" parent="Control5/MarginContainer" instance=ExtResource("11_q6mn5")]
 layout_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 150)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+columns = 3
+
+[node name="Button" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "A"
+icon = ExtResource("2_v7mo4")
+
+[node name="Button2" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "B"
+icon = ExtResource("2_v7mo4")
+
+[node name="Button3" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "x2"
+icon = ExtResource("2_v7mo4")
 
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]

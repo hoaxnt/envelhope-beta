@@ -8,7 +8,7 @@ var diver_name
 var diver_message
 
 signal dialogue_finished
-	
+#	fff 
 func handle_npc_interaction(npc_id: String) -> void:
 	
 	match npc_id:
