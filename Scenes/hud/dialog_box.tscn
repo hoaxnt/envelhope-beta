@@ -128,7 +128,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nirvc")
 theme_override_font_sizes/font_size = 40
 text = "This is empty"
-autowrap_mode = 1
+autowrap_mode = 2
 
 [node name="NextButton" type="Button" parent="."]
 layout_mode = 1
@@ -144,4 +144,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_nirvc")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8cbnh")
 metadata/_edit_lock_ = true
 
+[connection signal="pressed" from="VBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NoButton" to="." method="_on_no_button_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="next_dialogue_line"]

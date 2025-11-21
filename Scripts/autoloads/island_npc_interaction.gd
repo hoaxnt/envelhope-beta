@@ -8,16 +8,19 @@ var diver_name
 var diver_message
 
 signal dialogue_finished
-#	fff 
+
 func handle_npc_interaction(npc_id: String) -> void:
 	
 	match npc_id:
 		"diver":
-			dialogue_box.start_dialogue("diver", 4)
+			ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
 			
-			var high_scores = [6, 3, 5]
-			print(bubble_sort(high_scores))
-			
+			if ISLAND_NPC["current_objective"] == "none":
+				dialogue_box.start_dialogue("diver", 4, true, "gather_woods")
+			else:
+				dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
+				print("Comeback if you're done")
+	
 		"balancer":
 			dialogue_box.start_dialogue("balancer", 3)
 			

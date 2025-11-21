@@ -20,6 +20,12 @@ var ISLAND_NPC_STATS = {
 			"4": "Can you help me gather some woods?",
 		}
 	},
+	"diver_gather_woods": {
+		"name": "Diver",
+		"dialogue": {
+			"1": "Comeback to me if you're done",
+		}
+	},
 	"harvester": {
 		"name": "Harvester",
 		"dialogue": {
@@ -35,7 +41,10 @@ var ISLAND_NPC_STATS = {
 			"3": "Maybe not Hahaha!",
 		}
 	},
-	"current_npc_talking": "none"
+	"current_objective": "none",
+	"list_of_objectives": {
+		"gather_woods": "OBJECTIVE: Gather 30 woods and give it to Diver",
+	}
 }
 
 func _ready() -> void:
