@@ -15,7 +15,7 @@ var current_speed = base_speed
 var current_npc: Node = null # Type hint for clarity
 
 func _ready() -> void:
-	# Assuming the camera is meant to stay within the scene bounds
+
 	var screen_size = get_viewport_rect().size
 	camera.limit_right = screen_size.x
 	camera.limit_bottom = screen_size.y

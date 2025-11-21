@@ -7,7 +7,8 @@ extends Node
 var PLAYER_STATS = {
 	"hunger": 100.0,
 	"envelopes": 10000,
-	"cycle": 10
+	"cycle": 10,
+	"equipped_tool": "none",
 }
 
 var ISLAND_NPC_STATS = {

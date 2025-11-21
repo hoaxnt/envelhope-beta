@@ -24,6 +24,7 @@ Transition="*res://scenes/utils/transition.tscn"
 Tutorial="*res://scenes/utils/tutorial.tscn"
 GameData="*res://scripts/autoloads/game_data.gd"
 Hud="*res://scenes/hud/hud.tscn"
+InventoryManager="*res://scripts/autoloads/inventory_manager.gd"
 
 [debug]
 
@@ -48,6 +49,7 @@ enabled=PackedStringArray()
 [global_group]
 
 npcs=""
+player=""
 
 [input]
 
