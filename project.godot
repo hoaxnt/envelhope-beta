@@ -13,9 +13,7 @@ config_version=5
 config/name="Envelhope"
 run/main_scene="uid://dakmfuhim8ksf"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="uid://dxk4o3kip1r4m"
 config/icon="uid://dxk4o3kip1r4m"
-boot_splash/minimum_display_time=3000
 
 [autoload]
 
@@ -24,6 +22,8 @@ SaveLoad="*res://scripts/autoloads/save_load.gd"
 IslandNpcInteraction="*res://scripts/autoloads/island_npc_interaction.gd"
 Transition="*res://scenes/utils/transition.tscn"
 Tutorial="*res://scenes/utils/tutorial.tscn"
+GameData="*res://scripts/autoloads/game_data.gd"
+Hud="*res://scenes/hud/hud.tscn"
 
 [debug]
 
@@ -33,8 +33,8 @@ settings/size/resizable=true
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/window_width_override=1000
-window/size/window_height_override=550
+window/size/window_width_override=960
+window/size/window_height_override=540
 window/stretch/mode="viewport"
 
 [editor]
@@ -95,6 +95,11 @@ interact={
 paused_menu={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+show_objective={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
 ]
 }
 

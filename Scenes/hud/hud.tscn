@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=13 format=3 uid="uid://c1n41auotc7uk"]
 
 [ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://3rqjregok76e" path="res://scenes/hud/envelopes.tscn" id="3_0bx4p"]
 [ext_resource type="PackedScene" uid="uid://b6v6p84sq8x1a" path="res://scenes/hud/day_night_cycle.tscn" id="3_c45xl"]
 [ext_resource type="Texture2D" uid="uid://om54pqa2nl8x" path="res://assets/ui/envelope.png" id="4_n56i7"]
-[ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialog_box.gd" id="5_mgtrf"]
 [ext_resource type="Texture2D" uid="uid://5i30nwf1hvkt" path="res://assets/ui/bag.png" id="7_go0ap"]
 [ext_resource type="Texture2D" uid="uid://mxiklpr6dk07" path="res://assets/ui/current_quest.png" id="7_mq0y1"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="10_nhd55"]
+[ext_resource type="PackedScene" uid="uid://cy7p7yvejyyv" path="res://scenes/hud/dialog_box.tscn" id="9_nhd55"]
+[ext_resource type="PackedScene" uid="uid://dvmpuwcwltlnc" path="res://scenes/utils/objective_label.tscn" id="11_q6mn5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
@@ -23,20 +23,13 @@ corner_radius_top_right = 150
 corner_radius_bottom_right = 150
 corner_radius_bottom_left = 150
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
-bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.23610237, 0.16611111, 0.12567946, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_0fbou")
+
+[node name="DialogueBox" parent="." instance=ExtResource("9_nhd55")]
+visible = false
+z_index = 5
+offset_top = -250.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -220,56 +213,6 @@ icon = ExtResource("7_mq0y1")
 flat = true
 icon_alignment = 1
 
-[node name="Control4" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Panel" type="Panel" parent="Control4"]
-custom_minimum_size = Vector2(0, 250)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mgtrf")
-script = ExtResource("5_mgtrf")
-
-[node name="MarginContainer" type="MarginContainer" parent="Control4/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control4/Panel/MarginContainer"]
-layout_mode = 2
-
-[node name="Name" type="Label" parent="Control4/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("10_nhd55")
-theme_override_font_sizes/font_size = 50
-text = "Torling"
-
-[node name="Message" type="Label" parent="Control4/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1760, 125)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("10_nhd55")
-theme_override_font_sizes/font_size = 40
-text = "Get the scroll from the red dragon warrior and open it, after a few minutes come to me and open that scroll, the dragon warrior is waiting for you at the next room and I can't wait for you to be seen by him, if ever there is any conflict here just talk to me and I'm willing to help you."
-autowrap_mode = 1
-
 [node name="Control5" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 5
@@ -289,17 +232,54 @@ offset_left = -192.0
 offset_right = 192.0
 offset_bottom = 40.0
 grow_horizontal = 2
-theme_override_constants/margin_top = 185
+theme_override_constants/margin_top = 300
 
-[node name="ObjectiveLabel" type="Label" parent="Control5/MarginContainer"]
-custom_minimum_size = Vector2(800, 200)
+[node name="ObjectiveLabel" parent="Control5/MarginContainer" instance=ExtResource("11_q6mn5")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("10_nhd55")
-theme_override_font_sizes/font_size = 40
-text = "OBJECTIVE: none."
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(500, 150)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 4
+columns = 3
+
+[node name="Button" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "A"
+icon = ExtResource("2_v7mo4")
+
+[node name="Button2" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "B"
+icon = ExtResource("2_v7mo4")
+
+[node name="Button3" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "x2"
+icon = ExtResource("2_v7mo4")
 
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]

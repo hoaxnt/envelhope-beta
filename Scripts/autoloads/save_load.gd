@@ -1,7 +1,8 @@
 extends Node
 
 const CONFIG_PATH = "user://config.json"
-const SAVE_PATH = "user://game_data.json" 
+const PLAYER_DATA_PATH = "user://player_data.json" 
+const ISLAND_NPC_PATH = "user://island_npc.json"
 
 func save_game(data_to_save: Dictionary, path: String) -> Error:
 		var file = FileAccess.open(path, FileAccess.WRITE)

@@ -1,15 +1,7 @@
 extends CanvasLayer
 
-
-var game_stats = {
-	"hunger": 100.0,
-	"envelopes": 10000,
-	"cycle": 10
-}
-var loaded_data = {}
-
 func _ready() -> void:
-	SaveLoad.save_game(game_stats, SaveLoad.SAVE_PATH)
+	hide()
 	
 func _on_bag_button_pressed() -> void:
 	get_tree().current_scene.call_deferred("queue_free")

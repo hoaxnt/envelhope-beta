@@ -63,14 +63,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_6fgxk")
 theme_override_font_sizes/font_size = 60
-text = "  Controls  "
+text = "  Help  "
 
 [node name="MainMenuButton" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_6fgxk")
 theme_override_font_sizes/font_size = 50
-text = "  Back to Main Menu  "
+text = "  Save & Exit to Main Menu  "
 
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/HelpButton" to="PauseMenu" method="_on_help_button_pressed"]

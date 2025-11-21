@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://4h22a7hemgyb"]
+[gd_scene load_steps=42 format=3 uid="uid://4h22a7hemgyb"]
 
 [ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/characters/player/walk/walk_side.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://csml5lidw7k1i" path="res://scripts/characters/player.gd" id="1_yewv4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://assets/characters/player/idle/idle_up.png" id="4_atpat"]
 [ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/characters/player/walk/walk_down.png" id="5_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://assets/characters/player/walk/walk_up.png" id="7_eojnx"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="8_eojnx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqtwu"]
 radius = 4.0
@@ -264,7 +265,6 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_yewv4")
-sprint_speed = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
@@ -282,6 +282,7 @@ animation = &"idle_down"
 
 [node name="HeadText" type="Label" parent="."]
 visible = false
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -293,8 +294,9 @@ offset_right = 74.0
 offset_bottom = -13.645
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 9
-text = "Interact [E]"
+theme_override_fonts/font = ExtResource("8_eojnx")
+theme_override_font_sizes/font_size = 10
+text = "[E] interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvmpuwcwltlnc"]
+
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_k3ura"]
+[ext_resource type="Script" uid="uid://cf68fvjhvj26q" path="res://scripts/utils/objective_label.gd" id="2_vsxql"]
+
+[sub_resource type="Animation" id="Animation_q6mn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nhd55"]
+resource_name = "show_objective"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8nkf1"]
+_data = {
+&"RESET": SubResource("Animation_q6mn5"),
+&"show_objective": SubResource("Animation_nhd55")
+}
+
+[node name="ObjectiveLabel" type="Label"]
+custom_minimum_size = Vector2(800, 200)
+theme_override_fonts/font = ExtResource("1_k3ura")
+theme_override_font_sizes/font_size = 40
+text = "OBJECTIVE: Find the diver"
+horizontal_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("2_vsxql")
+metadata/_edit_use_anchors_ = true
+
+[node name="ObjectiveTextAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8nkf1")
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

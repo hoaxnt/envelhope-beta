@@ -1,28 +1,34 @@
 extends Node
 
-@export var dialog_box : Control
+@onready var dialogue_box = Hud.get_node("DialogueBox")
+@onready var dialogue_box_name = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Name")
+@onready var dialogue_box_message = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Message")
+@onready var ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
+var diver_name
+var diver_message
 
 signal dialogue_finished
-		
+#	fff 
 func handle_npc_interaction(npc_id: String) -> void:
-		match npc_id:
-				"diver":
-					
-					var high_scores = [6, 3, 5, 4,2,7,1]
-					print(bubble_sort(high_scores))
-					
-					#start_dialogue("diver", "Welcome to my shop!")
-				"balancer":
-					get_tree().current_scene.call_deferred("queue_free")
-					get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
-					
-						#start_dialogue("balancer", "Hello, adventurer.")
-				"harvester":
-						start_dialogue("harvester", "Knowledge is power.")
-				_:
-						start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
-						
-		_on_dialogue_system_closed() 
+	
+	match npc_id:
+		"diver":
+			dialogue_box.start_dialogue("diver", 4)
+			
+			var high_scores = [6, 3, 5]
+			print(bubble_sort(high_scores))
+			
+		"balancer":
+			dialogue_box.start_dialogue("balancer", 3)
+			
+			#get_tree().current_scene.call_deferred("queue_free")
+			#get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
+		"harvester":
+			dialogue_box.start_dialogue("harvester", 2)
+			
+		_:
+			start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
+	_on_dialogue_system_closed() 
 
 func _on_dialogue_system_closed() -> void:
 		dialogue_finished.emit()

@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://nv8phd5kfc7"]
+
+[ext_resource type="Script" uid="uid://2hger73fibag" path="res://scripts/utils/tutorial.gd" id="1_g50l0"]
+[ext_resource type="Texture2D" uid="uid://c885iuws6k2g8" path="res://assets/utils/mechanics.jpg" id="2_16obs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g50l0"]
+bg_color = Color(0.007843138, 0.007843138, 0.007843138, 0)
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_g50l0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 300.0
+offset_top = 80.0
+offset_right = 300.0
+offset_bottom = 80.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+texture = ExtResource("2_16obs")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g50l0")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 1407.0
+offset_top = 16.0
+offset_right = 1490.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 66
+text = " X "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "GAME CONTROLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "WASD             Move (Forward, Back, Strafe Left, Strafe Right)
+E	                      Interact / Use Object
+Bag	                 Open Inventory
+Quest             Open Journal / Quests Log
+Esc	                  Pause Game / Open Main Menu"
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=53 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://scripts/chapters/chapter_1.gd" id="1_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="5_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://cxvc8000q5li5" path="res://scenes/characters/npc_island/harvester.tscn" id="5_r7jkp"]
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="6_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/hud/hud.tscn" id="7_sx3b6"]
 [ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="10_0ad4i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
@@ -75,7 +74,7 @@ animations = [{
 size = Vector2(121, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l01ag"]
-size = Vector2(44, 38)
+size = Vector2(89, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmv4y"]
 size = Vector2(28, 15)
@@ -221,9 +220,6 @@ scale = Vector2(10.333373, 8.666707)
 sprite_frames = SubResource("SpriteFrames_cq1mj")
 autoplay = "default"
 
-[node name="Hud" parent="." instance=ExtResource("7_sx3b6")]
-visible = false
-
 [node name="Tutorial" parent="." instance=ExtResource("10_0ad4i")]
 visible = false
 
@@ -235,7 +231,7 @@ position = Vector2(14.5, -88.5)
 shape = SubResource("RectangleShape2D_0ad4i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(164, -66)
+position = Vector2(165.5, -61.5)
 shape = SubResource("RectangleShape2D_l01ag")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
@@ -356,8 +352,13 @@ shape = SubResource("CircleShape2D_ynuiw")
 position = Vector2(145, 284)
 shape = SubResource("CircleShape2D_nq4ne")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(418, 216)
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-193, -70)
 shape = SubResource("CircleShape2D_pqu7u")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
