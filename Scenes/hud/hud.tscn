@@ -13,15 +13,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhd55"]
 bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 border_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6mn5"]
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
@@ -71,15 +67,16 @@ z_index = 5
 offset_top = -250.0
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(500, 150)
+clip_contents = true
+custom_minimum_size = Vector2(400, 150)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -250.0
+offset_left = -200.0
 offset_top = -150.0
-offset_right = 250.0
+offset_right = 200.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nhd55")
@@ -97,7 +94,7 @@ offset_right = 184.5
 offset_bottom = 41.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 24
+theme_override_constants/h_separation = 8
 columns = 3
 
 [node name="Button" type="Button" parent="Panel/GridContainer"]

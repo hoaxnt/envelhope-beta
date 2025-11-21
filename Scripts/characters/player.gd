@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var base_speed = 80
 @onready var sprint_speed = 140
 
+@onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 
@@ -37,20 +38,24 @@ func get_input_and_animate():
 	if input_direction.length() > 0:
 			if abs(input_direction.x) > abs(input_direction.y):
 					if input_direction.x < 0:
-							anim.play("walk_side")
-							anim.flip_h = true
-							last_direction = "left"
+						dialogue_box.close_dialogue()
+						anim.play("walk_side")
+						anim.flip_h = true
+						last_direction = "left"
 					else:
-							anim.play("walk_side")
-							anim.flip_h = false
-							last_direction = "right"
+						dialogue_box.close_dialogue()
+						anim.play("walk_side")
+						anim.flip_h = false
+						last_direction = "right"
 			else:
 					if input_direction.y < 0:
-							anim.play("walk_up")
-							last_direction = "up"
+						dialogue_box.close_dialogue()
+						anim.play("walk_up")
+						last_direction = "up"
 					else:
-							anim.play("walk_down")
-							last_direction = "down"
+						dialogue_box.close_dialogue()
+						anim.play("walk_down")
+						last_direction = "down"
 	else:
 			match last_direction:
 					"up":
