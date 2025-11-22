@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://bddwrasoh2bum"]
 
-[ext_resource type="Script" uid="uid://dauut4mw71k3u" path="res://Scripts/minigames/island/pearl_diving.gd" id="1_a6bgs"]
+[ext_resource type="Script" uid="uid://dauut4mw71k3u" path="res://scripts/minigames/island/pearl_diving.gd" id="1_a6bgs"]
 [ext_resource type="Texture2D" uid="uid://cxx5nrliooey7" path="res://assets/island/minigame_pearldiving/Tileset1.png" id="2_wcao6"]
 [ext_resource type="Texture2D" uid="uid://3m6o5f52vnau" path="res://assets/island/minigame_pearldiving/Tileset3.png" id="3_wpnsi"]
 

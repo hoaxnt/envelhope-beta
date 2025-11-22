@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://crs4wyn58p5ct"]
+
+[ext_resource type="Script" uid="uid://dlthb080w46a6" path="res://scripts/hud/hotbar_slot.gd" id="1_56npp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhd55"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6mn5"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_567j1"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsgyl"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nkf1"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjjd2"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vblv"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_558d4"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m1a1"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iioc1"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[node name="HotbarSlot" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 150)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nhd55")
+script = ExtResource("1_56npp")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -41.5
+offset_right = 184.5
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 8
+columns = 3
+
+[node name="Slot1" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6mn5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_567j1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nsgyl")
+
+[node name="Slot2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8nkf1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jjjd2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8vblv")
+
+[node name="Slot3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_558d4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4m1a1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iioc1")
