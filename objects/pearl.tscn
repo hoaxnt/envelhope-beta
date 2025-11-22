@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvydpvo7w1poi"]
+
+[ext_resource type="Texture2D" uid="uid://cn43ev0sctfhp" path="res://assets/island/minigame_pearldiving/pearl.png" id="1_f34y1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf05h"]
+radius = 15.132746
+
+[node name="pearl" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2647059, 0.2647059)
+texture = ExtResource("1_f34y1")
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_xf05h")
+
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
