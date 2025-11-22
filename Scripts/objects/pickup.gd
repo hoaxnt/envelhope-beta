@@ -4,22 +4,25 @@ extends Area2D
 @export var icon: CompressedTexture2D = null
 @export var interaction_key: Key = KEY_E
 @export var player_tag: String = "player"
+@onready var item_label: Label = $Label
 
 var player_in_range: bool = false
 var player_body: Node2D = null
 
 func _ready():
-	print("game")
+	item_label.hide()
 	if !has_node("/root/InventoryManager"):
 		push_error("Error: InventoryManager Autoload is missing or incorrectly named.")
 
 func _on_body_entered(body: Node2D):
 	if body.is_in_group(player_tag):
+		item_label.show()
 		player_in_range = true
 		player_body = body
 
 func _on_body_exited(body: Node2D):
 	if body == player_body:
+		item_label.hide()
 		player_in_range = false
 		player_body = null
 
@@ -32,5 +35,4 @@ func _pick_up():
 
 	if InventoryManager:
 			InventoryManager.add_item(item_name)
-
 	queue_free()

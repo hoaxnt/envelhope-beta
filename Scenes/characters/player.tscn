@@ -280,6 +280,8 @@ shape = SubResource("CapsuleShape2D_6eyoc")
 sprite_frames = SubResource("SpriteFrames_wocps")
 animation = &"idle_down"
 
+[node name="HandSocket" type="Node2D" parent="AnimatedSprite2D"]
+
 [node name="HeadText" type="Label" parent="."]
 visible = false
 texture_filter = 1
