@@ -260,7 +260,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -280,6 +280,8 @@ shape = SubResource("CapsuleShape2D_6eyoc")
 sprite_frames = SubResource("SpriteFrames_wocps")
 animation = &"idle_down"
 
+[node name="HandSocket" type="Node2D" parent="AnimatedSprite2D"]
+
 [node name="HeadText" type="Label" parent="."]
 visible = false
 texture_filter = 1
@@ -296,7 +298,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("8_eojnx")
 theme_override_font_sizes/font_size = 10
-text = "[E] interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true

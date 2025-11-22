@@ -7,7 +7,8 @@ extends Node
 var PLAYER_STATS = {
 	"hunger": 100.0,
 	"envelopes": 10000,
-	"cycle": 10
+	"cycle": 10,
+	"equipped_tool": "none",
 }
 
 var ISLAND_NPC_STATS = {
@@ -18,6 +19,12 @@ var ISLAND_NPC_STATS = {
 			"2": "This is the time to dive regularly and make a fortune, but we've run into a serious problem...",
 			"3": "Our current boat is wrecked beyond repair. We need to craft a completely new one, and I'm missing the right materials.",
 			"4": "Can you help me gather some woods?",
+		}
+	},
+	"diver_gather_woods": {
+		"name": "Diver",
+		"dialogue": {
+			"1": "Comeback to me if you're done",
 		}
 	},
 	"harvester": {
@@ -35,7 +42,10 @@ var ISLAND_NPC_STATS = {
 			"3": "Maybe not Hahaha!",
 		}
 	},
-	"current_npc_talking": "none"
+	"current_objective": "none",
+	"list_of_objectives": {
+		"gather_woods": "OBJECTIVE: Gather 30 woods and give it to Diver",
+	}
 }
 
 func _ready() -> void:

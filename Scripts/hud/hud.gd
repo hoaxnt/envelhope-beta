@@ -1,12 +1,14 @@
 extends CanvasLayer
 
+@onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
+@onready var inventory_panel = Hud.get_node("Control4")
+
 func _ready() -> void:
+	inventory_panel.hide()
 	hide()
 	
 func _on_bag_button_pressed() -> void:
-	get_tree().current_scene.call_deferred("queue_free")
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/pearl_diving.tscn")
-	print("bug")
+	inventory_panel.visible = not inventory_panel.visible
 
 func _on_view_quest_button_pressed() -> void:
-	print("view quest")
+	obj.play("show_objective")

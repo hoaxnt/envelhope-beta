@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var global_state = get_node("/root/GlobalState")
 @onready var CONFIG = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
+@onready var tutorial = Hud.get_node("Tutorial")
 
 func _ready() -> void:
 	Hud.show()
@@ -12,7 +13,7 @@ func _input(event: InputEvent) -> void:
 		
 func _on_timer_timeout() -> void:
 	if CONFIG.get("user_opened_once") == false:
-		Tutorial.show()
+		tutorial.show()
 	else:
-		Tutorial.hide()
+		tutorial.hide()
 		
