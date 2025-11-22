@@ -1,6 +1,6 @@
 # HotbarSlot.gd
 extends Control
-
+#REMOVE UNIMPORTANT CODE AND FIX THE HOTBAR FUNCTIONALITY OR MAYBE THINK OF ANOTHER IDEA
 ## --- References ---
 @onready var icon_display: TextureRect = Hud.get_node("Control6/Icon")
 @onready var label_display: Label = $Label #Hud.get_node("Control6/Label")
