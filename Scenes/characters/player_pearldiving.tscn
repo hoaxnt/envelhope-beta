@@ -1,0 +1,162 @@
+[gd_scene load_steps=23 format=3 uid="uid://xt2vbq4u5q7y"]
+
+[ext_resource type="Texture2D" uid="uid://csfa785brf0g6" path="res://assets/characters/player_pearldiving/swim/Swim.png" id="1_40nl7"]
+[ext_resource type="Texture2D" uid="uid://brwdywuw6r0i3" path="res://assets/characters/player_pearldiving/swim/Swim2.png" id="2_c5jfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40nl7"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5jfx"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hxr1"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44jhr"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuwge"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd66q"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5kw0"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10ok7"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fwfi"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yow58"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tcum"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7oxv"]
+atlas = ExtResource("1_40nl7")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eboir"]
+atlas = ExtResource("2_c5jfx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdm1m"]
+atlas = ExtResource("2_c5jfx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loouy"]
+atlas = ExtResource("2_c5jfx")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x515"]
+atlas = ExtResource("2_c5jfx")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqqsl"]
+atlas = ExtResource("2_c5jfx")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tsln"]
+atlas = ExtResource("2_c5jfx")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olqkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40nl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5jfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hxr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44jhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuwge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd66q")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5kw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10ok7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fwfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yow58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tcum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7oxv")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eboir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdm1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loouy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x515")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqqsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tsln")
+}],
+"loop": true,
+"name": &"swim_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40nl7"]
+radius = 23.0
+
+[node name="player_pearldiving" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_olqkr")
+animation = &"swim"
+autoplay = "swim"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0)
+shape = SubResource("CircleShape2D_40nl7")
