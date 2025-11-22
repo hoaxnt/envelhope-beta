@@ -5,7 +5,7 @@ var player_in_area = false
 
 func _ready():
 	if state == "no pearl" :
-		$growth_timer.start()
+		$spawn_timer.start()
 		
 func _process(delta):
 	if state == "no pearl":
