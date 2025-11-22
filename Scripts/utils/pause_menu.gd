@@ -2,6 +2,7 @@ extends Control
 
 @onready var canvas_layer : CanvasLayer
 @onready var tutorial = Hud.get_node("Tutorial")
+
 var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var pause_menu_instance = null
 
@@ -16,6 +17,7 @@ func _on_main_menu_button_pressed() -> void:
 	get_tree().paused = false
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/utils/main_menu.tscn")
 	get_tree().current_scene.call_deferred("queue_free")
+	Hud.hide()
 	canvas_layer.hide()
 
 func _pause_game() -> void:

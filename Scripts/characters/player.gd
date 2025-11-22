@@ -104,14 +104,11 @@ func get_input_and_animate():
 							anim.play("idle_side")
 							anim.flip_h = false
 
-# --- Interaction Zone Signal Handlers ---
-
 func _on_interaction_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("npcs"):
 			current_npc = body
 			head_text.show()
 			
-			# Display the NPC's name above its head (if it has the node)
 			var npc_label = body.get_node_or_null("HeadText")
 			if is_instance_valid(npc_label):
 					npc_label.show()
@@ -120,7 +117,7 @@ func _on_interaction_zone_body_entered(body: Node2D) -> void:
 func _on_interaction_zone_body_exited(body: Node2D) -> void:
 	if body == current_npc:
 		current_npc = null
-		head_text.hide() # Hide player's prompt
+		head_text.hide()
 		
 		var npc_label = body.get_node_or_null("HeadText")
 		if is_instance_valid(npc_label):

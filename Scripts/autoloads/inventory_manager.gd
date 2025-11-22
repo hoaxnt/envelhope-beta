@@ -24,7 +24,6 @@ func add_item(item_name: String, quantity: int = 1) -> bool:
 	print("Inventory is full. Cannot add %s." % item_name)
 	return false
 
-# Function to remove an item (e.g., when crafting or using)
 func remove_item(item_name: String, quantity: int = 1) -> bool:
 	if !inventory.has(item_name):
 		print("Cannot remove %s. Not found in inventory." % item_name)
@@ -37,7 +36,7 @@ func remove_item(item_name: String, quantity: int = 1) -> bool:
 			inventory.erase(item_name)
 				
 		print("Removed %s %s." % [quantity, item_name])
-		inventory_changed.emit() # Notify listeners
+		inventory_changed.emit()
 		return true
 	else:
 		print("Not enough %s to remove." % item_name)
