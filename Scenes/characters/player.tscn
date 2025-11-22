@@ -10,8 +10,8 @@
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="8_eojnx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqtwu"]
-radius = 4.0
-height = 12.0
+radius = 7.0
+height = 22.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eyoc"]
 radius = 12.0
@@ -267,7 +267,6 @@ texture_filter = 1
 script = ExtResource("1_yewv4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_kqtwu")
 
 [node name="Area2D" type="Area2D" parent="."]
