@@ -9,6 +9,9 @@ var diver_message
 
 signal dialogue_finished
 
+const REQUIRED_WOOD = 2
+const WOOD_ITEM_NAME = "Log"
+
 func handle_npc_interaction(npc_id: String) -> void:
 	
 	match npc_id:
@@ -19,8 +22,33 @@ func handle_npc_interaction(npc_id: String) -> void:
 				dialogue_box.start_dialogue("diver", 4, true, "gather_woods")
 			else:
 				dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
-				print("Comeback if you're done")
+				var wood_count = InventoryManager.inventory.get(WOOD_ITEM_NAME, 0)
+				print("wood count ", wood_count)
+				
+				if wood_count >= REQUIRED_WOOD:
+					print("NICE WELL DONE!")
+					
+					InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
+					ISLAND_NPC["current_objective"] = "none"
+					SaveLoad.save_game(ISLAND_NPC, SaveLoad.ISLAND_NPC_PATH)
+				else:
+					print("Comeback if you're done")
+					
+					
+				
 	
+					#
+					#
+				#else:
+					## D. Show the "come back when you're done" dialogue (e.g., dialogue ID 1)
+					#dialogue_box.start_dialogue("diver_gather_woods", 1)
+					#print("Comeback if you're done. Need %d more wood." % (REQUIRED_WOOD - wood_count))
+			#
+			## If you have a completed state:
+			#elif ISLAND_NPC["current_objective"] == "completed_gather_woods":
+				## Show a post-mission dialogue
+				#dialogue_box.start_dialogue("diver_post_mission", 1)
+	#
 		"balancer":
 			dialogue_box.start_dialogue("balancer", 3)
 			
