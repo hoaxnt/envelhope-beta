@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://xt2vbq4u5q7y" path="res://scenes/characters/player_pearldiving.tscn" id="4_g6jhb"]
 [ext_resource type="PackedScene" uid="uid://p016lxodfcex" path="res://scenes/utils/pearl.tscn" id="5_4x152"]
 [ext_resource type="Texture2D" uid="uid://cn43ev0sctfhp" path="res://assets/island/minigame_pearldiving/pearl.png" id="6_qpj22"]
-[ext_resource type="PackedScene" path="res://Scenes/minigames/island/fish_obstacle.tscn" id="7_wrw2s"]
-[ext_resource type="PackedScene" path="res://Scenes/minigames/island/movement_area.tscn" id="8_88g0q"]
+[ext_resource type="PackedScene" uid="uid://bjocvfb1q65td" path="res://Scenes/minigames/island/fish_obstacle.tscn" id="7_wrw2s"]
+[ext_resource type="PackedScene" uid="uid://ddjjen64m35ag" path="res://Scenes/minigames/island/movement_area.tscn" id="8_88g0q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpnsi"]
 texture = ExtResource("2_wcao6")
@@ -2744,7 +2744,8 @@ position = Vector2(351, 449)
 position = Vector2(145, 427)
 
 [node name="fish_obstacle" parent="." instance=ExtResource("7_wrw2s")]
-position = Vector2(599, 272)
+position = Vector2(295, 298)
+scale = Vector2(0.5, 0.5)
 script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["player"]]
