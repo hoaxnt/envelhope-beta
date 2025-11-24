@@ -49,6 +49,7 @@ enabled=PackedStringArray()
 
 npcs=""
 player=""
+trees=""
 
 [input]
 

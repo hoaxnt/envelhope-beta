@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://mat5nmwemvko"]
+
+[ext_resource type="Texture2D" uid="uid://kcsl56t0cm71" path="res://assets/island/environment/trees.png" id="1_j00qk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j00qk"]
+radius = 34.0147
+
+[node name="Tree" type="Area2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 28)
+texture = ExtResource("1_j00qk")
+region_enabled = true
+region_rect = Rect2(0, 120, 16, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j00qk")
+region_enabled = true
+region_rect = Rect2(32, 64, 32, 64)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j00qk")
