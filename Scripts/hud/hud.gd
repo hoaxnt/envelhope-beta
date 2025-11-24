@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func _on_action_button_pressed() -> void:
 		action_button_pressed_signal.emit()
-		print("is action pressed: ", is_action_pressed)
+		print("is action pressedxxxxxxxxx: ", is_action_pressed)

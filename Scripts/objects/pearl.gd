@@ -7,7 +7,7 @@ func _ready():
 	if state == "no pearl" :
 		$spawn_timer.start()
 		
-func _process(delta):
+func _process(_delta):
 	if state == "no pearl":
 		$AnimatedSprite2D.play("no pearl")
 	if state == "pearl":

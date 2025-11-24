@@ -1,10 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqekfhy05luhm"]
+[gd_scene load_steps=6 format=3 uid="uid://cqekfhy05luhm"]
 
 [ext_resource type="Texture2D" uid="uid://duoo350i1i153" path="res://assets/island/tools/axe.png" id="1_7nh11"]
+
+[sub_resource type="Animation" id="Animation_7nh11"]
+resource_name = "slash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.8197902, 1.3578662, -0.8197902]
+}
+
+[sub_resource type="Animation" id="Animation_r6els"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_yg5nd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.8197902]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6els"]
+_data = {
+&"RESET": SubResource("Animation_yg5nd"),
+&"idle": SubResource("Animation_r6els"),
+&"slash": SubResource("Animation_7nh11")
+}
 
 [node name="AxeEquipped" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.8197902
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_7nh11")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r6els")
+}
