@@ -14,6 +14,9 @@ signal dialogue_finished
 const REQUIRED_WOOD = 3
 const WOOD_ITEM_NAME = "Log"
 
+func _ready() -> void:
+	print(boat.name)
+
 func handle_npc_interaction(npc_id: String) -> void:
 	
 	match npc_id:
