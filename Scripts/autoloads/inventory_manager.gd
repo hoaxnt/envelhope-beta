@@ -63,3 +63,6 @@ func deselect_item():
 		selected_item_name = ""
 		tool_selected.emit("")
 		print("Manager: Item deselected/unequipped.")
+		
+func is_axe_selected() -> bool:
+	return selected_item_name == "Axe"
