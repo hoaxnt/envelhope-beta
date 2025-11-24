@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+@onready var playerChoppingAudioStream = $"AudioStreamPlayer-CHOP"
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var head_text = $HeadText
