@@ -80,12 +80,21 @@ func get_input_and_animate():
 						anim.play("walk_side")
 						anim.flip_h = true
 						last_direction = "left"
+						
+						if current_tool_instance:
+							current_tool_instance.scale.x = -0.5
+							current_tool_instance.position.x = -15
+							
 					else:
 						dialogue_box.close_dialogue()
 						inventory.hide()
 						anim.play("walk_side")
 						anim.flip_h = false
 						last_direction = "right"
+						
+						if current_tool_instance:
+							current_tool_instance.scale.x = 0.5
+							current_tool_instance.position.x = 0
 			else:
 					if input_direction.y < 0:
 						inventory.hide()
