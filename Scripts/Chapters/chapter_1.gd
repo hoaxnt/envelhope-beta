@@ -10,19 +10,15 @@ var backgroundMusicOn = true
 func _ready() -> void:
 	Hud.show()
 	
-func _process(_delta):
-	update_music_stats()
+#func _process(_delta):
+	#update_music_stats()
 	
-func update_music_stats():
-	if backgroundMusicOn:
-		if !musicAudioStreamBG.playing:
-			musicAudioStreamBG.play()
-	else:
-		musicAudioStreamBG.stop()
-		
-		
-			
-			
+#func update_music_stats():
+	#if backgroundMusicOn:
+		#if !musicAudioStreamBG.playing:
+			#musicAudioStreamBG.play()
+	#else:
+		#musicAudioStreamBG.stop()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):

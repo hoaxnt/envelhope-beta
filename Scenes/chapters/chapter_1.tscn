@@ -1,22 +1,17 @@
-[gd_scene load_steps=57 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=56 format=3 uid="uid://btiivx7viv3y6"]
 
-[ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://Scripts/Chapters/chapter_1.gd" id="1_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://Scenes/maps/island/island.tscn" id="2_2t2a1"]
-[ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://Scenes/characters/npc_island/diver.tscn" id="3_lhans"]
-[ext_resource type="PackedScene" uid="uid://csuro1o2pcce1" path="res://Scenes/characters/npc_island/balancer.tscn" id="4_gbphn"]
-[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://Scenes/characters/player.tscn" id="4_itjef"]
-[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://Scripts/utils/portal.gd" id="5_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://cxvc8000q5li5" path="res://Scenes/characters/npc_island/harvester.tscn" id="5_r7jkp"]
+[ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://scripts/chapters/chapter_1.gd" id="1_k2l3u"]
+[ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
+[ext_resource type="PackedScene" uid="uid://cf5hru462vhwc" path="res://scenes/characters/npc_island/diver.tscn" id="3_lhans"]
+[ext_resource type="PackedScene" uid="uid://csuro1o2pcce1" path="res://scenes/characters/npc_island/balancer.tscn" id="4_gbphn"]
+[ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="4_itjef"]
+[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="5_k2l3u"]
+[ext_resource type="PackedScene" uid="uid://cxvc8000q5li5" path="res://scenes/characters/npc_island/harvester.tscn" id="5_r7jkp"]
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="6_k2l3u"]
-[ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://Scenes/utils/tutorial.tscn" id="10_0ad4i"]
+[ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="10_0ad4i"]
 [ext_resource type="PackedScene" uid="uid://dkughpfrdxuap" path="res://objects/axe.tscn" id="10_l01ag"]
 [ext_resource type="PackedScene" uid="uid://b0gbe4vyonscx" path="res://objects/log.tscn" id="11_l01ag"]
 [ext_resource type="PackedScene" uid="uid://mat5nmwemvko" path="res://objects/tree.tscn" id="12_pmv4y"]
-<<<<<<< HEAD
-[ext_resource type="AudioStream" uid="uid://dtnq0tkwyd5i7" path="res://assets/sfx/07 One Thing_s for Shore (Beach H-Scene).mp3" id="13_wjdj8"]
-=======
-[ext_resource type="PackedScene" uid="uid://clreda6v6x7tj" path="res://objects/boat.tscn" id="13_pqu7u"]
->>>>>>> 0acaf2f09e2ba5d7e9111ffe18f5720b23ffb7ef
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
 radius = 6.8259025
@@ -401,15 +396,6 @@ position = Vector2(756, 399)
 
 [node name="Tree6" parent="." instance=ExtResource("12_pmv4y")]
 position = Vector2(338, 639)
-
-<<<<<<< HEAD
-[node name="AudioStreamPlayer-BGM" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_wjdj8")
-volume_db = -20.0
-=======
-[node name="Boat" parent="." instance=ExtResource("13_pqu7u")]
-position = Vector2(1367, 59)
->>>>>>> 0acaf2f09e2ba5d7e9111ffe18f5720b23ffb7ef
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
