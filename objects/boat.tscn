@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://clreda6v6x7tj"]
+
+[ext_resource type="Texture2D" uid="uid://bncioqti4j101" path="res://assets/island/environment/farming_fishing.png" id="1_0jw6q"]
+[ext_resource type="Script" uid="uid://b7b30e166wkvl" path="res://scripts/objects/boat.gd" id="1_kfc0h"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_kfuc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d75dn"]
+radius = 173.00288
+
+[sub_resource type="Animation" id="Animation_0jw6q"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1.5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kfuc4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfuc4"]
+_data = {
+&"RESET": SubResource("Animation_kfuc4"),
+&"idle": SubResource("Animation_0jw6q")
+}
+
+[node name="Boat" type="Area2D"]
+script = ExtResource("1_kfc0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d75dn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_0jw6q")
+region_enabled = true
+region_rect = Rect2(352, 448, 128, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kfuc4")
+}
+autoplay = "idle"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -46.0
+offset_right = 58.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_kfuc4")
+text = "Pearl Diving [E]"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

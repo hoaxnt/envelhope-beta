@@ -39,7 +39,8 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _cut_tree():
 		var anim = get_parent().get_node("Player/AnimatedSprite2D/HandSocket/AxeEquipped/AnimationPlayer")
-		anim.play("slash")
+		if anim:
+			anim.play("slash")
 		
 		if not InventoryManager.is_axe_selected():
 				print("Need an axe to chop!")

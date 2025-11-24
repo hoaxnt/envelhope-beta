@@ -4,12 +4,14 @@ extends Node
 @onready var dialogue_box_name = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Name")
 @onready var dialogue_box_message = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Message")
 @onready var ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
+@onready var boat = get_node("/root/Chapter1/Boat")
+
 var diver_name
 var diver_message
 
 signal dialogue_finished
 
-const REQUIRED_WOOD = 2
+const REQUIRED_WOOD = 30
 const WOOD_ITEM_NAME = "Log"
 
 func handle_npc_interaction(npc_id: String) -> void:
@@ -18,21 +20,28 @@ func handle_npc_interaction(npc_id: String) -> void:
 		"diver":
 			ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
 			
-			if ISLAND_NPC["current_objective"] == "none":
-				dialogue_box.start_dialogue("diver", 4, true, "gather_woods")
+			if ISLAND_NPC["diver_objective"] == "completed":
+				dialogue_box.start_dialogue("diver_gather_woods_completed", 1, false, "none")
 			else:
-				dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
-				var wood_count = InventoryManager.inventory.get(WOOD_ITEM_NAME, 0)
-				print("wood count ", wood_count)
-				
-				if wood_count >= REQUIRED_WOOD:
-					print("NICE WELL DONE!")
-					
-					InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
-					ISLAND_NPC["current_objective"] = "none"
-					SaveLoad.save_game(ISLAND_NPC, SaveLoad.ISLAND_NPC_PATH)
+				if ISLAND_NPC["current_objective"] == "none":
+					dialogue_box.start_dialogue("diver", 4, true, "gather_woods")
 				else:
-					print("Comeback if you're done")
+					dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
+					var wood_count = InventoryManager.inventory.get(WOOD_ITEM_NAME, 0)
+					print("wood count ", wood_count)
+					
+					if wood_count >= REQUIRED_WOOD:
+						print("NICE WELL DONE!")
+						if boat:
+							boat.show()
+						dialogue_box.start_dialogue("diver_gather_woods_completed", 1, false, "none")
+						InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
+						ISLAND_NPC["current_objective"] = "none"
+						ISLAND_NPC["diver_objective"] = "completed"
+						SaveLoad.save_game(ISLAND_NPC, SaveLoad.ISLAND_NPC_PATH)
+					else:
+						dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
+						print("Comeback if you're done")
 					
 					
 				
