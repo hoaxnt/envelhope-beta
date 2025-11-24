@@ -101,6 +101,7 @@ theme_override_constants/h_separation = 40
 theme_override_constants/line_separation = 50
 theme_override_font_sizes/font_size = 40
 theme_override_styles/panel = SubResource("StyleBoxFlat_7pnlf")
+allow_reselect = true
 max_columns = 5
 icon_mode = 0
 fixed_icon_size = Vector2i(150, 150)

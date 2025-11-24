@@ -2,6 +2,8 @@ extends Control
 
 @onready var item_list: ItemList = Hud.get_node("Control4/Panel/VBoxContainer/Panel/ItemList")
 @onready var hotbar_container: HBoxContainer = Hud.get_node("HBoxContainer")
+@onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
+
 
 const ITEM_ICONS = {
 		"Axe": preload("res://assets/island/tools/axe.png"),
@@ -32,8 +34,8 @@ func _update_item_list():
 func _on_item_list_selected(index: int):
 	var item_name = item_list.get_item_metadata(index)
 	InventoryManager.select_item(item_name)
-	print("UI: Item selected from list: " + item_name)
+	PLAYER_DATA["equipped_tool"] = item_name
+	SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 	
 func _on_unequip_button_pressed() -> void:
-	InventoryManager.select_item("Axe")
-	pass # Replace with function body.
+	InventoryManager.select_item(PLAYER_DATA["equipped_tool"])	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=55 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://scripts/chapters/chapter_1.gd" id="1_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="6_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="10_0ad4i"]
 [ext_resource type="PackedScene" uid="uid://dkughpfrdxuap" path="res://objects/axe.tscn" id="10_l01ag"]
+[ext_resource type="PackedScene" uid="uid://b0gbe4vyonscx" path="res://objects/log.tscn" id="11_l01ag"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2l3u"]
 radius = 6.8259025
@@ -364,6 +365,12 @@ autostart = true
 [node name="Axe" parent="." instance=ExtResource("10_l01ag")]
 position = Vector2(754, 161)
 scale = Vector2(0.975, 0.975)
+
+[node name="Log" parent="." instance=ExtResource("11_l01ag")]
+position = Vector2(852, 58)
+
+[node name="Log2" parent="." instance=ExtResource("11_l01ag")]
+position = Vector2(770, 51)
 
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

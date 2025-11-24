@@ -280,7 +280,7 @@ sprite_frames = SubResource("SpriteFrames_wocps")
 animation = &"idle_down"
 
 [node name="HandSocket" type="Node2D" parent="AnimatedSprite2D"]
-position = Vector2(18, 5)
+position = Vector2(0, 7)
 
 [node name="HeadText" type="Label" parent="."]
 visible = false

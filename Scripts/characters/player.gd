@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
+@onready var inventory = Hud.get_node("Control4")
 
 var current_tool_instance: Node2D = null
 var last_direction = "down"
@@ -19,6 +20,7 @@ var current_npc: Node = null
 
 const TOOL_SCENES = {
 		"Axe": "res://objects/axe_equipped.tscn",
+		"Log": "res://objects/log_equipped.tscn",
 }
 
 func _ready() -> void:
@@ -73,22 +75,26 @@ func get_input_and_animate():
 	if input_direction.length() > 0:
 			if abs(input_direction.x) > abs(input_direction.y):
 					if input_direction.x < 0:
+						inventory.hide()
 						dialogue_box.close_dialogue()
 						anim.play("walk_side")
 						anim.flip_h = true
 						last_direction = "left"
 					else:
 						dialogue_box.close_dialogue()
+						inventory.hide()
 						anim.play("walk_side")
 						anim.flip_h = false
 						last_direction = "right"
 			else:
 					if input_direction.y < 0:
+						inventory.hide()
 						dialogue_box.close_dialogue()
 						anim.play("walk_up")
 						last_direction = "up"
 					else:
 						dialogue_box.close_dialogue()
+						inventory.hide()
 						anim.play("walk_down")
 						last_direction = "down"
 	else:
