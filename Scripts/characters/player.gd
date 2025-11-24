@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
-@onready var head_text = $HeadText
+@onready var head_text = Hud.get_node("Player/HeadText")
 @onready var hand_socket = $AnimatedSprite2D/HandSocket
 @onready var base_speed = 80
 @onready var sprint_speed = 140
@@ -31,11 +31,11 @@ func _ready() -> void:
 		InventoryManager.tool_selected.connect(equip_tool)
 	else:
 		push_error("InventoryManager Autoload not found!")
-
+		
 func _physics_process(_delta: float) -> void:
 	get_input_and_animate()
 	move_and_slide()
-
+	
 func equip_tool(tool_name: String):
 	if current_tool_instance != null:
 		current_tool_instance.queue_free()

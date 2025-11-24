@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://q1l722lvfn41"]
+[gd_scene load_steps=7 format=3 uid="uid://q1l722lvfn41"]
 
 [ext_resource type="Script" uid="uid://baens5l88jpql" path="res://scripts/utils/inventory.gd" id="1_gmhcc"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_mnd8v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ccb21"]
 bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmhcc"]
+bg_color = Color(0.7472856, 0.16943038, 0.17088568, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udak2"]
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
@@ -55,6 +58,7 @@ theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 500
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -66,6 +70,16 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_mnd8v")
 theme_override_font_sizes/font_size = 50
 text = "Inventory"
+
+[node name="UnequipButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_mnd8v")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmhcc")
+text = "  Unequip  "
 
 [node name="Panel" type="Panel" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(950, 600)
@@ -82,6 +96,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 theme_override_constants/h_separation = 40
 theme_override_constants/line_separation = 50
 theme_override_font_sizes/font_size = 40
@@ -90,3 +105,6 @@ max_columns = 5
 icon_mode = 0
 fixed_icon_size = Vector2i(150, 150)
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/UnequipButton" to="." method="_on_unequip_button_pressed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/Panel/ItemList" to="." method="_on_item_list_selected"]

@@ -1,5 +1,9 @@
-[gd_scene format=3 uid="uid://cqekfhy05luhm"]
+[gd_scene load_steps=2 format=3 uid="uid://cqekfhy05luhm"]
+
+[ext_resource type="Texture2D" uid="uid://duoo350i1i153" path="res://assets/island/tools/axe.png" id="1_7nh11"]
 
 [node name="AxeEquipped" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_7nh11")

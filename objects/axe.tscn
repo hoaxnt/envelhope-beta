@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_ibpkf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33j5x"]
-radius = 34.058773
+radius = 49.010204
 
 [node name="Axe" type="Area2D"]
 script = ExtResource("1_70obf")

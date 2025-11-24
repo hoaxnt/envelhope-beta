@@ -1,10 +1,10 @@
 extends Node
 
 var inventory: Dictionary = {}
-var selected_item_name: String = ""
 
 signal inventory_changed
 signal tool_selected(item_name: String)
+var selected_item_name: String = ""
 
 const MAX_SLOTS = 10
 
@@ -41,16 +41,25 @@ func remove_item(item_name: String, quantity: int = 1) -> bool:
 	else:
 		print("Not enough %s to remove." % item_name)
 		return false
-
+		
 func select_item(item_name: String):
+	if item_name == selected_item_name:
+		deselect_item()
+		return
+		
 	if inventory.has(item_name):
 		selected_item_name = item_name
 		tool_selected.emit(item_name)
-		print("Selected item: %s" % selected_item_name)
+		print("Manager: Equipped: %s" % selected_item_name)
+
+	elif item_name == "":
+		deselect_item()
+		
 	else:
+		print("Error: Tried to select item (%s) not in inventory." % item_name)
+		
+func deselect_item():
+	if selected_item_name != "":
 		selected_item_name = ""
 		tool_selected.emit("")
-		print("Deselected item.")
-
-func is_axe_selected() -> bool:
-	return selected_item_name == "Axe"
+		print("Manager: Item deselected/unequipped.")

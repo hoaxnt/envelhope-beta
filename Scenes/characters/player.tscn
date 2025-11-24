@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://4h22a7hemgyb"]
 
 [ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/characters/player/walk/walk_side.png" id="1_rp718"]
-[ext_resource type="Script" uid="uid://csml5lidw7k1i" path="res://Scripts/characters/player.gd" id="1_yewv4"]
+[ext_resource type="Script" uid="uid://csml5lidw7k1i" path="res://scripts/characters/player.gd" id="1_yewv4"]
 [ext_resource type="Texture2D" uid="uid://f3t1ahl550ll" path="res://assets/characters/player/idle/idle_down.png" id="2_dyp2m"]
 [ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/characters/player/idle/idle_side.png" id="3_atpat"]
 [ext_resource type="Texture2D" uid="uid://2gavvcs7021p" path="res://assets/characters/player/idle/idle_up.png" id="4_atpat"]
@@ -280,6 +280,7 @@ sprite_frames = SubResource("SpriteFrames_wocps")
 animation = &"idle_down"
 
 [node name="HandSocket" type="Node2D" parent="AnimatedSprite2D"]
+position = Vector2(18, 5)
 
 [node name="HeadText" type="Label" parent="."]
 visible = false
