@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjocvfb1q65td"]
+
+[ext_resource type="Texture2D" uid="uid://c0k6evfy3xifc" path="res://assets/island/minigame_pearldiving/fish.png" id="1_16q55"]
+[ext_resource type="Script" uid="uid://crr4krlwuos7v" path="res://Scripts/minigames/island/fish_obstacle.gd" id="1_sl84r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16q55"]
+size = Vector2(12.5, 6.5)
+
+[node name="fish_obstacle" type="Area2D"]
+script = ExtResource("1_sl84r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.0000005, 0.49999988)
+scale = Vector2(0.7058823, 0.74999994)
+texture = ExtResource("1_16q55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.75, 1.75)
+shape = SubResource("RectangleShape2D_16q55")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

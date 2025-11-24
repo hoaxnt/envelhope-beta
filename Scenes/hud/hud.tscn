@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=17 format=3 uid="uid://c1n41auotc7uk"]
 
 [ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://q1l722lvfn41" path="res://scenes/utils/inventory.tscn" id="11_8nkf1"]
 [ext_resource type="PackedScene" uid="uid://dvmpuwcwltlnc" path="res://scenes/utils/objective_label.tscn" id="11_q6mn5"]
 [ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="12_8nkf1"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="14_4m1a1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
@@ -164,6 +165,7 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Control3" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -171,11 +173,10 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_top = -195.0
+offset_bottom = -155.0
 grow_horizontal = 0
 grow_vertical = 2
-metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Control3"]
 layout_mode = 1
@@ -244,9 +245,29 @@ theme_override_constants/margin_top = 300
 layout_mode = 2
 
 [node name="Control4" parent="." instance=ExtResource("11_8nkf1")]
+visible = false
 
 [node name="Tutorial" parent="." instance=ExtResource("12_8nkf1")]
 visible = false
 
+[node name="ActionButton" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -315.0
+offset_top = -250.0
+offset_right = -165.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("14_4m1a1")
+theme_override_font_sizes/font_size = 46
+text = "Chop"
+
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
 [connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_button_pressed"]

@@ -161,15 +161,20 @@ b = Vector2(40.057495, 60.75659)
 a = Vector2(24.446716, 22.321411)
 b = Vector2(24.446716, 108.32141)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0ad4i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tunax"]
+size = Vector2(30, 61)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l01ag"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppruk"]
+size = Vector2(30, 61)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pmv4y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynuiw"]
+size = Vector2(30, 61)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_re7c5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq4ne"]
+size = Vector2(30, 61)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0jqk4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51b4k"]
+size = Vector2(29, 62)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1o1ye"]
 
@@ -179,7 +184,8 @@ b = Vector2(24.446716, 108.32141)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nq4ne"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pqu7u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p6ht"]
+size = Vector2(30, 61)
 
 [node name="Chapter1" type="Node2D"]
 y_sort_enabled = true
@@ -203,7 +209,7 @@ scale = Vector2(-1, 1)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
 z_index = 2
-position = Vector2(1072, 95)
+position = Vector2(627, 264)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -320,24 +326,24 @@ position = Vector2(-385.44672, 541.6786)
 shape = SubResource("SegmentShape2D_tt0qj")
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-273, 380)
-shape = SubResource("CircleShape2D_0ad4i")
+position = Vector2(-273, 354.5)
+shape = SubResource("RectangleShape2D_tunax")
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-224, 106)
-shape = SubResource("CircleShape2D_l01ag")
+position = Vector2(-224, 81.5)
+shape = SubResource("RectangleShape2D_ppruk")
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-80, -182)
-shape = SubResource("CircleShape2D_pmv4y")
+position = Vector2(-81, -207.5)
+shape = SubResource("RectangleShape2D_ynuiw")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(80, -183)
-shape = SubResource("CircleShape2D_re7c5")
+position = Vector2(80, -207.5)
+shape = SubResource("RectangleShape2D_nq4ne")
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(145, 139)
-shape = SubResource("CircleShape2D_0jqk4")
+position = Vector2(145.5, 115)
+shape = SubResource("RectangleShape2D_51b4k")
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-369, -84)
@@ -356,15 +362,15 @@ position = Vector2(145, 284)
 shape = SubResource("CircleShape2D_nq4ne")
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-193, -70)
-shape = SubResource("CircleShape2D_pqu7u")
+position = Vector2(-193, -95.5)
+shape = SubResource("RectangleShape2D_3p6ht")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
 [node name="Axe" parent="." instance=ExtResource("10_l01ag")]
-position = Vector2(754, 161)
+position = Vector2(774.99994, 181)
 scale = Vector2(0.975, 0.975)
 
 [node name="Log" parent="." instance=ExtResource("11_l01ag")]

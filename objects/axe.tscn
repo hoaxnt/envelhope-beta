@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkughpfrdxuap"]
+[gd_scene load_steps=8 format=3 uid="uid://dkughpfrdxuap"]
 
 [ext_resource type="Script" uid="uid://d6lxwjnwv00r" path="res://scripts/objects/pickup.gd" id="1_70obf"]
 [ext_resource type="Texture2D" uid="uid://duoo350i1i153" path="res://assets/island/tools/axe.png" id="1_hmqt1"]
@@ -6,6 +6,43 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33j5x"]
 radius = 34.058773
+
+[sub_resource type="Animation" id="Animation_70obf"]
+resource_name = "floating"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8l7v2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8l7v2"]
+_data = {
+&"RESET": SubResource("Animation_8l7v2"),
+&"floating": SubResource("Animation_70obf")
+}
 
 [node name="Axe" type="Area2D"]
 script = ExtResource("1_70obf")
@@ -31,6 +68,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_ibpkf")
 text = "Axe [E]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8l7v2")
+}
+autoplay = "floating"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

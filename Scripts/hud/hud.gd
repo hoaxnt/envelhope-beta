@@ -1,14 +1,13 @@
 extends CanvasLayer
 
-@onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
-@onready var inventory_panel = Hud.get_node("Control4")
+@onready var chop_button = Hud.get_node("ActionButton")
+signal action_button_pressed_signal 
+
+var is_action_pressed = false 
 
 func _ready() -> void:
-	inventory_panel.hide()
 	hide()
-	
-func _on_bag_button_pressed() -> void:
-	inventory_panel.visible = not inventory_panel.visible
 
-func _on_view_quest_button_pressed() -> void:
-	obj.play("show_objective")
+func _on_action_button_pressed() -> void:
+		action_button_pressed_signal.emit()
+		print("is action pressed: ", is_action_pressed)
