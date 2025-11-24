@@ -375,10 +375,13 @@ position = Vector2(774.99994, 181)
 scale = Vector2(0.975, 0.975)
 
 [node name="Log" parent="." instance=ExtResource("11_l01ag")]
-position = Vector2(852, 58)
+position = Vector2(1084, 82)
 
 [node name="Log2" parent="." instance=ExtResource("11_l01ag")]
-position = Vector2(770, 51)
+position = Vector2(1044, 84)
+
+[node name="Log3" parent="." instance=ExtResource("11_l01ag")]
+position = Vector2(991, 105)
 
 [node name="Tree" parent="." instance=ExtResource("12_pmv4y")]
 position = Vector2(691, 77)
