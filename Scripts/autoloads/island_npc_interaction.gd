@@ -15,7 +15,8 @@ const REQUIRED_WOOD = 3
 const WOOD_ITEM_NAME = "Log"
 
 func _ready() -> void:
-	print(boat.name)
+	if boat:
+		print(boat.name)
 
 func handle_npc_interaction(npc_id: String) -> void:
 	

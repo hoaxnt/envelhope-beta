@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://kmecuta4qy01"]
+
+[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://scripts/minigames/island/enemy.gd" id="1_xi5yg"]
+[ext_resource type="Texture2D" uid="uid://bax6ms5o4828t" path="res://assets/island/minigame_pearldiving/fish.png" id="1_y8n0v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xi5yg"]
+radius = 6.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_xi5yg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_y8n0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xi5yg")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

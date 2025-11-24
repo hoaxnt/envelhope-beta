@@ -27,8 +27,9 @@ const TOOL_SCENES = {
 
 func _ready() -> void:
 	var screen_size = get_viewport_rect().size
-	camera.limit_right = screen_size.x
-	camera.limit_bottom = screen_size.y
+	if camera:
+		camera.limit_right = screen_size.x
+		camera.limit_bottom = screen_size.y
 	anim.play("idle_down")
 		
 	if InventoryManager:
