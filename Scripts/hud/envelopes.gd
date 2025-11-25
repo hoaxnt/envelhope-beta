@@ -1,15 +1,12 @@
 extends Label
 
 @onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
-var envelopes
+@onready var envelope_label = Hud.get_node("Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2/Envelopes")
 
-func _ready():
-	envelopes = int(PLAYER_DATA["envelopes"])
-	text = str(envelopes)
+func _ready() -> void:
+	PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
+	envelope_label.text = str(int(PLAYER_DATA["envelopes"]))
 	
 func _on_timer_timeout() -> void:
 	PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
-	envelopes = int(PLAYER_DATA["envelopes"])
-	text = str(envelopes)
-
-	
+	envelope_label.text = str(int(PLAYER_DATA["envelopes"]))
