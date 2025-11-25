@@ -45,9 +45,7 @@ func handle_npc_interaction(npc_id: String) -> void:
 						print("Comeback if you're done")
 					
 		"harvester":
-			Hud.hide()
-			Transition.transition_to_scene("res://scenes/minigames/island/path_finding/forest_chase.tscn")
-			dialogue_box.start_dialogue("harvester", 4, true, "deliver_the_goods")
+			dialogue_box.start_dialogue("harvester", 4, false, "none")
 			
 		"balancer":
 			dialogue_box.start_dialogue("balancer", 3, false, "none")

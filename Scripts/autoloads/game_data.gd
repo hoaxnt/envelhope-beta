@@ -27,12 +27,12 @@ var ISLAND_NPC_STATS = {
 			"1": "Comeback to me if you're done",
 		}
 	},
-	"diver_gather_woods_completed": {
-		"name": "Diver",
-		"dialogue": {
-			"1": "Here's the boat, you can use it anytime you want, thankyou!"
-		}
-	},
+	#"diver_gather_woods_completed": {
+		#"name": "Diver",
+		#"dialogue": {
+			#"1": "Here's the boat, you can use it anytime you want, thankyou!"
+		#}
+	#},
 "harvester": {
 		"name": "Harvester",
 		"dialogue": {
