@@ -9,7 +9,7 @@ extends Panel
 
 @onready var objective_label = Hud.get_node("Control5/MarginContainer/ObjectiveLabel") as Label
 @onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation") as AnimationPlayer
-
+@onready var sfx = StreamAudio.get_node("Sfx")
 var current_npc_key = null
 var current_line_index = 1
 var max_line_count = 0        
@@ -54,7 +54,10 @@ func close_dialogue():
 	current_line_index = 0
 
 func _on_yes_button_pressed() -> void:
+	sfx.stream = StreamAudio.typing
+	sfx.play()
 	objective_label.text = ISLAND_NPC["list_of_objectives"][current_objective]
+	
 	objective_label_anim.play("show_objective")
 	ISLAND_NPC["current_objective"] = current_objective
 	SaveLoad.save_game(ISLAND_NPC, SaveLoad.ISLAND_NPC_PATH)

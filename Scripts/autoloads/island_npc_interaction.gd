@@ -4,22 +4,24 @@ extends Node
 @onready var dialogue_box_name = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Name")
 @onready var dialogue_box_message = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Message")
 @onready var ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
-@onready var boat = get_node("/root/Chapter1/Boat")
 
 var diver_name
 var diver_message
 
 signal dialogue_finished
 
-const REQUIRED_WOOD = 3
+const REQUIRED_WOOD = 1
 const WOOD_ITEM_NAME = "Log"
 
 func _ready() -> void:
+	var boat = get_node("/root/Chapter1/Boat")
 	if boat:
 		print(boat.name)
 
 func handle_npc_interaction(npc_id: String) -> void:
-	
+	var boat = get_node("/root/Chapter1/Boat")
+	if boat:
+		print(boat.name)
 	match npc_id:
 		"diver":
 			ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
@@ -36,6 +38,7 @@ func handle_npc_interaction(npc_id: String) -> void:
 					
 					if wood_count >= REQUIRED_WOOD:
 						if boat:
+							print(boat.name)
 							boat.show()
 						dialogue_box.start_dialogue("diver_gather_woods_completed", 1, false, "none")
 						InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
