@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://4h22a7hemgyb"]
+[gd_scene load_steps=42 format=3 uid="uid://4h22a7hemgyb"]
 
 [ext_resource type="Texture2D" uid="uid://fx22g2jl5kg8" path="res://assets/characters/player/walk/walk_side.png" id="1_rp718"]
 [ext_resource type="Script" uid="uid://csml5lidw7k1i" path="res://scripts/characters/player.gd" id="1_yewv4"]
@@ -8,15 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/characters/player/walk/walk_down.png" id="5_6eyoc"]
 [ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://assets/characters/player/walk/walk_up.png" id="7_eojnx"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="8_eojnx"]
-[ext_resource type="AudioStream" uid="uid://cwidlkn7dadus" path="res://assets/sfx/tree_cut.wav" id="9_8liwr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqtwu"]
 radius = 7.0
 height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eyoc"]
-radius = 12.0
-height = 34.0
+radius = 16.0
+height = 36.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eojnx"]
 atlas = ExtResource("2_dyp2m")
@@ -302,9 +301,6 @@ theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
-
-[node name="AudioStreamPlayer-CHOP" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_8liwr")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_interaction_zone_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_interaction_zone_body_exited"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var game_manager: Node2D
 
-const SPEED = 300.0
+const SPEED = 80.0
 const ACCELERATION = 20.0
 
 func _ready() -> void:

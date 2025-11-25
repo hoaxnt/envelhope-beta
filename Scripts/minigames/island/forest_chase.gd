@@ -1,9 +1,9 @@
 extends Node2D
-#
+
 ## --- Configuration ---
-#const TILE_SIZE: int = 64 # Must match the TileMap's cell size
-#const WALL_TILE_ID: int = 1 # The ID of your wall tile in the TileSet
-#const START_TILE_ID: int = 2 # An arbitrary ID for drawing the start point
+#const TILE_SIZE: int = 64 
+#const WALL_TILE_ID: int = 1 
+#const START_TILE_ID: int = 2 
 #const END_TILE_ID: int = 3   # An arbitrary ID for drawing the end point
 #const PATH_TILE_ID: int = 4  # An arbitrary ID for drawing the path
 #
@@ -190,3 +190,8 @@ extends Node2D
 						#status_label.set("theme_override_colors/font_color", Color.GREEN)
 				#"info":
 						#status_label.set("theme_override_colors/font_color", Color.BLUE)
+
+
+func _on_return_button_pressed() -> void:
+	Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
+	pass # Replace with function body.

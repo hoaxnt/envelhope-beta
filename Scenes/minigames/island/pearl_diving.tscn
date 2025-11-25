@@ -2748,99 +2748,137 @@ position_smoothing_speed = 2.0
 drag_left_margin = 1.0
 
 [node name="pearl" parent="." instance=ExtResource("5_4x152")]
-position = Vector2(88, 453)
+position = Vector2(15, 366)
 
 [node name="pearl2" parent="." instance=ExtResource("5_4x152")]
-position = Vector2(238, 455)
+position = Vector2(236, 469)
 
 [node name="pearl3" parent="." instance=ExtResource("5_4x152")]
-position = Vector2(381, 447)
+position = Vector2(396, 337)
 
 [node name="pearl4" parent="." instance=ExtResource("5_4x152")]
-position = Vector2(616, 409)
+position = Vector2(661, 288)
 
 [node name="pearl5" parent="." instance=ExtResource("5_4x152")]
-position = Vector2(528, 461)
+position = Vector2(661, 449)
 
 [node name="fish_obstacle" parent="." instance=ExtResource("7_wrw2s")]
-position = Vector2(636, 248)
-speed = 600.0
+position = Vector2(76, 435)
+speed = 100.0
 move_range = Rect2(0, 200, 700, 400)
 
 [node name="fish_obstacle2" parent="." instance=ExtResource("7_wrw2s")]
-position = Vector2(330, 422)
-speed = 600.0
+position = Vector2(336, 434)
+speed = 100.0
 move_range = Rect2(0, 200, 700, 400)
 
 [node name="fish_obstacle3" parent="." instance=ExtResource("7_wrw2s")]
-position = Vector2(594, 398)
-speed = 600.0
-move_range = Rect2(0, 200, 700, 300)
+position = Vector2(503, 430)
+speed = 100.0
+move_range = Rect2(0, 200, 700, 400)
+
+[node name="fish_obstacle4" parent="." instance=ExtResource("7_wrw2s")]
+position = Vector2(678, 430)
+speed = 100.0
+move_range = Rect2(0, 200, 700, 400)
+
+[node name="fish_obstacle5" parent="." instance=ExtResource("7_wrw2s")]
+position = Vector2(414, 435)
+speed = 100.0
+move_range = Rect2(0, 200, 700, 400)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-scale = Vector2(2.8, 2.8)
-transform = Transform2D(2.8, 0, 0, 2.8, 0, 0)
 
-[node name="PearlLabel" type="Label" parent="CanvasLayer"]
-offset_left = 58.571426
-offset_top = 19.642859
-offset_right = 138.57143
-offset_bottom = 42.64286
-theme_override_fonts/font = ExtResource("7_grp83")
-text = "Pearls : 0"
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
 
-[node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
-offset_left = 32.14286
-offset_top = 16.785715
-offset_right = 101.68833
-offset_bottom = 86.33118
-scale = Vector2(0.32352942, 0.3)
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Sprite2D" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
 texture = ExtResource("6_qpj22")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GameOverText" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 287.85715
-offset_top = 152.14285
-offset_right = 374.85715
-offset_bottom = 176.14285
+[node name="PearlLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("7_grp83")
-text = "GAME OVER!"
+theme_override_font_sizes/font_size = 80
+text = "Pearls : 0"
 
-[node name="FinalScoreLabel" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 267.0
-offset_top = 177.85715
-offset_right = 405.0
-offset_bottom = 200.85715
+[node name="TimerLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
 theme_override_fonts/font = ExtResource("7_grp83")
-text = "TOTAL PEARLS : 0 "
+theme_override_font_sizes/font_size = 80
+text = "Time : 60"
 
-[node name="RestartButton" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 269.64285
-offset_top = 211.78572
-offset_right = 395.64285
-offset_bottom = 242.78572
-theme_override_fonts/font = ExtResource("7_grp83")
-text = "Return to Island"
-
-[node name="SpawnTimer" type="Timer" parent="CanvasLayer"]
+[node name="SpawnTimer" type="Timer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 autostart = true
 
-[node name="TimerLabel" type="Label" parent="CanvasLayer/SpawnTimer"]
-offset_left = 597.0
-offset_top = 18.0
-offset_right = 667.0
-offset_bottom = 41.0
+[node name="Control" type="Control" parent="CanvasLayer"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.5
+offset_top = -32.0
+offset_right = 194.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 44
+alignment = 1
+
+[node name="GameOverText" type="Label" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("7_grp83")
-text = "Time : 60"
+theme_override_font_sizes/font_size = 150
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_grp83")
+theme_override_font_sizes/font_size = 80
+text = "TOTAL PEARLS : 0 "
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("7_grp83")
+theme_override_font_sizes/font_size = 80
+text = "  Return to Island  "
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 66
+text = "Restart"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -2856,5 +2894,6 @@ shape = SubResource("SegmentShape2D_brxrp")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_ti6lt")
 
-[connection signal="pressed" from="CanvasLayer/Control/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="timeout" from="CanvasLayer/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/MarginContainer/HBoxContainer/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

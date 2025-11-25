@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://div7ydoq1p075"]
+[gd_scene load_steps=6 format=3 uid="uid://div7ydoq1p075"]
 
 [ext_resource type="Script" uid="uid://bekjhavxrhjs4" path="res://scripts/minigames/island/forest_chase.gd" id="1_up5be"]
 [ext_resource type="TileSet" uid="uid://fllsjbq3dcqo" path="res://resources/forest_chase.tres" id="2_2fvmu"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="3_bb1g6"]
 [ext_resource type="PackedScene" uid="uid://kmecuta4qy01" path="res://scenes/minigames/island/path_finding/enemy.tscn" id="4_2fvmu"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="5_d2xei"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_up5be")
@@ -37,3 +38,18 @@ player = NodePath("../Player")
 [node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_2fvmu")]
 position = Vector2(331, -231)
 player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_d2xei")
+theme_override_font_sizes/font_size = 80
+text = "Go back to Island"
+
+[connection signal="pressed" from="CanvasLayer/ReturnButton" to="." method="_on_return_button_pressed"]
