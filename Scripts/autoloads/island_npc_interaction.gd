@@ -51,7 +51,7 @@ func handle_npc_interaction(npc_id: String) -> void:
 					
 		"harvester":
 			Hud.hide()
-			Transition.transition_to_scene("res://resources/forest_chase.tres")
+			Transition.transition_to_scene("res://scenes/minigames/island/path_finding/forest_chase.tscn")
 			dialogue_box.start_dialogue("harvester", 4, true, "deliver_the_goods")
 			
 		"balancer":
