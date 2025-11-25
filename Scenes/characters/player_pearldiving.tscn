@@ -148,7 +148,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40nl7"]
-radius = 23.0
+radius = 15.0
 
 [node name="player_pearldiving" type="CharacterBody2D"]
 

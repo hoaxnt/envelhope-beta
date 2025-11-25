@@ -10,7 +10,7 @@ var diver_message
 
 signal dialogue_finished
 
-const REQUIRED_WOOD = 1
+const REQUIRED_WOOD = 1 #fortest
 const WOOD_ITEM_NAME = "Log"
 
 func _ready() -> void:
