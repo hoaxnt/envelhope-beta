@@ -10,13 +10,8 @@ var diver_message
 
 signal dialogue_finished
 
-const REQUIRED_WOOD = 1 #fortest
+const REQUIRED_WOOD = 15
 const WOOD_ITEM_NAME = "Log"
-
-func _ready() -> void:
-	var boat = get_node("/root/Chapter1/Boat")
-	if boat:
-		print(boat.name)
 
 func handle_npc_interaction(npc_id: String) -> void:
 	var boat = get_node("/root/Chapter1/Boat")
