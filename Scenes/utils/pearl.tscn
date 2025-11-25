@@ -1,54 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://p016lxodfcex"]
+[gd_scene load_steps=4 format=3 uid="uid://p016lxodfcex"]
 
 [ext_resource type="Texture2D" uid="uid://cn43ev0sctfhp" path="res://assets/island/minigame_pearldiving/pearl.png" id="1_f34y1"]
-[ext_resource type="Script" uid="uid://cwu85vd6deu8y" path="res://Scripts/objects/pearl.gd" id="1_xf05h"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xf05h"]
-atlas = ExtResource("1_f34y1")
-region = Rect2(0, 0, 8, 10)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xf05h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xf05h")
-}],
-"loop": true,
-"name": &"no pearl",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_f34y1")
-}],
-"loop": true,
-"name": &"pearl",
-"speed": 5.0
-}]
+[ext_resource type="Script" uid="uid://cwu85vd6deu8y" path="res://scripts/objects/pearl.gd" id="1_xf05h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xf05h"]
-radius = 22.022715
+radius = 17.029387
 
-[node name="pearl" type="Node2D"]
+[node name="pearl" type="Area2D"]
 script = ExtResource("1_xf05h")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.13529414, 0.12941177)
-sprite_frames = SubResource("SpriteFrames_xf05h")
-animation = &"pearl"
-
-[node name="pickable_area" type="Area2D" parent="."]
-position = Vector2(16, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
-position = Vector2(-16, -2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xf05h")
 
-[node name="spawn_timer" type="Timer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25588235, 0.24475703)
+texture = ExtResource("1_f34y1")
+
+[node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
+autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
-[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

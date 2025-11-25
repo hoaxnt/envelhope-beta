@@ -33,11 +33,13 @@ var ISLAND_NPC_STATS = {
 			"1": "Here's the boat, you can use it anytime you want, thankyou!"
 		}
 	},
-	"harvester": {
+"harvester": {
 		"name": "Harvester",
 		"dialogue": {
-			"1": "This island is full of natural resources",
-			"2": "You won't starve in this island",
+			"1": "It's usually peaceful, but we've had trouble recently.",
+			"2": "A pirate fleet has been sighted, making our supply routes very dangerous.",
+			"3": "We desperately need to get food supplies to the neighboring village, but the pirate activity is high.",
+			"4": "Would you be willing to help us deliver the food while avoiding the pirates?"
 		}
 	},
 	"balancer": {

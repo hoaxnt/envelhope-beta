@@ -46,11 +46,14 @@ func handle_npc_interaction(npc_id: String) -> void:
 						dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
 						print("Comeback if you're done")
 					
+		"harvester":
+			Hud.hide()
+			Transition.transition_to_scene("res://resources/forest_chase.tres")
+			dialogue_box.start_dialogue("harvester", 4, true, "deliver_the_goods")
+			
 		"balancer":
 			dialogue_box.start_dialogue("balancer", 3)
 			
-		"harvester":
-			dialogue_box.start_dialogue("harvester", 2)
 			
 		_:
 			start_dialogue(npc_id, "Hmm... I have nothing to say right now.")

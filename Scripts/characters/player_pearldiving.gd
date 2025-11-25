@@ -18,9 +18,6 @@ func _physics_process(delta: float) -> void:
 	# The velocity we *want* to reach
 	var target_velocity := input_vector * SPEED
 	
-	# --- 3. Smooth Movement (Lerp/Acceleration) ---
-	# Use linear interpolation (lerp) to gradually move the current velocity 
-	# towards the target velocity, creating a smooth delay.
 	velocity.x = lerp(velocity.x, target_velocity.x, ACCELERATION * delta)
 	velocity.y = lerp(velocity.y, target_velocity.y, ACCELERATION * delta)
 	

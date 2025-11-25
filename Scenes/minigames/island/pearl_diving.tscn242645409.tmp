@@ -2745,60 +2745,48 @@ tile_set = SubResource("TileSet_v1bhc")
 position = Vector2(295, 298)
 script = null
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-scale = Vector2(2.8, 2.8)
-transform = Transform2D(2.8, 0, 0, 2.8, 0, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["player"]]
 
 [node name="pearl_label" type="Label" parent="CanvasLayer"]
-offset_left = 58.571426
-offset_top = 19.642859
-offset_right = 138.57143
-offset_bottom = 42.64286
+offset_left = 42.0
+offset_top = 24.0
+offset_right = 122.0
+offset_bottom = 47.0
 theme_override_fonts/font = ExtResource("7_grp83")
 text = "Pearls : 0 "
 
-[node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
-offset_left = 32.14286
-offset_top = 16.785715
-offset_right = 101.68833
-offset_bottom = 86.33118
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(14.999996, 34.999992)
 scale = Vector2(0.32352942, 0.3)
 texture = ExtResource("6_qpj22")
-expand_mode = 1
 
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="GameOverUI" type="CanvasLayer" parent="CanvasLayer"]
+visible = false
 
-[node name="GameOverText" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverUI"]
 offset_left = 286.0
-offset_top = 152.85715
+offset_top = 250.0
 offset_right = 373.0
-offset_bottom = 176.85715
+offset_bottom = 274.0
 text = "[TIME'S UP]"
 
-[node name="TotalPearlsText" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
+[node name="TotalPearlsText" type="Label" parent="CanvasLayer/GameOverUI"]
 offset_left = 267.0
-offset_top = 177.85715
+offset_top = 275.0
 offset_right = 405.0
-offset_bottom = 200.85715
+offset_bottom = 298.0
 text = "TOTAL PEARLS : 0 "
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 282.14285
-offset_top = 207.14287
-offset_right = 385.14285
-offset_bottom = 238.14287
+[node name="ExitButton" type="Button" parent="CanvasLayer/GameOverUI"]
+offset_left = 277.0
+offset_top = 305.0
+offset_right = 380.0
+offset_bottom = 336.0
 text = "EXIT"
 
-[node name="SpawnTimer" type="Timer" parent="CanvasLayer"]
+[node name="GameTimer" type="Timer" parent="CanvasLayer"]
 
-[node name="TimerLabel" type="Label" parent="CanvasLayer/SpawnTimer"]
+[node name="TimerLabel" type="Label" parent="CanvasLayer/GameTimer"]
 offset_left = 597.0
 offset_top = 18.0
 offset_right = 667.0
@@ -2806,4 +2794,4 @@ offset_bottom = 41.0
 theme_override_fonts/font = ExtResource("7_grp83")
 text = "Time : 60"
 
-[connection signal="pressed" from="CanvasLayer/Control/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverUI/ExitButton" to="." method="_on_exit_button_pressed"]
