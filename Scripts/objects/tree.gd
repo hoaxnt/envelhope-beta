@@ -4,6 +4,7 @@ extends Area2D
 @export var tree_max_hp: int = 5
 @export var respawn_time: float = 10.0
 @export var log_scene: PackedScene = preload("res://objects/log.tscn") 
+@onready var sfx = StreamAudio.get_node("Sfx")
 
 var tree_hp: int
 var is_felled: bool = false
@@ -76,14 +77,15 @@ func _fell_tree():
 
 
 func _drop_log_item():
-
-		var log_instance = log_scene.instantiate()
-		
+	sfx.stream = StreamAudio.drop
+	sfx.play()
+	var log_instance = log_scene.instantiate()
 	
-		get_tree().root.add_child(log_instance)
-		log_instance.global_position = global_position
-		
-		print("Dropped Log item.")
+
+	get_tree().root.add_child(log_instance)
+	log_instance.global_position = global_position
+	
+	print("Dropped Log item.")
 
 
 func _regrow():

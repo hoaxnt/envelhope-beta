@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cwidlkn7dadus"
-path="res://.godot/imported/tree_shaking_branches_01.wav-fa0d5ad8abf0ec4078322c3631dc79b0.sample"
+path="res://.godot/imported/tree_cut.wav-7a9ad411e6d6dc7e05f0830e43f80378.sample"
 
 [deps]
 
-source_file="res://assets/sfx/tree_shaking_branches_01.wav"
-dest_files=["res://.godot/imported/tree_shaking_branches_01.wav-fa0d5ad8abf0ec4078322c3631dc79b0.sample"]
+source_file="res://assets/sfx/tree_cut.wav"
+dest_files=["res://.godot/imported/tree_cut.wav-7a9ad411e6d6dc7e05f0830e43f80378.sample"]
 
 [params]
 

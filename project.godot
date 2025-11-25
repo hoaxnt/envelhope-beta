@@ -25,6 +25,7 @@ GameData="*res://scripts/autoloads/game_data.gd"
 Hud="*res://scenes/hud/hud.tscn"
 InventoryManager="*res://scripts/autoloads/inventory_manager.gd"
 AxeEquipped="*res://objects/axe_equipped.tscn"
+StreamAudio="*res://scenes/utils/audio_stream.tscn"
 
 [debug]
 

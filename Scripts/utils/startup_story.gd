@@ -25,11 +25,14 @@ var is_transitioning: bool = false
 @onready var label_node: Label = $Panel/VBoxContainer/Label
 @onready var next_button: Button = $Panel/SkipButton
 
+var sfx = StreamAudio.get_node("Sfx")
+
 func _ready() -> void:
 	anim.play("fade_reveal")
 	_update_content()
 
 func _on_skip_button_pressed() -> void:
+	sfx.play()
 	current_step += 1
 	if current_step < IMAGES.size():
 		anim.play("fade_reveal")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dakmfuhim8ksf"]
 
-[ext_resource type="Script" uid="uid://bbqrh4pa87t8k" path="res://Scripts/utils/main_menu.gd" id="1_iaex4"]
+[ext_resource type="Script" uid="uid://bbqrh4pa87t8k" path="res://scripts/utils/main_menu.gd" id="1_iaex4"]
 [ext_resource type="Texture2D" uid="uid://cli0qdu5xqr7u" path="res://assets/ui/background.png" id="2_dlq2s"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_ompks"]
 
@@ -72,4 +72,5 @@ theme_override_font_sizes/font_size = 81
 text = "  Quit Game  "
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton3" to="." method="_on_start_button_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

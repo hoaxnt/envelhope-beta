@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-@onready var playerChoppingAudioStream = $"AudioStreamPlayer-CHOP"
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var head_text = $HeadText
@@ -14,6 +12,8 @@ extends CharacterBody2D
 @onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var inventory = Hud.get_node("Control4")
+
+var sfx = StreamAudio.get_node("Sfx")
 
 var current_tool_instance: Node2D = null
 var last_direction = "down"
@@ -147,9 +147,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		inventory_panel.visible = not inventory_panel.visible
 #	-- Show Objective --
 	if event.is_action_pressed("show_objective"):
+		sfx.stream = StreamAudio.typing
+		sfx.play()
 		obj.play("show_objective")
-#	-- Interact --
+		#	-- Interact --
+	if event.is_action_pressed("interact"):
+		sfx.stream = StreamAudio.interact
+		sfx.play()
+#	-- Interact NPC --
 	if event.is_action_pressed("interact") and current_npc:
+		sfx.stream = StreamAudio.interact
+		sfx.play()
 		if not IslandNpcInteraction.dialogue_finished.is_connected(self._on_dialogue_finished):
 			IslandNpcInteraction.dialogue_finished.connect(self._on_dialogue_finished, CONNECT_ONE_SHOT)
 		if current_npc.has_method("get_npc_id"):
