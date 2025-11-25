@@ -146,7 +146,7 @@ size = Vector2(195.6106, 143.35773)
 size = Vector2(98, 42.999985)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jqk4"]
-size = Vector2(185, 155)
+size = Vector2(185, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o1ye"]
 size = Vector2(165.86136, 291.0752)
@@ -205,7 +205,7 @@ position = Vector2(1173, 97)
 position = Vector2(191, 396)
 
 [node name="Harvester" parent="NPCs" instance=ExtResource("5_r7jkp")]
-position = Vector2(951, 613)
+position = Vector2(1147, 660)
 scale = Vector2(-1, 1)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
@@ -307,7 +307,7 @@ position = Vector2(528, 620.5)
 shape = SubResource("RectangleShape2D_re7c5")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(477.5, 259.5)
+position = Vector2(477.5, 240.5)
 shape = SubResource("RectangleShape2D_0jqk4")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]

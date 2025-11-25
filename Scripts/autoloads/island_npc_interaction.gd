@@ -35,7 +35,6 @@ func handle_npc_interaction(npc_id: String) -> void:
 					print("wood count ", wood_count)
 					
 					if wood_count >= REQUIRED_WOOD:
-						print("NICE WELL DONE!")
 						if boat:
 							boat.show()
 						dialogue_box.start_dialogue("diver_gather_woods_completed", 1, false, "none")
@@ -47,26 +46,9 @@ func handle_npc_interaction(npc_id: String) -> void:
 						dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
 						print("Comeback if you're done")
 					
-					
-				
-	
-					#
-					#
-				#else:
-					## D. Show the "come back when you're done" dialogue (e.g., dialogue ID 1)
-					#dialogue_box.start_dialogue("diver_gather_woods", 1)
-					#print("Comeback if you're done. Need %d more wood." % (REQUIRED_WOOD - wood_count))
-			#
-			## If you have a completed state:
-			#elif ISLAND_NPC["current_objective"] == "completed_gather_woods":
-				## Show a post-mission dialogue
-				#dialogue_box.start_dialogue("diver_post_mission", 1)
-	#
 		"balancer":
 			dialogue_box.start_dialogue("balancer", 3)
 			
-			#get_tree().current_scene.call_deferred("queue_free")
-			#get_tree().call_deferred("change_scene_to_file", "res://scenes/minigames/island/bfs_minigame.tscn")
 		"harvester":
 			dialogue_box.start_dialogue("harvester", 2)
 			
