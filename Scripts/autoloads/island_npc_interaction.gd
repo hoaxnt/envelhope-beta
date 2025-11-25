@@ -10,13 +10,10 @@ var diver_message
 
 signal dialogue_finished
 
-const REQUIRED_WOOD = 15
-const WOOD_ITEM_NAME = "Log"
+const REQUIRED_WOOD = 1
+const WOOD_ITEM_NAME = "log"
 
 func handle_npc_interaction(npc_id: String) -> void:
-	var boat = get_node("/root/Chapter1/Boat")
-	if boat:
-		print(boat.name)
 	match npc_id:
 		"diver":
 			ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
@@ -32,35 +29,25 @@ func handle_npc_interaction(npc_id: String) -> void:
 					print("wood count ", wood_count)
 					
 					if wood_count >= REQUIRED_WOOD:
-						if boat:
-							print(boat.name)
-							boat.show()
-						dialogue_box.start_dialogue("diver_gather_woods_completed", 1, false, "none")
+						
 						InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
 						ISLAND_NPC["current_objective"] = "none"
 						ISLAND_NPC["diver_objective"] = "completed"
 						SaveLoad.save_game(ISLAND_NPC, SaveLoad.ISLAND_NPC_PATH)
 					else:
 						dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
-						print("Comeback if you're done")
 					
 		"harvester":
 			dialogue_box.start_dialogue("harvester", 4, false, "none")
 			
 		"balancer":
 			dialogue_box.start_dialogue("balancer", 3, false, "none")
-			
-			
 		_:
-			start_dialogue(npc_id, "Hmm... I have nothing to say right now.")
+			pass
 	_on_dialogue_system_closed() 
 
 func _on_dialogue_system_closed() -> void:
 		dialogue_finished.emit()
-		
-func start_dialogue(character_name: String, text: String) -> void:
-	
-		print("%s : %s" % [character_name, text])
 
 #-- Sorting Algorithm --
 func bubble_sort(arr: Array) -> Array:

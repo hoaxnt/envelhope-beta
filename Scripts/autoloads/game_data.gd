@@ -3,6 +3,11 @@ extends Node
 @onready var PLAYER_DATA_PATH = SaveLoad.PLAYER_DATA_PATH
 @onready var CONFIG_PATH = SaveLoad.CONFIG_PATH
 @onready var ISLAND_NPC_PATH = SaveLoad.ISLAND_NPC_PATH
+@onready var INVENTORY_PATH = SaveLoad.INVENTORY_PATH
+
+var INVENTORY = {
+	"log" : 0.0,
+}
 
 var PLAYER_STATS = {
 	"hunger": 100.0,
@@ -27,12 +32,6 @@ var ISLAND_NPC_STATS = {
 			"1": "Comeback to me if you're done",
 		}
 	},
-	#"diver_gather_woods_completed": {
-		#"name": "Diver",
-		#"dialogue": {
-			#"1": "Here's the boat, you can use it anytime you want, thankyou!"
-		#}
-	#},
 "harvester": {
 		"name": "Harvester",
 		"dialogue": {
@@ -60,4 +59,5 @@ var ISLAND_NPC_STATS = {
 func _ready() -> void:
 	SaveLoad.save_game(PLAYER_STATS, PLAYER_DATA_PATH)
 	SaveLoad.save_game(ISLAND_NPC_STATS, ISLAND_NPC_PATH)
+	SaveLoad.save_game(INVENTORY, INVENTORY_PATH)
 	

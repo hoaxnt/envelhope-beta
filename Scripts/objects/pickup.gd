@@ -7,6 +7,7 @@ extends Area2D
 @onready var item_label: Label = $Label
 @onready var sfx = StreamAudio.get_node("Sfx")
 
+
 var player_in_range: bool = false
 var player_body: Node2D = null
 

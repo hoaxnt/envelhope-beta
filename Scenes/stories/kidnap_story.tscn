@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpg5amojkingl"]
+[gd_scene load_steps=8 format=3 uid="uid://b10rasuuvetg8"]
 
-[ext_resource type="Script" uid="uid://bk4md7ygek5mq" path="res://scripts/utils/startup_story.gd" id="1_gqv3l"]
-[ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_5ekg1"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_wrs7h"]
+[ext_resource type="Script" uid="uid://db8xplmv60did" path="res://scripts/stories/kidnap_story.gd" id="1_x2pfh"]
+[ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_mnwg2"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="3_6n1nq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqv3l"]
 bg_color = Color(0.13599786, 0.13210395, 0.1330798, 1)
@@ -68,14 +68,14 @@ _data = {
 &"fade_reveal": SubResource("Animation_5ekg1")
 }
 
-[node name="StartupStory" type="Control"]
+[node name="KidnapStory" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gqv3l")
+script = ExtResource("1_x2pfh")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -103,14 +103,14 @@ custom_minimum_size = Vector2(1200, 750)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_5ekg1")
+texture = ExtResource("2_mnwg2")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_wrs7h")
+theme_override_fonts/font = ExtResource("3_6n1nq")
 theme_override_font_sizes/font_size = 40
 text = "And now you will experience the journey here in the island that is rich in natural resources"
 horizontal_alignment = 1
@@ -123,7 +123,7 @@ visible_ratio = 0.0
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_wrs7h")
+theme_override_fonts/font = ExtResource("3_6n1nq")
 theme_override_font_sizes/font_size = 50
 text = "Next>>"
 horizontal_alignment = 2

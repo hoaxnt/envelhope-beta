@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=45 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://brhpmhtu3mrs4" path="res://scripts/chapters/chapter_1.gd" id="1_k2l3u"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dkughpfrdxuap" path="res://objects/axe.tscn" id="10_l01ag"]
 [ext_resource type="PackedScene" uid="uid://b0gbe4vyonscx" path="res://objects/log.tscn" id="11_l01ag"]
 [ext_resource type="PackedScene" uid="uid://mat5nmwemvko" path="res://objects/tree.tscn" id="12_pmv4y"]
-[ext_resource type="PackedScene" uid="uid://clreda6v6x7tj" path="res://objects/boat.tscn" id="13_pqu7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48uj0"]
 size = Vector2(212, 254)
@@ -133,7 +132,7 @@ metadata/_edit_lock_ = true
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="Diver" parent="NPCs" instance=ExtResource("3_lhans")]
-position = Vector2(1173, 97)
+position = Vector2(1165, 97)
 
 [node name="Balancer" parent="NPCs" instance=ExtResource("4_gbphn")]
 position = Vector2(191, 396)
@@ -291,14 +290,14 @@ one_shot = true
 autostart = true
 
 [node name="Axe" parent="." instance=ExtResource("10_l01ag")]
-position = Vector2(722, 188.99998)
+position = Vector2(275.99994, 41.999985)
 scale = Vector2(0.975, 0.975)
 
 [node name="Log" parent="." instance=ExtResource("11_l01ag")]
 position = Vector2(582, 29)
 
 [node name="Log2" parent="." instance=ExtResource("11_l01ag")]
-position = Vector2(501, 147)
+position = Vector2(361, 206)
 
 [node name="Log3" parent="." instance=ExtResource("11_l01ag")]
 position = Vector2(754, 31)
@@ -320,9 +319,6 @@ position = Vector2(756, 399)
 
 [node name="Tree6" parent="." instance=ExtResource("12_pmv4y")]
 position = Vector2(338, 639)
-
-[node name="Boat" parent="." instance=ExtResource("13_pqu7u")]
-position = Vector2(1365, 51)
 
 [connection signal="body_entered" from="KidnapChecker" to="KidnapChecker" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

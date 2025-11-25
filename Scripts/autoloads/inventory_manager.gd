@@ -1,17 +1,24 @@
 extends Node
 
 var inventory: Dictionary = {}
+var selected_item_name: String = ""
+@onready var INVENTORY = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
 
 signal inventory_changed
 signal tool_selected(item_name: String)
-var selected_item_name: String = ""
 
-const MAX_SLOTS = 10
+const MAX_SLOTS = 5
 
 func add_item(item_name: String, quantity: int = 1) -> bool:
 	if inventory.has(item_name):
 		inventory[item_name] += quantity
 		print("Added %s %s. New count: %s" % [quantity, item_name, inventory[item_name]])
+		
+		if item_name == "Log":
+			var current_logs = int(INVENTORY["log"])
+			current_logs += quantity
+			INVENTORY["log"] = current_logs
+			SaveLoad.save_game(INVENTORY, SaveLoad.INVENTORY_PATH)
 		inventory_changed.emit() 
 		return true
 	
