@@ -1,82 +1,28 @@
-[gd_scene load_steps=22 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=13 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://scripts/chapters/chapter_2.gd" id="1_3ilha"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
-[ext_resource type="Script" uid="uid://bcfm8jfsqemav" path="res://scripts/characters/npc_plaza/fruit_vendor/roaming.gd" id="3_jauny"]
 [ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
 [ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
-[ext_resource type="Script" uid="uid://tdyss6nwpwej" path="res://scripts/utils/portal.gd" id="8_3ilha"]
-[ext_resource type="Texture2D" uid="uid://dnhad78k1oqjp" path="res://assets/utils/portal.png" id="9_3ilha"]
 [ext_resource type="PackedScene" uid="uid://c1n41auotc7uk" path="res://scenes/hud/hud.tscn" id="11_8exib"]
 
-[sub_resource type="Curve2D" id="Curve2D_g2xa2"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 130, 616, 0, 0, 0, 0, 370, 616)
-}
-point_count = 2
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cf2n5"]
+a = Vector2(1712, 1)
+b = Vector2(0, 2)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ei26i"]
-radius = 17.029387
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d806c"]
+b = Vector2(1, 736)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfiun"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(0, 0, 66, 66)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8exib"]
+a = Vector2(0, 735)
+b = Vector2(1712, 735)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i74ei"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(66, 0, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1c24i"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(132, 0, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7gtdu"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(198, 0, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcv6x"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(264, 0, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nidmx"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(330, 0, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysoor"]
-atlas = ExtResource("9_3ilha")
-region = Rect2(396, 0, 66, 66)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_q4xdi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rfiun")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i74ei")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1c24i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7gtdu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fcv6x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nidmx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysoor")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_clykv"]
+a = Vector2(1711, -2)
+b = Vector2(1710, 736)
 
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_3ilha")
@@ -85,28 +31,16 @@ script = ExtResource("1_3ilha")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
-position = Vector2(83, 412)
+position = Vector2(153, 502)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
-limit_left = 0
-limit_top = 0
-limit_right = 50
-limit_bottom = 50
+limit_left = 1
+limit_top = 1
+limit_right = 1710
+limit_bottom = 730
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-111, 2)
-curve = SubResource("Curve2D_g2xa2")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(130, 616)
-script = ExtResource("3_jauny")
-
-[node name="FruitVendor" parent="Path2D/PathFollow2D" instance=ExtResource("3_sa0bh")]
-z_index = 1
-rotation = 0.0217357
 
 [node name="StreetPerformer" parent="." instance=ExtResource("5_g2xa2")]
 position = Vector2(498, 602)
@@ -117,21 +51,24 @@ position = Vector2(263, 479)
 [node name="BlindVendor" parent="." instance=ExtResource("7_165o0")]
 position = Vector2(321, 657)
 
-[node name="Portal" type="Area2D" parent="."]
-position = Vector2(39.000004, 414)
-scale = Vector2(1.2, 1.1111112)
-script = ExtResource("8_3ilha")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource("CircleShape2D_ei26i")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
-position = Vector2(-2.3841858e-07, 0)
-scale = Vector2(0.93122387, 0.84844726)
-sprite_frames = SubResource("SpriteFrames_q4xdi")
-autoplay = "default"
+[node name="FruitVendor" parent="." instance=ExtResource("3_sa0bh")]
+z_index = 1
+position = Vector2(19, 618)
+rotation = 0.0217357
 
 [node name="Hud" parent="." instance=ExtResource("11_8exib")]
 visible = false
 
-[connection signal="body_entered" from="Portal" to="Portal" method="_on_body_entered"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_cf2n5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_d806c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_8exib")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_clykv")

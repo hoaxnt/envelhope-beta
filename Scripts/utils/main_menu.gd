@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_start_button_pressed() -> void:
 	sfx.play()
 	
-	Transition.transition_to_scene("res://scenes/utils/startup_story.tscn")
+	Transition.transition_to_scene("res://scenes/stories/startup_story.tscn")
 
 func _on_exit_button_pressed() -> void:
 	sfx.play()

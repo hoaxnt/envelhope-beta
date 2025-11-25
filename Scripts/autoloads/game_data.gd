@@ -11,7 +11,7 @@ var INVENTORY = {
 
 var PLAYER_STATS = {
 	"hunger": 100.0,
-	"envelopes": 10000,
+	"envelopes": 0,
 	"cycle": 10,
 	"equipped_tool": "none",
 }

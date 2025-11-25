@@ -5,6 +5,6 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	var INVENTORY = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
 	if body.is_in_group("player"):
-		if INVENTORY["log"] >= 15:
+		if INVENTORY["log"] >= 1:
 			Hud.hide()
-			Transition.transition_to_scene("res://scripts/stories/kidnap_story.gd")
+			Transition.transition_to_scene("res://scenes/stories/kidnap_story.tscn")
