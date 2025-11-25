@@ -47,7 +47,7 @@ var ISLAND_NPC_STATS = {
 		"dialogue": {
 			"1": "Our ancestors used to dive for pearls and make beautiful accessories out of it",
 			"2": "Isn't it amazing?",
-			"3": "Maybe not Hahaha!",
+			"3": "Umalis kana nga sa harap ko tanginamo!",
 		}
 	},
 	"current_objective": "none",

@@ -2787,7 +2787,7 @@ offset_top = 19.642859
 offset_right = 138.57143
 offset_bottom = 42.64286
 theme_override_fonts/font = ExtResource("7_grp83")
-text = "Pearls : 0 "
+text = "Pearls : 0"
 
 [node name="Sprite2D" type="TextureRect" parent="CanvasLayer"]
 offset_left = 32.14286
@@ -2806,11 +2806,12 @@ offset_bottom = 40.0
 
 [node name="GameOverText" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 286.0
-offset_top = 152.85715
-offset_right = 373.0
-offset_bottom = 176.85715
-text = "[TIME'S UP]"
+offset_left = 287.85715
+offset_top = 152.14285
+offset_right = 374.85715
+offset_bottom = 176.14285
+theme_override_fonts/font = ExtResource("7_grp83")
+text = "GAME OVER!"
 
 [node name="FinalScoreLabel" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -2818,15 +2819,17 @@ offset_left = 267.0
 offset_top = 177.85715
 offset_right = 405.0
 offset_bottom = 200.85715
+theme_override_fonts/font = ExtResource("7_grp83")
 text = "TOTAL PEARLS : 0 "
 
 [node name="RestartButton" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 282.14285
-offset_top = 207.14287
-offset_right = 385.14285
-offset_bottom = 238.14287
-text = "EXIT"
+offset_left = 269.64285
+offset_top = 211.78572
+offset_right = 395.64285
+offset_bottom = 242.78572
+theme_override_fonts/font = ExtResource("7_grp83")
+text = "Return to Island"
 
 [node name="SpawnTimer" type="Timer" parent="CanvasLayer"]
 autostart = true
@@ -2853,5 +2856,5 @@ shape = SubResource("SegmentShape2D_brxrp")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_ti6lt")
 
-[connection signal="pressed" from="CanvasLayer/Control/RestartButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

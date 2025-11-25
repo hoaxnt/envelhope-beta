@@ -55,7 +55,7 @@ func handle_npc_interaction(npc_id: String) -> void:
 			dialogue_box.start_dialogue("harvester", 4, true, "deliver_the_goods")
 			
 		"balancer":
-			dialogue_box.start_dialogue("balancer", 3)
+			dialogue_box.start_dialogue("balancer", 3, false, "none")
 			
 			
 		_:

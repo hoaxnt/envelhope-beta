@@ -5,6 +5,7 @@ extends Area2D
 @export var interaction_key: Key = KEY_E
 @export var player_tag: String = "player"
 @onready var item_label: Label = $Label
+@onready var sfx = StreamAudio.get_node("Sfx")
 
 var player_in_range: bool = false
 var player_body: Node2D = null
@@ -31,6 +32,8 @@ func _process(_delta):
 		_pick_up()
 
 func _pick_up():
+	sfx.stream = StreamAudio.interact
+	sfx.play()
 	print("Picked up: " + item_name)
 
 	if InventoryManager:

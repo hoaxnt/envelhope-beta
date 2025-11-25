@@ -150,10 +150,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		sfx.stream = StreamAudio.typing
 		sfx.play()
 		obj.play("show_objective")
-		#	-- Interact --
-	if event.is_action_pressed("interact"):
-		sfx.stream = StreamAudio.interact
-		sfx.play()
 #	-- Interact NPC --
 	if event.is_action_pressed("interact") and current_npc:
 		sfx.stream = StreamAudio.interact
