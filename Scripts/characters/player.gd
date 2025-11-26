@@ -7,11 +7,10 @@ extends CharacterBody2D
 @onready var base_speed = 80
 @onready var sprint_speed = 140
 
-@onready var inventory_panel = Hud.get_node("Control4")
+@onready var inventory_panel = Hud.get_node("InventoryPanel")
 @onready var dialogue_box = Hud.get_node("DialogueBox")
-@onready var obj = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
-@onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
-@onready var inventory = Hud.get_node("Control4")
+@onready var objective_label_anim = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
+@onready var inventory = Hud.get_node("InventoryPanel")
 
 var sfx = StreamAudio.get_node("Sfx")
 
@@ -154,8 +153,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("show_objective"):
 		sfx.stream = StreamAudio.typing
 		sfx.play()
-		if obj:
-			obj.play("show_objective")
+		if objective_label_anim:
+			objective_label_anim.play("show_objective")
 #	-- Interact NPC --
 	if event.is_action_pressed("interact") and current_npc:
 		sfx.stream = StreamAudio.interact

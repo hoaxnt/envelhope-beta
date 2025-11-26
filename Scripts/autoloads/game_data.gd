@@ -2,7 +2,7 @@ extends Node
 
 @onready var PLAYER_DATA_PATH = SaveLoad.PLAYER_DATA_PATH
 @onready var CONFIG_PATH = SaveLoad.CONFIG_PATH
-@onready var ISLAND_NPC_PATH = SaveLoad.ISLAND_NPC_PATH
+@onready var NPC_DATA_PATH = SaveLoad.NPC_DATA_PATH
 @onready var INVENTORY_PATH = SaveLoad.INVENTORY_PATH
 
 var INVENTORY = {
@@ -16,7 +16,7 @@ var PLAYER_STATS = {
 	"equipped_tool": "none",
 }
 
-var ISLAND_NPC_STATS = {
+var NPC_DATA_STATS = {
 	"diver": {
 		"name": "Diver",
 		"dialogue": {
@@ -53,11 +53,15 @@ var ISLAND_NPC_STATS = {
 	"diver_objective": "none",
 	"list_of_objectives": {
 		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver",
+		"survive_day_1": "OBJECTIVE: Survive the Day 1",
+		"survive_day_2": "OBJECTIVE: Survive the Day 2",
+		"survive_day_3": "OBJECTIVE: Survive the Day 3",
+		"survive_day_4": "OBJECTIVE: Survive the Day 4",
 	}
 }
 
 func _ready() -> void:
 	SaveLoad.save_game(PLAYER_STATS, PLAYER_DATA_PATH)
-	SaveLoad.save_game(ISLAND_NPC_STATS, ISLAND_NPC_PATH)
+	SaveLoad.save_game(NPC_DATA_STATS, NPC_DATA_PATH)
 	SaveLoad.save_game(INVENTORY, INVENTORY_PATH)
 	

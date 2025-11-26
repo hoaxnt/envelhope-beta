@@ -15,7 +15,7 @@ func _ready():
 
 func _on_timer_timeout():
 		if value > 0:
-				value -= 30
+				value -= 1
 				value = max(0.0, value)
 				PLAYER_DATA.set("hunger", value)
 				SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
@@ -24,7 +24,7 @@ func _on_timer_timeout():
 				if $Timer.is_stopped():
 						return
 				$Timer.stop()
-				envelopes -= 500
+				envelopes -= 100
 				
 				PLAYER_DATA.set("hunger", 100)
 				PLAYER_DATA.set("envelopes", envelopes)

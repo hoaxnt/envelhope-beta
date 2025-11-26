@@ -3,7 +3,7 @@ extends Node
 @onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var dialogue_box_name = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Name")
 @onready var dialogue_box_message = Hud.get_node("DialogueBox/MarginContainer/VBoxContainer/Message")
-@onready var ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
+@onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 
 var diver_name
 var diver_message
@@ -16,12 +16,12 @@ const WOOD_ITEM_NAME = "log"
 func handle_npc_interaction(npc_id: String) -> void:
 	match npc_id:
 		"diver":
-			ISLAND_NPC = SaveLoad.load_game(SaveLoad.ISLAND_NPC_PATH)
+			NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 			
-			if ISLAND_NPC["diver_objective"] == "completed":
+			if NPC_DATA["diver_objective"] == "completed":
 				dialogue_box.start_dialogue("diver_gather_woods_completed", 1, false, "none")
 			else:
-				if ISLAND_NPC["current_objective"] == "none":
+				if NPC_DATA["current_objective"] == "none":
 					dialogue_box.start_dialogue("diver", 4, true, "gather_woods")
 				else:
 					dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
@@ -31,9 +31,9 @@ func handle_npc_interaction(npc_id: String) -> void:
 					if wood_count >= REQUIRED_WOOD:
 						
 						InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
-						ISLAND_NPC["current_objective"] = "none"
-						ISLAND_NPC["diver_objective"] = "completed"
-						SaveLoad.save_game(ISLAND_NPC, SaveLoad.ISLAND_NPC_PATH)
+						NPC_DATA["current_objective"] = "none"
+						NPC_DATA["diver_objective"] = "completed"
+						SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
 					else:
 						dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
 					
