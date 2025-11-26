@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4pfeowu0e37s"]
+[gd_scene load_steps=5 format=3 uid="uid://c4pfeowu0e37s"]
 
 [ext_resource type="Texture2D" uid="uid://k1syp0j1w0ny" path="res://assets/city/plaza/trash/trash.png" id="1_dk1cs"]
+[ext_resource type="Script" uid="uid://cfileaw62emqf" path="res://scripts/city_elements/junk_collector_minigame.gd" id="1_fyai2"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_fyai2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d806c"]
-radius = 45.0
+radius = 68.0294
 
 [node name="JunkCollectorMinigame" type="Area2D"]
+script = ExtResource("1_fyai2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d806c")
@@ -19,6 +21,7 @@ region_enabled = true
 region_rect = Rect2(16, 160, 24, 16)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -31,3 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_fyai2")
 text = "Junk Collector [E]"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
