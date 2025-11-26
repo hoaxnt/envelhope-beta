@@ -48,17 +48,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="StreetPerformer" parent="." instance=ExtResource("5_g2xa2")]
-position = Vector2(498, 602)
+position = Vector2(382, 343)
 
 [node name="Guard" parent="." instance=ExtResource("6_2w64o")]
-position = Vector2(263, 479)
+position = Vector2(382, 432)
 
 [node name="BlindVendor" parent="." instance=ExtResource("7_165o0")]
-position = Vector2(321, 657)
+position = Vector2(382, 522)
 
 [node name="FruitVendor" parent="." instance=ExtResource("3_sa0bh")]
 z_index = 1
-position = Vector2(19, 618)
+position = Vector2(381.99997, 611)
 rotation = 0.0217357
 
 [node name="FoodMachine" parent="." instance=ExtResource("8_ei26i")]
