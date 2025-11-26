@@ -40,18 +40,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		stop_slider()
 
 func stop_slider():
-		if slider_bar.value >= TARGET_MIN_VALUE and slider_bar.value <= TARGET_MAX_VALUE:
-				slider_bar.modulate = Color("dede00ff")
-				earnings += 10
-				earnings_label.text = "Envelopes: %s" % str(earnings)
-		else:
-				slider_bar.modulate = Color("red")
-				if earnings < 3:
-					earnings = 0
-					earnings_label.text = "Envelopes: %s" % str(earnings)
-					return
-				earnings -= 3
-				earnings_label.text = "Envelopes: %s" % str(earnings)
+	if slider_bar.value >= TARGET_MIN_VALUE and slider_bar.value <= TARGET_MAX_VALUE:
+		#slider_bar.modulate = Color("ffff00ff")
+		earnings += 10
+		earnings_label.text = "Envelopes: %s" % str(earnings)
+	else:
+		#slider_bar.modulate = Color("ff0000ff")
+		if earnings < 3:
+			earnings = 0
+			earnings_label.text = "Envelopes: %s" % str(earnings)
+			return
+		earnings -= 3
+		earnings_label.text = "Envelopes: %s" % str(earnings)
 
 
 func _on_start_button_pressed() -> void:
