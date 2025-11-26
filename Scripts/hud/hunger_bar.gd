@@ -4,15 +4,11 @@ extends ProgressBar
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 @onready var envelopes = PLAYER_DATA.get("envelopes")
 @onready var hunger_status = PLAYER_DATA.get("hunger", 100.0)
-@onready var timer = $Timer
+@onready var hunger_timer = $HungerTimer
 
 func _ready():
 		max_value = 100.0
-
 		value = hunger_status
-		
-		if is_instance_valid(timer):
-				timer.connect("timeout", _on_timer_timeout)
 
 func _on_timer_timeout():
 		if value > 0:
@@ -22,13 +18,10 @@ func _on_timer_timeout():
 				SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 
 		if value <= 0:
-				if $Timer.is_stopped():
-						return
-				$Timer.stop()
+				hunger_timer.stop()
 				envelopes = 0 #fortest
-				
 				PLAYER_DATA.set("hunger", 100)
 				PLAYER_DATA.set("envelopes", envelopes)
 				SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 				value = 100.0
-				$Timer.start()
+				#hunger_timer.start() #fortest

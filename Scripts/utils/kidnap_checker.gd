@@ -12,5 +12,3 @@ func _on_body_entered(body: Node2D) -> void:
 			SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
 			Hud.hide()
 			Transition.transition_to_scene("res://scenes/stories/kidnap_story.tscn")
-		else:
-			print("kulang pa")

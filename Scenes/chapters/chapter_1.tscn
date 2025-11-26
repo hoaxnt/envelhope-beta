@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://mat5nmwemvko" path="res://objects/tree.tscn" id="12_pmv4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48uj0"]
-size = Vector2(212, 254)
+size = Vector2(285, 254)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ad4i"]
 size = Vector2(127, 124)
@@ -156,7 +156,7 @@ position = Vector2(951, 68)
 script = ExtResource("8_pmv4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KidnapChecker"]
-position = Vector2(79, 61)
+position = Vector2(42.5, 61)
 shape = SubResource("RectangleShape2D_48uj0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

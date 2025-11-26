@@ -16,7 +16,9 @@ var is_transitioning: bool = false
 @onready var image_node: TextureRect = $Panel/VBoxContainer/TextureRect
 @onready var label_node: Label = $Panel/VBoxContainer/Label
 @onready var next_button: Button = $Panel/SkipButton
-@onready var timer = Hud.get_node("DayPanel/Timer")
+@onready var day_timer = Hud.get_node("DayPanel/DayTimer")
+@onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
+
 
 var sfx = StreamAudio.get_node("Sfx")
 
@@ -46,5 +48,8 @@ func _transition_to_next_scene() -> void:
 	
 	is_transitioning = true
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
-	timer.start()
+	if NPC_DATA["day"] < 4:
+		NPC_DATA["day"] += 1
+		SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
+		day_timer.start()
 	

@@ -7,8 +7,8 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 script = ExtResource("1_iqqts")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.009999999999999998
+[node name="EnvelopeTimer" type="Timer" parent="."]
+wait_time = 0.05
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EnvelopeTimer" to="." method="_on_timer_timeout"]
