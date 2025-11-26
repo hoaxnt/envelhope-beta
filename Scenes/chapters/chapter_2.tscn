@@ -45,16 +45,19 @@ limit_bottom = 730
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="StreetPerformer" parent="." instance=ExtResource("5_g2xa2")]
+[node name="NPC" type="Node2D" parent="."]
+visible = false
+
+[node name="StreetPerformer" parent="NPC" instance=ExtResource("5_g2xa2")]
 position = Vector2(382, 343)
 
-[node name="Guard" parent="." instance=ExtResource("6_2w64o")]
+[node name="Guard" parent="NPC" instance=ExtResource("6_2w64o")]
 position = Vector2(382, 432)
 
-[node name="BlindVendor" parent="." instance=ExtResource("7_165o0")]
+[node name="BlindVendor" parent="NPC" instance=ExtResource("7_165o0")]
 position = Vector2(382, 522)
 
-[node name="FruitVendor" parent="." instance=ExtResource("3_sa0bh")]
+[node name="FruitVendor" parent="NPC" instance=ExtResource("3_sa0bh")]
 z_index = 1
 position = Vector2(381.99997, 611)
 rotation = 0.0217357
