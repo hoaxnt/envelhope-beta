@@ -3,8 +3,10 @@ extends Node2D
 @onready var global_state = get_node("/root/GlobalState")
 @onready var CONFIG = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
 @onready var tutorial = Hud.get_node("Tutorial")
+@onready var day_panel = Hud.get_node("DayPanel")
 
 func _ready() -> void:
+	day_panel.hide()
 	Hud.show()
 
 func _input(event: InputEvent) -> void:

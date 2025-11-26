@@ -6,7 +6,7 @@ extends Node
 @onready var INVENTORY_PATH = SaveLoad.INVENTORY_PATH
 
 var INVENTORY = {
-	"log" : 0.0,
+	"Log" : 0,
 }
 
 var PLAYER_STATS = {
