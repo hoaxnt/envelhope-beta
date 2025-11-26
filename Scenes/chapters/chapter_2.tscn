@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=15 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://scripts/chapters/chapter_2.gd" id="1_3ilha"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
 [ext_resource type="PackedScene" uid="uid://bixhfuq2bsrqu" path="res://scenes/city_elements/food_machine.tscn" id="8_ei26i"]
-[ext_resource type="Texture2D" uid="uid://hnnphpbh8qy3" path="res://assets/city/plaza/jeep.png" id="9_cf2n5"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="10_d806c"]
+[ext_resource type="PackedScene" uid="uid://kwdjoa5l13ga" path="res://scenes/city_elements/jeep_minigame.tscn" id="9_cf2n5"]
+[ext_resource type="PackedScene" uid="uid://do3p25ltpur2h" path="res://scenes/city_elements/junk_diving_minigame.tscn" id="10_d806c"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cf2n5"]
 a = Vector2(1712, 1)
@@ -25,9 +25,6 @@ b = Vector2(1712, 735)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_clykv"]
 a = Vector2(1711, -2)
 b = Vector2(1710, 736)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_d806c"]
-radius = 62.0
 
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_3ilha")
@@ -64,6 +61,12 @@ rotation = 0.0217357
 [node name="FoodMachine" parent="." instance=ExtResource("8_ei26i")]
 position = Vector2(1133, 471)
 
+[node name="JeepMinigame" parent="." instance=ExtResource("9_cf2n5")]
+position = Vector2(695, 641)
+
+[node name="JunkDivingMinigame" parent="." instance=ExtResource("10_d806c")]
+position = Vector2(1310, 116)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -77,29 +80,3 @@ shape = SubResource("SegmentShape2D_8exib")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_clykv")
-
-[node name="JeepMinigame" type="Area2D" parent="."]
-position = Vector2(695, 641)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="JeepMinigame"]
-shape = SubResource("CircleShape2D_d806c")
-
-[node name="Sprite2D" type="Sprite2D" parent="JeepMinigame"]
-scale = Vector2(0.17650004, 0.17650004)
-texture = ExtResource("9_cf2n5")
-
-[node name="Label" type="Label" parent="JeepMinigame"]
-z_index = 5
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.5
-offset_top = -39.0
-offset_right = 36.5
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("10_d806c")
-text = "Tambol [E]"
