@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 @onready var inventory_panel = Hud.get_node("Control4")
 @onready var dialogue_box = Hud.get_node("DialogueBox")
-@onready var obj = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
+@onready var obj = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var objective_label_anim = Hud.get_node("Control5/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var inventory = Hud.get_node("Control4")
 
@@ -78,11 +78,12 @@ func get_input_and_animate():
 	if input_direction.length() > 0:
 			if abs(input_direction.x) > abs(input_direction.y):
 					if input_direction.x < 0:
-						inventory.hide()
 						dialogue_box.close_dialogue()
 						anim.play("walk_side")
 						anim.flip_h = true
 						last_direction = "left"
+						if inventory:
+							inventory.hide()
 						
 						if current_tool_instance:
 							current_tool_instance.scale.x = -0.5
@@ -90,25 +91,28 @@ func get_input_and_animate():
 							
 					else:
 						dialogue_box.close_dialogue()
-						inventory.hide()
 						anim.play("walk_side")
 						anim.flip_h = false
 						last_direction = "right"
+						if inventory:
+							inventory.hide()
 						
 						if current_tool_instance:
 							current_tool_instance.scale.x = 0.5
 							current_tool_instance.position.x = 0
 			else:
 					if input_direction.y < 0:
-						inventory.hide()
 						dialogue_box.close_dialogue()
 						anim.play("walk_up")
 						last_direction = "up"
+						if inventory:
+							inventory.hide()
 					else:
 						dialogue_box.close_dialogue()
-						inventory.hide()
 						anim.play("walk_down")
 						last_direction = "down"
+						if inventory:
+							inventory.hide()
 	else:
 			match last_direction:
 					"up":
@@ -144,12 +148,14 @@ func _on_interaction_zone_body_exited(body: Node2D) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	#	-- Show Inventory --
 	if event.is_action_pressed("show_inventory"):
-		inventory_panel.visible = not inventory_panel.visible
+		if inventory_panel:
+			inventory_panel.visible = not inventory_panel.visible
 #	-- Show Objective --
 	if event.is_action_pressed("show_objective"):
 		sfx.stream = StreamAudio.typing
 		sfx.play()
-		obj.play("show_objective")
+		if obj:
+			obj.play("show_objective")
 #	-- Interact NPC --
 	if event.is_action_pressed("interact") and current_npc:
 		sfx.stream = StreamAudio.interact

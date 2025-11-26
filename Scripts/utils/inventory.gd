@@ -17,7 +17,7 @@ func _ready():
 	_update_item_list()
 	
 func _update_item_list():
-	item_list.clear()
+	#item_list.clear()
 	for item_name in InventoryManager.inventory:
 		var quantity = InventoryManager.inventory[item_name]
 		var display_text = item_name

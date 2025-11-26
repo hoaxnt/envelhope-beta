@@ -2,14 +2,12 @@ extends ProgressBar
 
 @onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
 @onready var envelopes = PLAYER_DATA.get("envelopes")
-@onready var timer = $Timer
 @onready var hunger_status = PLAYER_DATA.get("hunger", 100.0)
+@onready var timer = $Timer
 
 func _ready():
-#		Max value displayed on HUDs
 		max_value = 100.0
-		
-#		Displayed current hunger value
+
 		value = hunger_status
 		
 		if is_instance_valid(timer):
