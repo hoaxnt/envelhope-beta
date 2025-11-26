@@ -54,8 +54,8 @@ func close_dialogue():
 	current_line_index = 0
 
 func _on_yes_button_pressed() -> void:
-	sfx.stream = StreamAudio.typing
-	sfx.play()
+	#sfx.stream = StreamAudio.typing
+	#sfx.play()
 	objective_label.text = NPC_DATA["list_of_objectives"][current_objective]
 	
 	objective_label_anim.play("show_objective")

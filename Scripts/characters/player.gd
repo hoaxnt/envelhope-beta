@@ -151,8 +151,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			inventory_panel.visible = not inventory_panel.visible
 #	-- Show Objective --
 	if event.is_action_pressed("show_objective"):
-		sfx.stream = StreamAudio.typing
-		sfx.play()
+		#sfx.stream = StreamAudio.typing
+		#sfx.play()
 		if objective_label_anim:
 			objective_label_anim.play("show_objective")
 #	-- Interact NPC --
