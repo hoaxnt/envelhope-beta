@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs3mqr6e4f6uj"
-path="res://.godot/imported/box tile 32x32 2.png-dedc275bda074cd7e61bf09940c38b5e.ctex"
+uid="uid://k1syp0j1w0ny"
+path="res://.godot/imported/trash.png-52648db890c0237f1698ff954b5ca17f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/city/plaza/trash/box tile 32x32 2.png"
-dest_files=["res://.godot/imported/box tile 32x32 2.png-dedc275bda074cd7e61bf09940c38b5e.ctex"]
+source_file="res://assets/city/plaza/trash/trash.png"
+dest_files=["res://.godot/imported/trash.png-52648db890c0237f1698ff954b5ca17f.ctex"]
 
 [params]
 
