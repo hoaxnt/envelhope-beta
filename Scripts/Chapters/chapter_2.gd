@@ -13,14 +13,11 @@ func _ready() -> void:
 	camera.limit_bottom = 730
 	Hud.show()
 	
-
-	
 	if NPC_DATA["diver_objective"] == "completed":
 		objective_label.text = NPC_DATA["list_of_objectives"]["survive_day_1"]
 		sfx.stream = StreamAudio.typing
 		sfx.play()
 		objective_label_anim.play("show_objective")
-	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):

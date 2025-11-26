@@ -12,9 +12,16 @@ func _ready():
 		timer.timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout() -> void:
-	day_target_value += 1.0
+	if day_target_value >= 180:
+		Hud.hide()
+		timer.stop()
+		Transition.transition_to_scene("res://scenes/stories/sleep_story.tscn")
+		day_target_value = 0
+		return
+		
+	day_target_value += 30.0 #fortest
 	day_target_value = clamp(day_target_value, 0.0, day_progress_bar.max_value)
-	
+
 	var tween = create_tween()
 	tween.tween_property(day_progress_bar, "value", day_target_value, TWEEN_DURATION)
 	tween.set_ease(Tween.EASE_OUT)
