@@ -54,3 +54,5 @@ func _transition_to_next_scene() -> void:
 	is_transitioning = true
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
 	
+	
+	

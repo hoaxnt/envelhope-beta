@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
+@onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 var is_player_near_the_machine: bool
 
 func _on_body_entered(body: Node2D) -> void:
@@ -8,8 +9,9 @@ func _on_body_entered(body: Node2D) -> void:
 		is_player_near_the_machine = true
 		$Label.show()
 		
-		if PLAYER_DATA[""]
-
+		if PLAYER_DATA["envelopes"] >= 100 and NPC_DATA["day"] == 4:
+			print("RUN RUN RUN!")#fortest
+			
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_player_near_the_machine = false
@@ -25,5 +27,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		$Label.modulate = Color(1, 1, 1, 1)
 			
 		PLAYER_DATA["envelopes"] -= 15
+		PLAYER_DATA["hunger"] += 10
 		SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 		

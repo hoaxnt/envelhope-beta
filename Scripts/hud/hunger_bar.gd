@@ -24,4 +24,3 @@ func _on_timer_timeout():
 				PLAYER_DATA.set("envelopes", envelopes)
 				SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 				value = 100.0
-				#hunger_timer.start() #fortest

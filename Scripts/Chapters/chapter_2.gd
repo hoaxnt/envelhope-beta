@@ -7,6 +7,8 @@ extends Node2D
 @onready var day_panel = Hud.get_node("DayPanel")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
 @onready var day_label = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/DayLabel")
+@onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
+@onready var hunger_bar_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 func _ready() -> void:
 	camera.limit_left = 1
@@ -25,6 +27,12 @@ func _ready() -> void:
 		
 		objective_label.text = NPC_DATA["list_of_objectives"][survive_day]
 		objective_label_anim.play("show_objective")
+		
+		await objective_label_anim.animation_finished
+		if hunger_bar:
+			hunger_bar_timer.start()
+		
+		
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):

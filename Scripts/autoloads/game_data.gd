@@ -56,7 +56,7 @@ var NPC_DATA_STATS = {
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",
 		"survive_day_2": "OBJECTIVE: Survive the Day 2",
 		"survive_day_3": "OBJECTIVE: Survive the Day 3",
-		"survive_day_4": "OBJECTIVE: Survive the Day 4",
+		"survive_day_4": "OBJECTIVE: Dive for some junk",
 	},
 	"day": 1,
 }

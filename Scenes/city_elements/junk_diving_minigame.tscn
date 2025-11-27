@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_6ukd0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cf2n5"]
-radius = 74.02702
+radius = 48.04165
 
 [node name="JunkDivingMinigame" type="Area2D"]
 z_index = 2
