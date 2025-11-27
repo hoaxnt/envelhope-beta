@@ -3,6 +3,7 @@ extends Control
 @onready var day_progress_bar = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DayProgressBar
 @onready var day_timer = $DayTimer
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
+@onready var player = get_node("/root/Chapter2/Player")
 
 var day_target_value: float = 0.0 
 const TWEEN_DURATION = 0.5
@@ -11,7 +12,9 @@ func _ready():
 	day_target_value = day_progress_bar.value
 	if !day_timer.is_connected("timeout", _on_timer_timeout):
 		day_timer.timeout.connect(_on_timer_timeout)
-
+	
+# TASK: FIX DAY PANEL TIMER, CENTRALIZE THE CODE TO DAY PANEL ONLY AND NOT IN CHAPTER 2
+	
 func _on_timer_timeout() -> void:
 	NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 	

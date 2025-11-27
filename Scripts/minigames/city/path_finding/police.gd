@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 70.0 
+const SPEED = 70.0 #fortest
 
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var poice_body = $PoliceBody/Shadow

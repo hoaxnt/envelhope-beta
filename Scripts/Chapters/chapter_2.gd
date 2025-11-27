@@ -28,6 +28,7 @@ func _ready() -> void:
 		player.global_position = GlobalData.load_player_position()
 		
 		NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
+		
 		var day = int(NPC_DATA["day"])
 		var survive_day = "survive_day_%s" % str(day)
 		day_label.text = "Day %s" % str(day)
