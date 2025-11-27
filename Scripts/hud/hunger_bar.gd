@@ -2,31 +2,46 @@ extends ProgressBar
 
 @onready var hunger_timer = $HungerTimer
 
+const DEATH_SCENE_PATH = "res://scenes/game_over/death_scene.tscn"
+
 func _ready():
 	max_value = 100.0
-	value = float(GlobalData.get_player_data_value("hunger"))
-	hunger_timer.start()
-		
-	GlobalData.player_data_updated.connect(_on_player_data_updated)	
 
-func _on_player_data_updated(key: String, new_value):
-	if key == "hunger":	
-		self.value = new_value
+	value = GlobalData.get_player_data_value("hunger")
+	
+	if value > 0:
+		hunger_timer.start()
+	
+	GlobalData.player_data_updated.connect(_on_player_data_updated)
 
 func _on_timer_timeout():
-	if value > 0:
-		value -= 1
+	var current_hunger = value 
+	
+	if current_hunger > 0:
+		var new_hunger = current_hunger - 5
 		
-		GlobalData.update_player_data("hunger", value)
-		
-		var player_position = GlobalData.player_data.get("position")
-		GlobalData.update_player_data("position", player_position)
+		if new_hunger < 0:
+			new_hunger = 0 
+
+# TASK: FIX HUNGER BAR RESET AFTER HOSPITAL SCENEZZZ 
+
+		GlobalData.update_player_data("hunger", new_hunger)
+		value = new_hunger
 		
 	if value <= 0:
-		hunger_timer.stop()
+		hunger_timer.stop() 
 		
-		
-		GlobalData.handle_hunger_reset_city()
+		print("Hunger reached zero. Initiating scene transition.")
 
-		value = 100.0
-		hunger_timer.start()
+		GlobalData.handle_hunger_reset_city() 
+		
+		await Transition.transition_to_scene(DEATH_SCENE_PATH)
+		
+		print("This line runs only if execution resumes in the current scene after transition.")
+
+
+func _on_player_data_updated(key: String, new_value):
+	if key == "hunger":
+		self.value = new_value
+		if new_value > 0 and not hunger_timer.is_stopped():
+			hunger_timer.start()

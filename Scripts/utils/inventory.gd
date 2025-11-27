@@ -44,8 +44,8 @@ func _update_item_list():
 func _on_item_list_selected(index: int):
 	var item_name = item_list.get_item_metadata(index)
 	InventoryManager.select_item(item_name)
-	PLAYER_DATA["equipped_tool"] = item_name
-	SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
+	GlobalData.player_data.set("equipped_tool", item_name)
+	#SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
 	
 func _on_unequip_button_pressed() -> void:
 	# Use deselect_item() if that's what you want, or check if the tool is selected before attempting to re-select

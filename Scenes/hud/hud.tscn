@@ -88,6 +88,7 @@ custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+show_percentage = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
 layout_mode = 2

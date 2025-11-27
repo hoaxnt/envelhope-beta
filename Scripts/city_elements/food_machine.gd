@@ -8,9 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_player_near_the_machine = true
 		$Label.show()
-		
-		if GlobalData.npc_data.get("day") == 4 and GlobalData.get_player_data_value("envelopes") >= 100:
-			print("RUN RUN RUN!")
 			
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
