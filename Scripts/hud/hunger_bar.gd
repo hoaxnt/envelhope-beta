@@ -22,24 +22,16 @@ func _on_timer_timeout():
 		
 		if new_hunger < 0:
 			new_hunger = 0 
-
-# TASK: FIX HUNGER BAR RESET AFTER HOSPITAL SCENEZZZ 
-
+			
 		GlobalData.update_player_data("hunger", new_hunger)
 		value = new_hunger
 		
 	if value <= 0:
 		hunger_timer.stop() 
 		
-		print("Hunger reached zero. Initiating scene transition.")
-
-		GlobalData.handle_hunger_reset_city() 
+		GlobalData.handle_hunger_reset_city()
+		await Transition.transition_to_scene("res://scenes/stories/hospitalized_story.tscn")
 		
-		await Transition.transition_to_scene(DEATH_SCENE_PATH)
-		
-		print("This line runs only if execution resumes in the current scene after transition.")
-
-
 func _on_player_data_updated(key: String, new_value):
 	if key == "hunger":
 		self.value = new_value
