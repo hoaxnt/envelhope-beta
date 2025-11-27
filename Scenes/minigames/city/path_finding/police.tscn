@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://kmecuta4qy01"]
 
-[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://scripts/minigames/island/enemy.gd" id="1_xi5yg"]
+[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://scripts/minigames/city/path_finding/police.gd" id="1_xi5yg"]
 [ext_resource type="Texture2D" uid="uid://bax6ms5o4828t" path="res://assets/island/minigame_pearldiving/fish.png" id="1_y8n0v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xi5yg"]

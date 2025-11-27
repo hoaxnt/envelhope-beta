@@ -37,8 +37,9 @@ func load_player_position() -> Vector2:
 		return Vector2(80.0, 486.0)
 
 func handle_hunger_reset_city():
-	Hud.hide()
-	Transition.transition_to_scene("res://scenes/stories/hospitalized_story.tscn")
+	player_data["hunger"] = 100.0
+	player_data["envelopes"] = 0
+	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
 
 func handle_hunger_reset_island():
 	player_data["hunger"] = 100.0

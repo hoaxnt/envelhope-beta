@@ -18,7 +18,7 @@ func _physics_process(_delta: float):
 func _on_timer_timeout() -> void:
 	make_path()
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		Hud.hide()
 		Transition.transition_to_scene("res://scenes/stories/caught_story.tscn")

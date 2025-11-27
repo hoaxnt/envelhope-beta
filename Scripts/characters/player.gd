@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var sprint_speed: int = 200#fortest
+@export var sprint_speed: int = 500#fortest
 @onready var base_speed = 80
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D

@@ -45,14 +45,8 @@ func _update_content() -> void:
 func _transition_to_next_scene() -> void:
 	if is_transitioning:
 		return
-	
+		
 	is_transitioning = true
+	
 	await Transition.transition_to_scene(NEXT_SCENE_PATH)
-	
-	GlobalData.player_data.set("hunger", 100)
-	GlobalData.player_data.set("envelopes", 0)
-	
 	hunger_timer.start()
-	
-	
-	
