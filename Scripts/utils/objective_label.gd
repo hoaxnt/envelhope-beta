@@ -10,5 +10,4 @@ func _on_timer_timeout() -> void:
 	if CONFIG.get("user_opened_once") == true:
 		#sfx.stream = StreamAudio.typing
 		#sfx.play()
-		objective_anim.play("show_objective")
 		timer.stop()

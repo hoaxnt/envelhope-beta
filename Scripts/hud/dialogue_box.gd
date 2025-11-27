@@ -59,8 +59,7 @@ func _on_yes_button_pressed() -> void:
 	objective_label.text = NPC_DATA["list_of_objectives"][current_objective]
 	
 	objective_label_anim.play("show_objective")
-	NPC_DATA["current_objective"] = current_objective
-	SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
+	GlobalData.npc_data.set("current_objective", current_objective)
 	
 	dialogue_choices.hide()
 	close_dialogue()

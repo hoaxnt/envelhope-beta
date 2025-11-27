@@ -11,4 +11,3 @@ func _on_button_pressed() -> void:
 	sfx.stream = StreamAudio.button_press
 	sfx.play()
 	tutorial.hide()
-	SaveLoad.save_game({"user_opened_once" : true}, SaveLoad.CONFIG_PATH)
