@@ -10,7 +10,6 @@ extends Node2D
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 @onready var danger_zone = $DangerZone
 @onready var player = $Player
-
 @onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
 @onready var hunger_bar_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
@@ -23,17 +22,14 @@ func _ready() -> void:
 	day_panel.show()
 	day_timer.start()
 	
-	
-	if NPC_DATA["diver_objective"] == "completed":
+	if GlobalData.npc_data.get("diver_objective") == "completed":
 		player.global_position = GlobalData.load_player_position()
 		
-		NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
+		var day = GlobalData.npc_data.get("day")
+		var survive_day = "survive_day_%s" % str(int(day))
 		
-		var day = int(NPC_DATA["day"])
-		var survive_day = "survive_day_%s" % str(day)
-		day_label.text = "Day %s" % str(day)
-		
-		objective_label.text = NPC_DATA["list_of_objectives"][survive_day]
+		day_label.text = "Day %s" % str(int(day))
+		objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 		objective_label_anim.play("show_objective")
 		
 		await objective_label_anim.animation_finished

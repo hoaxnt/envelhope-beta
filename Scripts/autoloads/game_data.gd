@@ -9,6 +9,10 @@ var INVENTORY = {
 	"Log" : 0,
 }
 
+var CONFIG = {
+	"user_opened_once": false,
+}
+
 var PLAYER_STATS = {
 	"hunger": 100.0,
 	"envelopes": 100,
@@ -51,20 +55,19 @@ var NPC_DATA_STATS = {
 		}
 	},
 	"current_objective": "none",
-	"diver_objective": "completed",#fortest
+	"diver_objective": "none",#fortest
 	"list_of_objectives": {
 		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver",
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",
 		"survive_day_2": "OBJECTIVE: Survive the Day 2",
 		"survive_day_3": "OBJECTIVE: Survive the Day 3",
 		"survive_day_4": "OBJECTIVE: Dive for some junk",
-	},
-	"day": 1,
+	},	"day": 1,
 	"release_the_kraken": false,
 }
 
 func _ready() -> void:
-	SaveLoad.save_game(PLAYER_STATS, PLAYER_DATA_PATH)
-	SaveLoad.save_game(NPC_DATA_STATS, NPC_DATA_PATH)
-	SaveLoad.save_game(INVENTORY, INVENTORY_PATH)
-	
+	#SaveLoad.save_game(PLAYER_STATS, PLAYER_DATA_PATH)
+	#SaveLoad.save_game(NPC_DATA_STATS, NPC_DATA_PATH)
+	#SaveLoad.save_game(INVENTORY, INVENTORY_PATH)
+	pass
