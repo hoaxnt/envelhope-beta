@@ -60,6 +60,7 @@ var NPC_DATA_STATS = {
 		"survive_day_4": "OBJECTIVE: Dive for some junk",
 	},
 	"day": 1,
+	"release_the_kraken": false,
 }
 
 func _ready() -> void:

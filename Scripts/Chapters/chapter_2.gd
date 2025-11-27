@@ -9,6 +9,8 @@ extends Node2D
 @onready var day_label = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/DayLabel")
 @onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
 @onready var hunger_bar_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
+@onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
+@onready var danger_zone = $DangerZone
 @onready var player = $Player
 
 func _ready() -> void:
@@ -36,6 +38,23 @@ func _ready() -> void:
 		if hunger_bar:
 			hunger_bar_timer.start()
 		
+func spawn_police_squad():
+	var spawn_positions = [
+	Vector2(705, 235),
+	Vector2(654, 604),
+	Vector2(115, 68)
+	]
+	for pos in spawn_positions:
+		var police_instance = police_npc.instantiate()
+		police_instance.position = pos
+		add_child(police_instance)
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):
 		GlobalState.toggle_pause()
+
+func _on_danger_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		if GlobalData.npc_data.get("release_the_kraken") and GlobalData.npc_data.get("day") == 4:
+			GlobalData.npc_data.set("release_the_kraken", false)
+			spawn_police_squad()

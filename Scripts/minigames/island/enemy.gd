@@ -3,12 +3,10 @@ extends CharacterBody2D
 const SPEED = 70.0 
 
 @onready var player = get_node("/root/Chapter2/Player")
-#@onready var player = get_node("/root/PoliceChase/Player")#fortest
 @onready var poice_body = $PoliceBody/Shadow
 
 func make_path():
 	if player:
-		print("player exist")
 		poice_body.target_position = player.global_position
 		
 func _physics_process(_delta: float):
@@ -18,5 +16,9 @@ func _physics_process(_delta: float):
 	move_and_slide()
 
 func _on_timer_timeout() -> void:
-	print("timeout, make path")
 	make_path()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		Transition.transition_to_scene("res://scenes/stories/caught_story.tscn")

@@ -5,6 +5,15 @@ var npc_data: Dictionary = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 
 signal player_data_updated(key, value)
 
+func advance_to_next_day():
+	var current_day = npc_data.get("day", 1)
+	if current_day >= 4:
+		current_day = 0
+	var next_day = current_day + 1
+	npc_data["day"] = next_day
+	if next_day == 4:
+		npc_data["release_the_kraken"] = true
+	SaveLoad.save_game(npc_data, SaveLoad.NPC_DATA_PATH)
 
 func update_player_data(key: String, value):
 	player_data[key] = value
