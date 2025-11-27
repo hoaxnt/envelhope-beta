@@ -18,4 +18,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		Hud.hide()
 		Transition.transition_to_scene("res://scenes/minigames/island/pearl_diving.tscn")
 		
-#		TASK: Day 4 Last Chase, Ending Story,PEARL diving Logic Hunger Logic, Hospital Scene

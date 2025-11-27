@@ -7,6 +7,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_player_near_the_machine = true
 		$Label.show()
+		
+		if PLAYER_DATA[""]
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

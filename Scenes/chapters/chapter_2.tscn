@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=19 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://scripts/chapters/chapter_2.gd" id="1_3ilha"]
@@ -30,6 +30,14 @@ b = Vector2(1710, 736)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3veq7"]
 a = Vector2(1231, 128)
 b = Vector2(1228, 743)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nj00i"]
+a = Vector2(1399, 129)
+b = Vector2(1404, 740)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5g32p"]
+a = Vector2(1229, 129)
+b = Vector2(1400, 131)
 
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_3ilha")
@@ -95,3 +103,9 @@ shape = SubResource("SegmentShape2D_clykv")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_3veq7")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_nj00i")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_5g32p")
