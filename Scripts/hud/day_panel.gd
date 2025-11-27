@@ -25,14 +25,8 @@ func _on_timer_timeout() -> void:
 		day_target_value = 0
 		return
 	
-	
-	
 	day_target_value += 1.0 #fortest
 	day_target_value = clamp(day_target_value, 0.0, day_progress_bar.max_value)
-	
-	print(day_target_value)
-	#if day_target_value >= 180:
-		#day_timer.stop()
 
 	var tween = create_tween()
 	tween.tween_property(day_progress_bar, "value", day_target_value, TWEEN_DURATION)

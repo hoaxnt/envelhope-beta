@@ -104,7 +104,6 @@ region_rect = Rect2(8, 192, 1008, 752)
 position = Vector2(356, 381)
 scale = Vector2(8.355624, 8.355624)
 sprite_frames = SubResource("SpriteFrames_3iif3")
-autoplay = "default"
 frame_progress = 0.24007364
 
 [node name="Camera2D" type="Camera2D" parent="."]

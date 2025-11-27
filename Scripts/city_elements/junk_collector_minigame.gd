@@ -10,7 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		is_player_near = true
+		is_player_near = false
 		$Label.hide()
 		
 func _unhandled_input(event: InputEvent) -> void:

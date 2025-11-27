@@ -49,7 +49,7 @@ script = ExtResource("1_3ilha")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
-position = Vector2(1017, 482)
+position = Vector2(80, 486)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
