@@ -13,8 +13,6 @@ func _ready():
 	if !day_timer.is_connected("timeout", _on_timer_timeout):
 		day_timer.timeout.connect(_on_timer_timeout)
 	
-# TASK: FIX DAY PANEL TIMER, CENTRALIZE THE CODE TO DAY PANEL ONLY AND NOT IN CHAPTER 2
-	
 func _on_timer_timeout() -> void:
 	NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 	

@@ -20,6 +20,7 @@ func _ready() -> void:
 	camera.limit_bottom = 730
 	Hud.show()
 	day_panel.show()
+	
 	day_timer.start()
 	
 	if GlobalData.npc_data.get("diver_objective") == "completed":
