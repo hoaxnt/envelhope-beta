@@ -2,7 +2,7 @@ extends Area2D
 
 var is_player_near_the_machine: bool
 const FOOD_COST = 15
-const HUNGER_GAIN = 100.0
+const HUNGER_GAIN = 5.0 #fortest
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

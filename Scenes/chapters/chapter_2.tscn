@@ -28,19 +28,19 @@ a = Vector2(1711, -2)
 b = Vector2(1710, 736)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3veq7"]
-a = Vector2(1231, 128)
+a = Vector2(1231, 119)
 b = Vector2(1228, 743)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nj00i"]
-a = Vector2(1399, 129)
+a = Vector2(1399, 119)
 b = Vector2(1404, 740)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5g32p"]
-a = Vector2(1229, 129)
-b = Vector2(1400, 131)
+a = Vector2(1215, 130)
+b = Vector2(1407, 130)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8exib"]
-size = Vector2(537, 449.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clykv"]
+size = Vector2(190, 43)
 
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_3ilha")
@@ -111,11 +111,9 @@ shape = SubResource("SegmentShape2D_3veq7")
 shape = SubResource("SegmentShape2D_nj00i")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -11)
 shape = SubResource("SegmentShape2D_5g32p")
 
-[node name="Day4Checker" type="Area2D" parent="."]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Day4Checker"]
-position = Vector2(995.5, 201.75)
-shape = SubResource("RectangleShape2D_8exib")
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1312, 20.5)
+shape = SubResource("RectangleShape2D_clykv")
