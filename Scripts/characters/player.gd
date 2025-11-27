@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var head_text = $HeadText
 @onready var hand_socket = $AnimatedSprite2D/HandSocket
 @onready var base_speed = 80
-@onready var sprint_speed = 140
+@onready var sprint_speed = 500#fortest
 
 @onready var inventory_panel = Hud.get_node("InventoryPanel")
 @onready var dialogue_box = Hud.get_node("DialogueBox")

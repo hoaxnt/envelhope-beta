@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://oiw8mnm1leuq" path="res://assets/characters/player/walk/walk_up.png" id="7_eojnx"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="8_eojnx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqtwu"]
-radius = 7.0
-height = 16.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eyoc"]
 radius = 16.0
 height = 36.0
@@ -260,14 +256,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_eojnx"]
+radius = 5.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_yewv4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_kqtwu")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -281,6 +277,10 @@ animation = &"idle_down"
 
 [node name="HandSocket" type="Node2D" parent="AnimatedSprite2D"]
 position = Vector2(7, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_eojnx")
 
 [node name="HeadText" type="Label" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=13 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://dchxwfgk4jbge" path="res://scripts/chapters/chapter_2.gd" id="1_3ilha"]
@@ -11,42 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://kwdjoa5l13ga" path="res://scenes/city_elements/jeep_minigame.tscn" id="9_cf2n5"]
 [ext_resource type="PackedScene" uid="uid://do3p25ltpur2h" path="res://scenes/city_elements/junk_diving_minigame.tscn" id="10_d806c"]
 [ext_resource type="PackedScene" uid="uid://c4pfeowu0e37s" path="res://scenes/city_elements/junk_collector_minigame.tscn" id="11_8exib"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_cf2n5"]
-a = Vector2(1712, 1)
-b = Vector2(0, 2)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_d806c"]
-b = Vector2(1, 736)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_8exib"]
-a = Vector2(0, 735)
-b = Vector2(1712, 735)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_clykv"]
-a = Vector2(1711, -2)
-b = Vector2(1710, 736)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_3veq7"]
-a = Vector2(1231, 119)
-b = Vector2(1228, 743)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_nj00i"]
-a = Vector2(1399, 119)
-b = Vector2(1404, 740)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_5g32p"]
-a = Vector2(1215, 130)
-b = Vector2(1407, 130)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_clykv"]
-size = Vector2(190, 43)
+[ext_resource type="PackedScene" uid="uid://kmecuta4qy01" path="res://scenes/minigames/city/path_finding/police.tscn" id="12_clykv"]
 
 [node name="Chapter2" type="Node2D"]
 script = ExtResource("1_3ilha")
 
 [node name="Plaza" parent="." instance=ExtResource("1_3hgx5")]
 metadata/_edit_lock_ = true
+
+[node name="Police" parent="." instance=ExtResource("12_clykv")]
+position = Vector2(220, 501)
 
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
 position = Vector2(80, 486)
@@ -81,7 +55,7 @@ rotation = 0.0217357
 position = Vector2(1133, 471)
 
 [node name="JeepMinigame" parent="." instance=ExtResource("9_cf2n5")]
-position = Vector2(695, 641)
+position = Vector2(191, 640)
 
 [node name="JunkDivingMinigame" parent="." instance=ExtResource("10_d806c")]
 position = Vector2(1310, 116)
@@ -91,29 +65,3 @@ z_index = 2
 position = Vector2(823, 39)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("SegmentShape2D_cf2n5")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("SegmentShape2D_d806c")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("SegmentShape2D_8exib")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("SegmentShape2D_clykv")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("SegmentShape2D_3veq7")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("SegmentShape2D_nj00i")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1, -11)
-shape = SubResource("SegmentShape2D_5g32p")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1312, 20.5)
-shape = SubResource("RectangleShape2D_clykv")
