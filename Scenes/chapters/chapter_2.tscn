@@ -19,9 +19,6 @@ script = ExtResource("1_3ilha")
 [node name="Plaza" parent="." instance=ExtResource("1_3hgx5")]
 metadata/_edit_lock_ = true
 
-[node name="Police" parent="." instance=ExtResource("12_clykv")]
-position = Vector2(220, 501)
-
 [node name="Player" parent="." instance=ExtResource("2_v6yd1")]
 position = Vector2(80, 486)
 
@@ -55,7 +52,7 @@ rotation = 0.0217357
 position = Vector2(1133, 471)
 
 [node name="JeepMinigame" parent="." instance=ExtResource("9_cf2n5")]
-position = Vector2(191, 640)
+position = Vector2(131, 378)
 
 [node name="JunkDivingMinigame" parent="." instance=ExtResource("10_d806c")]
 position = Vector2(1310, 116)
@@ -64,4 +61,7 @@ position = Vector2(1310, 116)
 z_index = 2
 position = Vector2(823, 39)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Police" parent="Node2D" instance=ExtResource("12_clykv")]
+position = Vector2(220, 501)
