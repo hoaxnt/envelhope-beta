@@ -1,6 +1,7 @@
 extends Node2D
 
 const bgm = preload("res://assets/sfx/bgm.mp3")
+const bgm_chase = preload("res://assets/sfx/chase_bgm.mp3")
 const button_press = preload("res://assets/sfx/button_press.mp3")
 const cut = preload("res://assets/sfx/tree_cut.wav")
 const interact = preload("res://assets/sfx/interact.mp3")
