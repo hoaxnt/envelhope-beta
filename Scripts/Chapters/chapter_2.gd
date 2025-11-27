@@ -32,7 +32,6 @@ func _ready() -> void:
 		day_label.text = "Day %s" % str(int(day))
 		objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 		objective_label_anim.play("show_objective")
-		
 		await objective_label_anim.animation_finished
 		
 		if hunger_bar:
