@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjocvfb1q65td"]
 
 [ext_resource type="Texture2D" uid="uid://bax6ms5o4828t" path="res://assets/island/minigame_pearldiving/fish.png" id="1_16q55"]
-[ext_resource type="Script" uid="uid://bgex07726bvwj" path="res://scripts/minigames/island/fish_obstacle.gd" id="1_sl84r"]
+[ext_resource type="Script" uid="uid://bgex07726bvwj" path="res://scripts/minigames/city/crocs_obstacle.gd" id="1_sl84r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16q55"]
 size = Vector2(79.5, 45.5)
 
-[node name="fish_obstacle" type="Area2D"]
+[node name="crocs_obstacle" type="Area2D"]
 script = ExtResource("1_sl84r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

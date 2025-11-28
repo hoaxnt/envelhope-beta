@@ -1,12 +1,155 @@
-[gd_scene load_steps=12 format=3 uid="uid://rmgri270haly"]
+[gd_scene load_steps=37 format=3 uid="uid://rmgri270haly"]
 
 [ext_resource type="Script" uid="uid://c0lxyiegtjc3" path="res://scripts/minigames/city/junk_diving.gd" id="1_0lv74"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_brdyw"]
 [ext_resource type="Texture2D" uid="uid://cobj5hafl1d1d" path="res://assets/city/minigame/junk_diving_bg.jpg" id="1_uc1ku"]
-[ext_resource type="PackedScene" uid="uid://xt2vbq4u5q7y" path="res://scenes/characters/player_pearldiving.tscn" id="1_xynkh"]
 [ext_resource type="Script" uid="uid://bndfioqn4maro" path="res://scripts/characters/player_pearldiving.gd" id="2_uc1ku"]
-[ext_resource type="PackedScene" uid="uid://p016lxodfcex" path="res://scenes/utils/pearl.tscn" id="3_0lv74"]
-[ext_resource type="PackedScene" uid="uid://bjocvfb1q65td" path="res://scenes/minigames/island/fish_obstacle.tscn" id="4_ulg5r"]
+[ext_resource type="Texture2D" uid="uid://csfa785brf0g6" path="res://assets/characters/player_pearldiving/swim/Swim.png" id="4_6vbbh"]
+[ext_resource type="Texture2D" uid="uid://bdrwx2roqeqvi" path="res://assets/characters/player/swim_sprite.png" id="5_6pohf"]
+[ext_resource type="Texture2D" uid="uid://brwdywuw6r0i3" path="res://assets/characters/player_pearldiving/swim/Swim2.png" id="5_vro3k"]
+[ext_resource type="Script" uid="uid://bgex07726bvwj" path="res://scripts/minigames/city/crocs_obstacle.gd" id="6_ulg5r"]
+[ext_resource type="Script" uid="uid://4t32knba00pq" path="res://scripts/minigames/city/junk.gd" id="6_vro3k"]
+[ext_resource type="Texture2D" uid="uid://bax6ms5o4828t" path="res://assets/island/minigame_pearldiving/fish.png" id="7_42lmg"]
+[ext_resource type="Texture2D" uid="uid://k1syp0j1w0ny" path="res://assets/city/plaza/trash/trash.png" id="8_vro3k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40nl7"]
+atlas = ExtResource("4_6vbbh")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5jfx"]
+atlas = ExtResource("4_6vbbh")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hxr1"]
+atlas = ExtResource("4_6vbbh")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44jhr"]
+atlas = ExtResource("4_6vbbh")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuwge"]
+atlas = ExtResource("4_6vbbh")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd66q"]
+atlas = ExtResource("4_6vbbh")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu4se"]
+atlas = ExtResource("5_6pohf")
+region = Rect2(0, 0, 416, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkvw6"]
+atlas = ExtResource("5_6pohf")
+region = Rect2(0, 150, 416, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1h81"]
+atlas = ExtResource("5_6pohf")
+region = Rect2(0, 300, 416, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbeq6"]
+atlas = ExtResource("5_6pohf")
+region = Rect2(0, 450, 416, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eboir"]
+atlas = ExtResource("5_vro3k")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdm1m"]
+atlas = ExtResource("5_vro3k")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loouy"]
+atlas = ExtResource("5_vro3k")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x515"]
+atlas = ExtResource("5_vro3k")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqqsl"]
+atlas = ExtResource("5_vro3k")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tsln"]
+atlas = ExtResource("5_vro3k")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olqkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40nl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5jfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hxr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44jhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuwge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd66q")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu4se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkvw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1h81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbeq6")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eboir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdm1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loouy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x515")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqqsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tsln")
+}],
+"loop": true,
+"name": &"swim_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40nl7"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf05h"]
+radius = 17.029387
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16q55"]
+size = Vector2(79.5, 45.5)
 
 [sub_resource type="Animation" id="Animation_u50xa"]
 length = 0.001
@@ -48,6 +191,9 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brdyw"]
 bg_color = Color(0.12955844, 0.1295585, 0.12955832, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lv74"]
+bg_color = Color(0.12941177, 0.12941177, 0.12941177, 1)
+
 [node name="JunkDiving" type="Node2D"]
 script = ExtResource("1_0lv74")
 
@@ -55,13 +201,24 @@ script = ExtResource("1_0lv74")
 position = Vector2(483, 281)
 texture = ExtResource("1_uc1ku")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_xynkh")]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(251, 257)
 motion_mode = 1
 script = ExtResource("2_uc1ku")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.32666668, 0.32666668)
+sprite_frames = SubResource("SpriteFrames_olqkr")
+animation = &"swim"
+autoplay = "swim"
+frame_progress = 0.21123996
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-5, 0)
+shape = SubResource("CircleShape2D_40nl7")
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
+zoom = Vector2(0.71, 0.71)
 limit_left = 0
 limit_top = 0
 limit_right = 685
@@ -71,17 +228,45 @@ position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 drag_left_margin = 1.0
 
-[node name="Pearl" parent="." instance=ExtResource("3_0lv74")]
-position = Vector2(15, 366)
+[node name="Junk" type="Area2D" parent="."]
+position = Vector2(663, 287)
+script = ExtResource("6_vro3k")
 
-[node name="CrocsObstacle" parent="." instance=ExtResource("4_ulg5r")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Junk"]
+shape = SubResource("CircleShape2D_xf05h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Junk"]
+scale = Vector2(3.7358828, 3.573453)
+texture = ExtResource("8_vro3k")
+region_enabled = true
+region_rect = Rect2(208, 208, 24, 16)
+
+[node name="SpawnTimer" type="Timer" parent="Junk"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="Junk"]
+
+[node name="CrocsObstacle" type="Area2D" parent="."]
 position = Vector2(76, 435)
-speed = 100.0
-move_range = Rect2(0, 200, 700, 400)
+script = ExtResource("6_ulg5r")
+speed = 300.0
+move_range = Rect2(0, 150, 1000, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="CrocsObstacle"]
+position = Vector2(-20.713234, 38.5625)
+scale = Vector2(0.1863798, 0.18969728)
+texture = ExtResource("7_42lmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrocsObstacle"]
+position = Vector2(-23.75, 43)
+shape = SubResource("RectangleShape2D_16q55")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -104,6 +289,7 @@ libraries = {
 }
 
 [node name="Instructions" type="Panel" parent="CanvasLayer"]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(1300, 800)
 offset_left = 310.0
@@ -171,3 +357,67 @@ focus_mode = 0
 theme_override_fonts/font = ExtResource("1_brdyw")
 theme_override_font_sizes/font_size = 80
 text = "START"
+
+[node name="SummaryPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(1300, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lv74")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SummaryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SummaryPanel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 114
+alignment = 1
+
+[node name="SummaryLabel" type="Label" parent="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_brdyw")
+theme_override_font_sizes/font_size = 86
+text = "You've earned 0 Envelopes!"
+horizontal_alignment = 1
+
+[node name="DoneButton" type="Button" parent="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_brdyw")
+theme_override_font_sizes/font_size = 80
+text = "Done"
+
+[node name="EarningsLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -325.0
+offset_top = 45.0
+offset_right = -40.0
+offset_bottom = 125.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_brdyw")
+theme_override_font_sizes/font_size = 80
+text = "Junks: 0"
+
+[connection signal="body_entered" from="Junk" to="Junk" method="_on_body_entered"]
+[connection signal="body_exited" from="Junk" to="Junk" method="_on_body_exited"]
+[connection signal="timeout" from="Junk/SpawnTimer" to="Junk" method="_on_spawn_timer_timeout"]
+[connection signal="body_entered" from="CrocsObstacle" to="CrocsObstacle" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Instructions/HBoxContainer/VBoxContainer/MarginContainer2/StartButton" to="." method="_on_start_button_pressed"]
