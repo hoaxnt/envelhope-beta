@@ -16,7 +16,7 @@ var CONFIG = {
 
 var PLAYER_STATS = {
 	"hunger": 100.0,
-	"envelopes": 100,
+	"envelopes": 0,
 	"cycle": 10,
 	"equipped_tool": "none",
 	"position": [80.0, 486.0],
@@ -56,7 +56,7 @@ var NPC_DATA_STATS = {
 		}
 	},
 	"current_objective": "none",
-	"diver_objective": "completed",#fortest completed
+	"diver_objective": "none",#fortest completed
 	"list_of_objectives": {
 		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver",
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",

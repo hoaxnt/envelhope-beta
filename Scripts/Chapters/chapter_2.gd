@@ -8,6 +8,8 @@ extends Node2D
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
 @onready var day_label = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/DayLabel")
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
+@onready var police_npc_2 = load("res://scenes/minigames/city/path_finding/police_2.tscn")
+@onready var police_npc_3 = load("res://scenes/minigames/city/path_finding/police_3.tscn")
 @onready var danger_zone = $DangerZone
 @onready var player = $Player
 @onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
@@ -41,15 +43,35 @@ func _ready() -> void:
 			hunger_bar_timer.start()#fortest
 		
 func spawn_police_squad():
-	var spawn_positions = [
-	Vector2(705, 235),
-	Vector2(654, 604),
-	Vector2(115, 68)
-	]
-	for pos in spawn_positions:
-		var police_instance = police_npc.instantiate()
-		police_instance.position = pos
-		add_child(police_instance)
+	var police_instance = police_npc.instantiate()
+	#var police_instance_2 = police_npc_2.instantiate()
+	#var police_instance_3 = police_npc_3.instantiate()
+	
+	police_instance.position = Vector2(705, 235)
+	#police_instance_2.position = Vector2(654, 604)
+	#police_instance_3.position = Vector2(115, 68)
+	
+	add_child(police_instance)
+	#add_child(police_instance_2)
+	#add_child(police_instance_3)
+		
+		#var spawn_positions = [
+	#Vector2(705, 235),
+	#Vector2(654, 604),
+	#Vector2(115, 68)
+	#]
+	#for pos in spawn_positions:
+		#var police_instance = police_npc.instantiate()
+		#var police_instance_2 = police_npc_2.instantiate()
+		#var police_instance_3 = police_npc_3.instantiate()
+		#
+		#police_instance.position = pos
+		#police_instance_2.position = pos
+		#police_instance_3.position = pos
+		#
+		#add_child(police_instance)
+		#add_child(police_instance_2)
+		#add_child(police_instance_3)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):

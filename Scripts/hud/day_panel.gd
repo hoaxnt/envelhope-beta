@@ -26,7 +26,7 @@ func _on_timer_timeout() -> void:
 		day_target_value = 0
 		return
 	
-	day_target_value += 1.0 #fortest
+	day_target_value += 200.0 #fortest
 	day_target_value = clamp(day_target_value, 0.0, day_progress_bar.max_value)
 
 	var tween = create_tween()

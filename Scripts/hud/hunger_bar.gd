@@ -1,17 +1,17 @@
 extends ProgressBar
 
 @onready var hunger_timer = $HungerTimer
+@onready var current_hunger = GlobalData.get_player_data_value("hunger")
 
 const HUNGER_DECREMENT = 1 #fortest
 
 func _ready():
 	max_value = 100.0
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
-	hunger_timer.start()
 
 func _on_hunger_timer_timeout() -> void:
-	var current_hunger = GlobalData.get_player_data_value("hunger")
-	
+	print("ME")
+
 	if current_hunger > 0:
 		var new_hunger = current_hunger - HUNGER_DECREMENT
 		

@@ -8,7 +8,8 @@ extends Node2D
 func _ready() -> void:
 	day_panel.hide()
 	Hud.show()
-	print("in Chapter1 user opened: ", GlobalData.config.get("user_opened_once"))
+	print("CHAPTER 1 new game: ", GlobalData.config.get("is_new_game"))
+	
 	if not GlobalData.config.get("user_opened_once"):
 		tutorial.show()
 	else:

@@ -5,15 +5,19 @@ var npc_data: Dictionary = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 var inventory: Dictionary = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
 var config: Dictionary = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
 
+
 signal player_data_updated(key, value)
-signal npc_data_updated(key, value)
+signal npc_data_updated(npc_id: String, attribute_key: String, new_value)
 signal config_updated(key, value)
 signal inventory_updated(key, value)
 
-func update_npc_data(key: String, value):
-	npc_data[key] = value
+func update_npc_data(npc_id: String, attribute_key: String, new_value):
+	if not npc_data.has(npc_id):
+		npc_data[npc_id] = {}
+		print("WARNING: Initializing new entry for NPC ID: ", npc_id)
+	npc_data[npc_id][attribute_key] = new_value
 	SaveLoad.save_game(npc_data, SaveLoad.NPC_DATA_PATH)
-	npc_data_updated.emit(key, value)
+	npc_data_updated.emit(npc_id, attribute_key, new_value)
 
 func update_player_data(key: String, value):
 	player_data[key] = value
