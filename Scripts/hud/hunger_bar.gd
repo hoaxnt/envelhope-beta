@@ -7,6 +7,7 @@ const HUNGER_DECREMENT = 1 #fortest
 func _ready():
 	max_value = 100.0
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
+	hunger_timer.start()
 
 func _on_hunger_timer_timeout() -> void:
 	var current_hunger = GlobalData.get_player_data_value("hunger")
@@ -35,9 +36,10 @@ func _on_hunger_timer_timeout() -> void:
 				GlobalData.handle_hunger_reset_city()
 				value = GlobalData.get_player_data_value("hunger")
 				
+				
+				
 func _on_player_data_updated(key: String, new_value):
 	if key == "hunger":
 		self.value = new_value
-		
 		if new_value > 0 and hunger_timer.is_stopped():
 			hunger_timer.start()
