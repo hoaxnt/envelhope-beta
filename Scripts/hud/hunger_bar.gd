@@ -10,7 +10,6 @@ func _ready():
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
 
 func _on_hunger_timer_timeout() -> void:
-	print("ME")
 
 	if current_hunger > 0:
 		var new_hunger = current_hunger - HUNGER_DECREMENT

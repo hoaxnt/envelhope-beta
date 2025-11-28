@@ -6,9 +6,9 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("player"):
 		#fortest
-		print("Log: ", GlobalData.inventory.get("Log"), " Current Objective: ", GlobalData.npc_data.get("current_objective"))
 		
 		if int(inventory_data["Log"]) >= 1 and GlobalData.npc_data.get("current_objective") == "gather_woods":
+			print("Log: ", inventory_data["Log"], " Current Objective: ", GlobalData.npc_data.get("current_objective"))
 			
 			GlobalData.inventory.set("Log", 0)
 			GlobalData.npc_data.set("current_objective", "none")

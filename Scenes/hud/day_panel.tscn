@@ -82,4 +82,4 @@ expand_mode = 1
 
 [node name="DayTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="DayTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

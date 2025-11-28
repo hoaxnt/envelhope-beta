@@ -6,7 +6,7 @@ extends Node2D
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var day_panel = Hud.get_node("DayPanel")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
-@onready var day_label = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/DayLabel")
+#@onready var day_label = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/DayLabel")
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 @onready var police_npc_2 = load("res://scenes/minigames/city/path_finding/police_2.tscn")
 @onready var police_npc_3 = load("res://scenes/minigames/city/path_finding/police_3.tscn")
@@ -34,7 +34,7 @@ func _ready() -> void:
 		var day = GlobalData.npc_data.get("day")
 		var survive_day = "survive_day_%s" % str(int(day))
 		
-		day_label.text = "Day %s" % str(int(day))
+		
 		objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 		objective_label_anim.play("show_objective")
 		await objective_label_anim.animation_finished
