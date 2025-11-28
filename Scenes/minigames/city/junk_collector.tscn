@@ -8,7 +8,7 @@ length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
+tracks/0/path = NodePath("CountdownLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
+tracks/0/path = NodePath("CountdownLabel:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,7 +48,7 @@ script = ExtResource("1_2u6hv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -70,8 +70,24 @@ libraries = {
 &"": SubResource("AnimationLibrary_u50xa")
 }
 
-[node name="Instructions" type="Panel" parent="CanvasLayer"]
-visible = false
+[node name="TapTapButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -468.0
+offset_top = -312.0
+offset_right = 468.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2hg5b")
+theme_override_font_sizes/font_size = 120
+text = " [SPACEBAR] "
+
+[node name="InstructionsPanel" type="Panel" parent="CanvasLayer"]
 clip_contents = true
 custom_minimum_size = Vector2(1300, 800)
 offset_left = 310.0
@@ -82,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2hg5b")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Instructions"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/InstructionsPanel"]
 layout_mode = 0
 offset_right = 1300.0
 offset_bottom = 800.0
@@ -90,31 +106,31 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Instructions/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/InstructionsPanel/HBoxContainer"]
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 50
 
-[node name="Title" type="Label" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Title" type="Label" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_2hg5b")
 theme_override_font_sizes/font_size = 80
 text = "How to Play"
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
 
-[node name="Text" type="Label" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="Text" type="Label" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_2hg5b")
 theme_override_font_sizes/font_size = 40
@@ -125,12 +141,12 @@ text = "1. You have only 5 SECONDS to act.
 3. GET RICH: Each tap adds ONE coin to your total."
 autowrap_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/margin_bottom = 80
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="StartButton" type="Button" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -139,3 +155,14 @@ focus_mode = 0
 theme_override_fonts/font = ExtResource("1_2hg5b")
 theme_override_font_sizes/font_size = 80
 text = "START"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="CanvasLayer/TapTapButton" to="." method="_on_tap_tap_button_button_up"]
+[connection signal="pressed" from="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer/MarginContainer2/StartButton" to="." method="_on_start_button_pressed"]
