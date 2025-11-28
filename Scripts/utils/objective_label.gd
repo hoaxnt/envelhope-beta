@@ -5,9 +5,10 @@ extends Label
 @onready var sfx = StreamAudio.get_node("Sfx")
 
 func _on_timer_timeout() -> void:
-	var CONFIG = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
+	#fortest
 	
-	if CONFIG.get("user_opened_once") == true:
+	#if CONFIG.get("user_opened_once") == true:
+	if GlobalData.config.get("user_opened_once") == true:
 		#sfx.stream = StreamAudio.typing
 		#sfx.play()
 		timer.stop()

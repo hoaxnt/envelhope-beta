@@ -1,17 +1,13 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
-	var INVENTORY = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
-	
-	NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 	if body.is_in_group("player"):
+		
 		#fortest
-		#if INVENTORY["Log"] >= 1 and NPC_DATA["current_objective"] == "gather_woods":
-		if INVENTORY["Log"] >= 1 and NPC_DATA["current_objective"] == "gather_woods":
+		if GlobalData.inventory.get("Log") >= 1 and GlobalData.npc_data.get("current_objective") == "gather_woods":
 			
-			NPC_DATA["current_objective"] = "none"
-			NPC_DATA["diver_objective"] = "completed"
-			SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
+			GlobalData.update_npc_data("current_objective", "none")
+			GlobalData.update_npc_data("diver_objective", "completed")
+			
 			Hud.hide()
 			Transition.transition_to_scene("res://scenes/stories/kidnap_story.tscn")

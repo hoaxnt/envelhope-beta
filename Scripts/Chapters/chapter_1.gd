@@ -14,8 +14,9 @@ func _input(event: InputEvent) -> void:
 		global_state.toggle_pause()
 		
 func _on_timer_timeout() -> void:
-	if not CONFIG.get("user_opened_once"):
+	if not GlobalData.config.get("user_opened_once"):
 		tutorial.show()
+		GlobalData.up
 	else:
 		tutorial.hide()
 		

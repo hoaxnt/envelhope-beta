@@ -2,8 +2,33 @@ extends Node
 
 var player_data: Dictionary = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
 var npc_data: Dictionary = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
+var inventory: Dictionary = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
+var config: Dictionary = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
 
 signal player_data_updated(key, value)
+signal npc_data_updated(key, value)
+signal config_updated(key, value)
+signal inventory_updated(key, value)
+
+func update_npc_data(key: String, value):
+	npc_data[key] = value
+	SaveLoad.save_game(npc_data, SaveLoad.NPC_DATA_PATH)
+	npc_data_updated.emit(key, value)
+
+func update_player_data(key: String, value):
+	player_data[key] = value
+	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
+	player_data_updated.emit(key, value)
+
+func update_config_data(key: String, value):
+	config[key] = value
+	SaveLoad.save_game(config, SaveLoad.CONFIG_PATH)
+	config_updated.emit(key, value)
+
+func update_inventory_data(key: String, value):
+	inventory[key] = value
+	SaveLoad.save_game(inventory, SaveLoad.INVENTORY_PATH)
+	inventory_updated.emit(key, value)
 
 func advance_to_next_day():
 	var current_day = npc_data.get("day", 1)
@@ -15,10 +40,6 @@ func advance_to_next_day():
 		npc_data["release_the_kraken"] = true
 	SaveLoad.save_game(npc_data, SaveLoad.NPC_DATA_PATH)
 
-func update_player_data(key: String, value):
-	player_data[key] = value
-	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
-	player_data_updated.emit(key, value)
 
 func get_player_data_value(key: String):
 	return player_data.get(key)
