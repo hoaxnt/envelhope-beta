@@ -14,7 +14,7 @@ func _ready():
 	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day")))
 	
 func _on_day_timer_timeout() -> void:
-	#NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
+	
 	if GlobalData.npc_data.get("day") == 4 and day_current_time >= 180:
 		day_timer.stop()
 		
@@ -24,6 +24,7 @@ func _on_day_timer_timeout() -> void:
 		day_timer.stop()
 		Transition.transition_to_scene("res://scenes/stories/sleep_story.tscn")
 		day_current_time = 0
+		day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day")))
 		return
 	
 	day_current_time += 20.0 #fortest

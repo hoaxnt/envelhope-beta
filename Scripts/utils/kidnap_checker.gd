@@ -12,6 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 			
 			GlobalData.inventory.set("Log", 0)
 			GlobalData.npc_data.set("current_objective", "none")
+			GlobalData.npc_data.set("diver_objective", "completed")
 			GlobalData.update_npc_data("diver_objective", "completed")
 			
 			Hud.hide()
