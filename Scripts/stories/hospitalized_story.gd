@@ -49,4 +49,4 @@ func _transition_to_next_scene() -> void:
 	is_transitioning = true
 	
 	await Transition.transition_to_scene(NEXT_SCENE_PATH)
-	hunger_timer.start()
+	hunger_timer.start()#htimer

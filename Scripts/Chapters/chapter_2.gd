@@ -11,6 +11,7 @@ extends Node2D
 @onready var danger_zone = $DangerZone
 @onready var player = $Player
 @onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
+@onready var hunger_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 func _ready() -> void:
 	camera.limit_left = 1
@@ -19,7 +20,6 @@ func _ready() -> void:
 	camera.limit_bottom = 730
 	Hud.show()
 	day_panel.show()
-	
 	day_timer.start()
 	
 	if player:
@@ -31,11 +31,12 @@ func _ready() -> void:
 		var day = GlobalData.npc_data.get("day")
 		var survive_day = "survive_day_%s" % str(int(day))
 		
-		
 		objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 		objective_label_anim.play("show_objective")
 		
 		await objective_label_anim.animation_finished
+		hunger_timer.start()#htimer
+		print(hunger_timer)
 		
 func spawn_police_squad():
 	var spawn_positions = [

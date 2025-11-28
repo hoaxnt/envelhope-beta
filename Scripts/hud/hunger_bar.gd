@@ -1,7 +1,6 @@
 extends ProgressBar
 
 @onready var hunger_timer = $HungerTimer
-@onready var current_hunger = GlobalData.get_player_data_value("hunger")
 
 const HUNGER_DECREMENT = 1 #fortest
 
@@ -10,7 +9,9 @@ func _ready():
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
 
 func _on_hunger_timer_timeout() -> void:
-
+	print("TIMER TIMEOUT for HUNGER")
+	var current_hunger = GlobalData.get_player_data_value("hunger")
+	
 	if current_hunger > 0:
 		var new_hunger = current_hunger - HUNGER_DECREMENT
 		
@@ -35,11 +36,7 @@ func _on_hunger_timer_timeout() -> void:
 				Transition.transition_to_scene("res://scenes/stories/hospitalized_story.tscn")
 				GlobalData.handle_hunger_reset_island()
 				value = GlobalData.get_player_data_value("hunger")
-				
-				
-				
+					
 func _on_player_data_updated(key: String, new_value):
 	if key == "hunger":
 		self.value = new_value
-		if new_value > 0 and hunger_timer.is_stopped():
-			hunger_timer.start()
