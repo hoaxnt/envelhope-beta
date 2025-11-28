@@ -1,14 +1,11 @@
 extends Label
 
 @onready var objective_anim = $ObjectiveTextAnimation
-@onready var timer = $Timer
 @onready var sfx = StreamAudio.get_node("Sfx")
 
-func _on_timer_timeout() -> void:
-	#fortest
+func  _ready() -> void:
+	GlobalData.config_updated.connect(_show_objective_at_first_chapter_1)
 	
-	#if CONFIG.get("user_opened_once") == true:
-	if GlobalData.config.get("user_opened_once") == true:
-		#sfx.stream = StreamAudio.typing
-		#sfx.play()
-		timer.stop()
+func _show_objective_at_first_chapter_1(key, value):
+	if GlobalData.config.get(key) == value:
+		objective_anim.play("show_objective")#fortest
