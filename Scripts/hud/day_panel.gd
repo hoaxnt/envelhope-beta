@@ -11,10 +11,14 @@ const TWEEN_DURATION = 0.5
 
 func _ready():
 	day_current_time = day_progress_bar.value
-	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day", 1)))
+	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day",0)))
+	print("Day ", GlobalData.npc_data.get("day",0))
 	
 func _on_day_timer_timeout() -> void:
-	
+	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day",0)))
+	print("Day ", GlobalData.npc_data.get("day",0))
+	#NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
+	print("DAY TIMER TIMEOUT")
 	if GlobalData.npc_data.get("day") == 4 and day_current_time >= 180:
 		day_timer.stop()
 		
@@ -22,12 +26,11 @@ func _on_day_timer_timeout() -> void:
 		Hud.hide()
 		
 		day_timer.stop()
-		Transition.transition_to_scene("res://scenes/stories/sleep_story.tscn")
 		day_current_time = 0
-		day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day")))
+		Transition.transition_to_scene("res://scenes/stories/sleep_story.tscn")
 		return
 	
-	day_current_time += 2.0 #fortest
+	day_current_time += 5.0 #fortest
 	day_current_time = clamp(day_current_time, 0.0, day_progress_bar.max_value)
 
 	var tween = create_tween()
