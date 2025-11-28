@@ -12,6 +12,7 @@ func _on_start_button_pressed() -> void:
 	SaveLoad.save_game(GameData.INVENTORY, SaveLoad.INVENTORY_PATH)
 	SaveLoad.save_game(GameData.NPC_DATA_STATS, SaveLoad.NPC_DATA_PATH)
 	SaveLoad.save_game(GameData.CONFIG, SaveLoad.CONFIG_PATH)
+	GlobalData.update_config_data("is_new_game", false)
 	
 	Transition.transition_to_scene("res://scenes/stories/startup_story.tscn")
 	

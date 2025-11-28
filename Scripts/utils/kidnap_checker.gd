@@ -2,7 +2,6 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		
 		#fortest
 		if GlobalData.inventory.get("Log") >= 1 and GlobalData.npc_data.get("current_objective") == "gather_woods":
 			

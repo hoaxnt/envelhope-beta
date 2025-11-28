@@ -54,6 +54,8 @@ func _transition_to_next_scene() -> void:
 	is_transitioning = true
 	
 	GlobalData.update_config_data("is_new_game", true)
+	print("new game: ", GlobalData.config.get("is_new_game"))
+
 	
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
 	

@@ -16,5 +16,5 @@ func _on_body_exited(body: Node2D) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_player_near:
 		Hud.hide()
-		Transition.transition_to_scene("res://scenes/minigames/island/pearl_diving.tscn")
+		Transition.transition_to_scene("res://scenes/minigames/city/junk_diving.tscn")
 		

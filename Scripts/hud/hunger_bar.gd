@@ -36,8 +36,8 @@ func _on_hunger_timer_timeout() -> void:
 				value = GlobalData.get_player_data_value("hunger")
 				
 func _on_player_data_updated(key: String, new_value):
-		if key == "hunger":
-				self.value = new_value
-				
-				if new_value > 0 and hunger_timer.is_stopped():
-					hunger_timer.start()
+	if key == "hunger":
+		self.value = new_value
+		
+		if new_value > 0 and hunger_timer.is_stopped():
+			hunger_timer.start()
