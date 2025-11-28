@@ -11,6 +11,7 @@ var INVENTORY = {
 
 var CONFIG = {
 	"user_opened_once": false,
+	"is_new_game": false,
 }
 
 var PLAYER_STATS = {

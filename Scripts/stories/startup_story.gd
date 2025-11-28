@@ -48,9 +48,12 @@ func _update_content() -> void:
 		print("Error: Step index out of bounds or array sizes don't match.")
 
 func _transition_to_next_scene() -> void:
+	print("STORY DONE")
 	if is_transitioning:
 		return
-	
 	is_transitioning = true
+	
+	GlobalData.update_config_data("is_new_game", true)
+	
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
 	

@@ -1,6 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://rmgri270haly"]
+[gd_scene load_steps=12 format=3 uid="uid://rmgri270haly"]
 
+[ext_resource type="Script" uid="uid://c0lxyiegtjc3" path="res://scripts/minigames/city/junk_diving.gd" id="1_0lv74"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_brdyw"]
+[ext_resource type="Texture2D" uid="uid://cobj5hafl1d1d" path="res://assets/city/minigame/junk_diving_bg.jpg" id="1_uc1ku"]
+[ext_resource type="PackedScene" uid="uid://xt2vbq4u5q7y" path="res://scenes/characters/player_pearldiving.tscn" id="1_xynkh"]
+[ext_resource type="Script" uid="uid://bndfioqn4maro" path="res://scripts/characters/player_pearldiving.gd" id="2_uc1ku"]
+[ext_resource type="PackedScene" uid="uid://p016lxodfcex" path="res://scenes/utils/pearl.tscn" id="3_0lv74"]
+[ext_resource type="PackedScene" uid="uid://bjocvfb1q65td" path="res://scenes/minigames/island/fish_obstacle.tscn" id="4_ulg5r"]
+
+[sub_resource type="Animation" id="Animation_u50xa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
 
 [sub_resource type="Animation" id="Animation_wka3v"]
 resource_name = "countdown"
@@ -18,21 +39,6 @@ tracks/0/keys = {
 "values": ["3", "2", "1", "GO!"]
 }
 
-[sub_resource type="Animation" id="Animation_u50xa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["3"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u50xa"]
 _data = {
 &"RESET": SubResource("Animation_u50xa"),
@@ -43,6 +49,35 @@ _data = {
 bg_color = Color(0.12955844, 0.1295585, 0.12955832, 1)
 
 [node name="JunkDiving" type="Node2D"]
+script = ExtResource("1_0lv74")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(483, 281)
+texture = ExtResource("1_uc1ku")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_xynkh")]
+position = Vector2(251, 257)
+motion_mode = 1
+script = ExtResource("2_uc1ku")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 685
+limit_bottom = 495
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_left_margin = 1.0
+
+[node name="Pearl" parent="." instance=ExtResource("3_0lv74")]
+position = Vector2(15, 366)
+
+[node name="CrocsObstacle" parent="." instance=ExtResource("4_ulg5r")]
+position = Vector2(76, 435)
+speed = 100.0
+move_range = Rect2(0, 200, 700, 400)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -69,7 +104,6 @@ libraries = {
 }
 
 [node name="Instructions" type="Panel" parent="CanvasLayer"]
-visible = false
 clip_contents = true
 custom_minimum_size = Vector2(1300, 800)
 offset_left = 310.0

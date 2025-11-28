@@ -8,6 +8,10 @@ func _ready() -> void:
 	tutorial.hide()
 	
 func _on_button_pressed() -> void:
+	if not GlobalData.config.get("user_opened_once"):
+		print("im on tutorial and user: ", GlobalData.config.get("user_opened_once"))
+		GlobalData.update_config_data("user_opened_once", true)
+	
 	sfx.stream = StreamAudio.button_press
 	sfx.play()
 	tutorial.hide()
