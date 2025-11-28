@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://kmecuta4qy01"]
 
-[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://scripts/minigames/city/path_finding/police.gd" id="1_xi5yg"]
+[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://Scripts/minigames/city/path_finding/police.gd" id="1_xi5yg"]
 [ext_resource type="Texture2D" uid="uid://dd6fvfsq5ic54" path="res://assets/characters/police.png" id="2_cshbf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkdwf"]

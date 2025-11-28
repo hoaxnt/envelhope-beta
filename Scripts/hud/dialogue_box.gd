@@ -54,13 +54,11 @@ func close_dialogue():
 	current_line_index = 0
 
 func _on_yes_button_pressed() -> void:
-	#sfx.stream = StreamAudio.typing
-	#sfx.play()
 	objective_label.text = NPC_DATA["list_of_objectives"][current_objective]
-	
 	objective_label_anim.play("show_objective")
-	#GlobalData.npc_data.set("current_objective", current_objective)
-	GlobalData.update_npc_data("current_objective", current_objective)
+	GlobalData.npc_data.set("current_objective", current_objective)
+	SaveLoad.save_game(GlobalData.npc_data, SaveLoad.NPC_DATA_PATH)
+	#GlobalData.update_npc_data("current_objective", current_objective)
 	
 	dialogue_choices.hide()
 	close_dialogue()

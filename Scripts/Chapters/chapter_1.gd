@@ -4,8 +4,12 @@ extends Node2D
 @onready var CONFIG = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
 @onready var tutorial = Hud.get_node("Tutorial")
 @onready var day_panel = Hud.get_node("DayPanel")
+@onready var player = get_node("/root/Chapter1/Player")
 
 func _ready() -> void:
+	
+	player.position = GlobalData.load_player_position()
+		
 	day_panel.hide()
 	Hud.show()
 	print("CHAPTER 1 new game: ", GlobalData.config.get("is_new_game"))

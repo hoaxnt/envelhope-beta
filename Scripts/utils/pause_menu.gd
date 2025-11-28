@@ -2,6 +2,8 @@ extends Control
 
 @onready var canvas_layer : CanvasLayer
 @onready var tutorial = Hud.get_node("Tutorial")
+@onready var player_1 = get_node("/root/Chapter1/Player")
+@onready var player_2 = get_node("/root/Chapter2/Player")
 
 var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var pause_menu_instance = null
@@ -12,13 +14,6 @@ func _ready() -> void:
 func _on_resume_button_pressed() -> void:
 	canvas_layer.hide()
 	_unpause_game()
-
-func _on_main_menu_button_pressed() -> void:
-	get_tree().paused = false
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/utils/main_menu.tscn")
-	get_tree().current_scene.call_deferred("queue_free")
-	Hud.hide()
-	canvas_layer.hide()
 
 func _pause_game() -> void:
 	if get_tree().paused: return
@@ -34,3 +29,17 @@ func _on_help_button_pressed() -> void:
 	tutorial.show()
 	canvas_layer.hide()
 	_unpause_game()
+
+func _on_main_menu_button_pressed() -> void:
+	if player_1:
+		print("player detected")
+		GlobalData.save_player_position(player_1.global_position)
+	if player_2:
+		print("player detected")
+		GlobalData.save_player_position(player_2.global_position)
+		
+	get_tree().paused = false
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/utils/main_menu.tscn")
+	get_tree().current_scene.call_deferred("queue_free")
+	Hud.hide()
+	canvas_layer.hide()

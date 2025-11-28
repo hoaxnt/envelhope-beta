@@ -7,6 +7,9 @@ var sfx = StreamAudio.get_node("Sfx")
 func _ready() -> void:
 	bgm_sfx.play()
 
+func _on_continue_button_pressed() -> void:
+	Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
+
 func _on_start_button_pressed() -> void:
 	sfx.play()
 	SaveLoad.save_game(GameData.PLAYER_STATS, SaveLoad.PLAYER_DATA_PATH)

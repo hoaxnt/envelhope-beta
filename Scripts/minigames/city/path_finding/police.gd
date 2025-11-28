@@ -45,5 +45,5 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		pass
-		#Hud.hide()
-		#Transition.transition_to_scene("res://scenes/stories/caught_story.tscn")
+		Hud.hide()
+		Transition.transition_to_scene("res://scenes/stories/caught_story.tscn")
