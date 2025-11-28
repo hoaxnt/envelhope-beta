@@ -80,9 +80,11 @@ func _on_start_button_pressed() -> void:
 	var current_envelopes = GlobalData.get_player_data_value("envelopes")
 	var new_total_envelopes = current_envelopes + earnings
 	GlobalData.update_player_data("envelopes", new_total_envelopes)
+	
 	summary_panel.show()
 
 func _on_done_button_pressed() -> void:
 	if player:
 		player.position = GlobalData.load_player_position()
+		print(GlobalData.load_player_position())
 	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")

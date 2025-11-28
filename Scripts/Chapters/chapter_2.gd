@@ -23,6 +23,9 @@ func _ready() -> void:
 	
 	day_timer.start()
 	
+	if player:
+		player.position = GlobalData.load_player_position()
+	
 	if GlobalData.npc_data.get("diver_objective") == "completed":
 		player.global_position = GlobalData.load_player_position()
 		

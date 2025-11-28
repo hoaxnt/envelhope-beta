@@ -9,6 +9,8 @@ extends Node2D
 @onready var summary_panel = $CanvasLayer/SummaryPanel
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var summary_text = $CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer/SummaryText
+#@onready var main_player = get_node("/root/Chapter2/Player")
+@onready var main_player = $Player
 
 var game_started: bool = false
 var is_pressed: bool = false
@@ -42,12 +44,21 @@ func _on_start_button_pressed() -> void:
 	player.stop()
 	summary_panel.show()
 	
+	var current_envelopes = GlobalData.get_player_data_value("envelopes")
+	var new_total_envelopes = current_envelopes + collected_envelopes
+	GlobalData.update_player_data("envelopes", new_total_envelopes)
+	
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if not countdown_finished and game_started and event.is_action_pressed("action"):
 		collected_envelopes += 1
 		score_label.text = "Envelopes: %s" % str(collected_envelopes)
 		
 func _on_done_button_pressed() -> void:
+	if main_player:
+		main_player.position = GlobalData.load_player_position()
+		print(GlobalData.load_player_position())
+		
 	summary_panel.hide()
 	await Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
 	var earned_envelopes = GlobalData.player_data.get("envelopes") + collected_envelopes

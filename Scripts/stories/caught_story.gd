@@ -3,12 +3,19 @@ extends Control
 @onready var anim = $AnimationPlayer
 
 const IMAGES = [
-	"res://assets/utils/sleeping/sleep_scene.png",
+	"res://assets/utils/ending/caught.jpg",
+	"res://assets/utils/ending/black.PNG",
+	"res://assets/utils/ending/black.PNG",
+	"res://assets/utils/ending/blindfold.jpg",
 ]
 const DIALOGUE_TEXT = [
-	"The day's battles are done, he sleeps now, gathering the strength to rise tomorrow and conquer again.",
+	"The police caught him.",
+	"He thought he would be imprisoned but,",
+	"They took him somewhere else.",
+	"As his eyes open, he noticed a place that is familiar for him. 
+	Something a reminisce or a place where everything started."
 ]
-const NEXT_SCENE_PATH = "res://scenes/chapters/chapter_2.tscn"
+const NEXT_SCENE_PATH = "res://scenes/utils/developers_credits.tscn"
 
 var current_step: int = 0
 var is_transitioning: bool = false 
