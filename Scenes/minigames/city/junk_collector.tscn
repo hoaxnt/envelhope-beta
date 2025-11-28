@@ -1,7 +1,96 @@
-[gd_scene load_steps=7 format=3 uid="uid://wngau11143uf"]
+[gd_scene load_steps=20 format=3 uid="uid://wngau11143uf"]
 
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_2hg5b"]
 [ext_resource type="Script" uid="uid://ssvov4fs5s0f" path="res://scripts/minigames/city/junk_collector.gd" id="1_2u6hv"]
+[ext_resource type="Texture2D" uid="uid://crt23affnbbkj" path="res://assets/utils/junk_mountain.jpg" id="2_rphvu"]
+[ext_resource type="Texture2D" uid="uid://dkixpbmk4e8hx" path="res://assets/characters/player/Carry_Run/carry_run_side-sheet.png" id="3_rphvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5rhf"]
+atlas = ExtResource("3_rphvu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjsvf"]
+atlas = ExtResource("3_rphvu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsp6p"]
+atlas = ExtResource("3_rphvu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4l4v"]
+atlas = ExtResource("3_rphvu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0su6"]
+atlas = ExtResource("3_rphvu")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w22m7"]
+atlas = ExtResource("3_rphvu")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u6hv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5rhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjsvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsp6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4l4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0su6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w22m7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_i5rhf"]
+resource_name = "move"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(374, -165), Vector2(-470, -165)]
+}
+
+[sub_resource type="Animation" id="Animation_mjsvf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(374, -165)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjsvf"]
+_data = {
+&"RESET": SubResource("Animation_mjsvf"),
+&"move": SubResource("Animation_i5rhf")
+}
 
 [sub_resource type="Animation" id="Animation_u50xa"]
 length = 4.0
@@ -34,10 +123,15 @@ tracks/0/keys = {
 "values": ["3", "2", "1", "GO!"]
 }
 
+[sub_resource type="Animation" id="Animation_rphvu"]
+resource_name = "move"
+length = 5.0
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u50xa"]
 _data = {
 &"RESET": SubResource("Animation_u50xa"),
-&"countdown": SubResource("Animation_wka3v")
+&"countdown": SubResource("Animation_wka3v"),
+&"move": SubResource("Animation_rphvu")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hg5b"]
@@ -45,6 +139,27 @@ bg_color = Color(0.12955844, 0.1295585, 0.12955832, 1)
 
 [node name="JunkCollector" type="Node2D"]
 script = ExtResource("1_2u6hv")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(374, -165)
+scale = Vector2(1.6796875, 1.5341797)
+texture = ExtResource("2_rphvu")
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+position = Vector2(-298.00003, 209)
+scale = Vector2(5.548, 5.578)
+sprite_frames = SubResource("SpriteFrames_2u6hv")
+frame_progress = 0.38031948
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(44.700806, -5.01972)
+scale = Vector2(0.17927173, 0.17927173)
+zoom = Vector2(2.255, 2.255)
+
+[node name="PlayerAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mjsvf")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -71,15 +186,16 @@ libraries = {
 }
 
 [node name="TapTapButton" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(936, 128)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -468.0
-offset_top = -312.0
+offset_top = -167.0
 offset_right = 468.0
-offset_bottom = -122.0
+offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
@@ -160,9 +276,75 @@ text = "START"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -441.0
+offset_top = 34.0
+offset_right = -37.0
+offset_bottom = 110.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_2hg5b")
+theme_override_font_sizes/font_size = 80
+text = "Envelopes: 0"
 
-[connection signal="pressed" from="CanvasLayer/TapTapButton" to="." method="_on_tap_tap_button_button_up"]
+[node name="SummaryPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(1300, 800)
+offset_left = 175.0
+offset_top = 140.0
+offset_right = 1745.0
+offset_bottom = 940.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2hg5b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/SummaryPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -675.0
+offset_top = -400.0
+offset_right = 675.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SummaryPanel/HBoxContainer"]
+custom_minimum_size = Vector2(1300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 275
+theme_override_constants/margin_right = 100
+
+[node name="SummaryText" type="Label" parent="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_2hg5b")
+theme_override_font_sizes/font_size = 100
+text = "You've earned 0 Envelopes!"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 185
+
+[node name="DoneButton" type="Button" parent="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_2hg5b")
+theme_override_font_sizes/font_size = 80
+text = "DONE"
+
 [connection signal="pressed" from="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer/MarginContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer2/DoneButton" to="." method="_on_done_button_pressed"]

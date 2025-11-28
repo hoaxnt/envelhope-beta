@@ -1,41 +1,55 @@
-extends Node2D # Assuming this script is on a main UI node
+extends Node2D
 
-@onready var countdown_label = $CanvasLayer/CountdownLabel #get_node("CanvasLayer/Instructions/HBoxContainer/VBoxContainer/MarginContainer/Text")
-@onready var instructions_panel = $CanvasLayer/InstructionsPanel #get_node("CanvasLayer/Instructions")
-@onready var anim = get_node("CanvasLayer/AnimationPlayer")
+@onready var countdown_label = $CanvasLayer/CountdownLabel 
+@onready var instructions_panel = $CanvasLayer/InstructionsPanel 
+@onready var player = $Player
+@onready var background = $Background
+@onready var anim = $CanvasLayer/AnimationPlayer
+@onready var player_anim = $PlayerAnimation
+@onready var summary_panel = $CanvasLayer/SummaryPanel
+@onready var score_label = $CanvasLayer/ScoreLabel
+@onready var summary_text = $CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer/SummaryText
 
-# --- Game State Variables (Good practice for tracking) ---
 var game_started: bool = false
+var is_pressed: bool = false
 var countdown_finished: bool = false
+var collected_envelopes: int = 0
 
 func _ready() -> void:
-	print(countdown_label.name)
+	summary_panel.hide()
+	score_label.text = "Envelopes: 0"
 
 func _on_start_button_pressed() -> void:
-	if game_started:
+	if is_pressed:
 		return
-
-	instructions_panel.hide()
+	is_pressed = true
 	
-	# Start the countdown animation
+	instructions_panel.hide()
 	anim.play("countdown")
 	
-	# Wait for the animation to complete
 	await anim.animation_finished
-	print("Countdown finished. Game started!")
 	countdown_label.hide()
 	
-	countdown_finished = true
 	game_started = true
+	player_anim.play("move")
+	player.play("default")
 	
-
-
+	await player_anim.animation_finished
+	countdown_finished = true
+	game_started = false
+	
+	summary_text.text = "You've earned %s Envelopes!" % str(collected_envelopes)
+	player.stop()
+	summary_panel.show()
+	
 func _unhandled_input(event: InputEvent) -> void:
-	if countdown_finished and event.is_action_pressed("action"):
-		print("TAP (action)")
-		# You would add your game logic here (e.g., increment score)
+	if not countdown_finished and game_started and event.is_action_pressed("action"):
+		collected_envelopes += 1
+		score_label.text = "Envelopes: %s" % str(collected_envelopes)
 		
-func _on_tap_tap_button_button_up() -> void:
-	if countdown_finished:
-		print("TAP (TapTapButton)")
-		# You would add your game logic here (e.g., increment score)
+func _on_done_button_pressed() -> void:
+	summary_panel.hide()
+	await Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
+	var earned_envelopes = GlobalData.player_data.get("envelopes") + collected_envelopes
+	GlobalData.update_player_data("envelopes", earned_envelopes)
+	
