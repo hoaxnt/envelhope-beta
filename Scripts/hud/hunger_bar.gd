@@ -32,7 +32,8 @@ func _on_hunger_timer_timeout() -> void:
 			else:
 				print("hunger reset island")
 				Hud.hide()
-				GlobalData.handle_hunger_reset_city()
+				Transition.transition_to_scene("res://scenes/stories/hospitalized_story.tscn")
+				GlobalData.handle_hunger_reset_island()
 				value = GlobalData.get_player_data_value("hunger")
 				
 				

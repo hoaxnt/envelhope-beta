@@ -16,7 +16,7 @@ func _physics_process(_delta: float):
 	var direction: Vector2 = global_position.direction_to(next_point)
 	velocity = direction * SPEED
 	
-	print(pb.transform.origin)
+	print(pb.transform)
 
 	#if transform.x < 0:
 		#scale.x = -1 * abs(scale.y) 

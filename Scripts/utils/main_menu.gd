@@ -21,11 +21,13 @@ func _on_start_button_pressed() -> void:
 	
 	GlobalData.npc_data.set("diver_objective", "none")
 	GlobalData.npc_data.set("current_objective", "none")
-	GlobalData.npc_data.set("day", 0)
+	GlobalData.npc_data.set("day", 1)
+	
 	#GlobalData.update_inventory_data("Log", 0)
 	#GlobalData.update_npc_data("current_objective", "none")
 	#GlobalData.update_npc_data("diver_objective", "none")
 	#day diver_objective release_the_kraken
+	
 	Transition.transition_to_scene("res://scenes/stories/startup_story.tscn")
 	
 func _on_start_button_3_pressed() -> void:

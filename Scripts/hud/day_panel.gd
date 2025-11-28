@@ -11,7 +11,7 @@ const TWEEN_DURATION = 0.5
 
 func _ready():
 	day_current_time = day_progress_bar.value
-	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day")))
+	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day", 1)))
 	
 func _on_day_timer_timeout() -> void:
 	
@@ -27,7 +27,7 @@ func _on_day_timer_timeout() -> void:
 		day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day")))
 		return
 	
-	day_current_time += 20.0 #fortest
+	day_current_time += 2.0 #fortest
 	day_current_time = clamp(day_current_time, 0.0, day_progress_bar.max_value)
 
 	var tween = create_tween()
