@@ -3,8 +3,8 @@ extends Control
 @onready var anim = $AnimationPlayer
 
 const IMAGES = [
-	"res://assets/utils/kidnap/1.PNG",
-	"res://assets/utils/kidnap/2.PNG",
+	"res://assets/utils/kidnap/1.jpg",
+	"res://assets/utils/kidnap/2.jpg",
 	"res://assets/utils/kidnap/3.jpg",
 	"res://assets/utils/kidnap/4.jpg",
 ]
