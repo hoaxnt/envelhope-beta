@@ -46,9 +46,7 @@ theme_override_font_sizes/font_size = 81
 text = "DEVELOPED BY:
 Marc Julius regacho
 Karl Joshua Matibag
-Xavier Joel Ramos
-
-TY <3"
+Xavier Joel Ramos"
 horizontal_alignment = 1
 
 [node name="SkipButton" type="Button" parent="."]

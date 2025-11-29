@@ -7,7 +7,7 @@ extends Area2D
 var is_active: bool = true
 
 func _ready() -> void:
-	spawn_timer.wait_time = 2.0
+	#spawn_timer.wait_time = 2.0
 	spawn_timer.one_shot = true
 
 func collect_junk() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdrfpaqk4xiyq"]
 
 [ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="1_teri2"]
-[ext_resource type="Script" uid="uid://cgeds01xdtrar" path="res://scripts/stories/police_noticed_story.gd" id="1_ys8rk"]
+[ext_resource type="Script" uid="uid://cgeds01xdtrar" path="res://Scripts/stories/police_noticed_story.gd" id="1_ys8rk"]
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_ys8rk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqv3l"]

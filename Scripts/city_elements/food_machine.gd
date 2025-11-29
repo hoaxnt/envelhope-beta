@@ -2,7 +2,7 @@ extends Area2D
 
 var is_player_near_the_machine: bool
 const FOOD_COST = 25#fortest
-const HUNGER_GAIN = 10.0 #fortest
+const HUNGER_GAIN = 15.0 #fortest
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -25,7 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Label.modulate = Color(1, 0, 0, 1)
 			return
 						
-		$Label.text = "Buy Food for $15 [E]"
+		$Label.text = "Buy Food for $25 [E]"
 		$Label.modulate = Color(1, 1, 1, 1)
 			
 		GlobalData.purchase_food(FOOD_COST, HUNGER_GAIN)

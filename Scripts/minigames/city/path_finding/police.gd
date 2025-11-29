@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 101.0 #fortest
+const SPEED = 100.0 #fortest
 
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var police_body = $PoliceBody/Shadow
@@ -15,8 +15,6 @@ func _physics_process(_delta: float):
 	var next_point = police_body.get_next_path_position()
 	var direction: Vector2 = global_position.direction_to(next_point)
 	velocity = direction * SPEED
-	
-	print(pb.transform)
 
 	#if transform.x < 0:
 		#scale.x = -1 * abs(scale.y) 

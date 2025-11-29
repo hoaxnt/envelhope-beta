@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://wngau11143uf"]
 
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_2hg5b"]
-[ext_resource type="Script" uid="uid://ssvov4fs5s0f" path="res://scripts/minigames/city/junk_collector.gd" id="1_2u6hv"]
-[ext_resource type="Texture2D" uid="uid://crt23affnbbkj" path="res://assets/utils/junk_mountain.jpg" id="2_rphvu"]
+[ext_resource type="Script" uid="uid://ssvov4fs5s0f" path="res://Scripts/minigames/city/junk_collector.gd" id="1_2u6hv"]
+[ext_resource type="Texture2D" uid="uid://m2yu7jcue6td" path="res://assets/city/minigame/junk_collector_bg.jpg" id="2_cuu42"]
 [ext_resource type="Texture2D" uid="uid://dkixpbmk4e8hx" path="res://assets/characters/player/Carry_Run/carry_run_side-sheet.png" id="3_rphvu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5rhf"]
@@ -55,22 +55,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Animation" id="Animation_i5rhf"]
-resource_name = "move"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(374, -165), Vector2(-470, -165)]
-}
-
 [sub_resource type="Animation" id="Animation_mjsvf"]
 length = 0.001
 tracks/0/type = "value"
@@ -84,6 +68,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(374, -165)]
+}
+
+[sub_resource type="Animation" id="Animation_i5rhf"]
+resource_name = "move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 10.033334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(374, -165), Vector2(-391, -165), Vector2(-470, -165)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mjsvf"]
@@ -143,10 +143,10 @@ script = ExtResource("1_2u6hv")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(374, -165)
 scale = Vector2(1.6796875, 1.5341797)
-texture = ExtResource("2_rphvu")
+texture = ExtResource("2_cuu42")
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
-position = Vector2(-298.00003, 209)
+position = Vector2(-257.00003, 35)
 scale = Vector2(5.548, 5.578)
 sprite_frames = SubResource("SpriteFrames_2u6hv")
 frame_progress = 0.38031948
@@ -250,11 +250,11 @@ theme_override_constants/margin_right = 100
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_2hg5b")
 theme_override_font_sizes/font_size = 40
-text = "1. You have only 5 SECONDS to act.
+text = "1. You only have 10 SECONDS to act.
 
 2. SPAM the [SPACEBAR] relentlessly!
 
-3. GET RICH: Each tap adds ONE coin to your total."
+3. GET RICH: Each press adds ONE envelope to your total."
 autowrap_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/InstructionsPanel/HBoxContainer/VBoxContainer"]

@@ -3,10 +3,10 @@ extends Control
 @onready var anim = $AnimationPlayer
 
 const IMAGES = [
-	"res://assets/utils/sleeping/sleep_scene.png",
+	"res://assets/utils/ending/noticed.jpg",
 ]
 const DIALOGUE_TEXT = [
-	"The day's battles are done, he sleeps now, gathering the strength to rise tomorrow and conquer again.",
+	"As the days passed, the police noticed him.",
 ]
 const NEXT_SCENE_PATH = "res://scenes/chapters/chapter_2.tscn"
 
@@ -18,7 +18,8 @@ var is_transitioning: bool = false
 @onready var next_button: Button = $Panel/SkipButton
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
-
+@onready var player = get_node("/root/Chapter2/Player")
+@onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 
 var sfx = StreamAudio.get_node("Sfx")
 
@@ -47,5 +48,10 @@ func _transition_to_next_scene() -> void:
 		return
 	
 	is_transitioning = true
+	
+	if player:
+		player.position = GlobalData.load_player_position()
+		
+	GlobalData.npc_data.set("release_the_kraken", true)
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
 	

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 80.0
+@export var speed: float = 200.0
 @export var move_range: Rect2 = Rect2(Vector2(300, 100), Vector2(500, 500))
 var direction: Vector2
 
