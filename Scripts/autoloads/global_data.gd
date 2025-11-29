@@ -50,7 +50,7 @@ func save_player_position(position: Vector2):
 	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
 	player_data_updated.emit("position", pos_array)
 	
-func load_player_position() -> Vector2:
+func load_player_1_position() -> Vector2:
 	var pos_array = player_data.get("position")
 	if pos_array is Array and pos_array.size() == 2:
 		return Vector2(pos_array[0], pos_array[1])

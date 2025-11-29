@@ -13,10 +13,10 @@ const TWEEN_DURATION = 0.5
 
 func _ready():
 	day_current_time = day_progress_bar.value
-	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day",0)))
+	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day", 0)))
 	
 func _on_day_timer_timeout() -> void:
-	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day",0)))
+	day_label.text = "Day %s" % str(int(GlobalData.npc_data.get("day", 0)))
 	
 	if GlobalData.npc_data.get("day") == 4 and day_current_time >= 180:
 		day_timer.stop()

@@ -5,7 +5,7 @@ extends ProgressBar
 const HUNGER_DECREMENT = 1 #fortest
 
 func _ready():
-	#show_percentage = false
+	show_percentage = false
 	max_value = 100.0 #fortest
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
 	

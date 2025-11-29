@@ -54,7 +54,6 @@ func _transition_to_next_scene() -> void:
 	#if NPC_DATA["day"] < 4:
 		#NPC_DATA["day"] += 1
 		#SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
-		#
 		
 	GlobalData.advance_to_next_day()
 	day_timer.start()
