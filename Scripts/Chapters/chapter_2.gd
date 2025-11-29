@@ -43,6 +43,7 @@ func _ready() -> void:
 			objective_label_kraken.text = "RUNN!! RUNNN!! RUNNNN!!"
 			objective_label_anim_kraken.play("show_objective")
 		else:
+			objective_label_kraken.hide()
 			objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 			objective_label_anim.play("show_objective")
 		
@@ -60,6 +61,7 @@ func _on_danger_zone_body_entered(body: Node2D) -> void:
 			if player:
 				GlobalData.save_player_position(player.global_position)
 			Hud.hide()
+			
 			Transition.transition_to_scene("res://Scenes/stories/police_noticed_story.tscn")
 			
 func spawn_police_squad():

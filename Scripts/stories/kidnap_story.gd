@@ -5,8 +5,8 @@ extends Control
 const IMAGES = [
 	"res://assets/utils/kidnap/1.PNG",
 	"res://assets/utils/kidnap/2.PNG",
-	"res://assets/utils/kidnap/3.PNG",
-	"res://assets/utils/kidnap/4.PNG",
+	"res://assets/utils/kidnap/3.jpg",
+	"res://assets/utils/kidnap/4.jpg",
 ]
 
 const DIALOGUE_TEXT = [

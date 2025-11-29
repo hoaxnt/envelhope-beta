@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8br4r48cde5c"
-path="res://.godot/imported/4.PNG-946c0f89e64b297699979104515b2440.ctex"
+uid="uid://dla8dlffwibe0"
+path="res://.godot/imported/3.jpg-f2ad93cf3c9a2ead59b51378d02f3013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/utils/kidnap/4.PNG"
-dest_files=["res://.godot/imported/4.PNG-946c0f89e64b297699979104515b2440.ctex"]
+source_file="res://assets/utils/kidnap/3.jpg"
+dest_files=["res://.godot/imported/3.jpg-f2ad93cf3c9a2ead59b51378d02f3013.ctex"]
 
 [params]
 
