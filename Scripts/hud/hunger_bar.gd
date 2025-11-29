@@ -5,9 +5,11 @@ extends ProgressBar
 const HUNGER_DECREMENT = 1 #fortest
 
 func _ready():
-	show_percentage = false #fortest
+	#show_percentage = false
 	max_value = 100.0 #fortest
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
+	
+	value = GlobalData.player_data.get("hunger")
 
 func _on_hunger_timer_timeout() -> void:
 	print("TIMER TIMEOUT for HUNGER")
@@ -34,7 +36,7 @@ func _on_hunger_timer_timeout() -> void:
 			else:
 				print("hunger reset island")
 				Hud.hide()
-				Transition.transition_to_scene("res://scenes/stories/hospitalized_story.tscn")
+				Transition.transition_to_scene("res://scenes/stories/death_island.tscn")
 				GlobalData.handle_hunger_reset_island()
 				value = GlobalData.get_player_data_value("hunger")
 					

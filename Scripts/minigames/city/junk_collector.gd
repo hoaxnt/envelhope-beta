@@ -9,8 +9,9 @@ extends Node2D
 @onready var summary_panel = $CanvasLayer/SummaryPanel
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var summary_text = $CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer/SummaryText
-#@onready var main_player = get_node("/root/Chapter2/Player")
 @onready var main_player = $Player
+
+@onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var game_started: bool = false
 var is_pressed: bool = false
@@ -60,7 +61,8 @@ func _on_done_button_pressed() -> void:
 		print(GlobalData.load_player_position())
 		
 	summary_panel.hide()
-	await Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
+	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
+	
 	var earned_envelopes = GlobalData.player_data.get("envelopes") + collected_envelopes
 	GlobalData.update_player_data("envelopes", earned_envelopes)
 	

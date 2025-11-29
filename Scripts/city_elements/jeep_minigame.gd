@@ -2,6 +2,8 @@ extends Area2D
 
 var is_player_near: bool
 @onready var player = get_node("/root/Chapter2/Player")
+@onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
+@onready var day_timer: Timer = Hud.get_node("DayPanel/DayTimer")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -19,4 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			GlobalData.save_player_position(player.global_position)
 			print(player.global_position)
 		Hud.hide()
+		
+		day_timer.stop()
+		hunger_timer.stop()
 		Transition.transition_to_scene("res://scenes/minigames/city/tambol.tscn")

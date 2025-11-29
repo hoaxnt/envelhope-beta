@@ -5,6 +5,9 @@ extends Control
 @onready var player_1 = get_node("/root/Chapter1/Player")
 @onready var player_2 = get_node("/root/Chapter2/Player")
 
+@onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
+@onready var day_timer: Timer = Hud.get_node("DayPanel/DayTimer")
+
 var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var pause_menu_instance = null
 
@@ -43,3 +46,7 @@ func _on_main_menu_button_pressed() -> void:
 	get_tree().current_scene.call_deferred("queue_free")
 	Hud.hide()
 	canvas_layer.hide()
+	
+	# Saved shits
+	hunger_timer.stop()
+	day_timer.stop()

@@ -1,8 +1,12 @@
 extends Node2D
 
-@onready var camera : Camera2D = $Player/Camera2D
+@onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
+@onready var hunger_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var day_panel = Hud.get_node("DayPanel")
+
+
+@onready var camera : Camera2D = $Player/Camera2D
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 
@@ -13,8 +17,6 @@ extends Node2D
 
 @onready var danger_zone = $DangerZone
 @onready var player = $Player
-@onready var hunger_bar = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar")
-@onready var hunger_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 func _ready() -> void:
 	camera.limit_left = 1
@@ -25,6 +27,7 @@ func _ready() -> void:
 	day_panel.show()
 	day_timer.start()
 	objective_label_kraken.hide()
+	hunger_bar.value = GlobalData.player_data.get("hunger")
 	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
 		spawn_police_squad()
@@ -34,6 +37,8 @@ func _ready() -> void:
 	
 	if GlobalData.npc_data.get("diver_objective") == "completed":
 		player.global_position = GlobalData.load_player_position()
+		
+		hunger_timer.start()#htimer
 		
 		var day = GlobalData.npc_data.get("day")
 		var survive_day = "survive_day_%s" % str(int(day))
@@ -46,10 +51,6 @@ func _ready() -> void:
 			objective_label_kraken.hide()
 			objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 			objective_label_anim.play("show_objective")
-		
-		await objective_label_anim.animation_finished
-		hunger_timer.start()#htimer
-		print(hunger_timer)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):

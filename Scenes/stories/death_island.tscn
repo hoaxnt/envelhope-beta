@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ne7dh2axx25g"]
+[gd_scene load_steps=8 format=3 uid="uid://ctre5r3igkhf4"]
 
-[ext_resource type="Script" uid="uid://c7igmstw17a4s" path="res://Scripts/stories/hospitalized_story.gd" id="1_v6ccu"]
-[ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_wgyut"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="3_rg6fc"]
+[ext_resource type="Script" uid="uid://dnfw44bq8nydd" path="res://Scripts/stories/death_island.gd" id="1_vusm6"]
+[ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_yxfla"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="3_njsgt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqv3l"]
 bg_color = Color(0.13599786, 0.13210395, 0.1330798, 1)
@@ -68,14 +68,14 @@ _data = {
 &"fade_reveal": SubResource("Animation_5ekg1")
 }
 
-[node name="HospitalizedStory" type="Control"]
+[node name="DeathIslandStory" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v6ccu")
+script = ExtResource("1_vusm6")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -103,14 +103,14 @@ custom_minimum_size = Vector2(1200, 750)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_wgyut")
+texture = ExtResource("2_yxfla")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(1200, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_rg6fc")
+theme_override_fonts/font = ExtResource("3_njsgt")
 theme_override_font_sizes/font_size = 40
 text = "And now you will experience the journey here in the island that is rich in natural resources"
 horizontal_alignment = 1
@@ -123,7 +123,7 @@ visible_ratio = 0.0
 custom_minimum_size = Vector2(1300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_rg6fc")
+theme_override_fonts/font = ExtResource("3_njsgt")
 theme_override_font_sizes/font_size = 50
 text = "Next>>"
 horizontal_alignment = 2

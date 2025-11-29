@@ -23,6 +23,8 @@ func _on_start_button_pressed() -> void:
 	GlobalData.npc_data.set("current_objective", "none")
 	GlobalData.npc_data.set("day", 1)
 	GlobalData.npc_data.set("release_the_kraken", false)
+	GlobalData.player_data.set("hunger", 100)
+	GlobalData.player_data.set("envelopes", 0)
 	
 	#GlobalData.update_inventory_data("Log", 0)
 	#GlobalData.update_npc_data("current_objective", "none")

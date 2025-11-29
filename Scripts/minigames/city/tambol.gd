@@ -12,6 +12,8 @@ extends Node2D
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
 
+@onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
+
 var earnings = 0
 var sfx = StreamAudio.get_node("Sfx")
 
