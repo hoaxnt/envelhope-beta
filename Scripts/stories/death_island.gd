@@ -6,7 +6,8 @@ const IMAGES = [
 	"res://assets/utils/death_island/death_island.jpg",
 ]
 const DIALOGUE_TEXT = [
-	"nawalan sya ng malay pero tumayo ulet.",
+	"He passed out from hunger. Hours later, he woke up, pulled himself to his feet, 
+	and kept exploring the island.",
 ]
 const NEXT_SCENE_PATH = "res://scenes/chapters/chapter_1.tscn"
 

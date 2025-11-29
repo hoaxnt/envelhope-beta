@@ -16,7 +16,7 @@ extends Node2D
 @onready var objective_label_anim_kraken = $CanvasLayer/ObjectiveLabelKraken/ObjectiveTextKrakenAnimation
 
 @onready var danger_zone = $DangerZone
-@onready var player = $Player
+@onready var player = get_node("/root/Chapter2/Player")
 
 func _ready() -> void:
 	camera.limit_left = 1
@@ -29,12 +29,13 @@ func _ready() -> void:
 	objective_label_kraken.hide()
 	hunger_bar.value = GlobalData.player_data.get("hunger")
 	
+	if player:
+		player.position = GlobalData.load_player_position()
+		print("POSITION LOADED")
+	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
 		spawn_police_squad()
 		
-	if player:
-		player.position = GlobalData.load_player_position()
-	
 	if GlobalData.npc_data.get("diver_objective") == "completed":
 		player.global_position = GlobalData.load_player_position()
 		

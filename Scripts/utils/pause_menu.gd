@@ -8,6 +8,7 @@ extends Control
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 @onready var day_timer: Timer = Hud.get_node("DayPanel/DayTimer")
 
+
 var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var pause_menu_instance = null
 
@@ -35,10 +36,8 @@ func _on_help_button_pressed() -> void:
 
 func _on_main_menu_button_pressed() -> void:
 	if player_1:
-		print("player detected")
 		GlobalData.save_player_position(player_1.global_position)
 	if player_2:
-		print("player detected")
 		GlobalData.save_player_position(player_2.global_position)
 		
 	get_tree().paused = false
@@ -50,3 +49,12 @@ func _on_main_menu_button_pressed() -> void:
 	# Saved shits
 	hunger_timer.stop()
 	day_timer.stop()
+	if player_1:
+		GlobalData.save_player_position(player_1.global_position)
+		GlobalData.player_data.set("current_chapter", player_1.get_parent().name)
+		print("PARENT: ",player_1.global_position)
+	elif player_2:
+		GlobalData.save_player_position(player_2.global_position)
+		GlobalData.player_data.set("current_chapter", player_2.get_parent().name)
+		print("PARENT: ",player_2.global_position)
+	

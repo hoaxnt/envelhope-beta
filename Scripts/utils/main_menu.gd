@@ -8,7 +8,11 @@ func _ready() -> void:
 	bgm_sfx.play()
 
 func _on_continue_button_pressed() -> void:
-	Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
+	if GlobalData.player_data.get("current_chapter") == "Chapter1":
+		Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
+	elif GlobalData.player_data.get("current_chapter") == "Chapter2":
+		Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
+	
 
 func _on_start_button_pressed() -> void:
 	sfx.play()
@@ -18,6 +22,7 @@ func _on_start_button_pressed() -> void:
 	SaveLoad.save_game(GameData.CONFIG, SaveLoad.CONFIG_PATH)
 	GlobalData.update_config_data("is_new_game", false)
 	GlobalData.update_config_data("user_opened_once", false)
+	GlobalData.update_config_data("current_chapter", "none")
 	
 	GlobalData.npc_data.set("diver_objective", "none")
 	GlobalData.npc_data.set("current_objective", "none")
@@ -25,11 +30,6 @@ func _on_start_button_pressed() -> void:
 	GlobalData.npc_data.set("release_the_kraken", false)
 	GlobalData.player_data.set("hunger", 100)
 	GlobalData.player_data.set("envelopes", 0)
-	
-	#GlobalData.update_inventory_data("Log", 0)
-	#GlobalData.update_npc_data("current_objective", "none")
-	#GlobalData.update_npc_data("diver_objective", "none")
-	#day diver_objective release_the_kraken
 	
 	Transition.transition_to_scene("res://scenes/stories/startup_story.tscn")
 	

@@ -12,7 +12,6 @@ func _ready():
 	value = GlobalData.player_data.get("hunger")
 
 func _on_hunger_timer_timeout() -> void:
-	print("TIMER TIMEOUT for HUNGER")
 	var current_hunger = GlobalData.get_player_data_value("hunger")
 	
 	if current_hunger > 0:

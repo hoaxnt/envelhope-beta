@@ -5,7 +5,6 @@ extends Label
 
 func _ready() -> void:
 	objective_label_timer.start()
-	print("Objective label timer: Started")
 		
 #func _on_objective_label_timer_timeout() -> void:
 	##if GlobalData.config.get("user_opened_once") and GlobalData.config.get("is_new_game"):
