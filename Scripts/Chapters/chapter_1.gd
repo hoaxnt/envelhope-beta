@@ -8,11 +8,15 @@ extends Node2D
 
 func _ready() -> void:
 	
-	player.position = GlobalData.load_player_position()
+	if GlobalData.config.get("is_new_game"):
+		print("CHAPTER 1 new game is ", GlobalData.config.get("is_new_game"), " so position reset to default")
+		pass
+	else:
+		player.position = GlobalData.load_player_position()
 		
 	day_panel.hide()
 	Hud.show()
-	print("CHAPTER 1 new game: ", GlobalData.config.get("is_new_game"))
+	
 	
 	if not GlobalData.config.get("user_opened_once"):
 		tutorial.show()
