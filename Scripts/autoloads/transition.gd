@@ -19,6 +19,6 @@ func transition_to_scene(target_scene_path: String):
 
 	anim_player.play("fade_from_black")
 	await anim_player.animation_finished
+	hide()
 
 	emit_signal("transition_finished")
-	hide()

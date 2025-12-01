@@ -32,10 +32,6 @@ func _ready() -> void:
 		bgm.stream = StreamAudio.city
 		bgm.play()
 	
-	camera.limit_left = 1
-	camera.limit_top = 1
-	camera.limit_right = 1710
-	camera.limit_bottom = 730
 	Hud.show()
 	day_panel.show()
 	day_timer.start()
@@ -48,10 +44,11 @@ func _ready() -> void:
 	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
 		hunger_timer.stop()
+		spawn_police_squad()
+
 		var day = GlobalData.npc_data.get("day")
 		var survive_day = "survive_day_%s" % str(int(day))
 
-		spawn_police_squad()
 		
 		if GlobalData.npc_data.get("release_the_kraken") == true:
 			objective_label_kraken.show()
@@ -65,8 +62,8 @@ func _ready() -> void:
 	
 	if GlobalData.npc_data.get("diver_objective") == "completed" and GlobalData.npc_data.get("release_the_kraken") == false:
 		player.global_position = GlobalData.load_player2_position()
-		hunger_timer.start()#htimer
-		print("diver objective")
+		
+		objective_label_anim.play("show_objective")
 		
 func _physics_process(_delta: float) -> void:
 

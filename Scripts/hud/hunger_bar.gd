@@ -2,7 +2,7 @@ extends ProgressBar
 
 @onready var hunger_timer = $HungerTimer
 
-const HUNGER_DECREMENT = 20 #fortest
+const HUNGER_DECREMENT = 0.5 #fortest
 
 func _ready():
 	show_percentage = false
