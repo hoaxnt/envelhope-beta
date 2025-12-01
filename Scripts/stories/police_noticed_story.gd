@@ -1,6 +1,8 @@
 extends Control
 
 @onready var anim = $AnimationPlayer
+var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
+var sfx : AudioStreamPlayer2D = StreamAudio.get_node("Sfx")
 
 const IMAGES = [
 	"res://assets/utils/ending/noticed.jpg",
@@ -22,15 +24,17 @@ var is_transitioning: bool = false
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
-var sfx = StreamAudio.get_node("Sfx")
-
 func _ready() -> void:
+	bgm.volume_db = 20
+	bgm.stream = StreamAudio.kidnap
+	bgm.play()
+	
 	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 
 func _on_skip_button_pressed() -> void:
-	sfx.play()
+
 	current_step += 1
 	if current_step < IMAGES.size():
 		anim.play("fade_reveal")

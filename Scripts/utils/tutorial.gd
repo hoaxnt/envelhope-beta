@@ -10,6 +10,7 @@ func _ready() -> void:
 	tutorial.hide()
 	
 func _on_button_pressed() -> void:
+	
 	if not GlobalData.config.get("user_opened_once"):
 		GlobalData.update_config_data("user_opened_once", true)
 	
@@ -20,4 +21,5 @@ func _on_button_pressed() -> void:
 	objective_anim.play("show_objective")
 	
 	await objective_anim.animation_finished
+
 	hunger_timer.start()

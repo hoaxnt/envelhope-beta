@@ -29,6 +29,7 @@ func handle_npc_interaction(npc_id: String) -> void:
 					InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
 					NPC_DATA["current_objective"] = "none"
 					NPC_DATA["diver_objective"] = "completed"
+					
 					SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
 				else:
 					dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")

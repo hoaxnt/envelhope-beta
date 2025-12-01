@@ -19,7 +19,19 @@ extends Node2D
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var day_progress_bar = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DayProgressBar")
 var day_current_time: float = 0.0 
+var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
+var sfx : AudioStreamPlayer2D = StreamAudio.get_node("Sfx")
+
 func _ready() -> void:
+	if GlobalData.npc_data.get("release_the_kraken") == true:
+		bgm.volume_db = 5
+		bgm.stream = StreamAudio.bgm_chase
+		bgm.play()
+	else:
+		bgm.volume_db = 5
+		bgm.stream = StreamAudio.city
+		bgm.play()
+	
 	camera.limit_left = 1
 	camera.limit_top = 1
 	camera.limit_right = 1710
@@ -51,7 +63,7 @@ func _ready() -> void:
 			objective_label_anim.play("show_objective")
 			return
 	
-	if GlobalData.npc_data.get("diver_objective") == "completed" and GlobalData.npc_data.get("release_the_kraken") == 'false':
+	if GlobalData.npc_data.get("diver_objective") == "completed" and GlobalData.npc_data.get("release_the_kraken") == false:
 		player.global_position = GlobalData.load_player2_position()
 		hunger_timer.start()#htimer
 		print("diver objective")

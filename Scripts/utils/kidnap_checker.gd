@@ -15,5 +15,6 @@ func _on_body_entered(body: Node2D) -> void:
 			GlobalData.npc_data.set("diver_objective", "completed")
 			GlobalData.update_npc_data("diver_objective", "completed")
 			
+			
 			Hud.hide()
 			Transition.transition_to_scene("res://scenes/stories/kidnap_story.tscn")

@@ -3,10 +3,11 @@ extends Control
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var sfx = StreamAudio.get_node("Sfx")
-var bgm_sfx = StreamAudio.get_node("Bgm")
+var bgm = StreamAudio.get_node("Bgm")
 
 func _ready() -> void:
-	bgm_sfx.play()
+	bgm.volume_db = 10
+	bgm.play()
 	if not GlobalData.player_data.get("current_chapter") == "Chapter1" or GlobalData.player_data.get("current_chapter") == "Chapter2":
 		$VBoxContainer/ContinueButton.disabled = true
 		

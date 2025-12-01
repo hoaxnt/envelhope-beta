@@ -26,16 +26,21 @@ var is_transitioning: bool = false
 @onready var next_button: Button = $Panel/SkipButton
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
+var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
+var sfx : AudioStreamPlayer2D = StreamAudio.get_node("Sfx")
 
-var sfx = StreamAudio.get_node("Sfx")
 
 func _ready() -> void:
+	bgm.volume_db = 20
+	bgm.stream = StreamAudio.piano
+	bgm.play()
+	
 	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 
 func _on_skip_button_pressed() -> void:
-	sfx.play()
+	
 	current_step += 1
 	if current_step < IMAGES.size():
 		anim.play("fade_reveal")

@@ -15,7 +15,7 @@ extends Node2D
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var earnings = 0
-var sfx : AudioStreamPlayer2D = StreamAudio.get_node("Sfx")
+var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
 
 
 var speed: float = 150.0
@@ -65,13 +65,12 @@ func _on_start_button_pressed() -> void:
 	
 	target.show()
 	slider_bar.show()
-	sfx.stream = StreamAudio.badjao
-	sfx.play()
+	bgm.stream = StreamAudio.badjao
+	bgm.play()
 	dancer_anim.play("default")
 	is_moving = true
 	
-	await sfx.finished
-	
+	await bgm.finished
 	
 	dancer_anim.stop()
 	target.hide()
@@ -88,7 +87,8 @@ func _on_start_button_pressed() -> void:
 	summary_panel.show()
 
 func _on_done_button_pressed() -> void:
-	sfx.stop()
+	bgm.stop()
+	bgm.stream = StreamAudio.bgm
 	
 	if player:
 		player.position = GlobalData.load_player2_position()
