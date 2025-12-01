@@ -50,7 +50,7 @@ func _transition_to_next_scene() -> void:
 	is_transitioning = true
 	
 	if player:
-		player.position = GlobalData.load_player_position()
+		player.position = GlobalData.load_player2_position()
 		
 	GlobalData.npc_data.set("release_the_kraken", true)
 	Transition.transition_to_scene(NEXT_SCENE_PATH)

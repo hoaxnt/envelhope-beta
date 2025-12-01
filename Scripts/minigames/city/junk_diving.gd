@@ -34,7 +34,7 @@ func _on_start_button_pressed() -> void:
 
 func _on_done_button_pressed() -> void:
 	if player:
-		player.position = GlobalData.load_player_position()
+		player.position = GlobalData.load_player2_position()
 	
 	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
 

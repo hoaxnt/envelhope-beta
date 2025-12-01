@@ -16,7 +16,7 @@ func _ready() -> void:
 	hunger_bar.value = GlobalData.player_data.get("hunger")
 	hunger_timer.start()
 	
-	player.position = GlobalData.load_player_position()
+	player.position = GlobalData.load_player1_position()
 	
 	if not GlobalData.config.get("user_opened_once"):
 		tutorial.show()

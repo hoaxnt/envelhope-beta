@@ -30,14 +30,14 @@ func _ready() -> void:
 	hunger_bar.value = GlobalData.player_data.get("hunger")
 	
 	if player:
-		player.position = GlobalData.load_player_position()
+		player.position = GlobalData.load_player2_position()
 		print("POSITION LOADED")
 	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
 		spawn_police_squad()
 		
 	if GlobalData.npc_data.get("diver_objective") == "completed":
-		player.global_position = GlobalData.load_player_position()
+		player.global_position = GlobalData.load_player2_position()
 		
 		hunger_timer.start()#htimer
 		
@@ -61,7 +61,7 @@ func _on_danger_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if not GlobalData.npc_data.get("release_the_kraken") and GlobalData.npc_data.get("day") == 4:
 			if player:
-				GlobalData.save_player_position(player.global_position)
+				GlobalData.save_player2_position(player.global_position)
 			Hud.hide()
 			
 			Transition.transition_to_scene("res://Scenes/stories/police_noticed_story.tscn")

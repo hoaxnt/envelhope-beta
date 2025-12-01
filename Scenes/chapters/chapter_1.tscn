@@ -142,7 +142,7 @@ position = Vector2(1030, 291)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
 z_index = 2
-position = Vector2(627, 264)
+position = Vector2(628, 280)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -290,7 +290,7 @@ one_shot = true
 autostart = true
 
 [node name="Axe" parent="." instance=ExtResource("10_l01ag")]
-position = Vector2(275.99994, 41.999985)
+position = Vector2(1166, 176)
 scale = Vector2(0.975, 0.975)
 
 [node name="Log" parent="." instance=ExtResource("11_l01ag")]

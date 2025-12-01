@@ -50,12 +50,39 @@ func save_player_position(position: Vector2):
 	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
 	player_data_updated.emit("position", pos_array)
 	
-func load_player_1_position() -> Vector2:
+func save_player1_position(position: Vector2):
+	var pos_array = [position.x, position.y]
+	player_data["position_1"] = pos_array
+	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
+	player_data_updated.emit("position_1", pos_array)
+
+func save_player2_position(position: Vector2):
+	var pos_array = [position.x, position.y]
+	player_data["position_2"] = pos_array
+	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
+	player_data_updated.emit("position_2", pos_array)
+	
+
+func load_player_position() -> Vector2:
 	var pos_array = player_data.get("position")
 	if pos_array is Array and pos_array.size() == 2:
 		return Vector2(pos_array[0], pos_array[1])
 	else:
 		return Vector2(80.0, 486.0)
+		
+func load_player1_position() -> Vector2:
+	var pos_array = player_data.get("position_1")
+	if pos_array is Array and pos_array.size() == 2:
+		return Vector2(pos_array[0], pos_array[1])
+	else:
+		return Vector2(628.0, 280.0)
+
+func load_player2_position() -> Vector2:
+	var pos_array = player_data.get("position_2")
+	if pos_array is Array and pos_array.size() == 2:
+		return Vector2(pos_array[0], pos_array[1])
+	else:
+		return Vector2(143.0, 503.0)
 
 func handle_hunger_reset_city():
 	player_data["hunger"] = 100.0

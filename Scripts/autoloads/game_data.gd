@@ -20,7 +20,8 @@ var PLAYER_STATS = {
 	"envelopes": 0,
 	"cycle": 10,
 	"equipped_tool": "none",
-	"position": [543.687, 320.467],
+	"position_1": [628.0, 280.0],
+	"position_2": [143.0, 503.0],
 }
 
 var NPC_DATA_STATS = {

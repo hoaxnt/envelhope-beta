@@ -57,8 +57,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _on_done_button_pressed() -> void:
 	if main_player:
-		main_player.position = GlobalData.load_player_position()
-		print(GlobalData.load_player_position())
+		main_player.position = GlobalData.load_player2_position()
+		print(GlobalData.load_player2_position())
 		
 	summary_panel.hide()
 	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
