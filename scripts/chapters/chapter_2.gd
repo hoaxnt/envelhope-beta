@@ -77,6 +77,7 @@ func _on_danger_zone_body_entered(body: Node2D) -> void:
 			if player:
 				GlobalData.save_player2_position(player.global_position)
 			Hud.hide()
+			day_timer.stop()
 			
 			Transition.transition_to_scene("res://Scenes/stories/police_noticed_story.tscn")
 			
