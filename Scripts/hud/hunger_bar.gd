@@ -2,7 +2,7 @@ extends ProgressBar
 
 @onready var hunger_timer = $HungerTimer
 
-const HUNGER_DECREMENT = 1 #fortest
+const HUNGER_DECREMENT = 20 #fortest
 
 func _ready():
 	show_percentage = false
@@ -33,7 +33,6 @@ func _on_hunger_timer_timeout() -> void:
 				GlobalData.handle_hunger_reset_city()
 				value = GlobalData.get_player_data_value("hunger")
 			else:
-				print("hunger reset island")
 				Hud.hide()
 				Transition.transition_to_scene("res://scenes/stories/death_island.tscn")
 				GlobalData.handle_hunger_reset_island()

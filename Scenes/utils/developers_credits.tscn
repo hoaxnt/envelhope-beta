@@ -43,7 +43,7 @@ size_flags_vertical = 10
 theme_override_fonts/font = ExtResource("1_56oal")
 theme_override_font_sizes/font_size = 81
 text = "DEVELOPED BY:
-Marc Julius regacho
+Marc Julius Regacho
 Karl Joshua Matibag
 Xavier Joel Ramos"
 horizontal_alignment = 1

@@ -11,7 +11,7 @@ extends Node2D
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 
 @onready var objective_label = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel")
-@onready var objective_label_anim = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
+@onready var objective_label_anim : AnimationPlayer = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var objective_label_kraken = $CanvasLayer/ObjectiveLabelKraken
 @onready var objective_label_anim_kraken = $CanvasLayer/ObjectiveLabelKraken/ObjectiveTextKrakenAnimation
 
