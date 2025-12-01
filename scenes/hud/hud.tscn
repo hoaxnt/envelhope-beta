@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://c1n41auotc7uk"]
 
-[ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
+[ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
 [ext_resource type="Texture2D" uid="uid://c4myso2wgrqtd" path="res://assets/ui/hunger_icon.png" id="2_v7mo4"]
 [ext_resource type="PackedScene" uid="uid://3rqjregok76e" path="res://scenes/hud/envelopes.tscn" id="3_0bx4p"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://q1l722lvfn41" path="res://scenes/utils/inventory.tscn" id="11_8nkf1"]
 [ext_resource type="PackedScene" uid="uid://dvmpuwcwltlnc" path="res://scenes/utils/objective_label.tscn" id="11_q6mn5"]
 [ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="12_8nkf1"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="14_4m1a1"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="14_4m1a1"]
 [ext_resource type="PackedScene" uid="uid://dc1y85wkmnltq" path="res://scenes/hud/day_panel.tscn" id="14_iioc1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]

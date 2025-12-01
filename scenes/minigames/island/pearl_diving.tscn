@@ -1,13 +1,13 @@
 [gd_scene load_steps=30 format=4 uid="uid://bsbnx7njdtlj3"]
 
-[ext_resource type="Script" uid="uid://okg34i6hi7n4" path="res://scripts/minigames/island/pearl_diving.gd" id="1_a6bgs"]
+[ext_resource type="Script" path="res://scripts/minigames/island/pearl_diving.gd" id="1_a6bgs"]
 [ext_resource type="Texture2D" uid="uid://cxx5nrliooey7" path="res://assets/island/minigame_pearldiving/Tileset1.png" id="2_wcao6"]
-[ext_resource type="Script" uid="uid://bndfioqn4maro" path="res://scripts/characters/player_pearldiving.gd" id="3_grp83"]
+[ext_resource type="Script" path="res://scripts/characters/player_pearldiving.gd" id="3_grp83"]
 [ext_resource type="Texture2D" uid="uid://3m6o5f52vnau" path="res://assets/island/minigame_pearldiving/Tileset3.png" id="3_wpnsi"]
 [ext_resource type="PackedScene" uid="uid://xt2vbq4u5q7y" path="res://scenes/characters/player_pearldiving.tscn" id="4_g6jhb"]
 [ext_resource type="PackedScene" uid="uid://p016lxodfcex" path="res://scenes/utils/pearl.tscn" id="5_4x152"]
 [ext_resource type="Texture2D" uid="uid://cn43ev0sctfhp" path="res://assets/island/minigame_pearldiving/pearl.png" id="6_qpj22"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="7_grp83"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="7_grp83"]
 [ext_resource type="PackedScene" uid="uid://bjocvfb1q65td" path="res://scenes/minigames/island/fish_obstacle.tscn" id="7_wrw2s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wpnsi"]
