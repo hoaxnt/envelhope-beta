@@ -46,15 +46,14 @@ func _on_main_menu_button_pressed() -> void:
 	Hud.hide()
 	canvas_layer.hide()
 	
-	# Saved shits
 	hunger_timer.stop()
 	day_timer.stop()
 	if player_1:
 		GlobalData.save_player1_position(player_1.global_position)
 		GlobalData.player_data.set("current_chapter", player_1.get_parent().name)
-		print("PARENT: ",player_1.global_position)
+
 	elif player_2:
 		GlobalData.save_player2_position(player_2.global_position)
 		GlobalData.player_data.set("current_chapter", player_2.get_parent().name)
-		print("PARENT: ",player_2.global_position)
+
 	

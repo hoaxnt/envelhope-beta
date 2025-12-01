@@ -23,6 +23,7 @@ var is_transitioning: bool = false
 var sfx = StreamAudio.get_node("Sfx")
 
 func _ready() -> void:
+	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 

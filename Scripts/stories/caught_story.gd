@@ -20,16 +20,17 @@ const NEXT_SCENE_PATH = "res://scenes/utils/developers_credits.tscn"
 var current_step: int = 0
 var is_transitioning: bool = false 
 
+@onready var hunger_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 @onready var image_node: TextureRect = $Panel/VBoxContainer/TextureRect
 @onready var label_node: Label = $Panel/VBoxContainer/Label
 @onready var next_button: Button = $Panel/SkipButton
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
 
-
 var sfx = StreamAudio.get_node("Sfx")
 
 func _ready() -> void:
+	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 

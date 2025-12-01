@@ -16,6 +16,7 @@ var CONFIG = {
 }
 
 var PLAYER_STATS = {
+	"current_chapter": "none",
 	"hunger": 100.0,
 	"envelopes": 0,
 	"cycle": 10,

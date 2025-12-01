@@ -19,11 +19,12 @@ var is_transitioning: bool = false
 @onready var next_button: Button = $Panel/SkipButton
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
-
+@onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var sfx = StreamAudio.get_node("Sfx")
 
 func _ready() -> void:
+	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 
@@ -51,10 +52,7 @@ func _transition_to_next_scene() -> void:
 
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
 	
-	#if NPC_DATA["day"] < 4:
-		#NPC_DATA["day"] += 1
-		#SaveLoad.save_game(NPC_DATA, SaveLoad.NPC_DATA_PATH)
-		
 	GlobalData.advance_to_next_day()
 	day_timer.start()
+	hunger_timer.start()
 	

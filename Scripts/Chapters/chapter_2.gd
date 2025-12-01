@@ -17,7 +17,8 @@ extends Node2D
 
 @onready var danger_zone = $DangerZone
 @onready var player = get_node("/root/Chapter2/Player")
-
+@onready var day_progress_bar = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DayProgressBar")
+var day_current_time: float = 0.0 
 func _ready() -> void:
 	camera.limit_left = 1
 	camera.limit_top = 1
@@ -30,20 +31,16 @@ func _ready() -> void:
 	hunger_bar.value = GlobalData.player_data.get("hunger")
 	
 	if player:
+		print('player chapter2 ,position loaded')
 		player.position = GlobalData.load_player2_position()
-		print("POSITION LOADED")
 	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
-		spawn_police_squad()
-		
-	if GlobalData.npc_data.get("diver_objective") == "completed":
-		player.global_position = GlobalData.load_player2_position()
-		
-		hunger_timer.start()#htimer
-		
+		hunger_timer.stop()
 		var day = GlobalData.npc_data.get("day")
 		var survive_day = "survive_day_%s" % str(int(day))
 
+		spawn_police_squad()
+		
 		if GlobalData.npc_data.get("release_the_kraken") == true:
 			objective_label_kraken.show()
 			objective_label_kraken.text = "RUNN!! RUNNN!! RUNNNN!!"
@@ -52,6 +49,18 @@ func _ready() -> void:
 			objective_label_kraken.hide()
 			objective_label.text = GlobalData.npc_data["list_of_objectives"][survive_day]
 			objective_label_anim.play("show_objective")
+			return
+	
+	if GlobalData.npc_data.get("diver_objective") == "completed" and GlobalData.npc_data.get("release_the_kraken") == 'false':
+		player.global_position = GlobalData.load_player2_position()
+		hunger_timer.start()#htimer
+		print("diver objective")
+		
+func _physics_process(_delta: float) -> void:
+
+	if day_progress_bar.value >= 180 and GlobalData.npc_data.get("day") < 4:
+		if player:
+			GlobalData.save_player2_position(player.global_position)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):

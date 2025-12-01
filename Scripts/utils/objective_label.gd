@@ -5,13 +5,3 @@ extends Label
 
 func _ready() -> void:
 	objective_label_timer.start()
-		
-#func _on_objective_label_timer_timeout() -> void:
-	##if GlobalData.config.get("user_opened_once") and GlobalData.config.get("is_new_game"):
-	#if GlobalData.config.get("is_new_game"):
-		#
-		#objective_label_timer.stop()
-		#objective_anim.play("show_objective")
-		
-		#hunger_timer.start()
-		

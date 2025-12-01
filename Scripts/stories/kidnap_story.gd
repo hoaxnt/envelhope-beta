@@ -1,6 +1,5 @@
 extends Control
 
-@onready var anim = $AnimationPlayer
 
 const IMAGES = [
 	"res://assets/utils/kidnap/1.jpg",
@@ -24,10 +23,13 @@ var is_transitioning: bool = false
 @onready var image_node: TextureRect = $Panel/VBoxContainer/TextureRect
 @onready var label_node: Label = $Panel/VBoxContainer/Label
 @onready var next_button: Button = $Panel/SkipButton
+@onready var anim = $AnimationPlayer
+@onready var hunger_timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var sfx = StreamAudio.get_node("Sfx")
 
 func _ready() -> void:
+	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 
@@ -53,6 +55,8 @@ func _transition_to_next_scene() -> void:
 	
 	is_transitioning = true
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
+	
+	hunger_timer.start()
 	
 	
 	

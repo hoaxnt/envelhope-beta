@@ -20,10 +20,12 @@ var is_transitioning: bool = false
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
+@onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var sfx = StreamAudio.get_node("Sfx")
 
 func _ready() -> void:
+	hunger_timer.stop()
 	anim.play("fade_reveal")
 	_update_content()
 
