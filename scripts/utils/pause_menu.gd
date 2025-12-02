@@ -2,8 +2,8 @@ extends Control
 
 @onready var canvas_layer : CanvasLayer
 @onready var tutorial = Hud.get_node("Tutorial")
-@onready var player_1 = get_node("/root/Chapter1/Player")
-@onready var player_2 = get_node("/root/Chapter2/Player")
+@onready var player_1
+@onready var player_2
 
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 @onready var day_timer: Timer = Hud.get_node("DayPanel/DayTimer")
@@ -14,6 +14,12 @@ var pause_menu_instance = null
 
 func _ready() -> void:
 	canvas_layer = get_parent()
+	
+	if get_node("/root/Chapter1/Player"):
+		player_1 = get_node("/root/Chapter1/Player")
+	elif get_node("/root/Chapter2/Player"):
+		player_2 = get_node("/root/Chapter2/Player")
+		
 
 func _on_resume_button_pressed() -> void:
 	canvas_layer.hide()

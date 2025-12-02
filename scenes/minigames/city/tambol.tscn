@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://wn7q4vsgj5kd"]
 
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_ndmh6"]
-[ext_resource type="Script" uid="uid://br802vs8g7hkj" path="res://scripts/minigames/city/tambol.gd" id="1_wka3v"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="1_ndmh6"]
+[ext_resource type="Script" uid="uid://djgtqr18c7y0c" path="res://scripts/minigames/city/tambol.gd" id="1_wka3v"]
 [ext_resource type="Texture2D" uid="uid://bqapq382prsnw" path="res://assets/city/plaza/jeep_badjao.jpg" id="2_5bdva"]
 [ext_resource type="Texture2D" uid="uid://bqddy4oc3wco4" path="res://assets/characters/player/Hit_Base/hit_down-sheet.png" id="3_u50xa"]
 
@@ -47,6 +47,21 @@ bg_color = Color(18.892157, 18.892157, 18.892157, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx226"]
 bg_color = Color(0.11414815, 0.36695743, 0.9815763, 1)
 
+[sub_resource type="Animation" id="Animation_u50xa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+
 [sub_resource type="Animation" id="Animation_wka3v"]
 resource_name = "countdown"
 length = 3.5
@@ -61,21 +76,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": ["3", "2", "1", "GO!", ""]
-}
-
-[sub_resource type="Animation" id="Animation_u50xa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["3"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u50xa"]

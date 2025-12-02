@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1n41auotc7uk"]
+[gd_scene load_steps=15 format=3 uid="uid://c1n41auotc7uk"]
 
-[ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_0fbou"]
+[ext_resource type="Script" uid="uid://2gkntk6ah125" path="res://scripts/hud/hud.gd" id="1_0fbou"]
 [ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
 [ext_resource type="Texture2D" uid="uid://c4myso2wgrqtd" path="res://assets/ui/hunger_icon.png" id="2_v7mo4"]
 [ext_resource type="PackedScene" uid="uid://3rqjregok76e" path="res://scenes/hud/envelopes.tscn" id="3_0bx4p"]
-[ext_resource type="PackedScene" uid="uid://crs4wyn58p5ct" path="res://scenes/hud/hotbar_slot.tscn" id="3_558d4"]
 [ext_resource type="Texture2D" uid="uid://om54pqa2nl8x" path="res://assets/ui/envelope.png" id="4_n56i7"]
 [ext_resource type="Texture2D" uid="uid://5i30nwf1hvkt" path="res://assets/ui/bag.png" id="7_go0ap"]
 [ext_resource type="Texture2D" uid="uid://mxiklpr6dk07" path="res://assets/ui/current_quest.png" id="7_mq0y1"]
@@ -27,9 +26,6 @@ script = ExtResource("1_0fbou")
 visible = false
 z_index = 5
 offset_top = -250.0
-
-[node name="HotbarSlot" parent="." instance=ExtResource("3_558d4")]
-visible = false
 
 [node name="StatsPanel" type="Control" parent="."]
 layout_mode = 3

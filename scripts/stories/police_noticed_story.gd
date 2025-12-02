@@ -20,11 +20,14 @@ var is_transitioning: bool = false
 @onready var next_button: Button = $Panel/SkipButton
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
-@onready var player = get_node("/root/Chapter2/Player")
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
+#var player
 
 func _ready() -> void:
+	#if get_node("/root/Chapter2/Player"):
+		#player = get_node("/root/Chapter2/Player")
+		#
 	bgm.volume_db = 20
 	bgm.stream = StreamAudio.kidnap
 	bgm.play()
@@ -55,8 +58,8 @@ func _transition_to_next_scene() -> void:
 	
 	is_transitioning = true
 	
-	if player:
-		player.position = GlobalData.load_player2_position()
+	#if player:
+		#player.position = GlobalData.load_player2_position()
 		
 	GlobalData.npc_data.set("release_the_kraken", true)
 	Transition.transition_to_scene(NEXT_SCENE_PATH)

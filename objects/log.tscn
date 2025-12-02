@@ -1,16 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0gbe4vyonscx"]
 
-[ext_resource type="Script" uid="uid://d6lxwjnwv00r" path="res://scripts/objects/pickup.gd" id="1_du0hq"]
+[ext_resource type="Script" uid="uid://cebdssfilsv6s" path="res://scripts/objects/pickup.gd" id="1_du0hq"]
 [ext_resource type="Texture2D" uid="uid://bwwu4vo3olrgu" path="res://assets/island/objects/log.png" id="1_m1qec"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_vfroh"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_vfroh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m1qec"]
 radius = 19.0
 
 [node name="Log" type="Area2D"]
 script = ExtResource("1_du0hq")
-item_name = "Log"
-icon = ExtResource("1_m1qec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_m1qec")

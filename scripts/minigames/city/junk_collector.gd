@@ -10,7 +10,6 @@ extends Node2D
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var summary_text = $CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/MarginContainer/SummaryText
 @onready var main_player = $Player
-
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var game_started: bool = false

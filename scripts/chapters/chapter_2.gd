@@ -5,7 +5,6 @@ extends Node2D
 @onready var day_timer = Hud.get_node("DayPanel/DayTimer")
 @onready var day_panel = Hud.get_node("DayPanel")
 
-
 @onready var camera : Camera2D = $Player/Camera2D
 @onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH)
 @onready var police_npc = load("res://scenes/minigames/city/path_finding/police.tscn")
@@ -18,6 +17,7 @@ extends Node2D
 @onready var danger_zone = $DangerZone
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var day_progress_bar = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DayProgressBar")
+
 var day_current_time: float = 0.0 
 var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
 var sfx : AudioStreamPlayer2D = StreamAudio.get_node("Sfx")
@@ -37,7 +37,8 @@ func _ready() -> void:
 	
 	if GlobalData.npc_data.get("diver_objective") == "completed" and GlobalData.npc_data.get("release_the_kraken") == false:
 		player.global_position = GlobalData.load_player2_position()
-		objective_label_anim.play("show_objective")
+		
+		
 	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
 		bgm.volume_db = 5
@@ -58,6 +59,8 @@ func _ready() -> void:
 		objective_label_kraken.hide()
 		objective_label.text = GlobalData.npc_data["list_of_objectives"]["survive_day_%s" % str(int(GlobalData.npc_data.get("day")))]
 		objective_label_anim.play("show_objective")
+		await objective_label_anim.animation_finished
+		hunger_timer.start()
 		return
 	
 		
@@ -79,7 +82,7 @@ func _on_danger_zone_body_entered(body: Node2D) -> void:
 			Hud.hide()
 			day_timer.stop()
 			
-			Transition.transition_to_scene("res://Scenes/stories/police_noticed_story.tscn")
+			Transition.transition_to_scene("res://scenes/stories/police_noticed_story.tscn")
 			
 func spawn_police_squad():
 	var spawn_positions = [

@@ -8,13 +8,10 @@ extends Node2D
 @onready var earnings_label: Label = $CanvasLayer/EarningsLabel
 @onready var time_left_timer = $TimeLeft
 @onready var timer_label = $CanvasLayer/TimerLabel
-@onready var player = get_node("/root/Chapter2/Player")
-
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 
 var sfx = StreamAudio.get_node("Sfx")
 var game_started = false
-
 var earnings = 0
 var TIME = 60
 
@@ -33,9 +30,6 @@ func _on_start_button_pressed() -> void:
 	time_left_timer.start()
 
 func _on_done_button_pressed() -> void:
-	if player:
-		player.position = GlobalData.load_player2_position()
-	
 	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
 
 func _on_time_left_timeout() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lddrc2gxgxy0"]
 
-[ext_resource type="Script" uid="uid://dw54htboca3s2" path="res://scripts/utils/pause_menu.gd" id="1_toapa"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_6fgxk"]
+[ext_resource type="Script" uid="uid://dn8xdb3ghc8xq" path="res://scripts/utils/pause_menu.gd" id="1_toapa"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_6fgxk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toapa"]
 bg_color = Color(0, 0, 0, 0.2784314)

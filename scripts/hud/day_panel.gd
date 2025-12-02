@@ -2,10 +2,7 @@ extends Control
 
 @onready var day_progress_bar = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DayProgressBar
 @onready var day_timer = $DayTimer
-
 @onready var day_label = $MarginContainer/HBoxContainer/VBoxContainer/DayLabel
-@onready var NPC_DATA = SaveLoad.load_game(SaveLoad.NPC_DATA_PATH) 
-@onready var player = get_node("/root/Chapter2/Player")
 
 var day_current_time: float = 0.0 
 
@@ -29,7 +26,7 @@ func _on_day_timer_timeout() -> void:
 		Transition.transition_to_scene("res://scenes/stories/sleep_story.tscn")
 		return
 		
-	day_current_time += 40.0 #fortest
+	day_current_time += 5.0 #fortest
 	day_current_time = clamp(day_current_time, 0.0, day_progress_bar.max_value)
 
 	var tween = create_tween()

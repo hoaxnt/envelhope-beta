@@ -9,19 +9,13 @@ extends Node2D
 @onready var summary_panel = $CanvasLayer/SummaryPanel
 @onready var summary_label = $CanvasLayer/SummaryPanel/HBoxContainer/VBoxContainer/SummaryLabel
 @onready var dancer_anim = $AnimatedSprite2D
-@onready var player = get_node("/root/Chapter2/Player")
 @onready var PLAYER_DATA = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
-
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
-
 var earnings = 0
 var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
-
-
 var speed: float = 150.0
 var direction: int = 1
 var is_moving: bool = false
-
 const TARGET_MIN_VALUE: float = 45.0
 const TARGET_MAX_VALUE: float = 55.0
 
@@ -89,7 +83,5 @@ func _on_start_button_pressed() -> void:
 func _on_done_button_pressed() -> void:
 	bgm.stop()
 	bgm.stream = StreamAudio.bgm
-	
-	if player:
-		player.position = GlobalData.load_player2_position()
+
 	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")

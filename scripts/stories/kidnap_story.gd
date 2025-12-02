@@ -59,7 +59,7 @@ func _transition_to_next_scene() -> void:
 	Transition.transition_to_scene(NEXT_SCENE_PATH)
 	
 	bgm.stop()
-	hunger_timer.start()
+
 	
 	
 	
