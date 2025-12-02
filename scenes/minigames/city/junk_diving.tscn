@@ -520,11 +520,11 @@ theme_override_constants/margin_right = 100
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_brdyw")
 theme_override_font_sizes/font_size = 40
-text = "1. Watch the slider move rapidly back and forth across the bar.
+text = "1. Collect all the bottles 🧴 to win the game!
 
-2. Press the [Spacebar] when you believe the slider is perfectly aligned with the target zone.
+2. Avoid being bitten by crocodiles, it will deduct 10 seconds to your time
 
-3. The closer you stop to the center of the green zone, the better your reward!"
+3. The game ends when the time runs out"
 autowrap_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Instructions/HBoxContainer/VBoxContainer"]
