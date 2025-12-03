@@ -59,9 +59,9 @@ var NPC_DATA_STATS = {
 		}
 	},
 	"current_objective": "none",
-	"diver_objective": "none",#west completed
+	"diver_objective": "none",#fortest completed
 	"list_of_objectives": {
-		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver",
+		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver. Tip: Find an axe to begin your resource gathering journey.",
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",
 		"survive_day_2": "OBJECTIVE: Survive the Day 2",
 		"survive_day_3": "OBJECTIVE: Survive the Day 3",
@@ -69,9 +69,3 @@ var NPC_DATA_STATS = {
 	},	"day": 1,
 	"release_the_kraken": false,
 }
-
-func _ready() -> void:
-	#SaveLoad.save_game(PLAYER_STATS, PLAYER_DATA_PATH)
-	#SaveLoad.save_game(NPC_DATA_STATS, NPC_DATA_PATH)
-	#SaveLoad.save_game(INVENTORY, INVENTORY_PATH)
-	pass

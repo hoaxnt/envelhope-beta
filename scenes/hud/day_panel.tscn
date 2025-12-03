@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://dc1y85wkmnltq"]
 
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_724v6"]
-[ext_resource type="Script" uid="uid://dke7ebua215gb" path="res://Scripts/hud/day_panel.gd" id="1_ivflw"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="1_724v6"]
+[ext_resource type="Script" uid="uid://bp0kgnknwmjja" path="res://Scripts/hud/day_panel.gd" id="1_ivflw"]
 [ext_resource type="Texture2D" uid="uid://diweqnidfw18c" path="res://assets/ui/sun.png" id="2_ivflw"]
 [ext_resource type="Texture2D" uid="uid://ntqcc8bflpte" path="res://assets/ui/moon.png" id="3_oqufp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iioc1"]
-bg_color = Color(0.9843137, 0.80784315, 0.003921569, 1)
+bg_color = Color(0.9980331, 0.8885567, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_567j1"]
 bg_color = Color(0.30588236, 0.34117648, 0.40784314, 1)

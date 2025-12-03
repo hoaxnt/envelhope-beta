@@ -44,8 +44,9 @@ func _cut_tree():
 			anim.play("slash")
 		
 		if not InventoryManager.is_axe_selected():
-				print("Need an axe to chop!")
-				return
+			Hud.get_node("")
+			print("Need an axe to chop!")
+			return
 		
 		axe_anim.play("slash")
 		tree_hp -= 1

@@ -18,6 +18,10 @@
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
 border_width_left = 100
 border_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_0fbou")
@@ -125,6 +129,7 @@ theme_override_constants/margin_top = 300
 
 [node name="ObjectiveLabel" parent="ObjectivePanel/MarginContainer" instance=ExtResource("11_q6mn5")]
 layout_mode = 2
+text = "OBJECTIVE: Find the diver and talk to him"
 
 [node name="InventoryPanel" parent="." instance=ExtResource("11_8nkf1")]
 visible = false
@@ -133,7 +138,6 @@ visible = false
 visible = false
 
 [node name="ActionButton" type="Button" parent="."]
-visible = false
 custom_minimum_size = Vector2(150, 150)
 anchors_preset = 3
 anchor_left = 1.0
@@ -148,7 +152,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("14_4m1a1")
 theme_override_font_sizes/font_size = 46
-text = "Chop"
+text = " Chop [C] "
 
 [node name="UtilsPanel" type="Control" parent="."]
 layout_mode = 3

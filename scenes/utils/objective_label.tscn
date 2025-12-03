@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvmpuwcwltlnc"]
 
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_k3ura"]
-[ext_resource type="Script" uid="uid://cf68fvjhvj26q" path="res://scripts/utils/objective_label.gd" id="2_vsxql"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="1_k3ura"]
+[ext_resource type="Script" uid="uid://c375yfwci1iwp" path="res://scripts/utils/objective_label.gd" id="2_vsxql"]
 
 [sub_resource type="Animation" id="Animation_q6mn5"]
 length = 0.001
@@ -42,8 +42,12 @@ _data = {
 
 [node name="ObjectiveLabel" type="Label"]
 custom_minimum_size = Vector2(800, 200)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_k3ura")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "OBJECTIVE: Find the diver"
 horizontal_alignment = 1
 autowrap_mode = 2

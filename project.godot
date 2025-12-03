@@ -39,9 +39,6 @@ settings/size/resizable=true
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
-window/size/resizable=false
-window/size/borderless=true
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
@@ -60,6 +57,10 @@ enabled=PackedStringArray()
 npcs=""
 player=""
 trees=""
+
+[gui]
+
+theme/custom_font="uid://dg24wywv57r80"
 
 [input]
 
