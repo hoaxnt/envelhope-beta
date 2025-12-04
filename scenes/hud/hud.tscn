@@ -121,9 +121,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_right = 192.0
-offset_bottom = 40.0
+offset_left = -739.0
+offset_right = 739.0
+offset_bottom = 666.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 300
 
@@ -138,6 +138,7 @@ visible = false
 visible = false
 
 [node name="ActionButton" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 anchors_preset = 3
 anchor_left = 1.0

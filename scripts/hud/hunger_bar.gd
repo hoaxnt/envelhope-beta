@@ -9,7 +9,8 @@ func _ready():
 	max_value = 100.0 #fortest
 	GlobalData.player_data_updated.connect(_on_player_data_updated)
 	
-	value = GlobalData.player_data.get("hunger")
+	if GlobalData.player_data:
+		value = GlobalData.player_data.get("hunger")
 
 func _on_hunger_timer_timeout() -> void:
 	var current_hunger = GlobalData.get_player_data_value("hunger")
