@@ -8,8 +8,8 @@ extends CharacterBody2D
 @onready var hand_socket = $AnimatedSprite2D/HandSocket
 
 @onready var inventory_panel = Hud.get_node("InventoryPanel")
-@onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var objective_label_anim = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
+@onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var inventory = Hud.get_node("InventoryPanel")
 
 var sfx = StreamAudio.get_node("Sfx")
@@ -151,8 +151,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			inventory_panel.visible = not inventory_panel.visible
 #	-- Show Objective --
 	if event.is_action_pressed("show_objective"):
-		#sfx.stream = StreamAudio.typing
-		#sfx.play()
 		if objective_label_anim:
 			objective_label_anim.play("show_objective")
 #	-- Interact NPC --
