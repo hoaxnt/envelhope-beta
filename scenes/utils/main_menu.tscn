@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dakmfuhim8ksf"]
 
-[ext_resource type="Script" uid="uid://bbqrh4pa87t8k" path="res://Scripts/utils/main_menu.gd" id="1_iaex4"]
+[ext_resource type="Script" uid="uid://dn4j7vh85cnpd" path="res://Scripts/utils/main_menu.gd" id="1_iaex4"]
 [ext_resource type="Texture2D" uid="uid://cli0qdu5xqr7u" path="res://assets/ui/background.png" id="2_dlq2s"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_ompks"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_ompks"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmxjk"]
 

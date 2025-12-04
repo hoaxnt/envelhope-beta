@@ -54,9 +54,7 @@ func _cut_tree():
 		
 		if tree_hp <= 0 and not is_felled:
 				_fell_tree()
-
-
-
+				
 func _fell_tree():
 		is_felled = true
 		chop_button.hide()
