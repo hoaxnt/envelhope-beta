@@ -162,9 +162,6 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -175,25 +172,24 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -100.0
-offset_bottom = 100.0
+offset_left = -157.0
+offset_top = -123.0
+offset_bottom = 108.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_right = 30
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UtilsPanel/MarginContainer"]
-custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UtilsPanel/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="BagButton" type="Button" parent="UtilsPanel/MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 100)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 40
@@ -202,6 +198,7 @@ flat = true
 icon_alignment = 1
 
 [node name="ViewQuestButton" type="Button" parent="UtilsPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 40

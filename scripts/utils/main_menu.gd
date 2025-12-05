@@ -6,7 +6,8 @@ var sfx = StreamAudio.get_node("Sfx")
 var bgm = StreamAudio.get_node("Bgm")
 
 func _ready() -> void:
-	bgm.volume_db = 10
+	bgm.volume_db = 5
+	sfx.volume_db = 10
 	bgm.play()
 	
 	if GlobalData.player_data.get("current_chapter") == "none" or GlobalData.player_data.get("current_chapter") == "none":
