@@ -59,7 +59,7 @@ var NPC_DATA_STATS = {
 	"current_objective": "none",
 	"diver_objective": "none",#fortest completed
 	"list_of_objectives": {
-		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver",
+		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver [TIP] Find an axe to chop the tree",
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",
 		"survive_day_2": "OBJECTIVE: Survive the Day 2",
 		"survive_day_3": "OBJECTIVE: Survive the Day 3",

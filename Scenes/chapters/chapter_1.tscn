@@ -290,7 +290,7 @@ one_shot = true
 autostart = true
 
 [node name="Axe" parent="." instance=ExtResource("10_l01ag")]
-position = Vector2(275.99994, 41.999985)
+position = Vector2(1170, 154.00002)
 scale = Vector2(0.975, 0.975)
 
 [node name="Log" parent="." instance=ExtResource("11_l01ag")]

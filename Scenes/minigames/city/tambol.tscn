@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://wn7q4vsgj5kd"]
+[gd_scene load_steps=18 format=3 uid="uid://wn7q4vsgj5kd"]
 
 [ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_ndmh6"]
-[ext_resource type="Script" uid="uid://br802vs8g7hkj" path="res://scripts/minigames/city/tambol.gd" id="1_wka3v"]
+[ext_resource type="Script" uid="uid://br802vs8g7hkj" path="res://Scripts/minigames/city/tambol.gd" id="1_wka3v"]
 [ext_resource type="Texture2D" uid="uid://bqapq382prsnw" path="res://assets/city/plaza/jeep_badjao.jpg" id="2_5bdva"]
 [ext_resource type="Texture2D" uid="uid://bqddy4oc3wco4" path="res://assets/characters/player/Hit_Base/hit_down-sheet.png" id="3_u50xa"]
+[ext_resource type="Texture2D" uid="uid://b1jsnnrnw375o" path="res://assets/city/minigame/drum2.png" id="6_jq8st"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5bdva"]
 atlas = ExtResource("3_u50xa")
@@ -47,6 +48,21 @@ bg_color = Color(18.892157, 18.892157, 18.892157, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx226"]
 bg_color = Color(0.11414815, 0.36695743, 0.9815763, 1)
 
+[sub_resource type="Animation" id="Animation_u50xa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+
 [sub_resource type="Animation" id="Animation_wka3v"]
 resource_name = "countdown"
 length = 3.5
@@ -61,21 +77,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": ["3", "2", "1", "GO!", ""]
-}
-
-[sub_resource type="Animation" id="Animation_u50xa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["3"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u50xa"]
@@ -104,7 +105,7 @@ region_rect = Rect2(8, 192, 1008, 752)
 position = Vector2(356, 381)
 scale = Vector2(8.355624, 8.355624)
 sprite_frames = SubResource("SpriteFrames_3iif3")
-frame_progress = 0.24007364
+frame_progress = 0.2790211
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(363, 326)
@@ -238,6 +239,11 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ndmh6")
 theme_override_font_sizes/font_size = 80
 text = "Done"
+
+[node name="Drum2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(960.49994, 797.3125)
+scale = Vector2(1.1422762, 0.8819127)
+texture = ExtResource("6_jq8st")
 
 [node name="Instructions" type="Panel" parent="CanvasLayer"]
 visible = false
