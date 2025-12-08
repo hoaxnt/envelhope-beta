@@ -1,0 +1,252 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1n41auotc7uk"]
+
+[ext_resource type="Script" uid="uid://d0fgwe3nkpfsl" path="res://scripts/hud/hud.gd" id="1_0fbou"]
+[ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
+[ext_resource type="Texture2D" uid="uid://c4myso2wgrqtd" path="res://assets/ui/hunger_icon.png" id="2_v7mo4"]
+[ext_resource type="PackedScene" uid="uid://3rqjregok76e" path="res://scenes/hud/envelopes.tscn" id="3_0bx4p"]
+[ext_resource type="PackedScene" uid="uid://crs4wyn58p5ct" path="res://scenes/hud/hotbar_slot.tscn" id="3_558d4"]
+[ext_resource type="PackedScene" uid="uid://b6v6p84sq8x1a" path="res://scenes/hud/day_night_cycle.tscn" id="3_c45xl"]
+[ext_resource type="Texture2D" uid="uid://om54pqa2nl8x" path="res://assets/ui/envelope.png" id="4_n56i7"]
+[ext_resource type="Texture2D" uid="uid://5i30nwf1hvkt" path="res://assets/ui/bag.png" id="7_go0ap"]
+[ext_resource type="Texture2D" uid="uid://mxiklpr6dk07" path="res://assets/ui/current_quest.png" id="7_mq0y1"]
+[ext_resource type="PackedScene" uid="uid://cy7p7yvejyyv" path="res://scenes/hud/dialog_box.tscn" id="9_nhd55"]
+[ext_resource type="PackedScene" uid="uid://q1l722lvfn41" path="res://scenes/utils/inventory.tscn" id="11_8nkf1"]
+[ext_resource type="PackedScene" uid="uid://dvmpuwcwltlnc" path="res://scenes/utils/objective_label.tscn" id="11_q6mn5"]
+[ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="12_8nkf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+border_width_left = 100
+border_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbou"]
+bg_color = Color(0, 0, 0, 0.3882353)
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_0fbou")
+
+[node name="DialogueBox" parent="." instance=ExtResource("9_nhd55")]
+visible = false
+z_index = 5
+offset_top = -250.0
+
+[node name="HotbarSlot" parent="." instance=ExtResource("3_558d4")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+offset_right = 547.0
+offset_bottom = 230.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(400, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kniqr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -54.5
+offset_right = 202.0
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -10
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 44
+
+[node name="Label" type="TextureRect" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_v7mo4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HungerBar" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_l4r4f")]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Label" type="TextureRect" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+texture = ExtResource("4_n56i7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Envelopes" parent="Control/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_0bx4p")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control2"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="Control2/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0fbou")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control2/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control2/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Control2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Day | Night"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DayNightCycleLabel" parent="Control2/MarginContainer/Panel/HBoxContainer/VBoxContainer" instance=ExtResource("3_c45xl")]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control3/MarginContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control3/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BagButton" type="Button" parent="Control3/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("7_go0ap")
+flat = true
+icon_alignment = 1
+
+[node name="ViewQuestButton" type="Button" parent="Control3/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("7_mq0y1")
+flat = true
+icon_alignment = 1
+
+[node name="Control5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control5"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 300
+
+[node name="ObjectiveLabel" parent="Control5/MarginContainer" instance=ExtResource("11_q6mn5")]
+layout_mode = 2
+
+[node name="Control4" parent="." instance=ExtResource("11_8nkf1")]
+
+[node name="Tutorial" parent="." instance=ExtResource("12_8nkf1")]
+visible = false
+
+[connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
+[connection signal="pressed" from="Control3/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]

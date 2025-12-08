@@ -1,0 +1,213 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1n41auotc7uk"]
+
+[ext_resource type="Script" uid="uid://2gkntk6ah125" path="res://scripts/hud/hud.gd" id="1_0fbou"]
+[ext_resource type="PackedScene" uid="uid://wtiojfikc0fb" path="res://scenes/hud/hunger_bar.tscn" id="2_l4r4f"]
+[ext_resource type="Texture2D" uid="uid://c4myso2wgrqtd" path="res://assets/ui/hunger_icon.png" id="2_v7mo4"]
+[ext_resource type="PackedScene" uid="uid://3rqjregok76e" path="res://scenes/hud/envelopes.tscn" id="3_0bx4p"]
+[ext_resource type="Texture2D" uid="uid://om54pqa2nl8x" path="res://assets/ui/envelope.png" id="4_n56i7"]
+[ext_resource type="Texture2D" uid="uid://5i30nwf1hvkt" path="res://assets/ui/bag.png" id="7_go0ap"]
+[ext_resource type="Texture2D" uid="uid://mxiklpr6dk07" path="res://assets/ui/current_quest.png" id="7_mq0y1"]
+[ext_resource type="PackedScene" uid="uid://cy7p7yvejyyv" path="res://scenes/hud/dialog_box.tscn" id="9_nhd55"]
+[ext_resource type="PackedScene" uid="uid://q1l722lvfn41" path="res://scenes/utils/inventory.tscn" id="11_8nkf1"]
+[ext_resource type="PackedScene" uid="uid://dvmpuwcwltlnc" path="res://scenes/utils/objective_label.tscn" id="11_q6mn5"]
+[ext_resource type="PackedScene" uid="uid://nv8phd5kfc7" path="res://scenes/utils/tutorial.tscn" id="12_8nkf1"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="14_4m1a1"]
+[ext_resource type="PackedScene" uid="uid://dc1y85wkmnltq" path="res://scenes/hud/day_panel.tscn" id="14_iioc1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kniqr"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+border_width_left = 100
+border_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_0fbou")
+
+[node name="DialogueBox" parent="." instance=ExtResource("9_nhd55")]
+visible = false
+z_index = 5
+offset_top = -250.0
+
+[node name="StatsPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="StatsPanel"]
+layout_mode = 1
+offset_right = 547.0
+offset_bottom = 230.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="StatsPanel/MarginContainer"]
+custom_minimum_size = Vector2(400, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kniqr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatsPanel/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -54.5
+offset_right = 202.0
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsPanel/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -10
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 44
+
+[node name="Label" type="TextureRect" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_v7mo4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HungerBar" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_l4r4f")]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+show_percentage = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Label" type="TextureRect" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+texture = ExtResource("4_n56i7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Envelopes" parent="StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_0bx4p")]
+layout_mode = 2
+
+[node name="ObjectivePanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ObjectivePanel"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -739.0
+offset_right = 739.0
+offset_bottom = 666.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 300
+
+[node name="ObjectiveLabel" parent="ObjectivePanel/MarginContainer" instance=ExtResource("11_q6mn5")]
+layout_mode = 2
+text = "OBJECTIVE: Find the diver and talk to him"
+
+[node name="InventoryPanel" parent="." instance=ExtResource("11_8nkf1")]
+visible = false
+
+[node name="Tutorial" parent="." instance=ExtResource("12_8nkf1")]
+visible = false
+
+[node name="ActionButton" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -315.0
+offset_top = -250.0
+offset_right = -165.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("14_4m1a1")
+theme_override_font_sizes/font_size = 46
+text = " Chop [C] "
+
+[node name="UtilsPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UtilsPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -123.0
+offset_bottom = 108.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UtilsPanel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UtilsPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="BagButton" type="Button" parent="UtilsPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("7_go0ap")
+flat = true
+icon_alignment = 1
+
+[node name="ViewQuestButton" type="Button" parent="UtilsPanel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 40
+icon = ExtResource("7_mq0y1")
+flat = true
+icon_alignment = 1
+
+[node name="DayPanel" parent="." instance=ExtResource("14_iioc1")]
+
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_button_pressed"]
+[connection signal="pressed" from="UtilsPanel/MarginContainer/HBoxContainer/VBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
+[connection signal="pressed" from="UtilsPanel/MarginContainer/HBoxContainer/VBoxContainer/ViewQuestButton" to="." method="_on_view_quest_button_pressed"]

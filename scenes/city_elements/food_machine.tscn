@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bixhfuq2bsrqu"]
+
+[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="1_0egs4"]
+[ext_resource type="Script" uid="uid://eq7q0d48ledn" path="res://Scripts/city_elements/food_machine.gd" id="1_uvvmb"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="3_6rmwk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cf2n5"]
+radius = 66.0
+
+[node name="FoodMachine" type="Area2D"]
+script = ExtResource("1_uvvmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0egs4")
+region_enabled = true
+region_rect = Rect2(496, 176, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cf2n5")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -43.0
+offset_right = 76.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6rmwk")
+text = "Buy Food for $25 [E]"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

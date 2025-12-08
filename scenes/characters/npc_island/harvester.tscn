@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxvc8000q5li5"]
+
+[ext_resource type="Texture2D" uid="uid://1ivqaivu3h6t" path="res://assets/characters/npc_island/rogue/idle/idle-sheet.png" id="1_qjjtn"]
+[ext_resource type="Script" uid="uid://co7bi3dtiu1ii" path="res://scripts/characters/npc_island/harvester.gd" id="1_qmwf7"]
+[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="3_6r3lr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d75tx"]
+radius = 28.0
+height = 56.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmwf7"]
+atlas = ExtResource("1_qjjtn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r3lr"]
+atlas = ExtResource("1_qjjtn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43i2f"]
+atlas = ExtResource("1_qjjtn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5hv8"]
+atlas = ExtResource("1_qjjtn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d75tx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmwf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r3lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43i2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5hv8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Harvester" type="CharacterBody2D" groups=["npcs"]]
+script = ExtResource("1_qmwf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_d75tx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d75tx")
+autoplay = "default"
+
+[node name="HeadText" type="Label" parent="."]
+visible = false
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -36.645
+offset_right = 74.0
+offset_bottom = -13.645
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6r3lr")
+text = "npc"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

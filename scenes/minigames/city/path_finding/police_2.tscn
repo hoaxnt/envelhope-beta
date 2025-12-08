@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://0briv35fek8o"]
+
+[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://scripts/minigames/city/path_finding/police.gd" id="1_qmgr3"]
+[ext_resource type="Texture2D" uid="uid://dd6fvfsq5ic54" path="res://assets/characters/police.png" id="2_1htfb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkdwf"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvo6g"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oga3c"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imcnn"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muo7o"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(128, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyefj"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(160, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rxpb"]
+atlas = ExtResource("2_1htfb")
+region = Rect2(192, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0jp7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkdwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvo6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oga3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imcnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muo7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyefj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rxpb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xi5yg"]
+radius = 5.0990195
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cshbf"]
+radius = 31.0
+
+[node name="Police" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_qmgr3")
+
+[node name="PoliceBody" type="Node2D" parent="."]
+
+[node name="Shadow" type="NavigationAgent2D" parent="PoliceBody"]
+path_postprocessing = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PoliceBody"]
+scale = Vector2(1.3085938, 1.3085938)
+sprite_frames = SubResource("SpriteFrames_0jp7e")
+autoplay = "default"
+frame_progress = 0.8321535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xi5yg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cshbf")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
