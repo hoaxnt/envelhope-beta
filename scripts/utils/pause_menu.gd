@@ -8,30 +8,28 @@ extends Control
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 @onready var day_timer: Timer = Hud.get_node("DayPanel/DayTimer")
 
-
 var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var pause_menu_instance = null
 
 func _ready() -> void:
 	canvas_layer = get_parent()
 	
-	if get_node("/root/Chapter1/Player"):
+	if is_instance_valid("/root/Chapter1/Player"):
 		player_1 = get_node("/root/Chapter1/Player")
-	elif get_node("/root/Chapter2/Player"):
+	elif is_instance_valid("/root/Chapter2/Player"):
 		player_2 = get_node("/root/Chapter2/Player")
 		
-
 func _on_resume_button_pressed() -> void:
 	canvas_layer.hide()
 	_unpause_game()
-
+	
 func _pause_game() -> void:
 	if get_tree().paused: return
 	get_tree().paused = true
 	pause_menu_instance = pause_menu_scene.instantiate()
 	add_child(pause_menu_instance)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	
 func _unpause_game() -> void:
 	get_tree().paused = false
 
