@@ -1,12 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://wn7q4vsgj5kd"]
 
-<<<<<<< HEAD:Scenes/minigames/city/tambol.tscn
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="1_ndmh6"]
-[ext_resource type="Script" uid="uid://br802vs8g7hkj" path="res://Scripts/minigames/city/tambol.gd" id="1_wka3v"]
-=======
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="1_ndmh6"]
 [ext_resource type="Script" uid="uid://djgtqr18c7y0c" path="res://scripts/minigames/city/tambol.gd" id="1_wka3v"]
->>>>>>> 0a117977d112b83dc71c7b1b3edaaf565abb3884:scenes/minigames/city/tambol.tscn
 [ext_resource type="Texture2D" uid="uid://bqapq382prsnw" path="res://assets/city/plaza/jeep_badjao.jpg" id="2_5bdva"]
 [ext_resource type="Texture2D" uid="uid://bqddy4oc3wco4" path="res://assets/characters/player/Hit_Base/hit_down-sheet.png" id="3_u50xa"]
 [ext_resource type="Texture2D" uid="uid://b1jsnnrnw375o" path="res://assets/city/minigame/drum2.png" id="6_jq8st"]

@@ -25,13 +25,8 @@ func _on_day_timer_timeout() -> void:
 		
 		Transition.transition_to_scene("res://scenes/stories/sleep_story.tscn")
 		return
-<<<<<<< HEAD:Scripts/hud/day_panel.gd
-	
-	day_current_time += 5.0 #fortest
-=======
 		
 	day_current_time += 7.0 #fortest
->>>>>>> 0a117977d112b83dc71c7b1b3edaaf565abb3884:scripts/hud/day_panel.gd
 	day_current_time = clamp(day_current_time, 0.0, day_progress_bar.max_value)
 
 	var tween = create_tween()
