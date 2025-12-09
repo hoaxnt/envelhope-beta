@@ -107,6 +107,11 @@ scale = Vector2(8.355624, 8.355624)
 sprite_frames = SubResource("SpriteFrames_3iif3")
 frame_progress = 0.2790211
 
+[node name="Drum2" type="Sprite2D" parent="."]
+position = Vector2(363.00003, 464.00003)
+scale = Vector2(0.86227614, 0.6657342)
+texture = ExtResource("6_jq8st")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(363, 326)
 zoom = Vector2(2.325, 2.325)
@@ -239,11 +244,6 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ndmh6")
 theme_override_font_sizes/font_size = 80
 text = "Done"
-
-[node name="Drum2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(960.49994, 797.3125)
-scale = Vector2(1.1422762, 0.8819127)
-texture = ExtResource("6_jq8st")
 
 [node name="Instructions" type="Panel" parent="CanvasLayer"]
 visible = false

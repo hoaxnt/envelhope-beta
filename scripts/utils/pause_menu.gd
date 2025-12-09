@@ -2,11 +2,10 @@ extends Control
 
 @onready var canvas_layer : CanvasLayer
 @onready var tutorial = Hud.get_node("Tutorial")
-@onready var player_1
-@onready var player_2
-
 @onready var hunger_timer : Timer = Hud.get_node("StatsPanel/MarginContainer/Panel/HBoxContainer/VBoxContainer/HBoxContainer/HungerBar/HungerTimer")
 @onready var day_timer: Timer = Hud.get_node("DayPanel/DayTimer")
+@onready var player_1
+@onready var player_2
 
 var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var pause_menu_instance = null
@@ -32,14 +31,13 @@ func _pause_game() -> void:
 	
 func _unpause_game() -> void:
 	get_tree().paused = false
-
+	
 func _on_help_button_pressed() -> void:
 	tutorial.show()
 	canvas_layer.hide()
 	_unpause_game()
-
+	
 func _on_main_menu_button_pressed() -> void:
-
 	get_tree().paused = false
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/utils/main_menu.tscn")
 	get_tree().current_scene.call_deferred("queue_free")
@@ -52,9 +50,7 @@ func _on_main_menu_button_pressed() -> void:
 	if player_1:
 		GlobalData.save_player1_position(player_1.global_position)
 		GlobalData.player_data.set("current_chapter", player_1.get_parent().name)
-
+		
 	elif player_2:
 		GlobalData.save_player2_position(player_2.global_position)
 		GlobalData.player_data.set("current_chapter", player_2.get_parent().name)
-
-	
