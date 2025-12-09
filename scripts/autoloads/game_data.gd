@@ -61,7 +61,11 @@ var NPC_DATA_STATS = {
 	"current_objective": "none",
 	"diver_objective": "none",#fortest completed
 	"list_of_objectives": {
+<<<<<<< HEAD:Scripts/autoloads/game_data.gd
+		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver [TIP] Find an axe to chop the tree",
+=======
 		"gather_woods": "OBJECTIVE: Gather 15 woods and give it to Diver (Tip: Find an axe to cut trees)",
+>>>>>>> 0a117977d112b83dc71c7b1b3edaaf565abb3884:scripts/autoloads/game_data.gd
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",
 		"survive_day_2": "OBJECTIVE: Survive the Day 2",
 		"survive_day_3": "OBJECTIVE: Survive the Day 3",
