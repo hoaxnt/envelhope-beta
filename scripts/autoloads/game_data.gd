@@ -59,7 +59,7 @@ var NPC_DATA_STATS = {
 		}
 	},
 	"current_objective": "none",
-	"diver_objective": "none",#fortest completed
+	"diver_objective": "none",#fortest 
 	"list_of_objectives": {
 		"gather_woods": "OBJECTIVE: Gather 10 woods and give it to Diver (Tip: Find an axe to cut trees)",
 		"survive_day_1": "OBJECTIVE: Find job and buy some food",
