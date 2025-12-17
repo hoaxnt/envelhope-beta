@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var sprint_speed: int = 100#fortest
-@onready var base_speed = 80
+@onready var base_speed = 60
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var head_text = $HeadText
@@ -12,8 +12,8 @@ extends CharacterBody2D
 @onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var inventory = Hud.get_node("InventoryPanel")
 
-var sfx = StreamAudio.get_node("Sfx")
 
+var sfx = StreamAudio.get_node("Sfx")
 var current_tool_instance: Node2D = null
 var last_direction = "down"
 var current_speed = base_speed
@@ -29,7 +29,9 @@ func _ready() -> void:
 	if camera:
 		camera.limit_right = screen_size.x
 		camera.limit_bottom = screen_size.y
+		
 	anim.play("idle_down")
+
 		
 	if InventoryManager:
 		InventoryManager.tool_selected.connect(equip_tool)
@@ -68,16 +70,19 @@ func _on_inventory_selection_changed():
 func get_input_and_animate():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
-	if Input.is_key_pressed(KEY_SHIFT):
-			current_speed = sprint_speed
+	if Input.is_key_pressed(KEY_SHIFT) and input_direction.length() > 0:
+		GlobalState.HUNGER_MODE = "run"
+		current_speed = sprint_speed
 	else:
-			current_speed = base_speed
+		GlobalState.HUNGER_MODE = "idle" #fort
+		current_speed = base_speed
 	velocity = input_direction * current_speed
 			
 	if input_direction.length() > 0:
 			if abs(input_direction.x) > abs(input_direction.y):
 					if input_direction.x < 0:
 						dialogue_box.close_dialogue()
+						GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_side")
 						anim.flip_h = true
 						last_direction = "left"
@@ -90,6 +95,7 @@ func get_input_and_animate():
 							
 					else:
 						dialogue_box.close_dialogue()
+						GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_side")
 						anim.flip_h = false
 						last_direction = "right"
@@ -102,12 +108,14 @@ func get_input_and_animate():
 			else:
 					if input_direction.y < 0:
 						dialogue_box.close_dialogue()
+						GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_up")
 						last_direction = "up"
 						if inventory:
 							inventory.hide()
 					else:
 						dialogue_box.close_dialogue()
+						GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_down")
 						last_direction = "down"
 						if inventory:
@@ -115,15 +123,19 @@ func get_input_and_animate():
 	else:
 			match last_direction:
 					"up":
-							anim.play("idle_up")
+						GlobalState.HUNGER_MODE = "idle"
+						anim.play("idle_up")
 					"down":
-							anim.play("idle_down")
+						GlobalState.HUNGER_MODE = "idle"
+						anim.play("idle_down")
 					"left":
-							anim.play("idle_side")
-							anim.flip_h = true
+						GlobalState.HUNGER_MODE = "idle"
+						anim.play("idle_side")
+						anim.flip_h = true
 					"right":
-							anim.play("idle_side")
-							anim.flip_h = false
+						GlobalState.HUNGER_MODE = "idle"
+						anim.play("idle_side")
+						anim.flip_h = false
 
 func _on_interaction_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("npcs"):
