@@ -4,9 +4,6 @@ var pause_menu_scene = preload("res://scenes/utils/pause_menu.tscn")
 var current_menu_instance = null
 var HUNGER_MODE = "idle" #fortest
 
-func _process(_delta: float) -> void:
-	print("Hunger Mode: ", HUNGER_MODE)
-
 func toggle_pause() -> void:
 		if get_tree().paused:
 				unpause_game()

@@ -2,7 +2,7 @@ extends ProgressBar
 
 @onready var hunger_timer = $HungerTimer
 
-const HUNGER_DECREMENT = 1 #fortest
+var HUNGER_DECREMENT = 0.05 #fortest
 
 func _ready():
 	show_percentage = false
@@ -16,6 +16,16 @@ func _on_hunger_timer_timeout() -> void:
 	var current_hunger = GlobalData.get_player_data_value("hunger")
 	
 	if current_hunger > 0:
+		if GlobalState.HUNGER_MODE == "idle":
+			HUNGER_DECREMENT = 0.1
+			print("Hunger Decrement: ", HUNGER_DECREMENT)
+		elif GlobalState.HUNGER_MODE == "walk":
+			HUNGER_DECREMENT = 0.5
+			print("Hunger Decrement: ", HUNGER_DECREMENT)
+		elif GlobalState.HUNGER_MODE == "run":
+			HUNGER_DECREMENT = 1
+			print("Hunger Decrement: ", HUNGER_DECREMENT)
+		
 		var new_hunger = current_hunger - HUNGER_DECREMENT
 		
 		if new_hunger <= 0:
