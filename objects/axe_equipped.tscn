@@ -2,6 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://duoo350i1i153" path="res://assets/island/tools/axe.png" id="1_7nh11"]
 
+[sub_resource type="Animation" id="Animation_yg5nd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.8197902]
+}
+
+[sub_resource type="Animation" id="Animation_r6els"]
+resource_name = "idle"
+
 [sub_resource type="Animation" id="Animation_7nh11"]
 resource_name = "slash"
 length = 0.2
@@ -16,24 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-0.8197902, 1.3578662, -0.8197902]
-}
-
-[sub_resource type="Animation" id="Animation_r6els"]
-resource_name = "idle"
-
-[sub_resource type="Animation" id="Animation_yg5nd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.8197902]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r6els"]
