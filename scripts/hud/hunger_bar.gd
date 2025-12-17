@@ -18,15 +18,19 @@ func _on_hunger_timer_timeout() -> void:
 	if current_hunger > 0:
 		if GlobalState.HUNGER_MODE == "idle":
 			HUNGER_DECREMENT = 0.1
-			print("Hunger Decrement: ", HUNGER_DECREMENT)
 		elif GlobalState.HUNGER_MODE == "walk":
 			HUNGER_DECREMENT = 0.5
-			print("Hunger Decrement: ", HUNGER_DECREMENT)
 		elif GlobalState.HUNGER_MODE == "run":
-			HUNGER_DECREMENT = 1
-			print("Hunger Decrement: ", HUNGER_DECREMENT)
+			HUNGER_DECREMENT = 10
 		
 		var new_hunger = current_hunger - HUNGER_DECREMENT
+		
+		if new_hunger <= 30:
+			var fill_sb = get_theme_stylebox("fill")
+			if fill_sb is StyleBoxFlat:
+				var new_fill = fill_sb.duplicate()
+				new_fill.bg_color = Color(0.956, 0.049, 0.231, 1.0)
+				add_theme_stylebox_override("fill", new_fill)
 		
 		if new_hunger <= 0:
 			new_hunger = 0

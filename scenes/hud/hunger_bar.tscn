@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://wtiojfikc0fb"]
 
-[ext_resource type="Script" uid="uid://d2cxy5noa30a2" path="res://Scripts/hud/hunger_bar.gd" id="1_elhww"]
+[ext_resource type="Script" uid="uid://br4lva12nl5im" path="res://Scripts/hud/hunger_bar.gd" id="1_elhww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vn4"]
-bg_color = Color(0.97533685, 0.23190683, 0.18499789, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h743p"]
-bg_color = Color(4.813075e-08, 0.9152418, 0.21239248, 1)
+bg_color = Color(0.9618084, 0.8527203, 0, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
