@@ -3,7 +3,7 @@ extends ProgressBar
 @onready var hunger_timer = $HungerTimer
 var equipped_tool : String
 var HUNGER_DECREMENT = 0.05 #fortest
-var HUNGER_GAIN = 10
+var HUNGER_GAIN = 20
 
 func _ready():
 	show_percentage = false
@@ -13,24 +13,15 @@ func _ready():
 	if GlobalData.player_data:
 		value = GlobalData.player_data.get("hunger")
 
-func _unhandled_input(event: InputEvent) -> void:
-	equipped_tool = Hud.equipped_tool
-	if event.is_action_pressed("use"):
-		print("HUNGER PUMP")
-		if equipped_tool == "Chips":
-			GlobalData.player_data["hunger"] += HUNGER_GAIN
-			GlobalData.player_data["hunger"] = min(GlobalData.player_data["hunger"], 100.0)
-			SaveLoad.save_game(GlobalData.player_data, SaveLoad.PLAYER_DATA_PATH)
-			
 func _on_hunger_timer_timeout() -> void:
 	var current_hunger = GlobalData.get_player_data_value("hunger")
 	if current_hunger > 0: #fortest
 		if GlobalState.HUNGER_MODE == "idle":
-			HUNGER_DECREMENT = 0.1
+			HUNGER_DECREMENT = 0.2
 		elif GlobalState.HUNGER_MODE == "walk":
-			HUNGER_DECREMENT = 0.5
+			HUNGER_DECREMENT = 0.8
 		elif GlobalState.HUNGER_MODE == "run":
-			HUNGER_DECREMENT = 1
+			HUNGER_DECREMENT = 2
 		
 		var new_hunger = current_hunger - HUNGER_DECREMENT
 		
