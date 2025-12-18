@@ -19,9 +19,9 @@ func _on_hunger_timer_timeout() -> void:
 		if GlobalState.HUNGER_MODE == "idle":
 			HUNGER_DECREMENT = 0.2
 		elif GlobalState.HUNGER_MODE == "walk":
-			HUNGER_DECREMENT = 0.8
+			HUNGER_DECREMENT = 0.6
 		elif GlobalState.HUNGER_MODE == "run":
-			HUNGER_DECREMENT = 2
+			HUNGER_DECREMENT = 1.5
 		
 		var new_hunger = current_hunger - HUNGER_DECREMENT
 		

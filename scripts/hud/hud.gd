@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			InventoryManager.remove_item(equipped_tool)
 			InventoryManager.deselect_item()
 			action_button.hide()
-			GlobalData.player_data["hunger"] += 0.8 #thungergain
+			GlobalData.player_data["hunger"] += 3 #thungergain
 			GlobalData.player_data["hunger"] = min(GlobalData.player_data["hunger"], 100.0)
 			SaveLoad.save_game(GlobalData.player_data, SaveLoad.PLAYER_DATA_PATH)
 			
@@ -29,7 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			InventoryManager.remove_item(equipped_tool)
 			InventoryManager.deselect_item()
 			action_button.hide()
-			GlobalData.player_data["hunger"] += 2 #thungergain
+			GlobalData.player_data["hunger"] += 7 #thungergain
 			GlobalData.player_data["hunger"] = min(GlobalData.player_data["hunger"], 100.0)
 			SaveLoad.save_game(GlobalData.player_data, SaveLoad.PLAYER_DATA_PATH)
 			
@@ -38,7 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			InventoryManager.remove_item(equipped_tool)
 			InventoryManager.deselect_item()
 			action_button.hide()
-			GlobalData.player_data["hunger"] += 5 #thungergain
+			GlobalData.player_data["hunger"] += 15 #thungergain
 			GlobalData.player_data["hunger"] = min(GlobalData.player_data["hunger"], 100.0)
 			SaveLoad.save_game(GlobalData.player_data, SaveLoad.PLAYER_DATA_PATH)
 		else:
