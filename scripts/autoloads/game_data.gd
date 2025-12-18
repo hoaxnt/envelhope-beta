@@ -22,7 +22,7 @@ var PLAYER_STATS = {
 	"cycle": 10,
 	"equipped_tool": "none",
 	"position_1": [628.0, 280.0],
-	"position_2": [143.0, 503.0],
+	"position_2": [143.0, 503.0], #fortest
 }
 
 var NPC_DATA_STATS = {
