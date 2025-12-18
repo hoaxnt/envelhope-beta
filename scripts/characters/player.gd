@@ -44,9 +44,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	get_input_and_animate()
 	move_and_slide()
-
-
-
+	
 func unequip_tool():
 	if current_tool_instance != null:
 		current_tool_instance.queue_free()

@@ -6,7 +6,6 @@ extends CanvasLayer
 @onready var action_button = $ActionButton
 
 signal action_button_pressed_signal 
-
 var is_action_pressed = false 
 
 func _ready() -> void:
@@ -20,6 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			InventoryManager.remove_item(equipped_tool)
 			InventoryManager.deselect_item()
 			action_button.hide()
+			
 		else:
 			sfx.stream = StreamAudio.chop
 			sfx.play()
