@@ -3,6 +3,7 @@ extends Node
 var inventory: Dictionary = {}
 var selected_item_name: String = ""
 @onready var INVENTORY: Dictionary = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
+@onready var action_button = Hud.get_node("ActionButton")
 
 signal inventory_changed
 signal tool_selected(item_name: String)
@@ -67,11 +68,24 @@ func select_item(item_name: String):
 	if item_name == selected_item_name:
 		deselect_item()
 		return
-
+	
+	if GlobalData.player_data.get("equipped_tool") == "Chips":
+		action_button.text = "Use [C]"
+		action_button.show()
+	elif GlobalData.player_data.get("equipped_tool") == "Banana":
+		action_button.text = "Use [C]"
+		action_button.show()
+	elif GlobalData.player_data.get("equipped_tool") == "Water":
+		action_button.text = "Use [C]"
+		action_button.show()
+	else:
+		action_button.text = "none"
+		action_button.hide()
+		
 	if inventory.has(item_name):
 		selected_item_name = item_name
 		tool_selected.emit(item_name)
-		print("Manager: Equipped: %s" % selected_item_name)
+		print("Manager Equipped: %s" % selected_item_name)
 
 	elif item_name.is_empty():
 		deselect_item()

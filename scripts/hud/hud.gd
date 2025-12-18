@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var chop_button = Hud.get_node("ActionButton")
 @onready var sfx = StreamAudio.get_node("Sfx")
 @onready var inventory_panel = Hud.get_node("InventoryPanel")
 @onready var objective_label_anim = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
@@ -20,12 +19,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_action_button_pressed() -> void:
 	if GlobalData.player_data.get("equipped_tool") == "Chips":
-		queue_free()
-		print("Chips")
+		InventoryManager.remove_item("Chips")
 	elif GlobalData.player_data.get("equipped_tool") == "Banana":
-		print("Banana")
+		InventoryManager.remove_item("Banana")
 	elif GlobalData.player_data.get("equipped_tool") == "Water":
-		print("Water")
+		InventoryManager.remove_item("Water")
 		
 	sfx.stream = StreamAudio.chop
 	sfx.play()
