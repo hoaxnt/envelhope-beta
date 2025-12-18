@@ -24,6 +24,7 @@ const TOOL_SCENES = {
 		"Log": "res://objects/log_equipped.tscn",
 		"Banana": "res://objects/banana_equipped.tscn",
 		"Water": "res://objects/water_equipped.tscn",
+		"Chips": "res://objects/chips_equipped.tscn",
 }
 
 func _ready() -> void:
@@ -93,7 +94,8 @@ func get_input_and_animate():
 							inventory.hide()
 						
 						if current_tool_instance:
-							current_tool_instance.scale.x = -0.5
+							current_tool_instance.flip_h = true
+							#current_tool_instance.scale.x = -0.5
 							current_tool_instance.position.x = -15
 							
 					else:
@@ -109,7 +111,8 @@ func get_input_and_animate():
 							inventory.hide()
 						
 						if current_tool_instance:
-							current_tool_instance.scale.x = 0.5
+							current_tool_instance.flip_h = true
+							#current_tool_instance.scale.x = 0.5
 							current_tool_instance.position.x = 0
 			else:
 					if input_direction.y < 0:

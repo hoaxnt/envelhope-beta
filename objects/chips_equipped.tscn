@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2vac2ikv46en"]
+
+[ext_resource type="Texture2D" uid="uid://bxvhhdofme174" path="res://assets/city/plaza/chips.png" id="1_rf83e"]
+
+[node name="ChipsEquipped" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("1_rf83e")
