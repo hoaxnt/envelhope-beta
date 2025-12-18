@@ -22,6 +22,8 @@ var current_npc: Node = null
 const TOOL_SCENES = {
 		"Axe": "res://objects/axe_equipped.tscn",
 		"Log": "res://objects/log_equipped.tscn",
+		"Banana": "res://objects/banana_equipped.tscn",
+		"Water": "res://objects/water_equipped.tscn",
 }
 
 func _ready() -> void:

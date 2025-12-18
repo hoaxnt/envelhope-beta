@@ -65,9 +65,9 @@ func remove_item(item_name: String, quantity: int = 1) -> bool:
 		return false
 
 func select_item(item_name: String):
-	if item_name == selected_item_name:
-		deselect_item()
-		return
+	#if item_name == selected_item_name:
+		#deselect_item()
+		#return
 	
 	if GlobalData.player_data.get("equipped_tool") == "Chips":
 		action_button.text = "Use [C]"
@@ -79,7 +79,7 @@ func select_item(item_name: String):
 		action_button.text = "Use [C]"
 		action_button.show()
 	else:
-		action_button.text = "none"
+		action_button.text = ""
 		action_button.hide()
 		
 	if inventory.has(item_name):
@@ -87,8 +87,8 @@ func select_item(item_name: String):
 		tool_selected.emit(item_name)
 		print("Manager Equipped: %s" % selected_item_name)
 
-	elif item_name.is_empty():
-		deselect_item()
+	#elif item_name.is_empty():
+		#deselect_item()
 
 	else:
 		print("Error: Tried to select item (%s) not in inventory." % item_name)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3hksvu4l51vl"]
+
+[ext_resource type="Texture2D" uid="uid://be6dl8rm118i0" path="res://assets/city/plaza/water.png" id="1_isk7u"]
+
+[node name="WaterEquipped" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5599997, 0.5599997)
+texture = ExtResource("1_isk7u")
