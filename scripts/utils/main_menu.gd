@@ -10,7 +10,8 @@ func _ready() -> void:
 	sfx.volume_db = 10
 	bgm.play()
 	
-	if GlobalData.player_data.get("current_chapter") == "none" or GlobalData.player_data.get("current_chapter") == "none":
+#	BUG: NEW GAME in correct spawn point, it loads the last saved even if it is new game 
+	if GlobalData.player_data.get("current_chapter") == "none":
 		$VBoxContainer/ContinueButton.disabled = true
 		
 func _on_continue_button_pressed() -> void:
@@ -23,10 +24,6 @@ func _on_continue_button_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	sfx.play()
-	SaveLoad.save_game(GameData.PLAYER_STATS, SaveLoad.PLAYER_DATA_PATH)
-	SaveLoad.save_game(GameData.INVENTORY, SaveLoad.INVENTORY_PATH)
-	SaveLoad.save_game(GameData.NPC_DATA_STATS, SaveLoad.NPC_DATA_PATH)
-	SaveLoad.save_game(GameData.CONFIG, SaveLoad.CONFIG_PATH)
 	GlobalData.update_config_data("is_new_game", false)
 	GlobalData.update_config_data("user_opened_once", false)
 	GlobalData.update_config_data("current_chapter", "none")
@@ -36,6 +33,10 @@ func _on_start_button_pressed() -> void:
 	GlobalData.npc_data.set("release_the_kraken", false)
 	GlobalData.player_data.set("hunger", 100)
 	GlobalData.player_data.set("envelopes", 0)
+	SaveLoad.save_game(GameData.PLAYER_STATS, SaveLoad.PLAYER_DATA_PATH)
+	SaveLoad.save_game(GameData.INVENTORY, SaveLoad.INVENTORY_PATH)
+	SaveLoad.save_game(GameData.NPC_DATA_STATS, SaveLoad.NPC_DATA_PATH)
+	SaveLoad.save_game(GameData.CONFIG, SaveLoad.CONFIG_PATH)
 	
 	Transition.transition_to_scene("res://scenes/stories/startup_story.tscn")
 	

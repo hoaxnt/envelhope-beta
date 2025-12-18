@@ -10,8 +10,8 @@ var diver_message
 
 signal dialogue_finished
 
-const REQUIRED_WOOD = 10 #fortest
-const WOOD_ITEM_NAME = "log"
+const REQUIRED_WOOD = 1 #fortest
+const WOOD_ITEM_NAME = "Log"
 
 func handle_npc_interaction(npc_id: String) -> void:
 	match npc_id:

@@ -12,11 +12,12 @@ var pause_menu_instance = null
 
 func _ready() -> void:
 	canvas_layer = get_parent()
-	
-	if is_instance_valid("/root/Chapter1/Player"):
+	if get_node("/root/Chapter1/Player"):
 		player_1 = get_node("/root/Chapter1/Player")
-	elif is_instance_valid("/root/Chapter2/Player"):
+	elif get_node("/root/Chapter2/Player"):
 		player_2 = get_node("/root/Chapter2/Player")
+	else:
+		print("instance not valid")
 		
 func _on_resume_button_pressed() -> void:
 	canvas_layer.hide()
@@ -50,7 +51,9 @@ func _on_main_menu_button_pressed() -> void:
 	if player_1:
 		GlobalData.save_player1_position(player_1.global_position)
 		GlobalData.player_data.set("current_chapter", player_1.get_parent().name)
+		print("SAVED ", GlobalData.player_data["current_chapter"])
 		
 	elif player_2:
 		GlobalData.save_player2_position(player_2.global_position)
 		GlobalData.player_data.set("current_chapter", player_2.get_parent().name)
+		print("SAVED ", GlobalData.player_data["current_chapter"])
