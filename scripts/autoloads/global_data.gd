@@ -104,7 +104,6 @@ func purchase_food(cost: int):
 			InventoryManager.add_item(item_name)
 		
 		#player_data["hunger"] += hunger_gain
-		
 		#player_data["hunger"] = min(player_data["hunger"], 100.0)
 		#SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
 		#player_data_updated.emit("hunger", player_data["hunger"])

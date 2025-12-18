@@ -19,15 +19,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		action_button_pressed_signal.emit()
 
 func _on_action_button_pressed() -> void:
+	if GlobalData.player_data.get("equipped_tool") == "Chips":
+		queue_free()
+		print("Chips")
+	elif GlobalData.player_data.get("equipped_tool") == "Banana":
+		print("Banana")
+	elif GlobalData.player_data.get("equipped_tool") == "Water":
+		print("Water")
+		
 	sfx.stream = StreamAudio.chop
 	sfx.play()
 	action_button_pressed_signal.emit()
-
-
+	
 func _on_bag_button_pressed() -> void:
 	if inventory_panel:
 		inventory_panel.visible = not inventory_panel.visible
-
+		
 func _on_view_quest_button_pressed() -> void:
 	if objective_label_anim:
 		objective_label_anim.play("show_objective")

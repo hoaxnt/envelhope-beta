@@ -15,13 +15,13 @@ func _ready():
 func _on_hunger_timer_timeout() -> void:
 	var current_hunger = GlobalData.get_player_data_value("hunger")
 	
-	if current_hunger > 0:
+	if current_hunger > 0: #fortest
 		if GlobalState.HUNGER_MODE == "idle":
 			HUNGER_DECREMENT = 0.1
 		elif GlobalState.HUNGER_MODE == "walk":
 			HUNGER_DECREMENT = 0.5
 		elif GlobalState.HUNGER_MODE == "run":
-			HUNGER_DECREMENT = 10
+			HUNGER_DECREMENT = 1
 		
 		var new_hunger = current_hunger - HUNGER_DECREMENT
 		

@@ -9,7 +9,7 @@ func toggle_pause() -> void:
 				unpause_game()
 		else:
 				pause_game()
-
+		
 func pause_game() -> void:
 		if get_tree().paused: return
 		get_tree().paused = true

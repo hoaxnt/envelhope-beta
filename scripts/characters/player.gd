@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var sprint_speed: int = 100#fortest
+@export var sprint_speed: int = 100 #fortest
 @onready var base_speed = 60
 @onready var anim = $AnimatedSprite2D
 @onready var camera = $Camera2D
@@ -31,7 +31,6 @@ func _ready() -> void:
 		camera.limit_bottom = screen_size.y
 		
 	anim.play("idle_down")
-
 		
 	if InventoryManager:
 		InventoryManager.tool_selected.connect(equip_tool)
@@ -53,23 +52,22 @@ func equip_tool(tool_name: String):
 		if tool_scene:
 			current_tool_instance = tool_scene.instantiate()
 			hand_socket.add_child(current_tool_instance)
-			# current_tool_instance.rotation_degrees = 45 
+			
 		print("Equipped tool: " + tool_name)
 	else:
 		print("Tool scene not found for: " + tool_name)
-
+		
 func _on_inventory_selection_changed():
 	var selected_item = InventoryManager.selected_item_name
 	if selected_item != "":
 		equip_tool(selected_item)
 	else:
-			# Deselect/Unequip all tools
 		equip_tool("")
-
+		
 # --- Movement and Animation Function ---
 func get_input_and_animate():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-
+	
 	if Input.is_key_pressed(KEY_SHIFT) and input_direction.length() > 0:
 		current_speed = sprint_speed
 	else:
@@ -77,7 +75,7 @@ func get_input_and_animate():
 		
 		
 	velocity = input_direction * current_speed
-			
+		
 	if input_direction.length() > 0:
 			if abs(input_direction.x) > abs(input_direction.y):
 					if input_direction.x < 0:

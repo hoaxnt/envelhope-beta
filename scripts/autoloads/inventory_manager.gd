@@ -19,7 +19,7 @@ func add_item(item_name: String, quantity: int = 1) -> bool:
 			current_logs += quantity
 			INVENTORY["Log"] = current_logs
 			SaveLoad.save_game(INVENTORY, SaveLoad.INVENTORY_PATH)
-
+			
 		inventory_changed.emit()
 		return true
 
@@ -27,7 +27,6 @@ func add_item(item_name: String, quantity: int = 1) -> bool:
 		inventory[item_name] = quantity
 		print("New item added: %s" % item_name)
 		
-		# Handle initial save for new item "Log" if needed
 		if item_name == "Log":
 			INVENTORY["Log"] = quantity
 			SaveLoad.save_game(INVENTORY, SaveLoad.INVENTORY_PATH)
