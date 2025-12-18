@@ -91,7 +91,7 @@ func deselect_item():
 	if !selected_item_name.is_empty():
 		selected_item_name = ""
 		tool_selected.emit("")
-		print("Manager: Item deselected/unequipped.")
+		print("Manager: Item deselected")
 
 func is_axe_selected() -> bool:
 	return selected_item_name == "Axe"

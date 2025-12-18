@@ -15,7 +15,7 @@ func _ready():
 	if is_instance_valid(Hud):
 		item_list = Hud.get_node_or_null("InventoryPanel/Panel/VBoxContainer/Panel/ItemList")
 		hotbar_container = Hud.get_node_or_null("HBoxContainer")
-
+		
 	if InventoryManager and is_instance_valid(item_list):
 		InventoryManager.inventory_changed.connect(_update_item_list)
 		_update_item_list()

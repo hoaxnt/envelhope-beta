@@ -15,6 +15,7 @@ extends CharacterBody2D
 
 var sfx = StreamAudio.get_node("Sfx")
 var current_tool_instance: Node2D = null
+
 var last_direction = "down"
 var current_speed = base_speed
 var current_npc: Node = null
@@ -43,7 +44,15 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	get_input_and_animate()
 	move_and_slide()
-	
+
+
+
+func unequip_tool():
+	if current_tool_instance != null:
+		current_tool_instance.queue_free()
+		current_tool_instance = null
+		GlobalData.player_data["equipped_tool"] = ""
+
 func equip_tool(tool_name: String):
 	if current_tool_instance != null:
 		current_tool_instance.queue_free()
@@ -59,14 +68,12 @@ func equip_tool(tool_name: String):
 		print("Equipped tool: " + tool_name)
 	else:
 		print("Tool scene not found for: " + tool_name)
-		
 func _on_inventory_selection_changed():
 	var selected_item = InventoryManager.selected_item_name
 	if selected_item != "":
 		equip_tool(selected_item)
 	else:
 		equip_tool("")
-		
 # --- Movement and Animation Function ---
 func get_input_and_animate():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -161,7 +168,6 @@ func _on_interaction_zone_body_entered(body: Node2D) -> void:
 			if is_instance_valid(npc_label):
 					npc_label.show()
 					npc_label.text = body.name
-	
 func _on_interaction_zone_body_exited(body: Node2D) -> void:
 	if body == current_npc:
 		current_npc = null
@@ -172,6 +178,8 @@ func _on_interaction_zone_body_exited(body: Node2D) -> void:
 			npc_label.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("use"):
+		#unequip_tool()
 	#	-- Show Inventory --
 	if event.is_action_pressed("show_inventory"):
 		if inventory_panel:
