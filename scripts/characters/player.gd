@@ -63,9 +63,6 @@ func equip_tool(tool_name: String):
 			current_tool_instance = tool_scene.instantiate()
 			hand_socket.add_child(current_tool_instance)
 			
-		print("Equipped tool: " + tool_name)
-	else:
-		print("Tool scene not found for: " + tool_name)
 func _on_inventory_selection_changed():
 	var selected_item = InventoryManager.selected_item_name
 	if selected_item != "":

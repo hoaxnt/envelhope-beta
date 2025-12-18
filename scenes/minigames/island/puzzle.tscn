@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://4abqf6ah3fhe"]
+[gd_scene load_steps=2 format=3 uid="uid://4abqf6ah3fhe"]
 
-[ext_resource type="Script" uid="uid://3wdpx7id23h6" path="res://scripts/minigames/island/puzzle.gd" id="1_wqnws"]
 [ext_resource type="TileSet" uid="uid://c75vl7hsg0uky" path="res://resources/syndicate.tres" id="2_wqnws"]
 
 [node name="Puzzle" type="Node2D"]
-script = ExtResource("1_wqnws")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(79, 47)

@@ -13,8 +13,7 @@ const MAX_SLOTS = 5
 func add_item(item_name: String, quantity: int = 1) -> bool:
 	if inventory.has(item_name):
 		inventory[item_name] += quantity
-		print("Added %s %s. New count: %s" % [quantity, item_name, inventory[item_name]])
-
+		
 		if item_name == "Log":
 			var current_logs = INVENTORY.get("Log", 0)
 			current_logs += quantity
@@ -26,7 +25,6 @@ func add_item(item_name: String, quantity: int = 1) -> bool:
 
 	if inventory.size() < MAX_SLOTS:
 		inventory[item_name] = quantity
-		print("New item added: %s" % item_name)
 		
 		if item_name == "Log":
 			INVENTORY["Log"] = quantity
@@ -57,7 +55,6 @@ func remove_item(item_name: String, quantity: int = 1) -> bool:
 		if inventory[item_name] <= 0:
 			inventory.erase(item_name)
 
-		print("Removed %s %s." % [quantity, item_name])
 		inventory_changed.emit()
 		return true
 	else:
@@ -79,19 +76,14 @@ func select_item(item_name: String):
 	if inventory.has(item_name):
 		selected_item_name = item_name
 		tool_selected.emit(item_name)
-		print("Manager Equipped: %s" % selected_item_name)
 
 	#elif item_name.is_empty():
 		#deselect_item()
-
-	else:
-		print("Error: Tried to select item (%s) not in inventory." % item_name)
-
+		
 func deselect_item():
 	if !selected_item_name.is_empty():
 		selected_item_name = ""
 		tool_selected.emit("")
-		print("Manager: Item deselected")
 
 func is_axe_selected() -> bool:
 	return selected_item_name == "Axe"
