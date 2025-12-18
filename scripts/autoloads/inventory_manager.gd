@@ -69,13 +69,7 @@ func select_item(item_name: String):
 		#deselect_item()
 		#return
 	
-	if GlobalData.player_data.get("equipped_tool") == "Chips":
-		action_button.text = "Use [C]"
-		action_button.show()
-	elif GlobalData.player_data.get("equipped_tool") == "Banana":
-		action_button.text = "Use [C]"
-		action_button.show()
-	elif GlobalData.player_data.get("equipped_tool") == "Water":
+	if item_name == "Chips" or item_name == "Water" or item_name == "Banana":
 		action_button.text = "Use [C]"
 		action_button.show()
 	else:
