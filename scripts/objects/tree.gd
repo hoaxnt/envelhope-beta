@@ -14,8 +14,9 @@ var original_sprite_texture: Texture2D
 @onready var tree_collider = $CollisionShape2D 
 @onready var respawn_timer = $RespawnTimer 
 
-@onready var chop_button = Hud.get_node("ActionButton")
+@onready var chop_button : Button = Hud.get_node("ActionButton")
 @onready var axe_anim = AxeEquipped.get_node("AnimationPlayer")
+@onready var objective_label : Label = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel")
 
 func _ready() -> void:
 		tree_hp = tree_max_hp
@@ -25,6 +26,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		chop_button.text = "Chop [C]"
 		chop_button.show()
 
 		if not Hud.action_button_pressed_signal.is_connected(_cut_tree):
@@ -44,7 +46,10 @@ func _cut_tree():
 			anim.play("slash")
 		
 		if not InventoryManager.is_axe_selected():
-			Hud.get_node("")
+			#if objective_label:
+				#objective_label.text = "Need an axe to chop!"
+				#objective_label.show()
+				
 			print("Need an axe to chop!")
 			return
 		
