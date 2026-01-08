@@ -134,10 +134,10 @@ metadata/_edit_lock_ = true
 [node name="Diver" parent="NPCs" instance=ExtResource("3_lhans")]
 position = Vector2(1165, 97)
 
-[node name="Balancer" parent="NPCs" instance=ExtResource("4_gbphn")]
+[node name="Noriel" parent="NPCs" instance=ExtResource("4_gbphn")]
 position = Vector2(191, 396)
 
-[node name="Harvester" parent="NPCs" instance=ExtResource("5_r7jkp")]
+[node name="Rambo" parent="NPCs" instance=ExtResource("5_r7jkp")]
 position = Vector2(1030, 291)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]

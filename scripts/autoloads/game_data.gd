@@ -43,7 +43,7 @@ var NPC_DATA_STATS = {
 		}
 	},
 "harvester": {
-		"name": "Harvester",
+		"name": "Rambo",
 		"dialogue": {
 			"1": "It's usually peaceful, but we've had trouble recently.",
 			"2": "A pirate fleet has been sighted, making our supply routes very dangerous.",
@@ -51,8 +51,8 @@ var NPC_DATA_STATS = {
 			"4": "Would you be willing to help us deliver the food while avoiding the pirates?"
 		}
 	},
-	"balancer": {
-		"name": "Balancer",
+	"noriel": {
+		"name": "Noriel",
 		"dialogue": {
 			"1": "Our ancestors used to dive for pearls and make beautiful accessories out of it",
 			"2": "Isn't it amazing?",

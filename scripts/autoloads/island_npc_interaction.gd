@@ -37,8 +37,8 @@ func handle_npc_interaction(npc_id: String) -> void:
 		"harvester":
 			dialogue_box.start_dialogue("harvester", 4, false, "none")
 			
-		"balancer":
-			dialogue_box.start_dialogue("balancer", 3, false, "none")
+		"noriel":
+			dialogue_box.start_dialogue("noriel", 3, false, "none")
 		_:
 			pass
 	_on_dialogue_system_closed() 
