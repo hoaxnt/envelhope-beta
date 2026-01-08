@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpg5amojkingl"]
 
-[ext_resource type="Script" uid="uid://bk4md7ygek5mq" path="res://scripts/stories/startup_story.gd" id="1_gqv3l"]
+[ext_resource type="Script" uid="uid://cqb6pc0tn5war" path="res://scripts/stories/startup_story.gd" id="1_gqv3l"]
 [ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_5ekg1"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_wrs7h"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_wrs7h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqv3l"]
 bg_color = Color(0.13599786, 0.13210395, 0.1330798, 1)
@@ -125,7 +125,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_wrs7h")
 theme_override_font_sizes/font_size = 50
-text = "Next>>"
+text = "[Spacebar] Next>>"
 horizontal_alignment = 2
 vertical_alignment = 1
 uppercase = true

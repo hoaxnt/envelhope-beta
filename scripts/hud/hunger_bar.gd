@@ -31,6 +31,12 @@ func _on_hunger_timer_timeout() -> void:
 				var new_fill = fill_sb.duplicate()
 				new_fill.bg_color = Color(0.956, 0.049, 0.231, 1.0)
 				add_theme_stylebox_override("fill", new_fill)
+		else:
+			var fill_sb = get_theme_stylebox("fill")
+			if fill_sb is StyleBoxFlat:
+				var new_fill = fill_sb.duplicate()
+				new_fill.bg_color = Color(0.961, 0.851, 0.0, 1.0)
+				add_theme_stylebox_override("fill", new_fill)
 		
 		if new_hunger <= 0:
 			new_hunger = 0

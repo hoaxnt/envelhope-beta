@@ -37,13 +37,22 @@ func _ready() -> void:
 	_update_content()
 
 func _on_skip_button_pressed() -> void:
-
 	current_step += 1
 	if current_step < IMAGES.size():
 		anim.play("fade_reveal")
 		_update_content()
 	else:
 		_transition_to_next_scene()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("action"):
+		sfx.play()
+		current_step += 1
+		if current_step < IMAGES.size():
+			anim.play("fade_reveal")
+			_update_content()
+		else:
+			_transition_to_next_scene()
 
 func _update_content() -> void:
 	if current_step < IMAGES.size() and current_step < DIALOGUE_TEXT.size():

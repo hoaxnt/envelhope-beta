@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmopmkirtqevd"]
 
 [ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="1_kskdx"]
-[ext_resource type="Script" uid="uid://bmeqqs82cbwdx" path="res://Scripts/stories/caught_story.gd" id="1_v1p31"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_v1p31"]
+[ext_resource type="Script" uid="uid://b1h0lrswxqkag" path="res://Scripts/stories/caught_story.gd" id="1_v1p31"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_v1p31"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqv3l"]
 bg_color = Color(0.13599786, 0.13210395, 0.1330798, 1)
