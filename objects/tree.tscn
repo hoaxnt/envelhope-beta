@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://mat5nmwemvko"]
 
-[ext_resource type="Script" uid="uid://b77ncs50faovm" path="res://scripts/objects/tree.gd" id="1_d8ko4"]
+[ext_resource type="Script" uid="uid://bdacs58o51m2w" path="res://scripts/objects/tree.gd" id="1_d8ko4"]
 [ext_resource type="Texture2D" uid="uid://kcsl56t0cm71" path="res://assets/island/environment/trees.png" id="1_j00qk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j00qk"]
 radius = 42.0119
 
 [node name="Tree" type="Area2D" groups=["trees"]]
+z_index = 3
 script = ExtResource("1_d8ko4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]

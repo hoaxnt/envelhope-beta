@@ -256,8 +256,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_eojnx"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eojnx"]
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -279,8 +279,8 @@ animation = &"idle_down"
 position = Vector2(7, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_eojnx")
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_eojnx")
 
 [node name="HeadText" type="Label" parent="."]
 visible = false
