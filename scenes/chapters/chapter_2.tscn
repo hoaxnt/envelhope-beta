@@ -108,6 +108,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="NPC" type="Node2D" parent="."]
+visible = false
 
 [node name="StreetPerformer" parent="NPC" instance=ExtResource("5_g2xa2")]
 position = Vector2(382, 343)

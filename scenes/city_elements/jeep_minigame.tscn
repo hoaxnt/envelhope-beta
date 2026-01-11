@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://kwdjoa5l13ga"]
 
-[ext_resource type="Script" uid="uid://b8fqfxngk7pvr" path="res://scripts/city_elements/jeep_minigame.gd" id="1_ey8u4"]
+[ext_resource type="Script" uid="uid://bo1qnt0mb0oxd" path="res://scripts/city_elements/jeep_minigame.gd" id="1_ey8u4"]
 [ext_resource type="Texture2D" uid="uid://hnnphpbh8qy3" path="res://assets/city/plaza/jeep.png" id="1_wbm3s"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_ey8u4"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_ey8u4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d806c"]
 radius = 72.1734

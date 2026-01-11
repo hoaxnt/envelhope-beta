@@ -40,7 +40,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func stop_slider():
 	if slider_bar.value >= TARGET_MIN_VALUE and slider_bar.value <= TARGET_MAX_VALUE:
-		earnings += 10
+		earnings += 13
 		earnings_label.text = "Envelopes: %s" % str(earnings)
 	else:
 		if earnings < 3:

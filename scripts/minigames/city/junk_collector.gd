@@ -51,7 +51,7 @@ func _on_start_button_pressed() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if not countdown_finished and game_started and event.is_action_pressed("action"):
-		collected_envelopes += 10
+		collected_envelopes += 2
 		score_label.text = "Envelopes: %s" % str(collected_envelopes)
 		
 func _on_done_button_pressed() -> void:
