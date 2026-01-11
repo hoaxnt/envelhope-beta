@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func collect_junk() -> void:
 	is_active = false
-	get_parent().earnings += 1
+	get_parent().earnings += 20
 	earnings_label.text = "Junks: %s" % str(get_parent().earnings)
 	junk_sprite.hide()
 	spawn_timer.start()
