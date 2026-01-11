@@ -10,7 +10,6 @@ func _ready() -> void:
 	sfx.volume_db = 10
 	bgm.play()
 	
-#	BUG: NEW GAME in correct spawn point, it loads the last saved even if it is new game 
 	if GlobalData.player_data.get("current_chapter") == "none":
 		$VBoxContainer/ContinueButton.disabled = true
 		
@@ -39,12 +38,21 @@ func _on_start_button_pressed() -> void:
 	SaveLoad.save_game(GameData.CONFIG, SaveLoad.CONFIG_PATH)
 	
 	Transition.transition_to_scene("res://scenes/stories/startup_story.tscn")
-	
-func _on_start_button_3_pressed() -> void:
-	sfx.play()
 
 func _on_exit_button_pressed() -> void:
 	hunger_timer.stop()
 	sfx.play()
-	
 	get_tree().quit()
+
+func _on_settings_button_pressed() -> void:
+	get_child(1).visible = false
+	get_child(2).visible = true
+	
+func _on_check_button_pressed() -> void:
+	var master_bus_index = AudioServer.get_bus_index("Master")
+	var is_muted = AudioServer.is_bus_mute(master_bus_index)
+	AudioServer.set_bus_mute(master_bus_index, !is_muted)
+
+func _on_close_button_pressed() -> void:
+	get_child(1).visible = true
+	get_child(2).visible = false

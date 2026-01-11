@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctre5r3igkhf4"]
 
-[ext_resource type="Script" uid="uid://co0fkefgcbkro" path="res://Scripts/stories/death_island.gd" id="1_vusm6"]
+[ext_resource type="Script" uid="uid://co0fkefgcbkro" path="res://scripts/stories/death_island.gd" id="1_vusm6"]
 [ext_resource type="Texture2D" uid="uid://4ivoxsxtbmko" path="res://assets/utils/introduction/scene_1.jpg" id="2_yxfla"]
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="3_njsgt"]
 
