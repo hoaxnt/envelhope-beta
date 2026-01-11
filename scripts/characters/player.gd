@@ -158,8 +158,7 @@ func _on_interaction_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("cars"):
 		sfx.stream = StreamAudio.hit
 		sfx.play()
-		print("hit")
-		#sfx.stream = StreamAudio.interact
+		print("hit : ", sfx.stream)
 		
 	if body.is_in_group("npcs"):
 			current_npc = body
@@ -169,7 +168,10 @@ func _on_interaction_zone_body_entered(body: Node2D) -> void:
 			if is_instance_valid(npc_label):
 					npc_label.show()
 					npc_label.text = body.name
+					
 func _on_interaction_zone_body_exited(body: Node2D) -> void:
+	sfx.stream = StreamAudio.interact
+	
 	if body == current_npc:
 		current_npc = null
 		head_text.hide()
