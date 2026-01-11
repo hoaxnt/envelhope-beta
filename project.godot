@@ -57,6 +57,7 @@ enabled=PackedStringArray()
 npcs=""
 player=""
 trees=""
+cars=""
 
 [gui]
 

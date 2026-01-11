@@ -155,6 +155,12 @@ func get_input_and_animate():
 						anim.flip_h = false
 
 func _on_interaction_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("cars"):
+		sfx.stream = StreamAudio.hit
+		sfx.play()
+		print("hit")
+		#sfx.stream = StreamAudio.interact
+		
 	if body.is_in_group("npcs"):
 			current_npc = body
 			head_text.show()

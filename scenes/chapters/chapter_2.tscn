@@ -177,7 +177,7 @@ rotation = 1.5694302
 script = ExtResource("13_nj00i")
 speed = 100.0
 
-[node name="Car" type="StaticBody2D" parent="Path2D/PathFollow2D"]
+[node name="Car" type="StaticBody2D" parent="Path2D/PathFollow2D" groups=["cars"]]
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Car"]
@@ -199,7 +199,7 @@ rotation = -0.0020855027
 script = ExtResource("13_nj00i")
 speed = 100.0
 
-[node name="Car" type="StaticBody2D" parent="Path2D_2/PathFollow2D"]
+[node name="Car" type="StaticBody2D" parent="Path2D_2/PathFollow2D" groups=["cars"]]
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D_2/PathFollow2D/Car"]
@@ -221,7 +221,7 @@ rotation = -1.5767046
 script = ExtResource("13_nj00i")
 speed = 100.0
 
-[node name="Car" type="StaticBody2D" parent="Path2D_3/PathFollow2D"]
+[node name="Car" type="StaticBody2D" parent="Path2D_3/PathFollow2D" groups=["cars"]]
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D_3/PathFollow2D/Car"]
@@ -242,7 +242,7 @@ position = Vector2(-105, 56)
 script = ExtResource("13_nj00i")
 speed = 100.0
 
-[node name="Car" type="StaticBody2D" parent="Path2D_4/PathFollow2D"]
+[node name="Car" type="StaticBody2D" parent="Path2D_4/PathFollow2D" groups=["cars"]]
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D_4/PathFollow2D/Car"]
@@ -264,7 +264,7 @@ rotation = -1.587785
 script = ExtResource("13_nj00i")
 speed = 100.0
 
-[node name="Car" type="StaticBody2D" parent="Path2D_5/PathFollow2D"]
+[node name="Car" type="StaticBody2D" parent="Path2D_5/PathFollow2D" groups=["cars"]]
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D_5/PathFollow2D/Car"]
