@@ -97,7 +97,6 @@ func get_input_and_animate():
 						
 						if current_tool_instance is Sprite2D:
 							current_tool_instance.flip_h = true
-							#current_tool_instance.scale.x = -0.5
 							current_tool_instance.position.x = -15
 							
 					else:
@@ -114,7 +113,6 @@ func get_input_and_animate():
 						
 						if current_tool_instance is Sprite2D:
 							current_tool_instance.flip_h = true
-							#current_tool_instance.scale.x = 0.5
 							current_tool_instance.position.x = 0
 			else:
 					if input_direction.y < 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sjb672kut2l2"]
+[gd_scene load_steps=11 format=3 uid="uid://sjb672kut2l2"]
 
 [ext_resource type="Script" uid="uid://ddv6wp88xyd36" path="res://scripts/city_elements/shop.gd" id="1_dhnyk"]
 [ext_resource type="Texture2D" uid="uid://edd7qwhgbhlx" path="res://assets/city/plaza/banana.png" id="1_ptwfa"]
@@ -6,6 +6,12 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nclcp"]
 radius = 34.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p26yw"]
+bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fdpt"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkt6x"]
 bg_color = Color(0, 0, 0, 0.32156864)
@@ -16,10 +22,24 @@ corner_radius_bottom_left = 45
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o2y3"]
 bg_color = Color(0.32133758, 0.6467551, 5.7756904e-07, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mab54"]
+bg_color = Color(0.23845968, 0.48832732, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us1nh"]
+bg_color = Color(0.4004112, 0.7971971, 3.85046e-07, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Shop" type="Area2D"]
 script = ExtResource("1_dhnyk")
@@ -56,6 +76,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p26yw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -68,25 +89,42 @@ theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 text = "Shop"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(700, 600)
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(750, 650)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fdpt")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Panel/VBoxContainer/GridContainer"]
+[node name="Item1" type="Panel" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer"]
 custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gkt6x")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -100,66 +138,30 @@ offset_bottom = 127.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 51
-text = "Hat"
+text = "Water"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 texture = ExtResource("3_8o2y3")
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel/VBoxContainer"]
+[node name="Item1Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer"]
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_8o2y3")
-text = "$1000"
-
-[node name="Panel_2" type="Panel" parent="CanvasLayer/Panel/VBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(300, 400)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gkt6x")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel_2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -127.0
-offset_right = 100.0
-offset_bottom = 127.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel_2/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "Hat"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel_2/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-texture = ExtResource("3_8o2y3")
-
-[node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer/GridContainer/Panel_2/VBoxContainer"]
-custom_minimum_size = Vector2(200, 60)
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_8o2y3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mab54")
+theme_override_styles/hover = SubResource("StyleBoxFlat_us1nh")
 text = "$1000"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer/Item1Button" to="." method="_on_item_1_button_pressed"]
