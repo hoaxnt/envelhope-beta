@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://sjb672kut2l2"]
+
+[ext_resource type="Script" uid="uid://ddv6wp88xyd36" path="res://scripts/city_elements/shop.gd" id="1_dhnyk"]
+[ext_resource type="Texture2D" uid="uid://edd7qwhgbhlx" path="res://assets/city/plaza/banana.png" id="1_ptwfa"]
+[ext_resource type="Texture2D" uid="uid://be6dl8rm118i0" path="res://assets/city/plaza/water.png" id="3_8o2y3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nclcp"]
+radius = 34.0
+
+[node name="Shop" type="Area2D"]
+script = ExtResource("1_dhnyk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nclcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ptwfa")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -34.0
+offset_top = -46.0
+offset_right = 34.0
+offset_bottom = -16.0
+theme_override_font_sizes/font_size = 16
+text = "Shop [E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(800, 800)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_8o2y3")
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 44
+text = "$1000"
+flat = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=24 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://cmlikxubnf6p6" path="res://scripts/chapters/chapter_2.gd" id="1_i74ei"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://scenes/characters/npc_plaza/street_performer.tscn" id="5_g2xa2"]
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/guard.tscn" id="6_2w64o"]
 [ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
+[ext_resource type="PackedScene" uid="uid://sjb672kut2l2" path="res://scenes/city_elements/shop.tscn" id="8_5g32p"]
 [ext_resource type="PackedScene" uid="uid://bixhfuq2bsrqu" path="res://scenes/city_elements/food_machine.tscn" id="8_ei26i"]
 [ext_resource type="PackedScene" uid="uid://kwdjoa5l13ga" path="res://scenes/city_elements/jeep_minigame.tscn" id="9_cf2n5"]
 [ext_resource type="PackedScene" uid="uid://do3p25ltpur2h" path="res://scenes/city_elements/junk_diving_minigame.tscn" id="10_d806c"]
@@ -111,6 +112,9 @@ position = Vector2(382, 522)
 z_index = 1
 position = Vector2(381.99997, 611)
 rotation = 0.0217357
+
+[node name="Shop" parent="." instance=ExtResource("8_5g32p")]
+position = Vector2(642, 480)
 
 [node name="FoodMachine" parent="." instance=ExtResource("8_ei26i")]
 position = Vector2(1133, 471)
