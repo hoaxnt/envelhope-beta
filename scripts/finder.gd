@@ -122,4 +122,3 @@ func _on_path_timer_timeout():
 		path_step_index += 1
 	else:
 		path_timer.stop()
-		#print("Agent reached the destination!")

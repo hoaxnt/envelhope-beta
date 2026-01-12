@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://kmecuta4qy01"]
 
-[ext_resource type="Script" uid="uid://dljgmeysbway" path="res://Scripts/minigames/city/path_finding/police.gd" id="1_xi5yg"]
+[ext_resource type="Script" uid="uid://d2tj5bn1vku3e" path="res://Scripts/minigames/city/path_finding/police.gd" id="1_xi5yg"]
 [ext_resource type="Texture2D" uid="uid://dd6fvfsq5ic54" path="res://assets/characters/police.png" id="2_cshbf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkdwf"]
@@ -82,7 +82,8 @@ path_postprocessing = 1
 scale = Vector2(1.3085938, 1.3085938)
 sprite_frames = SubResource("SpriteFrames_0jp7e")
 autoplay = "default"
-frame_progress = 0.8321535
+frame = 5
+frame_progress = 0.5414705
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xi5yg")
