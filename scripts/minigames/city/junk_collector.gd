@@ -62,6 +62,3 @@ func _on_done_button_pressed() -> void:
 	summary_panel.hide()
 	Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")
 	
-	var earned_envelopes = GlobalData.player_data.get("envelopes") + collected_envelopes
-	GlobalData.update_player_data("envelopes", earned_envelopes)
-	
