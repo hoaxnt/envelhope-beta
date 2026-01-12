@@ -10,6 +10,6 @@ func _on_body_exited(body: Node2D) -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
+		
 		print("shop")
 		
-#		BUG: fix the shop item button size and code 
