@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://sjb672kut2l2"]
+[gd_scene load_steps=10 format=3 uid="uid://sjb672kut2l2"]
 
 [ext_resource type="Script" uid="uid://ddv6wp88xyd36" path="res://scripts/city_elements/shop.gd" id="1_dhnyk"]
-[ext_resource type="Texture2D" uid="uid://edd7qwhgbhlx" path="res://assets/city/plaza/banana.png" id="1_ptwfa"]
 [ext_resource type="Texture2D" uid="uid://be6dl8rm118i0" path="res://assets/city/plaza/water.png" id="3_8o2y3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nclcp"]
@@ -50,7 +49,6 @@ not_enough = NodePath("CanvasLayer/NotEnoughLabel")
 shape = SubResource("CircleShape2D_nclcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ptwfa")
 
 [node name="Label" type="Label" parent="."]
 visible = false
