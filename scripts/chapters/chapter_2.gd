@@ -18,6 +18,8 @@ extends Node2D
 @onready var player = get_node("/root/Chapter2/Player")
 @onready var day_progress_bar = Hud.get_node("DayPanel/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/DayProgressBar")
 
+@onready var item1_button = get_node("Shop/CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer/Item1Button")
+
 var day_current_time: float = 0.0 
 var bgm : AudioStreamPlayer2D = StreamAudio.get_node("Bgm")
 var sfx : AudioStreamPlayer2D = StreamAudio.get_node("Sfx")
@@ -37,7 +39,12 @@ func _ready() -> void:
 	
 	if GlobalData.npc_data.get("diver_objective") == "completed" and GlobalData.npc_data.get("release_the_kraken") == false:
 		player.global_position = GlobalData.load_player2_position()
-		
+	
+	if GlobalData.player_data.get("has_hat"):
+		player.get_child(0).visible = true
+		if item1_button:
+			item1_button.disabled = true
+			item1_button.text = "Owned"
 		
 	
 	if GlobalData.npc_data.get("release_the_kraken") == true:

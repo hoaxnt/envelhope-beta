@@ -40,5 +40,8 @@ func _on_item_1_button_pressed() -> void:
 	item1_button.disabled = true
 	item1_button.text = "Owned"
 	
+	#static
+	GlobalData.player_data.set("has_hat", true)
+	
 	if current_body_entered:
 		current_body_entered.get_child(0).visible = true
