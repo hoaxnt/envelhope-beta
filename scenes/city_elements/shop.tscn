@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://sjb672kut2l2"]
+[gd_scene load_steps=11 format=3 uid="uid://sjb672kut2l2"]
 
 [ext_resource type="Script" uid="uid://ddv6wp88xyd36" path="res://scripts/city_elements/shop.gd" id="1_dhnyk"]
-[ext_resource type="Texture2D" uid="uid://be6dl8rm118i0" path="res://assets/city/plaza/water.png" id="3_8o2y3"]
+[ext_resource type="Texture2D" uid="uid://hpnf3y4l253u" path="res://assets/equipments/hat_down.png" id="2_8o2y3"]
+[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="2_gkt6x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nclcp"]
-radius = 34.0
+radius = 85.00588
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p26yw"]
 bg_color = Color(0.23529412, 0.16470589, 0.1254902, 1)
@@ -49,13 +50,18 @@ not_enough = NodePath("CanvasLayer/NotEnoughLabel")
 shape = SubResource("CircleShape2D_nclcp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.7683716e-07, -9.536743e-07)
+scale = Vector2(1.0914284, 1.1641904)
+texture = ExtResource("2_gkt6x")
+region_enabled = true
+region_rect = Rect2(111.59997, 174.02733, 49.401802, 50.489944)
 
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = -34.0
-offset_top = -46.0
+offset_top = -63.0
 offset_right = 34.0
-offset_bottom = -16.0
+offset_bottom = -33.0
 theme_override_font_sizes/font_size = 16
 text = "Shop [E]"
 horizontal_alignment = 1
@@ -142,7 +148,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 51
-text = "Water"
+text = "Bandana"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -151,7 +157,8 @@ custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-texture = ExtResource("3_8o2y3")
+texture = ExtResource("2_8o2y3")
+expand_mode = 1
 
 [node name="Item1Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer/Panel/GridContainer/Item1/VBoxContainer"]
 custom_minimum_size = Vector2(200, 60)

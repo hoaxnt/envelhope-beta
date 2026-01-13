@@ -114,6 +114,7 @@ position = Vector2(381.99997, 611)
 rotation = 0.0217357
 
 [node name="Shop" parent="." instance=ExtResource("8_5g32p")]
+z_index = 3
 position = Vector2(642, 480)
 
 [node name="FoodMachine" parent="." instance=ExtResource("8_ei26i")]
