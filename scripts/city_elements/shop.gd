@@ -1,26 +1,39 @@
 extends Node
 
+@export var item1_button: Button
+@export var not_enough: Label
+var is_shop_entered = false
+
 func _ready() -> void:
 	get_child(3).visible = false
+	not_enough.visible = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		get_child(2).visible = true
+		is_shop_entered = true
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		get_child(2).visible = false
+		is_shop_entered = false
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") and is_shop_entered:
 		get_child(3).visible = true
 	if event.is_action_pressed("w") or event.is_action_pressed("a") or event.is_action_pressed("s") or event.is_action_pressed("d"):
 		get_child(3).visible = false
+		not_enough.visible = false
 		
 func _on_item_1_button_pressed() -> void:
 	var current_envelopes = GlobalData.get_player_data_value("envelopes")
 	if current_envelopes < 100:
 		print("Not enough envelopes")
+		not_enough.visible = true
 		return
-		
+	not_enough.visible = false
+	GlobalData.purchase_shop(100)
+	item1_button.disabled = true
+	item1_button.text = "Owned"
+	
 	print("Item1 bought")

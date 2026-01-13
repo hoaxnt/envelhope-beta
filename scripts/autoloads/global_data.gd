@@ -94,6 +94,10 @@ func handle_hunger_reset_island():
 	player_data["envelopes"] = 0
 	SaveLoad.save_game(player_data, SaveLoad.PLAYER_DATA_PATH)
 
+func purchase_shop(cost: int):
+	if player_data["envelopes"] >= cost:
+		player_data["envelopes"] -= cost
+
 func purchase_food(cost: int):
 	if InventoryManager:
 		if player_data["envelopes"] >= cost:
@@ -102,6 +106,5 @@ func purchase_food(cost: int):
 			var options = ["Banana", "Water", "Chips"]
 			var item_name = options.pick_random()
 			InventoryManager.add_item(item_name)
-		
 		return true
 	return false
