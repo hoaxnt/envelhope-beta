@@ -30,13 +30,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _on_item_1_button_pressed() -> void:
 	var current_envelopes = GlobalData.get_player_data_value("envelopes")
-	if current_envelopes < 1000:
+	if current_envelopes < 2000:
 		print("Not enough envelopes")
 		not_enough.visible = true
 		return
 		
 	not_enough.visible = false
-	GlobalData.purchase_shop(1000)
+	GlobalData.purchase_shop(2000)
 	item1_button.disabled = true
 	item1_button.text = "Owned"
 	
