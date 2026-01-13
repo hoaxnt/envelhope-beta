@@ -117,16 +117,19 @@ rotation = 0.0217357
 position = Vector2(642, 480)
 
 [node name="FoodMachine" parent="." instance=ExtResource("8_ei26i")]
+z_index = 3
 position = Vector2(1133, 471)
 
 [node name="JeepMinigame" parent="." instance=ExtResource("9_cf2n5")]
+z_index = 3
 position = Vector2(131, 378)
 
 [node name="JunkDivingMinigame" parent="." instance=ExtResource("10_d806c")]
+z_index = 3
 position = Vector2(1310, 116)
 
 [node name="JunkCollectorMinigame" parent="." instance=ExtResource("11_8exib")]
-z_index = 2
+z_index = 3
 position = Vector2(823, 39)
 
 [node name="DangerZone" type="Area2D" parent="."]
