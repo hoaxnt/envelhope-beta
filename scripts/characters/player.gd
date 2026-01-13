@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var sprint_speed: int = 100 #fortest
 @onready var base_speed = 60
 @onready var anim = $AnimatedSprite2D
+
+#static
+@onready var hat_anim = $HatAnimation
+
 @onready var camera = $Camera2D
 @onready var head_text = $HeadText
 @onready var hand_socket = $AnimatedSprite2D/HandSocket
@@ -35,6 +39,7 @@ func _ready() -> void:
 		camera.limit_bottom = screen_size.y
 		
 	anim.play("idle_down")
+	hat_anim.play("idle_down")
 		
 	if InventoryManager:
 		InventoryManager.tool_selected.connect(equip_tool)
@@ -90,6 +95,8 @@ func get_input_and_animate():
 						else:
 							GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_side")
+						hat_anim.play("idle_side")
+						hat_anim.flip_h = true
 						anim.flip_h = true
 						last_direction = "left"
 						if inventory:
@@ -106,6 +113,8 @@ func get_input_and_animate():
 						else:
 							GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_side")
+						hat_anim.play("idle_side")
+						hat_anim.flip_h = false
 						anim.flip_h = false
 						last_direction = "right"
 						if inventory:
@@ -122,6 +131,7 @@ func get_input_and_animate():
 						else:
 							GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_up")
+						hat_anim.play("idle_up")
 						last_direction = "up"
 						if inventory:
 							inventory.hide()
@@ -132,6 +142,7 @@ func get_input_and_animate():
 						else:
 							GlobalState.HUNGER_MODE = "walk"
 						anim.play("walk_down")
+						hat_anim.play("idle_down")
 						last_direction = "down"
 						if inventory:
 							inventory.hide()
@@ -140,16 +151,22 @@ func get_input_and_animate():
 					"up":
 						GlobalState.HUNGER_MODE = "idle"
 						anim.play("idle_up")
+						hat_anim.play("idle_up")
 					"down":
 						GlobalState.HUNGER_MODE = "idle"
 						anim.play("idle_down")
+						hat_anim.play("idle_down")
 					"left":
 						GlobalState.HUNGER_MODE = "idle"
 						anim.play("idle_side")
+						hat_anim.play("idle_side")
+						hat_anim.flip_h = true
 						anim.flip_h = true
 					"right":
 						GlobalState.HUNGER_MODE = "idle"
 						anim.play("idle_side")
+						hat_anim.play("idle_side")
+						hat_anim.flip_h = false
 						anim.flip_h = false
 
 func _on_interaction_zone_body_entered(body: Node2D) -> void:
@@ -179,8 +196,6 @@ func _on_interaction_zone_body_exited(body: Node2D) -> void:
 			npc_label.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
-	#if event.is_action_pressed("use"):
-		#unequip_tool()
 	#	-- Show Inventory --
 	if event.is_action_pressed("show_inventory"):
 		if inventory_panel:

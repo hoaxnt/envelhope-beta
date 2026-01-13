@@ -2,6 +2,7 @@ extends Node
 
 @export var item1_button: Button
 @export var not_enough: Label
+var current_body_entered : Node2D
 var is_shop_entered = false
 
 func _ready() -> void:
@@ -10,11 +11,13 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		current_body_entered = body
 		get_child(2).visible = true
 		is_shop_entered = true
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		current_body_entered = null
 		get_child(2).visible = false
 		is_shop_entered = false
 	
@@ -31,9 +34,11 @@ func _on_item_1_button_pressed() -> void:
 		print("Not enough envelopes")
 		not_enough.visible = true
 		return
+		
 	not_enough.visible = false
 	GlobalData.purchase_shop(100)
 	item1_button.disabled = true
 	item1_button.text = "Owned"
 	
-	print("Item1 bought")
+	if current_body_entered:
+		current_body_entered.get_child(0).visible = true
