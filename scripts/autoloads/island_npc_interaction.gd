@@ -25,7 +25,6 @@ func handle_npc_interaction(npc_id: String) -> void:
 				print("wood count ", wood_count)
 				
 				if wood_count >= REQUIRED_WOOD:
-					
 					InventoryManager.remove_item(WOOD_ITEM_NAME, REQUIRED_WOOD)
 					NPC_DATA["current_objective"] = "none"
 					NPC_DATA["diver_objective"] = "completed"

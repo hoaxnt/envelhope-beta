@@ -23,7 +23,8 @@ var PLAYER_STATS = {
 	"equipped_tool": "none",
 	"position_1": [628.0, 280.0],
 	"position_2": [1080.0, 490.0], #fortest
-	"has_hat": false #static
+	"has_hat": false, #static
+	"has_axe": false
 }
 
 var NPC_DATA_STATS = {
