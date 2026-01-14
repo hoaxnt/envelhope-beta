@@ -108,4 +108,4 @@ fixed_icon_size = Vector2i(150, 150)
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/UnequipButton" to="." method="_on_unequip_button_pressed"]
-[connection signal="item_selected" from="Panel/VBoxContainer/Panel/ItemList" to="." method="_on_item_list_selected"]
+[connection signal="item_selected" from="Panel/VBoxContainer/Panel/ItemList" to="." method="_on_item_list_item_selected"]

@@ -59,13 +59,13 @@ func _update_item_list():
 			var index = item_list.get_item_count() - 1
 			item_list.set_item_metadata(index, item_name)
 				
-func _on_item_list_selected(index: int):
-	var item_name = item_list.get_item_metadata(index)
-	InventoryManager.select_item(item_name)
-	GlobalData.player_data.set("equipped_tool", item_name)
-	
 func _on_unequip_button_pressed() -> void:
 	if PLAYER_DATA.has("equipped_tool"):
 		InventoryManager.select_item(PLAYER_DATA["equipped_tool"])
 		PLAYER_DATA["equipped_tool"] = ""
 		SaveLoad.save_game(PLAYER_DATA, SaveLoad.PLAYER_DATA_PATH)
+
+func _on_item_list_item_selected(index: int) -> void:
+	var item_name = item_list.get_item_metadata(index)
+	InventoryManager.select_item(item_name)
+	GlobalData.update_player_data("equipped_tool", item_name)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dkughpfrdxuap"]
 
-[ext_resource type="Script" uid="uid://d6lxwjnwv00r" path="res://scripts/objects/pickup.gd" id="1_70obf"]
+[ext_resource type="Script" uid="uid://cebdssfilsv6s" path="res://scripts/objects/pickup.gd" id="1_70obf"]
 [ext_resource type="Texture2D" uid="uid://duoo350i1i153" path="res://assets/island/tools/axe.png" id="1_hmqt1"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_ibpkf"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_ibpkf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_33j5x"]
 radius = 34.058773
@@ -46,6 +46,7 @@ _data = {
 
 [node name="Axe" type="Area2D"]
 script = ExtResource("1_70obf")
+item_name = "Axe"
 icon = ExtResource("1_hmqt1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

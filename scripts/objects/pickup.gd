@@ -1,18 +1,28 @@
 extends Area2D
 
-@export var item_name: String = "Axe"
+@onready var item_label: Label = $Label
+@onready var sfx = StreamAudio.get_node("Sfx")
+@export var item_name: String
 @export var icon: CompressedTexture2D = null
 @export var interaction_key: Key = KEY_E
 @export var player_tag: String = "player"
-@onready var item_label: Label = $Label
-@onready var sfx = StreamAudio.get_node("Sfx")
-
 
 var player_in_range: bool = false
 var player_body: Node2D = null
 
 func _ready():
 	item_label.hide()
+	if GlobalData.config.get("user_opened_once") == false:
+		InventoryManager.remove_item("Axe")
+		
+	if item_name == "Axe" and GlobalData.config.get("user_opened_once"):
+		if GlobalData.get_player_data_value("has_axe"):
+			if InventoryManager:
+				InventoryManager.remove_item(item_name)
+				InventoryManager.add_item(item_name)
+			queue_free()
+			print("Already have Axe!")
+	
 	if !has_node("/root/InventoryManager"):
 		push_error("Error: InventoryManager Autoload is missing or incorrectly named.")
 
@@ -35,8 +45,10 @@ func _process(_delta):
 func _pick_up():
 	sfx.stream = StreamAudio.interact
 	sfx.play()
+	
+	if item_name == "Axe":
+		GlobalData.update_player_data("has_axe", true)
 	print("Picked up: " + item_name)
-
 	if InventoryManager:
 			InventoryManager.add_item(item_name)
 	queue_free()
