@@ -4,6 +4,7 @@ extends Node
 @export var not_enough: Label
 var current_body_entered : Node2D
 var is_shop_entered = false
+var item1_price = 0
 
 func _ready() -> void:
 	get_child(3).visible = false
@@ -30,13 +31,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func _on_item_1_button_pressed() -> void:
 	var current_envelopes = GlobalData.get_player_data_value("envelopes")
-	if current_envelopes < 2000:
+	if current_envelopes < item1_price:
 		print("Not enough envelopes")
 		not_enough.visible = true
 		return
 		
 	not_enough.visible = false
-	GlobalData.purchase_shop(2000)
+	GlobalData.purchase_shop(item1_price)
 	item1_button.disabled = true
 	item1_button.text = "Owned"
 	
