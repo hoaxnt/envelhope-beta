@@ -64,6 +64,7 @@ func save_player2_position(position: Vector2):
 	
 
 func load_player_position() -> Vector2:
+	player_data = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
 	var pos_array = player_data.get("position")
 	if pos_array is Array and pos_array.size() == 2:
 		return Vector2(pos_array[0], pos_array[1])
@@ -71,6 +72,7 @@ func load_player_position() -> Vector2:
 		return Vector2(80.0, 486.0)
 		
 func load_player1_position() -> Vector2:
+	player_data = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
 	var pos_array = player_data.get("position_1")
 	if pos_array is Array and pos_array.size() == 2:
 		return Vector2(pos_array[0], pos_array[1])
@@ -78,6 +80,7 @@ func load_player1_position() -> Vector2:
 		return Vector2(628.0, 280.0)
 
 func load_player2_position() -> Vector2:
+	player_data = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
 	var pos_array = player_data.get("position_2")
 	if pos_array is Array and pos_array.size() == 2:
 		return Vector2(pos_array[0], pos_array[1])

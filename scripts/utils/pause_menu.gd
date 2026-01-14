@@ -50,10 +50,10 @@ func _on_main_menu_button_pressed() -> void:
 	
 	if player_1:
 		GlobalData.save_player1_position(player_1.global_position)
-		GlobalData.player_data.set("current_chapter", player_1.get_parent().name)
+		GlobalData.update_player_data("current_chapter", "Chapter1")
 		print("SAVED ", GlobalData.player_data["current_chapter"])
 		
 	elif player_2:
 		GlobalData.save_player2_position(player_2.global_position)
-		GlobalData.player_data.set("current_chapter", player_2.get_parent().name)
+		GlobalData.update_player_data("current_chapter", "Chapter2")
 		print("SAVED ", GlobalData.player_data["current_chapter"])

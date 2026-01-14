@@ -46,7 +46,6 @@ func _ready() -> void:
 			item1_button.disabled = true
 			item1_button.text = "Owned"
 		
-	
 	if GlobalData.npc_data.get("release_the_kraken") == true:
 		bgm.volume_db = 5
 		bgm.stream = StreamAudio.bgm_chase
@@ -70,9 +69,7 @@ func _ready() -> void:
 		hunger_timer.start()
 		return
 	
-		
 func _physics_process(_delta: float) -> void:
-
 	if day_progress_bar.value >= 180 and GlobalData.npc_data.get("day") < 4:
 		if player:
 			GlobalData.save_player2_position(player.global_position)
