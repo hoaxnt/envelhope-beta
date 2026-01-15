@@ -385,7 +385,6 @@ position = Vector2(338, 639)
 
 [connection signal="pressed" from="OneTimeTutorial/Panel/VBoxContainer/CloseOneTimeButton" to="." method="_on_close_one_time_button_pressed"]
 [connection signal="body_entered" from="WASD" to="." method="_on_wasd_body_entered"]
-[connection signal="body_exited" from="WASD" to="." method="_on_wasd_body_exited"]
 [connection signal="body_entered" from="E" to="." method="_on_e_body_entered"]
 [connection signal="body_entered" from="I" to="." method="_on_i_body_entered"]
 [connection signal="body_entered" from="KidnapChecker" to="KidnapChecker" method="_on_body_entered"]
