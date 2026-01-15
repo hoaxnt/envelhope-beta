@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=41 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://cqx5uig7pgpox" path="res://scripts/chapters/chapter_1.gd" id="1_it1fp"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dkughpfrdxuap" path="res://objects/axe.tscn" id="10_l01ag"]
 [ext_resource type="PackedScene" uid="uid://b0gbe4vyonscx" path="res://objects/log.tscn" id="11_l01ag"]
 [ext_resource type="PackedScene" uid="uid://mat5nmwemvko" path="res://objects/tree.tscn" id="12_pmv4y"]
+[ext_resource type="FontFile" uid="uid://dp5oum2xdtbaq" path="res://assets/fonts/Rubik-Regular.ttf" id="12_pqu7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48uj0"]
 size = Vector2(285, 254)
@@ -135,6 +136,39 @@ position_smoothing_enabled = true
 
 [node name="Tutorial" parent="." instance=ExtResource("10_0ad4i")]
 visible = false
+
+[node name="OneTimeTutorial" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="OneTimeTutorial"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OneTimeTutorial/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.5
+offset_top = -42.0
+offset_right = 93.5
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 509
+
+[node name="Label" type="Label" parent="OneTimeTutorial/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("12_pqu7u")
+theme_override_font_sizes/font_size = 70
+text = "(Guide)"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="KidnapChecker" type="Area2D" parent="."]
 position = Vector2(951, 68)
@@ -310,8 +344,6 @@ position = Vector2(756, 399)
 
 [node name="Tree6" parent="." instance=ExtResource("12_pmv4y")]
 position = Vector2(338, 639)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="KidnapChecker" to="KidnapChecker" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
