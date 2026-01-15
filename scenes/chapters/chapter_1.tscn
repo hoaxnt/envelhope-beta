@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=42 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://cqx5uig7pgpox" path="res://scripts/chapters/chapter_1.gd" id="1_it1fp"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b0gbe4vyonscx" path="res://objects/log.tscn" id="11_l01ag"]
 [ext_resource type="PackedScene" uid="uid://mat5nmwemvko" path="res://objects/tree.tscn" id="12_pmv4y"]
 [ext_resource type="FontFile" uid="uid://dp5oum2xdtbaq" path="res://assets/fonts/Rubik-Regular.ttf" id="12_pqu7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynuiw"]
+size = Vector2(212, 102.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48uj0"]
 size = Vector2(285, 254)
@@ -107,9 +110,11 @@ b = Vector2(24.446716, 108.32141)
 [sub_resource type="CircleShape2D" id="CircleShape2D_l01ag"]
 radius = 12.500977
 
-[node name="Chapter1" type="Node2D"]
+[node name="Chapter1" type="Node2D" node_paths=PackedStringArray("one_time_tutorial", "guide_label")]
 y_sort_enabled = true
 script = ExtResource("1_it1fp")
+one_time_tutorial = NodePath("OneTimeTutorial")
+guide_label = NodePath("OneTimeTutorial/Panel/VBoxContainer/GuideLabel")
 
 [node name="Island" parent="." instance=ExtResource("2_2t2a1")]
 position = Vector2(1, 0)
@@ -161,7 +166,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 509
 
-[node name="Label" type="Label" parent="OneTimeTutorial/Panel/VBoxContainer"]
+[node name="GuideLabel" type="Label" parent="OneTimeTutorial/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("12_pqu7u")
@@ -169,6 +174,13 @@ theme_override_font_sizes/font_size = 70
 text = "(Guide)"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="WASD" type="Area2D" parent="."]
+position = Vector2(466, 305)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WASD"]
+position = Vector2(162, 4.75)
+shape = SubResource("RectangleShape2D_ynuiw")
 
 [node name="KidnapChecker" type="Area2D" parent="."]
 position = Vector2(951, 68)

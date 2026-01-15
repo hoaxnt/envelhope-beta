@@ -7,7 +7,11 @@ extends Node2D
 @onready var objective_label_anim : AnimationPlayer = Hud.get_node("ObjectivePanel/MarginContainer/ObjectiveLabel/ObjectiveTextAnimation")
 @onready var player: Node = get_node_or_null("/root/Chapter1/Player")
 
+@export var one_time_tutorial : CanvasLayer
+@export var guide_label : Label
+
 func _ready() -> void:
+	one_time_tutorial.hide()
 	day_panel.hide()
 	Hud.show()
 	hunger_bar.value = GlobalData.player_data.get("hunger")
@@ -22,4 +26,3 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):
 		global_state.toggle_pause()
-		

@@ -10,17 +10,13 @@ func _ready() -> void:
 	tutorial.hide()
 	
 func _on_button_pressed() -> void:
-	
-	
 	sfx.stream = StreamAudio.button_press
 	sfx.play()
 	tutorial.hide()
-	
 	objective_anim.play("show_objective")
 	
 	await objective_anim.animation_finished
 	
 	if not GlobalData.config.get("user_opened_once"):
 		GlobalData.update_config_data("user_opened_once", true)
-
 	hunger_timer.start()
