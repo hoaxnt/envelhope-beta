@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://mat5nmwemvko" path="res://objects/tree.tscn" id="12_pmv4y"]
 [ext_resource type="FontFile" uid="uid://dp5oum2xdtbaq" path="res://assets/fonts/Rubik-Regular.ttf" id="12_pqu7u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynuiw"]
-size = Vector2(212, 102.5)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmv4y"]
+bg_color = Color(0, 0, 0, 0.7176471)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48uj0"]
 size = Vector2(285, 254)
@@ -110,11 +110,12 @@ b = Vector2(24.446716, 108.32141)
 [sub_resource type="CircleShape2D" id="CircleShape2D_l01ag"]
 radius = 12.500977
 
-[node name="Chapter1" type="Node2D" node_paths=PackedStringArray("one_time_tutorial", "guide_label")]
+[node name="Chapter1" type="Node2D" node_paths=PackedStringArray("one_time_tutorial", "guide_label", "wasd")]
 y_sort_enabled = true
 script = ExtResource("1_it1fp")
 one_time_tutorial = NodePath("OneTimeTutorial")
 guide_label = NodePath("OneTimeTutorial/Panel/VBoxContainer/GuideLabel")
+wasd = NodePath("WASD")
 
 [node name="Island" parent="." instance=ExtResource("2_2t2a1")]
 position = Vector2(1, 0)
@@ -143,6 +144,7 @@ position_smoothing_enabled = true
 visible = false
 
 [node name="OneTimeTutorial" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Panel" type="Panel" parent="OneTimeTutorial"]
 anchors_preset = 15
@@ -150,24 +152,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmv4y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OneTimeTutorial/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.5
-offset_top = -42.0
-offset_right = 93.5
-offset_bottom = 42.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 509
+theme_override_constants/separation = -551
 
 [node name="GuideLabel" type="Label" parent="OneTimeTutorial/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("12_pqu7u")
 theme_override_font_sizes/font_size = 70
@@ -175,12 +173,20 @@ text = "(Guide)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CloseOneTimeButton" type="Button" parent="OneTimeTutorial/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_font_sizes/font_size = 60
+text = "Press anywhere to continue . ."
+flat = true
+
 [node name="WASD" type="Area2D" parent="."]
 position = Vector2(466, 305)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WASD"]
-position = Vector2(162, 4.75)
-shape = SubResource("RectangleShape2D_ynuiw")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WASD"]
+polygon = PackedVector2Array(126, -36, 144, -36, 145, -4, 181, -4, 181, -37, 198, -37, 200, 9, 125, 8)
 
 [node name="KidnapChecker" type="Area2D" parent="."]
 position = Vector2(951, 68)
@@ -357,5 +363,8 @@ position = Vector2(756, 399)
 [node name="Tree6" parent="." instance=ExtResource("12_pmv4y")]
 position = Vector2(338, 639)
 
+[connection signal="pressed" from="OneTimeTutorial/Panel/VBoxContainer/CloseOneTimeButton" to="." method="_on_close_one_time_button_pressed"]
+[connection signal="body_entered" from="WASD" to="." method="_on_wasd_body_entered"]
+[connection signal="body_exited" from="WASD" to="." method="_on_wasd_body_exited"]
 [connection signal="body_entered" from="KidnapChecker" to="KidnapChecker" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

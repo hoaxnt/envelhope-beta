@@ -17,6 +17,4 @@ func _on_button_pressed() -> void:
 	
 	await objective_anim.animation_finished
 	
-	if not GlobalData.config.get("user_opened_once"):
-		GlobalData.update_config_data("user_opened_once", true)
 	hunger_timer.start()
