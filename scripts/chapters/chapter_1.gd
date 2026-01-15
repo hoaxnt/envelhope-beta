@@ -10,6 +10,10 @@ extends Node2D
 @export var one_time_tutorial : CanvasLayer
 @export var guide_label : Label
 @export var wasd : Area2D
+@export var e: Area2D
+@export var i: Area2D
+
+var current_one_time_monitor: String
 
 func _ready() -> void:
 	day_panel.hide()
@@ -31,11 +35,27 @@ func _on_wasd_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == false:
 		guide_label.text = "Move around by pressing [W A S D] keys"
 		one_time_tutorial.show()
-#			if not GlobalData.config.get("user_opened_once"):
-		#GlobalData.update_config_data("user_opened_once", true)
-func _on_wasd_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		wasd.monitoring = false
+		current_one_time_monitor = "wasd"
+		
+func _on_e_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == false:
+		guide_label.text = "Pickup items using [E] key on the keyboard"
+		one_time_tutorial.show()
+		current_one_time_monitor = "e"
+		
+func _on_i_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == false:
+		guide_label.text = "You can check your inventory by pressing [I] key"
+		one_time_tutorial.show()
+		current_one_time_monitor = "i"
 		
 func _on_close_one_time_button_pressed() -> void:
+	if current_one_time_monitor == "wasd":
+		wasd.monitoring = false
+	elif current_one_time_monitor == "e":
+		e.monitoring = false
+	elif current_one_time_monitor == "i":
+		i.monitoring = false
+		if not GlobalData.config.get("user_opened_once"):
+			GlobalData.update_config_data("user_opened_once", true)
 	one_time_tutorial.hide()
