@@ -1,54 +1,49 @@
 [gd_scene load_steps=10 format=3 uid="uid://roh6nuojjp2y"]
 
-[ext_resource type="Script" uid="uid://cg0mfw1cvriky" path="res://scripts/characters/npc_plaza/fruit_vendor/fruit_vendor.gd" id="1_xk2rj"]
-[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/characters/player/idle/idle_side.png" id="2_xk2rj"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="3_jhqlp"]
+[ext_resource type="Script" uid="uid://cr8syaorvyo82" path="res://scripts/characters/npc_plaza/fruit_vendor/fruit_vendor.gd" id="1_xk2rj"]
+[ext_resource type="Texture2D" uid="uid://cw0f4risxled6" path="res://assets/characters/npc_plaza/Male1.png" id="2_jhqlp"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="3_jhqlp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhqlp"]
 radius = 40.04997
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xrx7d"]
-atlas = ExtResource("2_xk2rj")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_siudc"]
+atlas = ExtResource("2_jhqlp")
+region = Rect2(0, 480, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtv4a"]
-atlas = ExtResource("2_xk2rj")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ju1u"]
+atlas = ExtResource("2_jhqlp")
+region = Rect2(32, 480, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rwbk"]
-atlas = ExtResource("2_xk2rj")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaatp"]
+atlas = ExtResource("2_jhqlp")
+region = Rect2(64, 480, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejvtx"]
-atlas = ExtResource("2_xk2rj")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4x5g"]
+atlas = ExtResource("2_jhqlp")
+region = Rect2(96, 480, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qyh0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xrx7d")
+"texture": SubResource("AtlasTexture_siudc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qtv4a")
+"texture": SubResource("AtlasTexture_7ju1u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8rwbk")
+"texture": SubResource("AtlasTexture_kaatp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ejvtx")
+"texture": SubResource("AtlasTexture_o4x5g")
 }],
 "loop": true,
-"name": &"idle_side",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
+"name": &"idle",
 "speed": 5.0
 }]
 
-[node name="FruitVendor" type="Area2D"]
+[node name="Kangmanor" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_xk2rj")
 
@@ -57,8 +52,7 @@ shape = SubResource("CircleShape2D_jhqlp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7qyh0")
-animation = &"idle_side"
-autoplay = "idle_side"
+animation = &"idle"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -66,12 +60,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -34.0
-offset_right = 20.0
-offset_bottom = -11.0
+offset_left = -37.0
+offset_top = -38.0
+offset_right = 37.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_jhqlp")
-text = "Ben"
+text = "Kangmanor"
 horizontal_alignment = 1

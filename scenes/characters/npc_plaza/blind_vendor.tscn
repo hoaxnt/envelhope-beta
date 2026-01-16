@@ -1,97 +1,49 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmwar6r6bslj7"]
+[gd_scene load_steps=10 format=3 uid="uid://dmwar6r6bslj7"]
 
-[ext_resource type="Script" uid="uid://dxyonnq4gj6kh" path="res://scripts/characters/npc_plaza/blind_vendor/blind_vendor.gd" id="1_v5s4s"]
-[ext_resource type="Texture2D" uid="uid://bdo1buj1m7grf" path="res://assets/characters/player/idle/idle_side.png" id="2_c1a22"]
-[ext_resource type="Texture2D" uid="uid://bqdk1wyu2bukv" path="res://assets/characters/player/walk/walk_down.png" id="3_4wveq"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="4_c1a22"]
+[ext_resource type="Script" uid="uid://tr6td1mwuiy5" path="res://scripts/characters/npc_plaza/blind_vendor/blind_vendor.gd" id="1_v5s4s"]
+[ext_resource type="Texture2D" uid="uid://cw0f4risxled6" path="res://assets/characters/npc_plaza/Male1.png" id="2_v5s4s"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="4_c1a22"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c1a22"]
 radius = 40.04997
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xrx7d"]
-atlas = ExtResource("2_c1a22")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1a22"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(0, 48, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtv4a"]
-atlas = ExtResource("2_c1a22")
-region = Rect2(64, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wveq"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(32, 48, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rwbk"]
-atlas = ExtResource("2_c1a22")
-region = Rect2(128, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kat45"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(64, 48, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejvtx"]
-atlas = ExtResource("2_c1a22")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ge03v"]
-atlas = ExtResource("3_4wveq")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_my5a0"]
-atlas = ExtResource("3_4wveq")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_enhl8"]
-atlas = ExtResource("3_4wveq")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cpjh"]
-atlas = ExtResource("3_4wveq")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_enuwj"]
-atlas = ExtResource("3_4wveq")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7401"]
-atlas = ExtResource("3_4wveq")
-region = Rect2(320, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7g8s"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(96, 48, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qyh0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xrx7d")
+"texture": SubResource("AtlasTexture_c1a22")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qtv4a")
+"texture": SubResource("AtlasTexture_4wveq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8rwbk")
+"texture": SubResource("AtlasTexture_kat45")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ejvtx")
+"texture": SubResource("AtlasTexture_m7g8s")
 }],
 "loop": true,
-"name": &"idle_side",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ge03v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_my5a0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_enhl8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3cpjh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_enuwj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a7401")
-}],
-"loop": true,
-"name": &"new_animation",
+"name": &"idle",
 "speed": 5.0
 }]
 
-[node name="BlindVendor" type="Area2D"]
+[node name="Tony" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_v5s4s")
 
@@ -100,8 +52,7 @@ shape = SubResource("CircleShape2D_c1a22")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7qyh0")
-animation = &"new_animation"
-autoplay = "idle_side"
+animation = &"idle"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -110,11 +61,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -34.0
+offset_top = -41.0
 offset_right = 20.0
-offset_bottom = -11.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_c1a22")
-text = "Toti"
+text = "Tony"
 horizontal_alignment = 1
