@@ -317,7 +317,7 @@ position_smoothing_enabled = true
 [node name="NPC" type="Node2D" parent="."]
 
 [node name="Barker" parent="NPC" instance=ExtResource("5_g2xa2")]
-position = Vector2(187, 215)
+position = Vector2(239, 133)
 
 [node name="Islaw" parent="NPC" instance=ExtResource("6_2w64o")]
 position = Vector2(382, 432)
@@ -337,37 +337,37 @@ position = Vector2(129, 180)
 position = Vector2(48, -21)
 sprite_frames = SubResource("SpriteFrames_5g32p")
 autoplay = "default"
-frame_progress = 0.4171989
+frame_progress = 0.77928925
 
 [node name="AnimatedSprite2D_2" type="AnimatedSprite2D" parent="NPC/Pila"]
 position = Vector2(65, -24)
 sprite_frames = SubResource("SpriteFrames_o08q1")
 autoplay = "default"
-frame_progress = 0.17037703
+frame_progress = 0.53246397
 
 [node name="AnimatedSprite2D_3" type="AnimatedSprite2D" parent="NPC/Pila"]
 position = Vector2(74, -17)
 sprite_frames = SubResource("SpriteFrames_f0761")
 autoplay = "default"
-frame_progress = 0.58732057
+frame_progress = 0.94940966
 
 [node name="AnimatedSprite2D_4" type="AnimatedSprite2D" parent="NPC/Pila"]
 position = Vector2(87, -22)
 sprite_frames = SubResource("SpriteFrames_et68c")
 autoplay = "default"
-frame_progress = 0.054268494
+frame_progress = 0.4163574
 
 [node name="AnimatedSprite2D_5" type="AnimatedSprite2D" parent="NPC/Pila"]
 position = Vector2(98, -4)
 sprite_frames = SubResource("SpriteFrames_2l5je")
 autoplay = "default"
-frame_progress = 0.45478687
+frame_progress = 0.8168777
 
 [node name="AnimatedSprite2D_6" type="AnimatedSprite2D" parent="NPC/Pila"]
 position = Vector2(93, 8)
 sprite_frames = SubResource("SpriteFrames_iycpf")
 autoplay = "default"
-frame_progress = 0.8930085
+frame_progress = 0.25509363
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NPC/Pila"]
 polygon = PackedVector2Array(40, -35, 41, -8, 47, -6, 53, -6, 55, -9, 61, -9, 68, -8, 68, -2, 76, -1, 83, -7, 85, 0, 85, 13, 85, 21, 89, 23, 98, 22, 99, 12, 106, 7, 103, -20, 91, -21, 92, -36, 83, -40, 70, -42, 59, -39, 56, -36, 51, -39, 43, -39)

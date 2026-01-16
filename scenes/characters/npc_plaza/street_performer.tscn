@@ -54,7 +54,7 @@ shape = SubResource("CircleShape2D_hkb1r")
 sprite_frames = SubResource("SpriteFrames_7qyh0")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.43599254
+frame_progress = 0.61866224
 
 [node name="Label" type="Label" parent="."]
 z_index = 4
@@ -74,4 +74,4 @@ text = "Barker"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

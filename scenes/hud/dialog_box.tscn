@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cy7p7yvejyyv"]
 
-[ext_resource type="Script" uid="uid://x8j0bfcy17pf" path="res://scripts/hud/dialogue_box.gd" id="1_21e2g"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_nirvc"]
+[ext_resource type="Script" uid="uid://cld0x5kv8gnum" path="res://scripts/hud/dialogue_box.gd" id="1_21e2g"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_nirvc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
 bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)

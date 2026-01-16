@@ -1,17 +1,26 @@
 extends Area2D
 
-var dialog_box
-var is_dialog_visible = false
-var is_player_collided = false
+var current_body: String
+@onready var dialogue_box = Hud.get_node("DialogueBox")
 
 func _ready() -> void:
-	pass
-	
-func _process(_delta: float) -> void:
-	pass
-	
-func _on_body_entered(_player: PhysicsBody2D) -> void:
-	#if player.name == "Player":
-		#while player:
-			#is_player_collided = true
-	pass # Replace with function body.
+	get_child(2).hide()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_child(2).show()
+		current_body = "player"
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_child(2).hide()
+		current_body = ""
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and current_body == "player":
+		var name_label : Label = dialogue_box.get_child(1).get_child(0).get_child(0)
+		var message_label : Label = dialogue_box.get_child(1).get_child(0).get_child(1)
+		if dialogue_box:
+			name_label.text = name
+			message_label.text = "Trece Trece!"
+			dialogue_box.show()
