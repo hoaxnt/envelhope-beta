@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cxvc8000q5li5"]
 
 [ext_resource type="Texture2D" uid="uid://1ivqaivu3h6t" path="res://assets/characters/npc_island/rogue/idle/idle-sheet.png" id="1_qjjtn"]
-[ext_resource type="Script" uid="uid://b0nxmomrxorv4" path="res://scripts/characters/npc_island/harvester.gd" id="1_qmwf7"]
+[ext_resource type="Script" uid="uid://b0nxmomrxorv4" path="res://scripts/characters/npc_island/rambo.gd" id="1_qmwf7"]
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="3_6r3lr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d75tx"]
@@ -47,7 +47,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6r3lr"]
 radius = 35.0
 
-[node name="Harvester" type="CharacterBody2D" groups=["npcs"]]
+[node name="Rambo" type="CharacterBody2D" groups=["npcs"]]
 script = ExtResource("1_qmwf7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -85,3 +85,4 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_6r3lr")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -22,11 +22,15 @@ func _on_continue_button_pressed() -> void:
 		Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")		
 
 func _on_start_button_pressed() -> void:
+	print("Current logs: ", GlobalData.inventory.get("Log"))
 	sfx.play()
+	var item_list = Hud.get_node_or_null("InventoryPanel/Panel/VBoxContainer/Panel/ItemList")
+	item_list.clear()
 	GlobalData.update_config_data("talked_to_rambo", false)
 	GlobalData.update_config_data("is_new_game", false)
 	GlobalData.update_config_data("user_opened_once", false)
 	GlobalData.update_config_data("current_chapter", "none")
+	InventoryManager.remove_item("Log", GlobalData.inventory.get("Log"))
 	GlobalData.npc_data.set("diver_objective", "none")
 	GlobalData.npc_data.set("current_objective", "none")
 	GlobalData.npc_data.set("day", 1)

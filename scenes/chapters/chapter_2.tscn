@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ch7e3kl82la3y"]
+[gd_scene load_steps=62 format=3 uid="uid://ch7e3kl82la3y"]
 
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://cmlikxubnf6p6" path="res://scripts/chapters/chapter_2.gd" id="1_i74ei"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="12_i74ei"]
 [ext_resource type="Script" uid="uid://duut16lxiujqq" path="res://scripts/city_elements/car_1.gd" id="13_nj00i"]
 [ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="14_nj00i"]
+[ext_resource type="Script" uid="uid://cf4cxec5pem65" path="res://scripts/hud/dialogue_box_city.gd" id="15_noc3c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_awnlt"]
 atlas = ExtResource("8_w15kb")
@@ -237,6 +238,30 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8exib"]
 size = Vector2(242, 796)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgtrf"]
+bg_color = Color(0.2901961, 0.20784314, 0.16078432, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.23610237, 0.16611111, 0.12567946, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21e2g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0652i"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nirvc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cbnh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="Animation" id="Animation_q6mn5"]
 length = 0.001
 tracks/0/type = "value"
@@ -316,19 +341,23 @@ position_smoothing_enabled = true
 
 [node name="NPC" type="Node2D" parent="."]
 
-[node name="Barker" parent="NPC" instance=ExtResource("5_g2xa2")]
+[node name="Barker" parent="NPC" node_paths=PackedStringArray("dialogue_box") instance=ExtResource("5_g2xa2")]
 position = Vector2(239, 133)
+dialogue_box = NodePath("../../CanvasLayer_2")
 
-[node name="Islaw" parent="NPC" instance=ExtResource("6_2w64o")]
+[node name="Islaw" parent="NPC" node_paths=PackedStringArray("dialogue_box") instance=ExtResource("6_2w64o")]
 position = Vector2(798, 217)
+dialogue_box = NodePath("../../CanvasLayer_2")
 
-[node name="Tony" parent="NPC" instance=ExtResource("7_165o0")]
+[node name="Tony" parent="NPC" node_paths=PackedStringArray("dialogue_box") instance=ExtResource("7_165o0")]
 position = Vector2(263, 467)
+dialogue_box = NodePath("../../CanvasLayer_2")
 
-[node name="Kangmanor" parent="NPC" instance=ExtResource("3_sa0bh")]
+[node name="Kangmanor" parent="NPC" node_paths=PackedStringArray("dialogue_box") instance=ExtResource("3_sa0bh")]
 z_index = 1
 position = Vector2(1179.0001, 140)
 rotation = 0.0217357
+dialogue_box = NodePath("../../CanvasLayer_2")
 
 [node name="Pila" type="StaticBody2D" parent="NPC"]
 position = Vector2(129, 180)
@@ -398,6 +427,65 @@ scale = Vector2(1.027354, 1.027354)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
 position = Vector2(1117, 366)
 shape = SubResource("RectangleShape2D_8exib")
+
+[node name="CanvasLayer_2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer_2"]
+custom_minimum_size = Vector2(0, 250)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgtrf")
+script = ExtResource("15_noc3c")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer_2/DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer_2/DialogueBox/MarginContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CanvasLayer_2/DialogueBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_i74ei")
+theme_override_font_sizes/font_size = 50
+text = "None"
+
+[node name="Message" type="Label" parent="CanvasLayer_2/DialogueBox/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1760, 125)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_i74ei")
+theme_override_font_sizes/font_size = 40
+text = "This is empty"
+autowrap_mode = 2
+
+[node name="NextButton" type="Button" parent="CanvasLayer_2/DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxFlat_21e2g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0652i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nirvc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8cbnh")
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -490,3 +578,4 @@ region_enabled = true
 region_rect = Rect2(240.76367, 482.74844, 31.11557, 45.324432)
 
 [connection signal="body_entered" from="DangerZone" to="." method="_on_danger_zone_body_entered"]
+[connection signal="pressed" from="CanvasLayer_2/DialogueBox/NextButton" to="CanvasLayer_2/DialogueBox" method="_on_next_button_pressed"]

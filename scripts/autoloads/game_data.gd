@@ -44,7 +44,7 @@ var NPC_DATA_STATS = {
 			"1": "Comeback to me if you're done",
 		}
 	},
-"harvester": {
+"rambo": {
 		"name": "Rambo",
 		"dialogue": {
 			"1": "Hey Rico! I heard you were starting a new project.",

@@ -33,8 +33,8 @@ func handle_npc_interaction(npc_id: String) -> void:
 				else:
 					dialogue_box.start_dialogue("diver_gather_woods", 1, false, "gather_woods")
 				
-		"harvester":
-			dialogue_box.start_dialogue("harvester", 4, false, "none")
+		"rambo":
+			dialogue_box.start_dialogue("rambo", 4, false, "none")
 			
 		"noriel":
 			dialogue_box.start_dialogue("noriel", 3, false, "none")

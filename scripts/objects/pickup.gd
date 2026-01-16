@@ -11,6 +11,7 @@ var player_in_range: bool = false
 var player_body: Node2D = null
 
 func _ready():
+	hide()
 	item_label.hide()
 	if GlobalData.config.get("user_opened_once") == false:
 		InventoryManager.remove_item("Axe")
