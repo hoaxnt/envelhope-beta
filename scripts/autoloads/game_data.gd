@@ -10,6 +10,7 @@ var INVENTORY = {
 }
 
 var CONFIG = {
+	"talked_to_rambo": false,
 	"user_opened_once": false,
 	"is_new_game": false,
 	"current_chapter": "none",

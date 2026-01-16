@@ -23,6 +23,7 @@ func _on_continue_button_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	sfx.play()
+	GlobalData.update_config_data("talked_to_rambo", false)
 	GlobalData.update_config_data("is_new_game", false)
 	GlobalData.update_config_data("user_opened_once", false)
 	GlobalData.update_config_data("current_chapter", "none")
