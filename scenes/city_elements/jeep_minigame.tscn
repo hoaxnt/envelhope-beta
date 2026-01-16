@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://kwdjoa5l13ga"]
+[gd_scene load_steps=4 format=3 uid="uid://kwdjoa5l13ga"]
 
 [ext_resource type="Script" uid="uid://bo1qnt0mb0oxd" path="res://scripts/city_elements/jeep_minigame.gd" id="1_ey8u4"]
-[ext_resource type="Texture2D" uid="uid://hnnphpbh8qy3" path="res://assets/city/plaza/jeep.png" id="1_wbm3s"]
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_ey8u4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d806c"]
@@ -12,10 +11,6 @@ script = ExtResource("1_ey8u4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d806c")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.17650004, 0.17650004)
-texture = ExtResource("1_wbm3s")
 
 [node name="Label" type="Label" parent="."]
 visible = false

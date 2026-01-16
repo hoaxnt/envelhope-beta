@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://do3p25ltpur2h"]
+[gd_scene load_steps=4 format=3 uid="uid://do3p25ltpur2h"]
 
-[ext_resource type="Script" uid="uid://brsq4eldortug" path="res://scripts/city_elements/junk_diving_minigame.gd" id="1_6ukd0"]
-[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="1_s06qa"]
-[ext_resource type="FontFile" uid="uid://brajnm0fevmq0" path="res://assets/fonts/BoldPixels.ttf" id="2_6ukd0"]
+[ext_resource type="Script" uid="uid://iox0anpsjbxo" path="res://scripts/city_elements/junk_diving_minigame.gd" id="1_6ukd0"]
+[ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="2_6ukd0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cf2n5"]
 radius = 48.04165
@@ -13,11 +12,6 @@ script = ExtResource("1_6ukd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cf2n5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_s06qa")
-region_enabled = true
-region_rect = Rect2(400, 160, 48, 16)
 
 [node name="Label" type="Label" parent="."]
 visible = false

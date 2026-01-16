@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://sjb672kut2l2"]
+[gd_scene load_steps=10 format=3 uid="uid://sjb672kut2l2"]
 
 [ext_resource type="Script" uid="uid://ddv6wp88xyd36" path="res://scripts/city_elements/shop.gd" id="1_dhnyk"]
 [ext_resource type="Texture2D" uid="uid://hpnf3y4l253u" path="res://assets/equipments/hat_down.png" id="2_8o2y3"]
-[ext_resource type="Texture2D" uid="uid://blyd235qe331v" path="res://assets/city/plaza/city_elements.png" id="2_gkt6x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nclcp"]
 radius = 85.00588
@@ -48,13 +47,6 @@ not_enough = NodePath("CanvasLayer/NotEnoughLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nclcp")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.7683716e-07, -9.536743e-07)
-scale = Vector2(1.0914284, 1.1641904)
-texture = ExtResource("2_gkt6x")
-region_enabled = true
-region_rect = Rect2(111.59997, 174.02733, 49.401802, 50.489944)
 
 [node name="Label" type="Label" parent="."]
 visible = false
