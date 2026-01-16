@@ -17,7 +17,7 @@
 bg_color = Color(0, 0, 0, 0.7176471)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynuiw"]
-size = Vector2(849, 189)
+size = Vector2(849, 155)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq4ne"]
 size = Vector2(40, 178)
@@ -169,7 +169,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = -551
+theme_override_constants/separation = -156
 
 [node name="GuideLabel" type="Label" parent="OneTimeTutorial/Panel/VBoxContainer"]
 layout_mode = 2
@@ -194,12 +194,13 @@ flat = true
 position = Vector2(466, 305)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WASD"]
-polygon = PackedVector2Array(126, -36, 144, -36, 145, -4, 181, -4, 181, -37, 198, -37, 200, 9, 125, 8)
+position = Vector2(0, -1)
+polygon = PackedVector2Array(141, -44, 146, -44, 145, -5, 179, -4, 178, -44, 181, -44, 182, -2, 142, -2)
 
 [node name="E" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="E"]
-position = Vector2(769.5, 126.5)
+position = Vector2(769.5, 109.5)
 shape = SubResource("RectangleShape2D_ynuiw")
 
 [node name="I" type="Area2D" parent="."]

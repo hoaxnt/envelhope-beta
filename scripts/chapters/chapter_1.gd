@@ -54,8 +54,8 @@ func _on_close_one_time_button_pressed() -> void:
 		wasd.monitoring = false
 	elif current_one_time_monitor == "e":
 		e.monitoring = false
-	elif current_one_time_monitor == "i":
-		i.monitoring = false
 		if not GlobalData.config.get("user_opened_once"):
 			GlobalData.update_config_data("user_opened_once", true)
+	elif current_one_time_monitor == "i":
+		i.monitoring = false
 	one_time_tutorial.hide()
