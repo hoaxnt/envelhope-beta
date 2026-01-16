@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cqfnmj4as6wxg" path="res://scenes/maps/city/plaza.tscn" id="1_3hgx5"]
 [ext_resource type="Script" uid="uid://cmlikxubnf6p6" path="res://scripts/chapters/chapter_2.gd" id="1_i74ei"]
 [ext_resource type="PackedScene" uid="uid://4h22a7hemgyb" path="res://scenes/characters/player.tscn" id="2_v6yd1"]
-[ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc_plaza/fruit_vendor.tscn" id="3_sa0bh"]
+[ext_resource type="PackedScene" uid="uid://roh6nuojjp2y" path="res://scenes/characters/npc_plaza/kangmanor.tscn" id="3_sa0bh"]
 [ext_resource type="PackedScene" uid="uid://cp647drb6trig" path="res://scenes/characters/npc_plaza/barker.tscn" id="5_g2xa2"]
 [ext_resource type="PackedScene" uid="uid://7ig7qjivgr7b" path="res://scenes/characters/npc_plaza/islaw.tscn" id="6_2w64o"]
-[ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/blind_vendor.tscn" id="7_165o0"]
+[ext_resource type="PackedScene" uid="uid://dmwar6r6bslj7" path="res://scenes/characters/npc_plaza/Tony.tscn" id="7_165o0"]
 [ext_resource type="PackedScene" uid="uid://sjb672kut2l2" path="res://scenes/city_elements/shop.tscn" id="8_5g32p"]
 [ext_resource type="PackedScene" uid="uid://bixhfuq2bsrqu" path="res://scenes/city_elements/food_machine.tscn" id="8_ei26i"]
 [ext_resource type="Texture2D" uid="uid://pkg0wa367xjv" path="res://assets/characters/npc_plaza/Female1.png" id="8_w15kb"]
@@ -320,14 +320,14 @@ position_smoothing_enabled = true
 position = Vector2(239, 133)
 
 [node name="Islaw" parent="NPC" instance=ExtResource("6_2w64o")]
-position = Vector2(382, 432)
+position = Vector2(798, 217)
 
 [node name="Tony" parent="NPC" instance=ExtResource("7_165o0")]
-position = Vector2(382, 522)
+position = Vector2(263, 467)
 
 [node name="Kangmanor" parent="NPC" instance=ExtResource("3_sa0bh")]
 z_index = 1
-position = Vector2(381.99997, 611)
+position = Vector2(1179.0001, 140)
 rotation = 0.0217357
 
 [node name="Pila" type="StaticBody2D" parent="NPC"]

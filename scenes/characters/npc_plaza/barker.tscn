@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cp647drb6trig"]
+[gd_scene load_steps=11 format=3 uid="uid://cp647drb6trig"]
 
 [ext_resource type="Script" uid="uid://bdy2q10i20fvo" path="res://scripts/characters/npc_plaza/barker/barker.gd" id="1_1lybs"]
 [ext_resource type="Texture2D" uid="uid://b7qtuxd5j8wl8" path="res://assets/characters/npc_plaza/Male4.png" id="2_hkb1r"]
@@ -43,6 +43,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16bxe"]
+radius = 9.0
+height = 36.0
+
 [node name="Barker" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_1lybs")
@@ -72,6 +76,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_ge03v")
 text = "Barker"
 horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_16bxe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

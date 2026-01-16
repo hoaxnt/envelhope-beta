@@ -22,5 +22,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		var message_label : Label = dialogue_box.get_child(1).get_child(0).get_child(1)
 		if dialogue_box:
 			name_label.text = name
-			message_label.text = "I hate cops!"
+			message_label.text = "There's a cool Bandana at the shop for only 2000! I want to buy one!"
 			dialogue_box.show()
