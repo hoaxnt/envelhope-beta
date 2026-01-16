@@ -286,9 +286,9 @@ size = Vector2(36.99997, 58.002872)
 
 [sub_resource type="Curve2D" id="Curve2D_5g32p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 902, 796, 0, 0, 0, 0, 898, 119, 0, 0, 0, 0, -41, 122)
+"points": PackedVector2Array(0, 0, 0, 0, 902, 796, 0, 0, 0, 0, 898, 119, 0, 0, 0, 0, 334.80002, 119.19998, 0, 0, 0, 0, 343, 775)
 }
-point_count = 3
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_w15kb"]
 _data = {

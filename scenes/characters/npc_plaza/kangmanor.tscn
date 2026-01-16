@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://roh6nuojjp2y"]
+[gd_scene load_steps=11 format=3 uid="uid://roh6nuojjp2y"]
 
 [ext_resource type="Script" uid="uid://cr8syaorvyo82" path="res://scripts/characters/npc_plaza/kangmanor/kangmanor.gd" id="1_xk2rj"]
 [ext_resource type="Texture2D" uid="uid://cw0f4risxled6" path="res://assets/characters/npc_plaza/Male1.png" id="2_jhqlp"]
@@ -43,6 +43,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pi75s"]
+radius = 9.0
+height = 36.0
+
 [node name="Kangmanor" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_xk2rj")
@@ -69,6 +73,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_jhqlp")
 text = "Kangmanor"
 horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_pi75s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

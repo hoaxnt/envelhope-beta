@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7ig7qjivgr7b"]
+[gd_scene load_steps=11 format=3 uid="uid://7ig7qjivgr7b"]
 
 [ext_resource type="Script" uid="uid://w1wxhxcx7rlj" path="res://scripts/characters/npc_plaza/islaw/islaw.gd" id="1_ahb35"]
 [ext_resource type="Texture2D" uid="uid://bv33h6nmmffm0" path="res://assets/characters/npc_plaza/Male3.png" id="2_2j1co"]
@@ -43,6 +43,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahb35"]
+radius = 9.0
+height = 36.0
+
 [node name="Islaw" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_ahb35")
@@ -70,6 +74,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_pnbqb")
 text = "Islaw"
 horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_ahb35")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
