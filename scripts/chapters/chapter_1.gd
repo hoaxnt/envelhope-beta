@@ -44,7 +44,7 @@ func _on_e_body_entered(body: Node2D) -> void:
 		current_one_time_monitor = "e"
 		
 func _on_i_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == false:
+	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == true:
 		guide_label.text = "You can check your inventory by pressing [I] key"
 		one_time_tutorial.show()
 		current_one_time_monitor = "i"

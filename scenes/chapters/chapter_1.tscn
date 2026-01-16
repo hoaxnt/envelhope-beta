@@ -20,7 +20,7 @@ bg_color = Color(0, 0, 0, 0.7176471)
 size = Vector2(849, 155)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nq4ne"]
-size = Vector2(40, 178)
+size = Vector2(158, 178)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48uj0"]
 size = Vector2(285, 254)
@@ -204,9 +204,10 @@ position = Vector2(769.5, 109.5)
 shape = SubResource("RectangleShape2D_ynuiw")
 
 [node name="I" type="Area2D" parent="."]
+position = Vector2(713, 93)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="I"]
-position = Vector2(615, 88)
+position = Vector2(-59, 0)
 shape = SubResource("RectangleShape2D_nq4ne")
 
 [node name="KidnapChecker" type="Area2D" parent="."]
