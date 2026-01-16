@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://7ig7qjivgr7b"]
 
-[ext_resource type="Script" uid="uid://bdy2q10i20fvo" path="res://scripts/characters/npc_plaza/barker/barker.gd" id="1_2j1co"]
+[ext_resource type="Script" uid="uid://w1wxhxcx7rlj" path="res://scripts/characters/npc_plaza/islaw/islaw.gd" id="1_ahb35"]
 [ext_resource type="Texture2D" uid="uid://bv33h6nmmffm0" path="res://assets/characters/npc_plaza/Male3.png" id="2_2j1co"]
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="4_pnbqb"]
 
@@ -45,7 +45,7 @@ animations = [{
 
 [node name="Islaw" type="Area2D"]
 texture_filter = 1
-script = ExtResource("1_2j1co")
+script = ExtResource("1_ahb35")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pnbqb")
@@ -70,3 +70,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_pnbqb")
 text = "Islaw"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
