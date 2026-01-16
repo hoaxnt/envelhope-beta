@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmwar6r6bslj7"]
+[gd_scene load_steps=15 format=3 uid="uid://dmwar6r6bslj7"]
 
 [ext_resource type="Script" uid="uid://tr6td1mwuiy5" path="res://scripts/characters/npc_plaza/Tony/Tony.gd" id="1_v5s4s"]
 [ext_resource type="Texture2D" uid="uid://cw0f4risxled6" path="res://assets/characters/npc_plaza/Male1.png" id="2_v5s4s"]
@@ -23,6 +23,22 @@ region = Rect2(64, 48, 32, 48)
 atlas = ExtResource("2_v5s4s")
 region = Rect2(96, 48, 32, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b5q1"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(128, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb2qm"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(160, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v104p"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(192, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06qno"]
+atlas = ExtResource("2_v5s4s")
+region = Rect2(224, 48, 32, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qyh0"]
 animations = [{
 "frames": [{
@@ -41,6 +57,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b5q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb2qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v104p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06qno")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8b5q1"]
@@ -56,7 +89,8 @@ shape = SubResource("CircleShape2D_c1a22")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7qyh0")
-animation = &"idle"
+animation = &"walk_down"
+autoplay = "idle"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

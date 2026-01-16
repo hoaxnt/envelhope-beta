@@ -46,10 +46,10 @@ var NPC_DATA_STATS = {
 "harvester": {
 		"name": "Rambo",
 		"dialogue": {
-			"1": "It's usually peaceful, but we've had trouble recently.",
-			"2": "A pirate fleet has been sighted, making our supply routes very dangerous.",
-			"3": "We desperately need to get food supplies to the neighboring village, but the pirate activity is high.",
-			"4": "Would you be willing to help us deliver the food while avoiding the pirates?"
+			"1": "Hey Rico! I heard you were starting a new project.",
+			"2": "If you ever need logs, you just have to ask.",
+			"3": "I have plenty of spares sitting behind my house.",
+			"4": "Here, take these 5x Logs."
 		}
 	},
 	"noriel": {

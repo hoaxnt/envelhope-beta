@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var crocs_sprite: AnimatedSprite2D
 @export var speed: float = 250.0
 @export var move_range: Rect2 = Rect2(Vector2(300, 100), Vector2(500, 500))
 var direction: Vector2
@@ -18,6 +19,11 @@ func pick_new_direction():
 		randf_range(-1, 1),
 		randf_range(-1, 1)
 	).normalized()
+	
+	if direction.x < 0:
+		crocs_sprite.scale.x = abs(crocs_sprite.scale.x)
+	elif direction.x > 0:
+		crocs_sprite.scale.x = -abs(crocs_sprite.scale.x)
 
 	position.x = clamp(position.x, move_range.position.x, move_range.position.x + move_range.size.x)
 	position.y = clamp(position.y, move_range.position.y, move_range.position.y + move_range.size.y)

@@ -138,7 +138,7 @@ position = Vector2(1165, 97)
 position = Vector2(191, 396)
 
 [node name="Rambo" parent="NPCs" instance=ExtResource("5_r7jkp")]
-position = Vector2(1030, 291)
+position = Vector2(968, 483)
 
 [node name="Player" parent="." instance=ExtResource("4_itjef")]
 z_index = 2
