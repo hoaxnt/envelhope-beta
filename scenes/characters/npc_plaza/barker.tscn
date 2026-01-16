@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cp647drb6trig"]
 
-[ext_resource type="Script" uid="uid://bdy2q10i20fvo" path="res://scripts/characters/npc_plaza/street_performer/street_performer.gd" id="1_1lybs"]
+[ext_resource type="Script" uid="uid://bdy2q10i20fvo" path="res://scripts/characters/npc_plaza/barker/barker.gd" id="1_1lybs"]
 [ext_resource type="Texture2D" uid="uid://b7qtuxd5j8wl8" path="res://assets/characters/npc_plaza/Male4.png" id="2_hkb1r"]
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="4_ge03v"]
 
@@ -54,7 +54,7 @@ shape = SubResource("CircleShape2D_hkb1r")
 sprite_frames = SubResource("SpriteFrames_7qyh0")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.61866224
+frame_progress = 0.71010834
 
 [node name="Label" type="Label" parent="."]
 z_index = 4
