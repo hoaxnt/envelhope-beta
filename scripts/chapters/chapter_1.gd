@@ -38,7 +38,7 @@ func _on_wasd_body_entered(body: Node2D) -> void:
 		current_one_time_monitor = "wasd"
 		
 func _on_e_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == false:
+	if body.is_in_group("player") and GlobalData.config.get("user_opened_once") == true:
 		guide_label.text = "Pickup items using [E] key on the keyboard"
 		one_time_tutorial.show()
 		current_one_time_monitor = "e"
@@ -51,11 +51,11 @@ func _on_i_body_entered(body: Node2D) -> void:
 		
 func _on_close_one_time_button_pressed() -> void:
 	if current_one_time_monitor == "wasd":
+		if GlobalData.config.get("user_opened_once") == false:
+			GlobalData.update_config_data("user_opened_once", true)
 		wasd.monitoring = false
 	elif current_one_time_monitor == "e":
 		e.monitoring = false
-		if not GlobalData.config.get("user_opened_once"):
-			GlobalData.update_config_data("user_opened_once", true)
 	elif current_one_time_monitor == "i":
 		i.monitoring = false
 	one_time_tutorial.hide()
