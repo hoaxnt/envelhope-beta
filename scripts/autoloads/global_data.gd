@@ -27,7 +27,6 @@ func update_config_data(key: String, value):
 	config_updated.emit(key, value)
 
 func update_inventory_data(key: String, value):
-	inventory = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
 	inventory[key] = value
 	SaveLoad.save_game(inventory, SaveLoad.INVENTORY_PATH)
 	inventory_updated.emit(key, value)
