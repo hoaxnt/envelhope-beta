@@ -4,7 +4,7 @@ extends Node
 @export var not_enough: Label
 var current_body_entered : Node2D
 var is_shop_entered = false
-var item1_price = 0
+var item1_price = 1000
 
 func _ready() -> void:
 	get_child(2).visible = false
