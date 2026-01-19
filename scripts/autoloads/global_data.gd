@@ -9,12 +9,19 @@ var config: Dictionary = SaveLoad.load_game(SaveLoad.CONFIG_PATH)
 signal player_data_updated(key, value)
 signal npc_data_updated(attribute_key: String, new_value)
 signal config_updated(key, value)
-signal inventory_updated(key, value)
+#signal inventory_updated(key, value)
 
 func update_npc_data(key: String, value):
 	player_data[key] = value
 	SaveLoad.save_game(npc_data, SaveLoad.NPC_DATA_PATH)
 	npc_data_updated.emit(key, value)
+
+func update_inventory_data(key1: String, key2: String, key3: String, key4: String, value1, value2, value3, value4):
+	inventory[key1] = value1
+	inventory[key2] = value2
+	inventory[key3] = value3
+	inventory[key4] = value4
+	SaveLoad.save_game(inventory, SaveLoad.INVENTORY_PATH)
 
 func update_player_data(key: String, value):
 	player_data[key] = value
@@ -25,11 +32,6 @@ func update_config_data(key: String, value):
 	config[key] = value
 	SaveLoad.save_game(config, SaveLoad.CONFIG_PATH)
 	config_updated.emit(key, value)
-
-func update_inventory_data(key: String, value):
-	inventory[key] = value
-	SaveLoad.save_game(inventory, SaveLoad.INVENTORY_PATH)
-	inventory_updated.emit(key, value)
 
 func advance_to_next_day():
 	var current_day = npc_data.get("day", 1)

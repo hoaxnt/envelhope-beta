@@ -8,7 +8,7 @@ var selected_item_name: String = ""
 signal inventory_changed
 signal tool_selected(item_name: String)
 
-const MAX_SLOTS = 5
+const MAX_SLOTS = 10
 
 func add_item(item_name: String, quantity: int = 1) -> bool:
 	if inventory.has(item_name):

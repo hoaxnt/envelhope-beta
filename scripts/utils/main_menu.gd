@@ -16,7 +16,7 @@ func _ready() -> void:
 		
 func _on_continue_button_pressed() -> void:
 	if GlobalData.player_data.get("current_chapter") == "Chapter1":
-		InventoryManager.remove_item("Log", GlobalData.inventory.get("Log"))
+		InventoryManager.remove_item("Log", GlobalData.inventory.get("Log")) #temp
 		InventoryManager.add_item("Log", old_saved_log)
 		
 		hunger_timer.start()
@@ -34,7 +34,7 @@ func _on_start_button_pressed() -> void:
 	item_list.clear()
 	
 	InventoryManager.remove_item("Log", GlobalData.inventory.get("Log"))
-	GlobalData.update_inventory_data("Log", 0)
+	GlobalData.update_inventory_data("Log", "Chips", "Water","Banana", 0,0,0,0)
 	print("Mainmenu After Current logs: ", GlobalData.inventory.get("Log"))
 	
 	GlobalData.update_config_data("talked_to_rambo", false)
