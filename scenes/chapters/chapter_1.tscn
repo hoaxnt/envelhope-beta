@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://btiivx7viv3y6"]
+[gd_scene load_steps=40 format=3 uid="uid://btiivx7viv3y6"]
 
 [ext_resource type="Script" uid="uid://cqx5uig7pgpox" path="res://scripts/chapters/chapter_1.gd" id="1_it1fp"]
 [ext_resource type="PackedScene" uid="uid://c8mx67b8f1vc3" path="res://scenes/maps/island/island.tscn" id="2_2t2a1"]
@@ -81,14 +81,8 @@ b = Vector2(16.194092, 116.438385)
 a = Vector2(77, 5)
 b = Vector2(-46, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqu7u"]
-size = Vector2(195.6106, 143.35773)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_re7c5"]
 size = Vector2(98, 42.999985)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jqk4"]
-size = Vector2(185, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o1ye"]
 size = Vector2(165.86136, 291.0752)
@@ -109,8 +103,6 @@ b = Vector2(24.446716, 108.32141)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcv0w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynuiw"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_nq4ne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l01ag"]
 radius = 12.500977
@@ -276,17 +268,9 @@ shape = SubResource("SegmentShape2D_tunax")
 position = Vector2(627, -166)
 shape = SubResource("SegmentShape2D_ppruk")
 
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(31.194702, 332.3211)
-shape = SubResource("RectangleShape2D_pqu7u")
-
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(528, 620.5)
 shape = SubResource("RectangleShape2D_re7c5")
-
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(476, 253.5)
-shape = SubResource("RectangleShape2D_0jqk4")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-520.93066, 179.4624)
@@ -315,10 +299,6 @@ shape = SubResource("CircleShape2D_kcv0w")
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-305, -169)
 shape = SubResource("CircleShape2D_ynuiw")
-
-[node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(145, 284)
-shape = SubResource("CircleShape2D_nq4ne")
 
 [node name="CollisionShape2D_2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-81, -179.00002)
