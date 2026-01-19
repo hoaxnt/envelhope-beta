@@ -16,7 +16,6 @@ extends CharacterBody2D
 @onready var dialogue_box = Hud.get_node("DialogueBox")
 @onready var inventory = Hud.get_node("InventoryPanel")
 
-
 var sfx = StreamAudio.get_node("Sfx")
 var current_tool_instance: Node2D = null
 
