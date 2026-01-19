@@ -23,6 +23,40 @@ func _on_continue_button_pressed() -> void:
 		hunger_timer.start()
 		Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")		
 
+func update_inventory():
+	if InventoryManager:
+		var item_names = InventoryManager.inventory.keys()
+		var n = item_names.size()
+		for i in range(n):
+			for j in range(0, n - i - 1):
+				var name_a = item_names[j]
+				var name_b = item_names[j + 1]
+				
+				var qty_a = InventoryManager.inventory[name_a]
+				var qty_b = InventoryManager.inventory[name_b]
+				
+				var should_swap = false
+				if qty_a < qty_b:
+					should_swap = true
+					
+				elif qty_a == qty_b:
+					if name_a.to_lower() > name_b.to_lower():
+						should_swap = true
+				
+				if should_swap:
+					item_names[j] = name_b
+					item_names[j + 1] = name_a
+					
+		for item_name in item_names:
+			var quantity = InventoryManager.inventory[item_name]
+			var display_text = item_name
+			if quantity > 1:
+				display_text = "%s (x%d)" % [item_name, quantity]
+			var icon = ITEM_ICONS.get(item_name)
+			item_list.add_item(display_text, icon, true)
+			var index = item_list.get_item_count() - 1
+			item_list.set_item_metadata(index, item_name)
+
 func _on_start_button_pressed() -> void:
 	print("Mainmenu Before Current logs: ", GlobalData.inventory.get("Log"))
 	sfx.play()

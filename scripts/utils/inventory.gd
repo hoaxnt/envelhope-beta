@@ -1,8 +1,8 @@
 extends Control
 
-@onready var item_list: ItemList = get_node_or_null("%ItemList")
 @onready var hotbar_container: HBoxContainer = get_node_or_null("%HBoxContainer")
 @onready var PLAYER_DATA: Dictionary = SaveLoad.load_game(SaveLoad.PLAYER_DATA_PATH)
+@onready var item_list: ItemList = get_node_or_null("%ItemList")
 
 const ITEM_ICONS = {
 		"Axe": preload("res://assets/island/tools/axe.png"),
