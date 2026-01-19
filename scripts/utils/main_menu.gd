@@ -33,7 +33,7 @@ func _on_start_button_pressed() -> void:
 	var item_list = Hud.get_node_or_null("InventoryPanel/Panel/VBoxContainer/Panel/ItemList")
 	item_list.clear()
 	
-	InventoryManager.remove_item("Log", old_saved_log)
+	InventoryManager.remove_item("Log", GlobalData.inventory.get("Log"))
 	GlobalData.update_inventory_data("Log", 0)
 	print("Mainmenu After Current logs: ", GlobalData.inventory.get("Log"))
 	
