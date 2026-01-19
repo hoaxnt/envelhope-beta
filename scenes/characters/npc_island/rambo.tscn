@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6r3lr"]
-radius = 35.0
+radius = 21.0
 
 [node name="Rambo" type="CharacterBody2D" groups=["npcs"]]
 script = ExtResource("1_qmwf7")
