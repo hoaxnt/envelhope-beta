@@ -4,6 +4,7 @@ extends Control
 
 var sfx = StreamAudio.get_node("Sfx")
 var bgm = StreamAudio.get_node("Bgm")
+var old_saved_log = GlobalData.inventory.get("Log")
 
 func _ready() -> void:
 	bgm.volume_db = 5
@@ -15,7 +16,8 @@ func _ready() -> void:
 		
 func _on_continue_button_pressed() -> void:
 	if GlobalData.player_data.get("current_chapter") == "Chapter1":
-		InventoryManager.add_item("Log", GlobalData.inventory.get("Log"))
+		InventoryManager.remove_item("Log", GlobalData.inventory.get("Log"))
+		InventoryManager.add_item("Log", old_saved_log)
 		
 		hunger_timer.start()
 		Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
@@ -31,7 +33,7 @@ func _on_start_button_pressed() -> void:
 	var item_list = Hud.get_node_or_null("InventoryPanel/Panel/VBoxContainer/Panel/ItemList")
 	item_list.clear()
 	
-	InventoryManager.remove_item("Log", GlobalData.inventory.get("Log"))
+	InventoryManager.remove_item("Log", old_saved_log)
 	GlobalData.update_inventory_data("Log", 0)
 	print("Mainmenu After Current logs: ", GlobalData.inventory.get("Log"))
 	
