@@ -15,9 +15,7 @@ func _ready() -> void:
 		
 func _on_continue_button_pressed() -> void:
 	if GlobalData.player_data.get("current_chapter") == "Chapter1":
-		
-		var INVENTORY: Dictionary = SaveLoad.load_game(SaveLoad.INVENTORY_PATH)
-		INVENTORY["Log"] = GlobalData.inventory.get("Log")
+		InventoryManager.add_item("Log", GlobalData.inventory.get("Log"))
 		
 		hunger_timer.start()
 		Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")

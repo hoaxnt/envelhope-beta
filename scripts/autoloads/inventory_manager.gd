@@ -11,7 +11,6 @@ signal tool_selected(item_name: String)
 const MAX_SLOTS = 5
 
 func add_item(item_name: String, quantity: int = 1) -> bool:
-	
 	if inventory.has(item_name):
 		inventory[item_name] += quantity
 		
