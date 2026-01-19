@@ -15,11 +15,11 @@ func _ready() -> void:
 		
 func _on_continue_button_pressed() -> void:
 	if GlobalData.player_data.get("current_chapter") == "Chapter1":
-		GlobalData.inventory.get("Log")
+		
 		hunger_timer.start()
 		Transition.transition_to_scene("res://scenes/chapters/chapter_1.tscn")
 	elif GlobalData.player_data.get("current_chapter") == "Chapter2":
-		GlobalData.inventory.get("Log")
+		
 		hunger_timer.start()
 		Transition.transition_to_scene("res://scenes/chapters/chapter_2.tscn")		
 
