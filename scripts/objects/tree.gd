@@ -2,7 +2,7 @@ extends Area2D
 
 
 @export var tree_max_hp: int = 5
-@export var respawn_time: float = 15.0 #fortest
+@export var respawn_time: float = 10.0 #fortest
 @export var log_scene: PackedScene = preload("res://objects/log.tscn") 
 @onready var sfx = StreamAudio.get_node("Sfx")
 
