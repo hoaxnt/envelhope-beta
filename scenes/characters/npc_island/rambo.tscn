@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://dg24wywv57r80" path="res://assets/fonts/BoldPixels.ttf" id="3_6r3lr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d75tx"]
-radius = 28.0
-height = 56.0
+radius = 12.0
+height = 36.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qmwf7"]
 atlas = ExtResource("1_qjjtn")
