@@ -22,7 +22,7 @@ var CONFIG = {
 var PLAYER_STATS = {
 	"current_chapter": "none",
 	"hunger": 100.0,
-	"envelopes": 10000, #fortest
+	"envelopes": 0, #fortest
 	"cycle": 10,
 	"equipped_tool": "none",
 	"position_1": [628.0, 280.0],

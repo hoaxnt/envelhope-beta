@@ -1,6 +1,6 @@
 extends Area2D
 
-var log_requirement = 1 # fort
+var log_requirement = 10 # fort
 
 func _on_body_entered(body: Node2D) -> void:
 	
